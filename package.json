@@ -1,0 +1,24 @@
+{
+  "name": "thai",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "localforage": "^1.7.2",
+    "node-sass": "^4.9.2",
+    "prop-types": "^15.6.2",
+    "rc-slider": "^8.6.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "test:notify": "react-scripts test --env=jsdom --notify",
+    "eject": "react-scripts eject",
+    "css": "node-sass src/ -o src/ --recursive",
+    "css:watch": "node-sass src/ -o src/ --recursive --watch"
+  }
+}

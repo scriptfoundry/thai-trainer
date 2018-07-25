@@ -1,0 +1,34 @@
+import localforage from 'localforage';
+
+export const init = () => {
+    localforage.config({
+        name: 'thai2',
+        storeName: 'persistentStore',
+        description: 'Persistent store for settings and progress for Spoken Thai Flashcards'
+    });
+};
+
+export const loadWords = async () => {
+    let response = await fetch('/data/allwords.json');
+    let words = await response.json();
+    return words;
+};
+
+export const loadProgressData = async () => {
+    const progress = await localforage.getItem('progress');
+    return progress || [];
+};
+
+export const saveProgressData = async (progress) => {
+    await localforage.setItem('progress', progress);
+};
+
+export const loadVoices = async () => {
+    const voiceSettings = await localforage.getItem('voiceSettings');
+    let { englishVoiceName = null, thaiVoiceName = null, rate = rate } = voiceSettings || {};
+    return { englishVoiceName, thaiVoiceName, rate };
+};
+
+export const saveVoices = async (voiceSettings) => {
+    await localforage.setItem('voiceSettings', voiceSettings);
+};
