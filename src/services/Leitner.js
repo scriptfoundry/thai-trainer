@@ -68,7 +68,7 @@ export const getOutstandingWords = (words, date) => {
  * @param {Number} limit The ideal number of words to include
  * @returns {Object[]} A list of card objects for study
  */
-export const refresh = (words, limit) => {
+export const refreshPracticeWords = (words, limit) => {
     const filterCurrent = ({ aspectScores=null }) => aspectScores !== null && Math.min(...aspectScores) === 0;
     let currentWords = words.filter(filterCurrent);
 
@@ -77,3 +77,20 @@ export const refresh = (words, limit) => {
 
     return [...currentWords, ...pendingWords];
 };
+
+/**
+ * Add a word to a practice deck
+ * @param {Object[]} words Array of words currently selected for practice
+ * @param {Object} word Word to be added
+ * @param {Number} day The day index
+ * @returns {Object[]} New list of words
+ */
+export const addPracticeWord = (words, word, day) => ([ ...words, { ...word, day, dueDate: day, aspectScores: [0, 0, 0] } ]);
+
+/**
+ * Removes a word from a practice deck
+ * @param {Object[]} words Array of words current selected for practice
+ * @param {Object} word Word to be removed
+ * @returns {Object[]} New list of words
+ */
+export const removePracticeWord = (words, word) => words.filter(({ id }) => id !== word.id);

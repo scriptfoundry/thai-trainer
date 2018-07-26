@@ -7,7 +7,9 @@ import {
     applyScoresToWords,
     createDueDateGeneratorForAspects,
     getOutstandingWords,
-    refresh,
+    refreshPracticeWords,
+    addPracticeWord,
+    removePracticeWord,
 } from '../Leitner';
 
 describe('Leitner', () => {
@@ -164,26 +166,71 @@ describe('Leitner', () => {
             return { id };
         });
 
-        expect(refresh(words, 15)).toEqual(words.slice(0, 15));
+        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(0, 15));
 
         words = words.map(({v, id}) => {
             if (id >= 5 && id < 10) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             return { id };
         });
-        expect(refresh(words, 15)).toEqual([...words.slice(0, 5), ...words.slice(10, 20)]);
+        expect(refreshPracticeWords(words, 15)).toEqual([...words.slice(0, 5), ...words.slice(10, 20)]);
 
         words = words.map(({v, id}) => {
             if (id < 5) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             if (id < 10) return { id, day: 1001, aspectScores: [ 0, 0, 0 ]};
             return { id };
         });
-        expect(refresh(words, 15)).toEqual(words.slice(5, 20));
+        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(5, 20));
 
         words = words.map(({v, id}) => {
             if (id < 5) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             if (id < 25) return { id, day: 1001, aspectScores: [ 0, 0, 0 ]};
             return { id };
         });
-        expect(refresh(words, 15)).toEqual(words.slice(5, 25));
+        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(5, 25));
+    });
+    it('adds a word for practice', () => {
+        const words = [
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  4 },
+            { id:  5 },
+            { id:  6 },
+        ];
+        let practiceWords = words.filter(({day}) => day !== undefined);
+        let newWord = words.find(({id}) => id === 5);
+
+        expect(addPracticeWord(practiceWords, newWord, 1001)).toEqual([
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+        ]);
+
+        // Ensure that words and the original words are not modified
+        expect(words.find(({id}) => id === 5)).toEqual({ id: 5 });
+        expect(newWord).toEqual({ id: 5 });
+    });
+    it('drops a word from practice', () => {
+        const words = [
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6, day: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+        ];
+
+        let wordToRemove = words.find(({id}) => id === 5);
+
+        expect(wordToRemove).toEqual({ id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] });
+        expect(removePracticeWord(words, wordToRemove)).toEqual([
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6, day: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+        ]);
+
+        // Words not already in the practice deck are not removed
+        expect(removePracticeWord(words, {id: 999})).toEqual(words);
     });
 });
