@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import { loadLatestWords } from './services/WordManager';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { operations } from './store';
 
 class App extends Component {
-  constructor(...args) {
-    super(...args);
-
-    this.state = { words: [] };
-  }
-
   async componentDidMount() {
-    let words = await loadLatestWords();
-    this.setState({ words });
+    const { dispatch } = this.props;
+
+    await dispatch(operations.initializeWordsManager());
+
+    dispatch(operations.changeView('boo'));
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+          Home
         </header>
-        <p className="App-intro">
-          hi
-        </p>
       </div>
     );
   }
 }
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
 
-export default App;
+
+export default connect()(App);

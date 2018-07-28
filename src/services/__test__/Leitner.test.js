@@ -13,6 +13,9 @@ import {
 } from '../Leitner';
 
 describe('Leitner', () => {
+    beforeEach((() => jest.resetModules()));
+    afterEach(() => jest.resetModules());
+
     it('exists', () => {
         expect(ASPECT_COMPREHENSION).toBeDefined();
         expect(ASPECT_READ).toBeDefined();
@@ -27,6 +30,89 @@ describe('Leitner', () => {
             if (index === 0) expect(sleep).toEqual(0);
             else expect(sleep > arr[index - 1].sleep).toBe(true);
         });
+    });
+    it('loads words and progress from file and local storage', async () => {
+        const wordsToGet = [
+            [1,'Animals','Animal','สัตว์','sàt','sàt'],
+            [2,'Animals','Bear','หมี','mǐː','mǐi'],
+            [3,'Animals','Bird','นก','nók','nók'],
+            [4,'Animals','Cat','แมว','mɛːw','mɛɛo'],
+            [5,'Animals','Cow / Bull','วัว','wuːa','wua'],
+            [6,'Animals','Dog','หมา','mǎː','mǎa'],
+            [7,'Animals','Fish','ปลา','plaː','bplaa'],
+            [8,'Animals','Horse','ม้า','máː','máa'],
+            [9,'Animals','Monkey','ลิง','liŋ','ling'],
+            [10,'Animals','Mouse / Rat','หนู','nǔː','nǔu'],
+        ];
+
+        const json = jest.fn(() => wordsToGet);
+        global.fetch = jest.fn(() => ({ json }));
+
+        let localForageData = null;
+        const getItem = jest.fn(() => localForageData);
+        jest.doMock('localforage', () => ({ getItem }));
+
+        const { loadWords } = require('../Leitner');
+
+        let allWordData = await loadWords();
+        expect(getItem).toHaveBeenCalledWith('progress');
+        expect(allWordData).toEqual([
+            {'id': 1, 'ip': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์'},
+            {'id': 2, 'ip': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี'},
+            {'id': 3, 'ip': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก'},
+            {'id': 4, 'ip': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว'},
+            {'id': 5, 'ip': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว'},
+            {'id': 6, 'ip': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา'},
+            {'id': 7, 'ip': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา'},
+            {'id': 8, 'ip': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า'},
+            {'id': 9, 'ip': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง'},
+            {'id': 10, 'ip': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู'}
+        ]);
+
+        localForageData = [
+            [2, 1000, 1001, [1, 2, 3]],
+            [3, 1000, 1002, [1, 1, 1]],
+            [5, 1000, 1000, [0, 0, 0]],
+            [6, 1000, 1000, [0, 0, 0]],
+        ];
+        allWordData = await loadWords();
+        expect(allWordData).toEqual([
+            {'id': 1, 'ip': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์'},
+            {'id': 2, 'ip': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3]},
+            {'id': 3, 'ip': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1]},
+            {'id': 4, 'ip': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว'},
+            {'id': 5, 'ip': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            {'id': 6, 'ip': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            {'id': 7, 'ip': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา'},
+            {'id': 8, 'ip': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า'},
+            {'id': 9, 'ip': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง'},
+            {'id': 10, 'ip': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู'}
+        ]);
+    });
+    it('saves progress to local storage', async () => {
+        const setItem = jest.fn(() => Promise.resolve(null));
+        jest.doMock('localforage', () => ({ setItem }));
+        let words = [
+            {'id': 1, 'ip': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์'},
+            {'id': 2, 'ip': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3]},
+            {'id': 3, 'ip': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1]},
+            {'id': 4, 'ip': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว'},
+            {'id': 5, 'ip': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            {'id': 6, 'ip': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            {'id': 7, 'ip': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา'},
+            {'id': 8, 'ip': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า'},
+            {'id': 9, 'ip': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง'},
+            {'id': 10, 'ip': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู'}
+        ];
+        let expected = [
+            [2, 1000, 1001, [1, 2, 3]],
+            [3, 1000, 1002, [1, 1, 1]],
+            [5, 1000, 1000, [0, 0, 0]],
+            [6, 1000, 1000, [0, 0, 0]],
+        ];
+        const { saveProgress } = require('../Leitner');
+        await saveProgress(words);
+        expect(setItem).toHaveBeenCalledWith('progress', expected);
     });
     it('updates a words aspects scores', () => {
         let word = { id: 123 };
@@ -168,20 +254,20 @@ describe('Leitner', () => {
 
         expect(refreshPracticeWords(words, 15)).toEqual(words.slice(0, 15));
 
-        words = words.map(({v, id}) => {
+        words = words.map(({id}) => {
             if (id >= 5 && id < 10) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             return { id };
         });
         expect(refreshPracticeWords(words, 15)).toEqual([...words.slice(0, 5), ...words.slice(10, 20)]);
 
-        words = words.map(({v, id}) => {
+        words = words.map(({id}) => {
             if (id < 5) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             if (id < 10) return { id, day: 1001, aspectScores: [ 0, 0, 0 ]};
             return { id };
         });
         expect(refreshPracticeWords(words, 15)).toEqual(words.slice(5, 20));
 
-        words = words.map(({v, id}) => {
+        words = words.map(({id}) => {
             if (id < 5) return { id, day: 1001, aspectScores: [ 5, 5, 5 ]};
             if (id < 25) return { id, day: 1001, aspectScores: [ 0, 0, 0 ]};
             return { id };

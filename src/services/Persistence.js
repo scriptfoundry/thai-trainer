@@ -25,7 +25,7 @@ export const saveProgressData = async (progress) => {
 
 export const loadVoices = async () => {
     const voiceSettings = await localforage.getItem('voiceSettings');
-    let { englishVoiceName = null, thaiVoiceName = null, rate = rate } = voiceSettings || {};
+    let { englishVoiceName = null, thaiVoiceName = null, rate = 1 } = voiceSettings || {};
     return { englishVoiceName, thaiVoiceName, rate };
 };
 
