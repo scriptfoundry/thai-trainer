@@ -1,5 +1,4 @@
 import Levenshtein from 'fast-levenshtein';
-import { WSAEPROVIDERFAILEDINIT } from 'constants';
 export const classNames =  (obj) => {
 	return Object.keys(obj)
 		.reduce((strings, key) => obj[key] ? [...strings, key]: strings, [])

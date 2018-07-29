@@ -1,5 +1,4 @@
-import { loadLatestWords, /* updateWord, saveProgress */ } from '../services/WordManager';
-import {} from '../services/Leitner';
+import { loadWords } from '../services/Leitner';
 const WORD_SETWORDS = 'word/setwords';
 
 const defaultState = {
@@ -13,8 +12,7 @@ export const reducer = (state = defaultState, { type, payload }) => {
 };
 
 const initializeWordsManager = () => async dispatch => {
-    let words = await loadLatestWords();
-    let progress = 
+    let words = await loadWords();
     dispatch({ type: WORD_SETWORDS, payload: words });
 };
 

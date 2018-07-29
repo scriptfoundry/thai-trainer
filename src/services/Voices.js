@@ -48,7 +48,7 @@ export const setThaiVoice = ({ name }) => {
     saveSettings();
 };
 export const setEnglishVoice = ({ name }) => {
-    englishVoice = findVoice(englishVoices, name) || thaiVoice;
+    englishVoice = findVoice(englishVoices, name) || englishVoice;
     saveSettings();
 };
 export const setRate = (newRate) => {

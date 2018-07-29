@@ -2,29 +2,52 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { operations } from './store';
+import Loading from './components/Loading';
+import Navigation from './components/Navigation';
+import Progress from './components/Progress';
+import Settings from './components/Settings';
 
 class App extends Component {
   async componentDidMount() {
-    const { dispatch } = this.props;
+    const { changeView, initializeWordsManager, initializeVoiceManager } = this.props;
 
-    await dispatch(operations.initializeWordsManager());
+    await initializeVoiceManager();
+    await initializeWordsManager();
 
-    dispatch(operations.changeView('boo'));
+    changeView('navigation');
   }
 
   render() {
+    let { loaded, view } = this.props;
+    let content = null;
+
+    if (!loaded) content = <Loading/>;
+    else if (view === 'settings') content = <Settings />;
+    else if (view === 'navigation') content = <Navigation />;
+    else if (view === 'progress') content = <Progress />;
+
     return (
       <div className="App">
         <header>
-          Home
+          { content }
         </header>
       </div>
     );
   }
 }
+
 App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  loaded: PropTypes.bool.isRequired,
+  view: PropTypes.string
 };
 
+const { changeView, initializeWordsManager, initializeVoiceManager } = operations;
 
-export default connect()(App);
+const mapStateToProps = (state) => ({
+  loaded: state.words.wordsLoaded,
+  view: state.view.currentView,
+
+  thaiVoice: state.voice.thaiVoice
+});
+
+export default connect(mapStateToProps, { changeView, initializeWordsManager, initializeVoiceManager })(App);
