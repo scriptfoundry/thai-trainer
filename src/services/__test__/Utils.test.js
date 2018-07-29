@@ -53,4 +53,108 @@ describe('UtilsService', () => {
         expect(revised).toEqual([0, 0, 0]);
         expect(revised).toBe(arr); // ensure that the array is not a copy when nothing has changed.
     });
+
+    it('calculates the days since the start of the epoch', () => {
+        const { getDayOfEpoch } = require('../Utils');
+
+        const oneMinute = 60 * 1000;
+        const oneHour = 60 * oneMinute;
+        const fourHours = 4 * oneHour;
+        const fourAM = fourHours;
+        const nineHours = 9 * oneHour;
+        const oneDay = 24 * oneHour;
+        const thousandDays = 1000 * oneDay;
+
+        let timezoneOffset = 4 * 60; // e.g. New York DST: GMT-4
+        let timestamp = oneDay; // 1970-01-02:000000Z
+
+        const mockDate = {
+            getTimezoneOffset: () => timezoneOffset,
+            getTime: () => timestamp
+        };
+
+        expect(mockDate.getTimezoneOffset()).toEqual(240);
+        expect(mockDate.getTime()).toEqual(oneDay);
+
+        expect(getDayOfEpoch(mockDate)).toEqual(0);
+
+        timestamp = oneDay + fourHours + fourAM;
+        expect(getDayOfEpoch(mockDate)).toEqual(1);
+
+        timestamp = thousandDays;
+        expect(getDayOfEpoch(mockDate)).toEqual(999);
+
+        timestamp = thousandDays + fourHours + fourAM - oneMinute;
+        expect(getDayOfEpoch(mockDate)).toEqual(999);
+
+        timestamp = thousandDays + fourHours + fourAM;
+        expect(getDayOfEpoch(mockDate)).toEqual(1000);
+
+        timestamp = thousandDays + oneDay;
+        expect(getDayOfEpoch(mockDate)).toEqual(1000);
+
+        timestamp = thousandDays + oneDay + fourHours;
+        expect(getDayOfEpoch(mockDate)).toEqual(1000);
+
+        timestamp = thousandDays + oneDay + fourHours + fourAM;
+        expect(getDayOfEpoch(mockDate)).toEqual(1001);
+
+        timezoneOffset = -9 * 60; // (e.g. Japan: GMT+9)
+        timestamp = oneDay;
+        expect(getDayOfEpoch(mockDate)).toEqual(1);
+
+        // In Japan, the sun's been up longer, so this is midnight Jan 2 + 9 hours
+        timestamp = oneDay;
+        expect(getDayOfEpoch(mockDate)).toEqual(1);
+
+        // This is just before midnight on Jan 1
+        timestamp = oneDay - nineHours - oneMinute;
+        expect(getDayOfEpoch(mockDate)).toEqual(0);
+
+        // This is just before 4am on Jan 2
+        timestamp = oneDay - nineHours + fourHours - oneMinute;
+        expect(getDayOfEpoch(mockDate)).toEqual(0);
+
+        // This is 4am on Jan 2
+        timestamp = oneDay - nineHours + fourHours;
+        expect(getDayOfEpoch(mockDate)).toEqual(1);
+
+        // This is just before 4am on the thousandth day
+        timestamp = thousandDays - nineHours + fourHours - oneMinute;
+        expect(getDayOfEpoch(mockDate)).toEqual(999);
+
+        // THis is 4am on the thousandth day
+        timestamp = thousandDays - nineHours + fourHours;
+        expect(getDayOfEpoch(mockDate)).toEqual(1000);
+    });
+    it('sorts a word list by similarity with one of those words', () => {
+        const { makeSimilaritySorter } = require('../Utils');
+        const calculateSimilarity = makeSimilaritySorter('thai');
+        const words = [
+            { id: 6, section: 'Animals', term: 'Dog', thai: 'หมา', ipa: 'mǎː', paiboon: 'mǎa' },
+            { id: 7, section: 'Animals', term: 'Fish', thai: 'ปลา', ipa: 'plaː', paiboon: 'bplaa' },
+            { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
+            { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
+            { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
+            { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
+            { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
+        ];
+
+        expect(calculateSimilarity(words[0], words)).toEqual([
+            { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
+            { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
+            { id: 7, section: 'Animals', term: 'Fish', thai: 'ปลา', ipa: 'plaː', paiboon: 'bplaa' },
+            { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
+            { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
+            { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
+        ]);
+        expect(calculateSimilarity(words[1], words)).toEqual([
+            { id: 6, section: 'Animals', term: 'Dog', thai: 'หมา', ipa: 'mǎː', paiboon: 'mǎa' },
+            { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
+            { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
+            { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
+            { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
+            { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
+        ]);
+    });
 });

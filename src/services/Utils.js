@@ -1,3 +1,5 @@
+import Levenshtein from 'fast-levenshtein';
+import { WSAEPROVIDERFAILEDINIT } from 'constants';
 export const classNames =  (obj) => {
 	return Object.keys(obj)
 		.reduce((strings, key) => obj[key] ? [...strings, key]: strings, [])
@@ -95,4 +97,34 @@ export const createApplyDeltaWithLimits = (min, max) => {
 		}
 		return arr;
 	};
+};
+
+
+/**
+ * Calculates the number of days since the "start of day" (4am) on Jan1 1970
+ * @param {Date} date object having two methods: getTimezoneOffset and getTime
+ * @returns { Number } The number of days since 4am on the start of the epoch
+ */
+export const getDayOfEpoch = (date = new Date()) => {
+    // tsAdjustment is the number of ms difference between local time and UTC
+    const tsAdjustment = date.getTimezoneOffset() * 60000;
+
+    // timestamp is the number of ms since 1Jan1970 in the local timezone
+    const timestamp = date.getTime() - tsAdjustment;
+
+    //     Math.floor((timestamp - fourAM)) / twentyfourHours)
+    return Math.floor((timestamp - 14400000) / 86400000);
+};
+
+const rxThaiNonFullWidthCharacters = /[^กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะาำเแโใไๅๆ๏๐๑๒๓๔๕๖๗๘๙๚๛]/;
+const getFullWidthCharacters = word => word.replace(rxThaiNonFullWidthCharacters, '');
+export const makeSimilaritySorter = (property) => (target, words) => {
+	words = words.filter(word => word[property] !== target[property]);
+
+	const needle = getFullWidthCharacters(target[property]);
+
+	return words
+		.map(word => ({ word, similarity: Levenshtein.get(needle, getFullWidthCharacters(word[property]) )}))
+		.sort((a, b) => a.similarity > b.similarity ? 1 : -1)
+		.map(({word}) => word);
 };

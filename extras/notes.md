@@ -7,9 +7,20 @@ SPACED REPETITION:
 5: mark as mastered
 
 
-User opens page
+[start app]
+1. Load saved state
 1. First time users gets something???
-1. If there are more than 5 outstanding tests, show navigation for [test] and [practice selector]
+1. Show 
+    a. If there are more than 5 outstanding words for test, show navigation for [test] and [practice selector]
+    a. If there are outstanding/current practice decks, show navigation for [practice]
+    a. Show word list
+
+
+[show progress]
+1. get all words and show:
+    a. what's been mastered
+    a. what's been practiced
+    a. what's pending
 
 [test]
 1. Select 5 >= n <= 25 outstanding words (sort by overdue-ness)
