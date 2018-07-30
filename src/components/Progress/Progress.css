@@ -1,0 +1,7 @@
+.progress .progress-items > div {
+  display: flex; }
+  .progress .progress-items > div > div {
+    flex: 1; }
+
+.progress .progress-icons {
+  display: flex; }

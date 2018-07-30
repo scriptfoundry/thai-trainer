@@ -2,16 +2,15 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import { reducer as words, operations as wordOperations  } from './words';
-import { reducer as settings } from './settings';
 import { reducer as view, operations as viewOperations } from './view';
 import { reducer as voice, operations as voiceOperations } from './voice';
-
+import { reducer as settings, operations as settingsOperations } from './settings';
 
 const rootReducer = combineReducers({
-    settings,
     view,
     words,
     voice,
+    settings,
 });
 
 let enhancers = [];
@@ -31,6 +30,7 @@ export const operations = {
     ...viewOperations,
     ...wordOperations,
     ...voiceOperations,
+    ...settingsOperations,
 };
 
 export default store;

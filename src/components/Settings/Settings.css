@@ -1,0 +1,10 @@
+.settings .sample {
+  display: flex;
+  align-items: center;
+  align-content: center; }
+  .settings .sample div {
+    flex: 1; }
+    .settings .sample div:first-child {
+      text-align: right; }
+    .settings .sample div:nth-child(2) {
+      text-align: center; }

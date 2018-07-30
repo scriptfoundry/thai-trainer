@@ -1,0 +1,18 @@
+.settings {
+    .sample {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        div {
+            flex: 1;
+
+            &:first-child {
+                text-align: right;
+            }
+            &:nth-child(2) {
+                text-align: center;
+            }
+        }
+    }
+}

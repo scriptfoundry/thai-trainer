@@ -32,3 +32,13 @@ export const loadVoices = async () => {
 export const saveVoices = async (voiceSettings) => {
     await localforage.setItem('voiceSettings', voiceSettings);
 };
+
+export const loadSettings = async () => {
+    let settings = await localforage.getItem('settings');
+    let { pronunciationType } = settings || {};
+    return { pronunciationType };
+};
+
+export const saveSettings = async (settings) => {
+    await localforage.setItem('settings', settings);
+};

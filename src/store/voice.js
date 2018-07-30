@@ -4,6 +4,7 @@ const VOICE_SETVOICES = 'voice/setvoices';
 const VOICE_SETENGLISHVOICE = 'voice/setEnglishVoice';
 const VOICE_SETTHAIVOICE = 'voice/setThaiVoice';
 const VOICE_SETRATE = 'voice/setRate';
+const VOICE_SAYSAMPLE = 'voice/saySample';
 
 const defaultState = {
     thaiVoice: null,
@@ -36,6 +37,10 @@ export const reducer = (state=defaultState, action) => {
         say(LANGUAGE_THAI, 'ฉันเป็นผู้แนะนำของคุณ'); // "I am your guide"
         return { ...state, rate };
     }
+    if (action.type === VOICE_SAYSAMPLE) {
+        say(LANGUAGE_THAI, action.payload);
+        // State is not modified
+    }
 
     return state;
 };
@@ -50,4 +55,5 @@ export const operations = {
     setEnglishVoice: voice => dispatch => dispatch({ type: VOICE_SETENGLISHVOICE, payload: voice}),
     setThaiVoice: voice => dispatch => dispatch({ type: VOICE_SETTHAIVOICE, payload: voice}),
     setRate: rate => dispatch => dispatch({ type: VOICE_SETRATE, payload: rate }),
+    saySample: word => dispatch => dispatch({ type: VOICE_SAYSAMPLE, payload: word })
 };

@@ -7,12 +7,17 @@ import Navigation from './components/Navigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
 
+import ProgressIcon from './components/common/ProgressIcon';
+
 class App extends Component {
   async componentDidMount() {
-    const { changeView, initializeWordsManager, initializeVoiceManager } = this.props;
+    const { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings } = this.props;
 
-    await initializeVoiceManager();
-    await initializeWordsManager();
+    await Promise.all([
+      initializeVoiceManager(),
+      initializeWordsManager(),
+      initializeSettings(),
+    ]);
 
     changeView('navigation');
   }
@@ -41,7 +46,7 @@ App.propTypes = {
   view: PropTypes.string
 };
 
-const { changeView, initializeWordsManager, initializeVoiceManager } = operations;
+const { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings } = operations;
 
 const mapStateToProps = (state) => ({
   loaded: state.words.wordsLoaded,
@@ -50,4 +55,4 @@ const mapStateToProps = (state) => ({
   thaiVoice: state.voice.thaiVoice
 });
 
-export default connect(mapStateToProps, { changeView, initializeWordsManager, initializeVoiceManager })(App);
+export default connect(mapStateToProps, { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings })(App);

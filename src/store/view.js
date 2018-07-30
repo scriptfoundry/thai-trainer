@@ -10,7 +10,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
     return state;
 };
 
-const changeView = view => dispatch => dispatch({ type: VIEW_CHANGEVIEW, payload: view });
+const changeView = (view=null) => dispatch => dispatch({ type: VIEW_CHANGEVIEW, payload: view });
 
 export const operations = {
     changeView
