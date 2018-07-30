@@ -1,4 +1,4 @@
-import { init, getAll, setThaiVoice, setEnglishVoice, setRate } from '../services/Voices';
+import { init, getAll, setThaiVoice, setEnglishVoice, setRate, say, LANGUAGE_ENGLISH, LANGUAGE_THAI } from '../services/Voices';
 
 const VOICE_SETVOICES = 'voice/setvoices';
 const VOICE_SETENGLISHVOICE = 'voice/setEnglishVoice';
@@ -21,16 +21,19 @@ export const reducer = (state=defaultState, action) => {
     if (action.type === VOICE_SETENGLISHVOICE) {
         setEnglishVoice(action.payload);
         const { englishVoice } = getAll();
+        say(LANGUAGE_ENGLISH, 'I am the English voice');
         return { ...state, englishVoice };
     }
     if (action.type === VOICE_SETTHAIVOICE) {
         setThaiVoice(action.payload);
         const { thaiVoice } = getAll();
+        say(LANGUAGE_THAI, 'ฉันเป็นผู้แนะนำของคุณ'); // "I am your guide"
         return { ...state, thaiVoice };
     }
     if (action.type === VOICE_SETRATE) {
         setRate(action.payload);
         const { rate } = getAll();
+        say(LANGUAGE_THAI, 'ฉันเป็นผู้แนะนำของคุณ'); // "I am your guide"
         return { ...state, rate };
     }
 
