@@ -1,19 +1,7 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { operations } from '../../store';
+import Practice from './Practice';
 
-export default class Practice extends PureComponent {
-    constructor(...args) {
-        super(...args);
-        this.state = {
-            words: []
-        };
-    }
+const { changeView } = operations;
 
-    render() {
-        return <div>Practice</div>;
-    }
-}
-
-Practice.propTypes = {
-
-};
+export default connect(null, { changeView })(Practice);

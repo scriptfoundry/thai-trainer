@@ -6,6 +6,7 @@ import Loading from './components/Loading';
 import Navigation from './components/Navigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
+import Practice from './components/Practice';
 
 class App extends Component {
   async componentDidMount() {
@@ -28,6 +29,7 @@ class App extends Component {
     else if (view === 'settings') content = <Settings />;
     else if (view === 'navigation') content = <Navigation />;
     else if (view === 'progress') content = <Progress />;
+    else if (view === 'practice') content = <Practice />;
 
     return (
       <div className="App">
