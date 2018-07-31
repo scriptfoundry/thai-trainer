@@ -14,6 +14,12 @@ export const ASPECT_READ = 0;
 export const ASPECT_COMPREHENSION = 1;
 export const ASPECT_TRANSLATE = 2;
 
+export const STATUS_NONE = 0;
+export const STATUS_PRACTICE = 1;
+export const STATUS_OVERDUE = 2;
+export const STATUS_WAITING = 3;
+export const STATUS_MASTERED = 4;
+
 const clamp5 = makeClamp(0, 5);
 const applyDelta = createApplyDeltaWithLimits(0, 5);
 
@@ -144,4 +150,32 @@ export function addPracticeWord(words, word, day) {
  */
 export function removePracticeWord(words, word) {
     return words.filter(({ id }) => id !== word.id);
+}
+
+/**
+ * Get the "rough" status of a word
+ * @param {Object} word The word to be tested, having an optional due date and aspect scores
+ * @param {Number} day The day number against which the due date is to be compared
+ * @returns {Number} Returns one of: STATUS_NONE, STATUS_ACTIVE, STATUS_WAITING or STATUS_MASTERED
+ */
+export function getRoughStatus({ dueDate, aspectScores }, day) {
+    if (!aspectScores) return STATUS_NONE;
+    if (Math.min(...aspectScores) === 0) return STATUS_PRACTICE;
+    if (Math.min(...aspectScores) >= 5) return STATUS_MASTERED;
+    if (dueDate <= day) return STATUS_OVERDUE;
+    return STATUS_WAITING;
+}
+
+/**
+ * Organize a list of words into groups by their status
+ * @param {Object[]} words The words to be reduced
+ * @param {Number} day The day number against which the due date is to be compared
+ * @returns {Object[]} Returns words organised into groups of overdue, waiting, mastered, practiced and waiting
+ */
+export function organizeByRoughStatus(words, day) {
+    return words.reduce((statuses, word) => {
+        let status = getRoughStatus(word, day);
+        statuses[status].push(word);
+        return statuses;
+    }, [[], [], [], [], []]);
 }

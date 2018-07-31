@@ -7,8 +7,6 @@ import Navigation from './components/Navigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
 
-import ProgressIcon from './components/common/ProgressIcon';
-
 class App extends Component {
   async componentDidMount() {
     const { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings } = this.props;

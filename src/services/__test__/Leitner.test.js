@@ -3,6 +3,13 @@ import {
     ASPECT_COMPREHENSION,
     ASPECT_READ,
     ASPECT_TRANSLATE,
+
+    STATUS_PRACTICE,
+    STATUS_OVERDUE,
+    STATUS_MASTERED,
+    STATUS_NONE,
+    STATUS_WAITING,
+
     updateWordAspect,
     applyScoresToWords,
     createDueDateGeneratorForAspects,
@@ -10,6 +17,8 @@ import {
     refreshPracticeWords,
     addPracticeWord,
     removePracticeWord,
+    getRoughStatus,
+    organizeByRoughStatus,
 } from '../Leitner';
 
 describe('Leitner', () => {
@@ -318,5 +327,71 @@ describe('Leitner', () => {
 
         // Words not already in the practice deck are not removed
         expect(removePracticeWord(words, {id: 999})).toEqual(words);
+    });
+    it('gets unseen/active/mastered status of a word', () => {
+        const words = [
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
+            { id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6 },
+            { id:  7, day: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
+            { id:  8, day: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
+            { id:  9, day: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
+            { id:  10, day: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+        ];
+
+        // ACTIVE: overdue
+        expect(words.map(word => getRoughStatus(word, 1001))).toEqual([
+            STATUS_MASTERED,
+            STATUS_OVERDUE,
+            STATUS_PRACTICE,
+            STATUS_PRACTICE,
+            STATUS_NONE,
+            STATUS_MASTERED,
+            STATUS_WAITING,
+            STATUS_PRACTICE,
+            STATUS_PRACTICE,
+        ]);
+
+        expect(words.map(word => getRoughStatus(word, 1004))).toEqual([
+            STATUS_MASTERED,
+            STATUS_OVERDUE,
+            STATUS_PRACTICE,
+            STATUS_PRACTICE,
+            STATUS_NONE,
+            STATUS_MASTERED,
+            STATUS_OVERDUE,
+            STATUS_PRACTICE,
+            STATUS_PRACTICE,
+        ]);
+
+    });
+    it('reduces a list of words into groups of like status', () => {
+        const words = [
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
+            { id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6 },
+            { id:  7, day: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
+            { id:  8, day: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
+            { id:  9, day: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
+            { id:  10, day: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+        ];
+
+        let sections = organizeByRoughStatus(words, 1001);
+        expect(sections[STATUS_OVERDUE].map(({id}) => id)).toEqual([2]);
+        expect(sections[STATUS_WAITING].map(({id}) => id)).toEqual([8]);
+        expect(sections[STATUS_MASTERED].map(({id}) => id)).toEqual([1, 7]);
+        expect(sections[STATUS_NONE].map(({id}) => id)).toEqual([6]);
+        expect(sections[STATUS_PRACTICE].map(({id}) => id)).toEqual([3, 5, 9, 10]);
+
+        sections = organizeByRoughStatus(words, 1005);
+        expect(sections[STATUS_OVERDUE].map(({id}) => id)).toEqual([2, 8]);
+        expect(sections[STATUS_WAITING].map(({id}) => id)).toEqual([]);
+        expect(sections[STATUS_MASTERED].map(({id}) => id)).toEqual([1, 7]);
+        expect(sections[STATUS_NONE].map(({id}) => id)).toEqual([6]);
+        expect(sections[STATUS_PRACTICE].map(({id}) => id)).toEqual([3, 5, 9, 10]);
     });
 });
