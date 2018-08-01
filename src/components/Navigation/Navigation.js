@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { memoize, getDayOfEpoch } from '../../services/Utils';
 
 const filterWordsByDate = memoize((words, cutoffDate) => words.filter(({dueDate}) => dueDate <= cutoffDate));
-const filterWordsByAspectScore = memoize((words) => words.filter(({ aspectScores }) => aspectScores && (Math.min(...aspectScores) === 0)));
 
 const Navigation = ({ changeView, words }) => {
         const overdueWords = filterWordsByDate(words, getDayOfEpoch());
-        const ongoingWords = filterWordsByAspectScore(words);
 
         return <div className="navigator">
             <section>
@@ -15,10 +13,7 @@ const Navigation = ({ changeView, words }) => {
                 <button onClick={ () => changeView('boo') }>Start test</button>
             </section>
             <section>
-                <h2>You are still practicing { ongoingWords.length } words</h2>
-                <button onClick={ () => changeView('practice') }>Add new words automatically and resume testing</button>
-                <button>Select new words manually and resume testing</button>
-                <button>Resume practicing with current cards only</button>
+                <button onClick={ () => changeView('practice') }>Practice</button>
             </section>
             <section>
                 <button onClick={ () => changeView('progress') }>View progress</button>

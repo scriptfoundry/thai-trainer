@@ -1,3 +1,20 @@
+.progress .thead {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%; }
+
+.progress .thead .toggle-header {
+  flex: 1;
+  text-align: center;
+  border: 1px solid grey; }
+
+.progress .thead .selected {
+  color: white;
+  background-color: grey;
+  border-color: black; }
+
 .progress .tbody > div {
   display: flex; }
 
@@ -6,3 +23,6 @@
 
 .progress .progress-icons {
   display: flex; }
+
+.progress .progress-icons > * {
+  flex-basis: 20px; }

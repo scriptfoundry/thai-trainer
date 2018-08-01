@@ -179,3 +179,17 @@ export function organizeByRoughStatus(words, day) {
         return statuses;
     }, [[], [], [], [], []]);
 }
+
+/**
+ * Gets a list of words filtered by their rough status
+ * @param {Object[]} words The words to be filtered
+ * @param {Number} day The epoch day by which the status should be determined
+ * @param {Number[]} filter The status values to be included in the filtering
+ * @returns {Object[]} filtered words
+ */
+export function filterByRoughStatus(words, day, filter=[]) {
+    return words
+        .map(word => ({ word, status: getRoughStatus(word, day )}))
+        .filter(({ status }) => filter.includes(status))
+        .map(({ word }) => word);
+}

@@ -20,37 +20,9 @@ export const memoize = (fn, size = 3) => {
     };
 };
 
-const range = function (from, to) {
-	if (from === to) return from;
-
-
-	return Math.floor(Math.random() * (1 + to - from)) + from;
-};
-
-export const shuffle = (length) => {
-	let array = new Array(length).fill(0).map((i, index) => index);
-	let counter = length;
-	let temp;
-	let index;
-
-	while (counter > 0) {
-		index = range(0, counter - 1);
-
-		counter--;
-
-		temp = array[counter];
-		array[counter] = array[index];
-		array[index] = temp;
-	}
-
-	return array;
-};
-
 export const wait = duration => new Promise(resolve => setTimeout(resolve, duration));
 
 export const makeClamp = (min = -Number.MAX_VALUE, max = Number.MAX_VALUE) => n => n < min ? min : n > max ? max : n;
-
-// export const compose = (fn, ...tFns) => (...args) => fn(...tFns.map((tFn, i) => tFn(args[i])));
 
 const slice = Function.prototype.call.bind(Array.prototype.slice);
 
@@ -126,4 +98,52 @@ export const makeSimilaritySorter = (property) => (target, words) => {
 		.map(word => ({ word, similarity: Levenshtein.get(needle, getFullWidthCharacters(word[property]) )}))
 		.sort((a, b) => a.similarity > b.similarity ? 1 : -1)
 		.map(({word}) => word);
+};
+
+export const shuffle = (arr) => {
+    // Implements Knuth shuffle algorithm
+    arr = arr.slice();
+
+    let index = arr.length;
+    let tmp;
+    let rnd;
+
+    while (index > 0) {
+        rnd = Math.floor(Math.random() * index);
+        index -= 1;
+        tmp = arr[index];
+        arr[index] = arr[rnd];
+        arr[rnd] = tmp;
+    }
+
+    return arr;
+};
+
+export const arraysAreSimplyEqual = (a, b) => a.length === b.length && a.every((aItem, index) => aItem === b[index]);
+
+export const buildRandomizedValuesQueue = cycleCount => values => {
+    let queue = [];
+    let length = values.length;
+    let lastInsert;
+    let newInsert;
+
+    for (let i = 0; i < cycleCount; i++) {
+        lastInsert = queue.slice(-length);
+
+        if (length < 3) {
+            newInsert = [].concat(values);
+        } else {
+            do {
+                newInsert = shuffle(values);
+            } while (
+                (newInsert[0] === lastInsert[length - 1])
+                || (i === cycleCount - 1 && queue[0] === newInsert[length - 1])
+                || arraysAreSimplyEqual(lastInsert, newInsert)
+            );
+        }
+
+        queue = [].concat(queue, newInsert);
+    }
+
+    return queue;
 };

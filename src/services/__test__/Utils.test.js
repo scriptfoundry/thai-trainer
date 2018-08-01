@@ -1,4 +1,6 @@
 describe('UtilsService', () => {
+    beforeEach(() => jest.resetModules());
+    afterEach(() => jest.resetModules());
     it('clamps', () => {
         const makeClamp = require('../Utils').makeClamp;
 
@@ -157,4 +159,31 @@ describe('UtilsService', () => {
             { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
         ]);
     });
+
+    it('can tell if two arrays are shallowly equal', () => {
+        const { arraysAreSimplyEqual } = require('../Utils');
+        expect(arraysAreSimplyEqual([], [])).toBe(true);
+        expect(arraysAreSimplyEqual([], [1])).toBe(false);
+        expect(arraysAreSimplyEqual([1], [])).toBe(false);
+
+        expect(arraysAreSimplyEqual([1, 2, 3, 999], [1, 2, 3, 999])).toBe(true);
+        expect(arraysAreSimplyEqual([1, 2, 3, 4, 999], [1, 2, 3, 999])).toBe(false);
+        expect(arraysAreSimplyEqual([1, 2, 3, 999], [1, 2, 3, 1000])).toBe(false);
+    });
+    it('generates a series of random values that repeat minimally', () => {
+        const randomValues = [0.6540056371566356, 0.60261415840193, 0.1987945168012557, 0.6226792369370973, 0.32944677232662434];
+        let randomValueIndex = 0;
+        global.Math = {
+            random: () => randomValues[randomValueIndex++ % randomValues.length],
+            floor: Math.floor
+        };
+
+        const { buildRandomizedValuesQueue } = require('../Utils');
+        let r = buildRandomizedValuesQueue(5);
+
+        expect(r([1, 2])).toEqual([ 1, 2, 1, 2, 1, 2, 1, 2, 1, 2 ]);
+        expect(r([1, 2, 3])).toEqual([ 1, 3, 2, 3, 1, 2, 3, 2, 1, 3, 1, 2, 1, 3, 2 ]);
+        expect(r([1, 2, 3, 5])).toEqual([ 5, 2, 1, 3, 5, 1, 2, 3, 1, 3, 5, 2, 5, 2, 1, 3, 5, 1, 2, 3 ]);
+    });
+
 });

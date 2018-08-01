@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CircularProgressbar from 'react-circular-progressbar';
 
 
-const ProgressIcon = ({ progress }) => <div className="progress-meters" style={{ width: '20px' }}>
+const ProgressIcon = ({ progress }) => <div className="progress-meter">
     <CircularProgressbar
         percentage={progress * 100}
         strokeWidth={ 30 }

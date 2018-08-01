@@ -1,24 +1,29 @@
 import { STATUS_PRACTICE } from '../services/Leitner';
 const VIEW_CHANGEVIEW = 'view/changeview';
-const VIEW_CHANGEPREVIEWTAB = 'view_changepreviewtab';
+const VIEW_CHANGEPREVIEWFILTER = 'view_changepreviewfilter';
 
 
 const defaultState = {
     currentView: null,
-    previewTab: STATUS_PRACTICE
+    previewFilter: [STATUS_PRACTICE]
 };
 
 export const reducer = (state=defaultState, { type, payload }) => {
     if (type === VIEW_CHANGEVIEW) return { ...state, currentView: payload };
-    else if (type === VIEW_CHANGEPREVIEWTAB) return { ...state, previewTab: payload };
+    else if (type === VIEW_CHANGEPREVIEWFILTER) {
+        let previewFilter = state.previewFilter.filter(status => status !== payload);
+        if (previewFilter.length === state.previewFilter.length) previewFilter.push(payload);
+
+        return { ...state, previewFilter };
+    }
 
     return state;
 };
 
 const changeView = (view=null) => dispatch => dispatch({ type: VIEW_CHANGEVIEW, payload: view });
-const changePreviewTab = tab => dispatch => dispatch({ type: VIEW_CHANGEPREVIEWTAB, payload: tab });
+const togglePreviewFilterStatus = status => dispatch => dispatch({ type: VIEW_CHANGEPREVIEWFILTER, payload: status });
 
 export const operations = {
     changeView,
-    changePreviewTab,
+    togglePreviewFilterStatus,
 };

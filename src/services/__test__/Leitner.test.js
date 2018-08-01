@@ -19,7 +19,9 @@ import {
     removePracticeWord,
     getRoughStatus,
     organizeByRoughStatus,
+    filterByRoughStatus,
 } from '../Leitner';
+import { isMaster } from 'cluster';
 
 describe('Leitner', () => {
     beforeEach((() => jest.resetModules()));
@@ -393,5 +395,26 @@ describe('Leitner', () => {
         expect(sections[STATUS_MASTERED].map(({id}) => id)).toEqual([1, 7]);
         expect(sections[STATUS_NONE].map(({id}) => id)).toEqual([6]);
         expect(sections[STATUS_PRACTICE].map(({id}) => id)).toEqual([3, 5, 9, 10]);
+    });
+    it('groups and filters a list of words into groups of like status', () => {
+        const words = [
+            { id:  1, day: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
+            { id:  2, day: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
+            { id:  3, day: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
+            { id:  5, day: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6 },
+            { id:  7, day: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
+            { id:  8, day: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
+            { id:  9, day: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
+            { id:  10, day: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+        ];
+
+        expect(filterByRoughStatus(words, 1001, []).map(({id}) => id)).toEqual([]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_PRACTICE]).map(({id}) => id)).toEqual([3, 5, 9, 10]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_NONE]).map(({id}) => id)).toEqual([6]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_MASTERED, STATUS_OVERDUE]).map(({id}) => id)).toEqual([1, 2, 7]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_OVERDUE, STATUS_MASTERED]).map(({id}) => id)).toEqual([1, 2, 7]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_OVERDUE, STATUS_WAITING, STATUS_MASTERED, STATUS_PRACTICE]).map(({id}) => id)).toEqual([1, 2, 3, 5, 7, 8, 9, 10]);
+        expect(filterByRoughStatus(words, 1001, [STATUS_MASTERED, STATUS_NONE, STATUS_OVERDUE, STATUS_PRACTICE, STATUS_WAITING]).map(({id}) => id)).toEqual([1, 2, 3, 5, 6, 7, 8, 9, 10]);
     });
 });

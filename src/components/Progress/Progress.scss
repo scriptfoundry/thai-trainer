@@ -1,4 +1,22 @@
 .progress {
+    .thead {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+
+        .toggle-header {
+            flex: 1;
+            text-align: center;
+            border: 1px solid grey;
+        }
+        .selected {
+            color: white;
+            background-color: grey;
+            border-color: black;
+        }
+    }
     .tbody > div {
         display: flex;
 
@@ -8,5 +26,9 @@
     }
     .progress-icons {
         display: flex;
+
+        > * {
+            flex-basis: 20px;
+        }
     }
 }

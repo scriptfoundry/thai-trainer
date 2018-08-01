@@ -3,7 +3,8 @@ import { PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON } from '../services/Wo
 
 const SETTINGS_SETPRONUNCIATIONTYPE = 'settings/setpronunciationtype';
 const defaultState = {
-    pronunciationType: PRONUNCIATIONTYPE_IPA
+    pronunciationType: PRONUNCIATIONTYPE_IPA,
+    practiceWordLimit: 20
 };
 
 export const reducer = (state=defaultState, { type, payload }) => {

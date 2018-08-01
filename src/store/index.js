@@ -5,12 +5,14 @@ import { reducer as words, operations as wordOperations  } from './words';
 import { reducer as view, operations as viewOperations } from './view';
 import { reducer as voice, operations as voiceOperations } from './voice';
 import { reducer as settings, operations as settingsOperations } from './settings';
+import { reducer as practice, operations as practiceOperations } from './practice';
 
 const rootReducer = combineReducers({
     view,
     words,
     voice,
     settings,
+    practice,
 });
 
 let enhancers = [];
@@ -31,6 +33,7 @@ export const operations = {
     ...wordOperations,
     ...voiceOperations,
     ...settingsOperations,
+    ...practiceOperations,
 };
 
 export default store;
