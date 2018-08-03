@@ -173,10 +173,7 @@ describe('UtilsService', () => {
     it('generates a series of random values that repeat minimally', () => {
         const randomValues = [0.6540056371566356, 0.60261415840193, 0.1987945168012557, 0.6226792369370973, 0.32944677232662434];
         let randomValueIndex = 0;
-        global.Math = {
-            random: () => randomValues[randomValueIndex++ % randomValues.length],
-            floor: Math.floor
-        };
+        global.Math.random = jest.fn(() => randomValues[randomValueIndex++ % randomValues.length])
 
         const { buildRandomizedValuesQueue } = require('../Utils');
         let r = buildRandomizedValuesQueue(5);
@@ -185,5 +182,26 @@ describe('UtilsService', () => {
         expect(r([1, 2, 3])).toEqual([ 1, 3, 2, 3, 1, 2, 3, 2, 1, 3, 1, 2, 1, 3, 2 ]);
         expect(r([1, 2, 3, 5])).toEqual([ 5, 2, 1, 3, 5, 1, 2, 3, 1, 3, 5, 2, 5, 2, 1, 3, 5, 1, 2, 3 ]);
     });
+    it('moves an element in an array', () => {
+        const { moveArrayItem } = require('../Utils');
+        expect(moveArrayItem([], 1, 2)).toEqual([]);
+        expect(moveArrayItem([1, 2, 3], 1, 0)).toEqual([2, 1, 3]);
+        expect(moveArrayItem([1, 2, 3], 1, 1)).toEqual([1, 2, 3]);
+        expect(moveArrayItem([1, 2, 3], 1, 2)).toEqual([1, 3, 2]);
 
+        expect(moveArrayItem([1, 2, 3], 0, 0)).toEqual([1, 2, 3]);
+        expect(moveArrayItem([1, 2, 3], 0, 1)).toEqual([2, 1, 3]);
+        expect(moveArrayItem([1, 2, 3], 0, 2)).toEqual([2, 3, 1]);
+
+        expect(moveArrayItem([1, 2, 3], 2, 0)).toEqual([3, 1, 2]);
+        expect(moveArrayItem([1, 2, 3], 2, 1)).toEqual([1, 3, 2]);
+        expect(moveArrayItem([1, 2, 3], 2, 2)).toEqual([1, 2, 3]);
+
+        expect(moveArrayItem([1, 2, 3], 0, -1)).toEqual([1, 2, 3]);
+        expect(moveArrayItem([1, 2, 3], 1, -1)).toEqual([2, 1, 3]);
+        expect(moveArrayItem([1, 2, 3], 1, 50)).toEqual([1, 3, 2]);
+
+        expect(moveArrayItem([1, 2, 3], -1, 2)).toEqual([1, 2, 3]);
+        expect(moveArrayItem([1, 2, 3], -2, -1)).toEqual([1, 2, 3]);
+    });
 });

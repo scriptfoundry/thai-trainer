@@ -147,3 +147,20 @@ export const buildRandomizedValuesQueue = cycleCount => values => {
 
     return queue;
 };
+
+/**
+ * Moves an item of an array from one index to a new index
+ * @param {any[]} arr The array to be changed
+ * @param {Number} sourceIndex The index of the item that will be moved
+ * @param {Number} destinationIndex The new index that the moved item will occupy
+ * @returns {any[]} A new array in the desired order
+ */
+export function moveArrayItem(arr, sourceIndex, destinationIndex) {
+    const el = arr[sourceIndex];
+    if (el === undefined) return [...arr];
+
+    destinationIndex = destinationIndex < 0 ? 0 : destinationIndex;
+
+    const result = [...arr.slice(0, sourceIndex), ...arr.slice(sourceIndex + 1)];
+    return [...result.slice(0, destinationIndex), el, ...result.slice(destinationIndex)];
+}

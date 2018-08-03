@@ -21,7 +21,7 @@ export const reducer = (state = defaultState, { type, payload }) => {
         return { ...state, currentIndex, currentStage: 0 };
     }
     if (type === PRACTICE_NUDGE) {
-        if (state.currentStage === 0) return { ...state, currentStage: 1 };
+        if (state.currentStage < 3) return { ...state, currentStage: state.currentStage + 1 };
         const length = state.queue.length;
         let currentIndex = (state.currentIndex + length + 1) % length;
         return { ...state, currentIndex, currentStage: 0 };

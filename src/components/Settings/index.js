@@ -5,7 +5,7 @@ import Settings from './Settings';
 const mapStateToProps = ({
     voice: {thaiVoice, thaiVoices, englishVoice, englishVoices, rate},
     words: { words },
-    settings: { pronunciationType },
+    settings: { pronunciationType, practiceWordLimit, practiceOrder, practiceAllAtOnce },
 }) => ({
     words,
     englishVoice,
@@ -14,8 +14,9 @@ const mapStateToProps = ({
     thaiVoices,
     rate,
     pronunciationType,
+    practiceWordLimit,
+    practiceOrder,
+    practiceAllAtOnce,
 });
 
-const { setEnglishVoice, setThaiVoice, setRate, changeView, changePronunciationType, saySample } = operations;
-
-export default connect(mapStateToProps, { setEnglishVoice, setThaiVoice, setRate, changeView, changePronunciationType, saySample })(Settings);
+export default connect(mapStateToProps, operations)(Settings);
