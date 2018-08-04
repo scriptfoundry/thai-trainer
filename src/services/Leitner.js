@@ -1,6 +1,7 @@
 import { getWords } from './WordManager';
 import { loadProgressData, saveProgressData } from './Persistence';
 import { createApplyDeltaWithLimits, makeClamp } from './Utils';
+import { getPortPromise } from '../../node_modules/portfinder';
 
 export const STAGES = [
     { sleep: 0 },
@@ -23,11 +24,12 @@ export const STATUS_MASTERED = 4;
 const clamp5 = makeClamp(0, 5);
 const applyDelta = createApplyDeltaWithLimits(0, 5);
 
-export const createDueDateGeneratorForAspects = (stages) => ({ day, aspectScores}) => day + stages[clamp5(Math.min(...aspectScores))].sleep;
+export const createDueDateGeneratorForAspects = (stages) => ({ date, aspectScores}) => date + stages[clamp5(Math.min(...aspectScores))].sleep;
 
 const deserializeProgress = ([id, date, dueDate, aspectScores]) => ({ id, date, dueDate, aspectScores });
 const hasProgress = ({ date, dueDate, aspectScores }) => (date !== undefined && dueDate !== undefined && aspectScores !== undefined);
 const serializeProgress = ({ id, date, dueDate, aspectScores }) => ([id, date, dueDate, aspectScores]);
+const getProgress = words => words.filter(hasProgress).map(serializeProgress);
 
 /**
  * Loads words from static file, progress data from local storage and merges all data into an array of words
@@ -46,12 +48,13 @@ export async function loadWords() {
     });
 }
 
+
 /**
  * Saves the current progress information for a list of words
  * @param {Object[]} words Array of words containing optional progress data
  */
 export async function saveProgress(words) {
-    let progressItems = words.filter(hasProgress).map(serializeProgress);
+    const progressItems = getProgress(words);
     await saveProgressData(progressItems);
 }
 
@@ -106,7 +109,7 @@ export function getOutstandingWords(words, date) {
         let bMin = Math.min(...b.aspectScores);
         if (aMin !== bMin) return aMin < bMin ? 1 : -1;
 
-        if (a.day !== b.day) return a.day > b.day ? 1 : -1;
+        if (a.date !== b.date) return a.date > b.date ? 1 : -1;
 
         return a.id > b.id ? 1 : -1;
     };
@@ -135,11 +138,11 @@ export function refreshPracticeWords(words, limit) {
  * Add a word to a practice deck
  * @param {Object[]} words Array of words currently selected for practice
  * @param {Object} word Word to be added
- * @param {Number} day The day index
+ * @param {Number} date The day index
  * @returns {Object[]} New list of words
  */
-export function addPracticeWord(words, word, day) {
-    return [ ...words, { ...word, day, dueDate: day, aspectScores: [0, 0, 0] } ];
+export function addPracticeWord(words, word, date) {
+    return [ ...words, { ...word, date, dueDate: date, aspectScores: [0, 0, 0] } ];
 }
 
 /**
@@ -192,4 +195,14 @@ export function filterByRoughStatus(words, day, filter=[]) {
         .map(word => ({ word, status: getRoughStatus(word, day )}))
         .filter(({ status }) => filter.includes(status))
         .map(({ word }) => word);
+}
+
+/**
+ * Build an updated words list
+ * @param {Object[]} words Existing list of words
+ * @param {Object[]} queue List of words that may contain updated
+ * @returns {Object[]} An updated list of words with any content from queue
+ */
+export function updateProgress(words, queue) {
+    return words.map(w => queue.find((({id}) => id === w.id)) || w);
 }
