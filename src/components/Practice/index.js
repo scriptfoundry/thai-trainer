@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import Practice from './Practice';
 
-const mapStateToProps = ({ practice, settings, words }) => ({
-    currentIndex: practice.currentIndex,
-    currentStage: practice.currentStage,
-    queue: practice.queue,
+const mapStateToProps = ({ words, settings }) => ({
+    currentIndex: words.currentIndex,
+    currentStage: words.currentStage,
+    queue: words.queue,
     words: words.words,
     practiceWordLimit: settings.practiceWordLimit,
     pronunciationType: settings.pronunciationType,

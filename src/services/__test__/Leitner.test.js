@@ -259,31 +259,26 @@ describe('Leitner', () => {
         expect(getOutstandingWords(words, 1001)).toEqual(expected);
     });
     it('refreshes a list of practice words', () => {
-        let words = new Array(30).fill(0).map((v, id) => {
-            return { id };
-        });
+        let words = [
+            { id: 1, date: 1000, dueDate: 9999, aspectScores: [5, 5, 5]},
+            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2, 3]},
+            { id: 3, date: 1000, dueDate: 1001, aspectScores: [1, 1, 1]},
+            { id: 4, },
+            { id: 5, },
+            { id: 6, },
+            { id: 7, },
+            { id: 8, },
+            { id: 9, },
+            { id: 10, },
+        ];
 
-        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(0, 15));
-
-        words = words.map(({id}) => {
-            if (id >= 5 && id < 10) return { id, date: 1001, aspectScores: [ 5, 5, 5 ]};
-            return { id };
-        });
-        expect(refreshPracticeWords(words, 15)).toEqual([...words.slice(0, 5), ...words.slice(10, 20)]);
-
-        words = words.map(({id}) => {
-            if (id < 5) return { id, date: 1001, aspectScores: [ 5, 5, 5 ]};
-            if (id < 10) return { id, date: 1001, aspectScores: [ 0, 0, 0 ]};
-            return { id };
-        });
-        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(5, 20));
-
-        words = words.map(({id}) => {
-            if (id < 5) return { id, date: 1001, aspectScores: [ 5, 5, 5 ]};
-            if (id < 25) return { id, date: 1001, aspectScores: [ 0, 0, 0 ]};
-            return { id };
-        });
-        expect(refreshPracticeWords(words, 15)).toEqual(words.slice(5, 25));
+        expect(refreshPracticeWords(words, 5, 1000)).toEqual([
+            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2, 3]},
+            { id: 4, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            { id: 5, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            { id: 6, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            { id: 7, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+        ]);
     });
     it('adds a word for practice', () => {
         const words = [

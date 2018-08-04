@@ -1,7 +1,6 @@
 import { getWords } from './WordManager';
 import { loadProgressData, saveProgressData } from './Persistence';
 import { createApplyDeltaWithLimits, makeClamp } from './Utils';
-import { getPortPromise } from '../../node_modules/portfinder';
 
 export const STAGES = [
     { sleep: 0 },
@@ -122,14 +121,15 @@ export function getOutstandingWords(words, date) {
  * were previously selected for study)
  * @param {Object[]} words All words
  * @param {Number} limit The ideal number of words to include
+ * @param {Number} date The epoch day by which the practice words should be defined
  * @returns {Object[]} A list of card objects for study
  */
-export function refreshPracticeWords(words, limit) {
+export function refreshPracticeWords(words, limit, date) {
     const filterCurrent = ({ aspectScores=null }) => aspectScores !== null && Math.min(...aspectScores) === 0;
     let currentWords = words.filter(filterCurrent);
 
     const filterPending = ({ aspectScores=null}) => aspectScores === null;
-    let pendingWords = words.filter(filterPending).slice(0, Math.max(0, limit - currentWords.length));
+    let pendingWords = words.filter(filterPending).slice(0, Math.max(0, limit - currentWords.length)).map(w => ({ ...w, date, dueDate: date, aspectScores: [0, 0, 0]}));
 
     return [...currentWords, ...pendingWords];
 }
