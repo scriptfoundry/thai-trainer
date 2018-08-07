@@ -20,6 +20,10 @@ export const STATUS_OVERDUE = 2;
 export const STATUS_WAITING = 3;
 export const STATUS_MASTERED = 4;
 
+export const TEST_TYPEOVERDUE = 0;
+export const TEST_TYPECURRENT = 1;
+export const TEST_STAGE1 = 0;
+
 const clamp5 = makeClamp(0, 5);
 const applyDelta = createApplyDeltaWithLimits(0, 5);
 
@@ -114,6 +118,16 @@ export function getOutstandingWords(words, date) {
     };
 
     return words.filter(filter).sort(sorter);
+}
+
+/**
+ * Gets all words currently being praticed
+ * @param {Object[]} words The words to be searched
+ * @returns {Object[]} The words that are currently being practiced
+ */
+export function getCurrentPracticeWords(words) {
+    const filter = ({ aspectScores }) => Math.max(...aspectScores) === 0;
+    return words.filter(hasProgress).filter(filter);
 }
 
 /**

@@ -7,6 +7,8 @@ import Navigation from './components/Navigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
 import Practice from './components/Practice';
+import TestSelector from './components/TestSelector';
+import Test from './components/Test';
 
 class App extends Component {
   async componentDidMount() {
@@ -30,6 +32,8 @@ class App extends Component {
     else if (view === 'navigation') content = <Navigation />;
     else if (view === 'progress') content = <Progress />;
     else if (view === 'practice') content = <Practice />;
+    else if (view === 'testselector') content = <TestSelector />;
+    else if (view === 'test') content = <Test />;
 
     return (
       <div className="App">
@@ -51,8 +55,6 @@ const { changeView, initializeWordsManager, initializeVoiceManager, initializeSe
 const mapStateToProps = (state) => ({
   loaded: state.words.wordsLoaded,
   view: state.view.currentView,
-
-  thaiVoice: state.voice.thaiVoice
 });
 
 export default connect(mapStateToProps, { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings })(App);

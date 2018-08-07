@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PRONUNCIATIONTYPE_PAIBOON } from '../../services/WordManager';
+import Line from './Line';
+import { classNames } from '../../services/Utils';
 
-const Card = ({ word: { term, thai, ipa, paiboon }, pronunciationType, stage }) => <div>
-    <div>{ term }</div>
-    <div>{ thai }</div>
-    <div>{ pronunciationType === PRONUNCIATIONTYPE_PAIBOON ? paiboon : ipa }</div>
-</div>;
+const Card = ({ word, onClick, pronunciationType, stage, practiceOrder, practiceAllAtOnce }) => {
+    const lines = practiceOrder.map((prop, index) => <Line key={prop} index={index} order={practiceOrder} practiceAllAtOnce={practiceAllAtOnce} pronunciationType={pronunciationType} stage={stage} word={word}  />);
+    return <div onClick={ onClick } className={ classNames({card: true, practiceAllAtOnce}) }>{ lines }</div>;
+};
 
 Card.propTypes = {
     word: PropTypes.shape({
@@ -17,6 +17,9 @@ Card.propTypes = {
     }).isRequired,
     pronunciationType: PropTypes.string.isRequired,
     stage: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
+    practiceAllAtOnce: PropTypes.bool.isRequired,
+    practiceOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Card;

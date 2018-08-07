@@ -1,0 +1,24 @@
+.practice {
+    .container {
+
+    }
+    .card {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        font-size: 4em;
+        background-color: white;
+        transition: opacity .3s;
+        > div {
+            transition: opacity .3s;
+            opacity: 0;
+
+            &.visible {
+                opacity: 1
+            }
+        }
+    }
+    .card-exit {
+        opacity: 0;
+    }
+}

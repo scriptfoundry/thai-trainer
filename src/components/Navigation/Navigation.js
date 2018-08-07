@@ -10,7 +10,7 @@ const Navigation = ({ changeView, words }) => {
         return <div className="navigator">
             <section>
                 <h2>You have { overdueWords.length } words to test</h2>
-                <button onClick={ () => changeView('boo') }>Start test</button>
+                <button onClick={ () => changeView('test') }>Start test</button>
             </section>
             <section>
                 <button onClick={ () => changeView('practice') }>Practice</button>

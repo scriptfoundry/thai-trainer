@@ -130,8 +130,8 @@ describe('UtilsService', () => {
         expect(getDayOfEpoch(mockDate)).toEqual(1000);
     });
     it('sorts a word list by similarity with one of those words', () => {
-        const { makeSimilaritySorter } = require('../Utils');
-        const calculateSimilarity = makeSimilaritySorter('thai');
+        const { sortBySimilarity } = require('../Utils');
+
         const words = [
             { id: 6, section: 'Animals', term: 'Dog', thai: 'หมา', ipa: 'mǎː', paiboon: 'mǎa' },
             { id: 7, section: 'Animals', term: 'Fish', thai: 'ปลา', ipa: 'plaː', paiboon: 'bplaa' },
@@ -142,7 +142,7 @@ describe('UtilsService', () => {
             { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
         ];
 
-        expect(calculateSimilarity(words[0], words)).toEqual([
+        expect(sortBySimilarity(words[0], 'thai', words)).toEqual([
             { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
             { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
             { id: 7, section: 'Animals', term: 'Fish', thai: 'ปลา', ipa: 'plaː', paiboon: 'bplaa' },
@@ -150,13 +150,32 @@ describe('UtilsService', () => {
             { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
             { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
         ]);
-        expect(calculateSimilarity(words[1], words)).toEqual([
+        expect(sortBySimilarity(words[1], 'thai', words)).toEqual([
             { id: 6, section: 'Animals', term: 'Dog', thai: 'หมา', ipa: 'mǎː', paiboon: 'mǎa' },
             { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
             { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
             { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
             { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
             { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' }
+        ]);
+
+        // sortBySimilarity = makeSimilaritySorter('term');
+        expect(sortBySimilarity(words[0], 'term', words)).toEqual([
+            { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
+            { id: 7, section: 'Animals', term: 'Fish', thai: 'ปลา', ipa: 'plaː', paiboon: 'bplaa' },
+            { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
+            { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
+            { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' },
+            { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
+        ]);
+
+        expect(sortBySimilarity(words[1], 'term', words)).toEqual([
+            { id: 11, section: 'Animals', term: 'Pig', thai: 'หมู', ipa: 'mǔː', paiboon: 'mǔu' },
+            { id: 6, section: 'Animals', term: 'Dog', thai: 'หมา', ipa: 'mǎː', paiboon: 'mǎa' },
+            { id: 8, section: 'Animals', term: 'Horse', thai: 'ม้า', ipa: 'máː', paiboon: 'máa' },
+            { id: 12, section: 'Animals', term: 'Sheep', thai: 'แกะ', ipa: 'kɛ̀ʔ', paiboon: 'gɛ̀' },
+            { id: 9, section: 'Animals', term: 'Monkey', thai: 'ลิง', ipa: 'liŋ', paiboon: 'ling' },
+            { id: 10, section: 'Animals', term: 'Mouse / Rat', thai: 'หนู', ipa: 'nǔː', paiboon: 'nǔu' },
         ]);
     });
 
@@ -173,7 +192,7 @@ describe('UtilsService', () => {
     it('generates a series of random values that repeat minimally', () => {
         const randomValues = [0.6540056371566356, 0.60261415840193, 0.1987945168012557, 0.6226792369370973, 0.32944677232662434];
         let randomValueIndex = 0;
-        global.Math.random = jest.fn(() => randomValues[randomValueIndex++ % randomValues.length])
+        global.Math.random = jest.fn(() => randomValues[randomValueIndex++ % randomValues.length]);
 
         const { buildRandomizedValuesQueue } = require('../Utils');
         let r = buildRandomizedValuesQueue(5);

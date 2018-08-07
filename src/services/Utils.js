@@ -87,14 +87,14 @@ export const getDayOfEpoch = (date = new Date()) => {
     return Math.floor((timestamp - 14400000) / 86400000);
 };
 
-const rxThaiNonFullWidthCharacters = /[^กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะาำเแโใไๅๆ๏๐๑๒๓๔๕๖๗๘๙๚๛]/;
+const rxThaiNonFullWidthCharacters = /[^กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะาำเแโใไๅๆ๏๐๑๒๓๔๕๖๗๘๙๚๛a-z ]/;
 const getFullWidthCharacters = word => word.replace(rxThaiNonFullWidthCharacters, '');
-export const makeSimilaritySorter = (property) => (target, words) => {
-	words = words.filter(word => word[property] !== target[property]);
 
+export const sortBySimilarity = (target, property, words) => {
 	const needle = getFullWidthCharacters(target[property]);
 
-	return words
+    return words
+        .filter(word => word[property] !== target[property])
 		.map(word => ({ word, similarity: Levenshtein.get(needle, getFullWidthCharacters(word[property]) )}))
 		.sort((a, b) => a.similarity > b.similarity ? 1 : -1)
 		.map(({word}) => word);
