@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { memoize, getDayOfEpoch } from '../../services/Utils';
 
-const filterWordsByDate = memoize((words, cutoffDate) => words.filter(({dueDate}) => dueDate <= cutoffDate));
+const filterWordsByDate = memoize((words, cutoffDate) => words.filter(({ dueDate, aspectScores }) => dueDate <= cutoffDate && Math.min(...aspectScores) > 0));
 
 const Navigation = ({ changeView, words }) => {
         const overdueWords = filterWordsByDate(words, getDayOfEpoch());

@@ -70,6 +70,8 @@ export const voicePropType = PropTypes.shape({
     name: PropTypes.string.isRequired
 });
 
+export const isPronunciation = property => property === 'ipa' || property === 'paiboon';
+
 export const getAll = () => ({
     thaiVoices,
     englishVoices,

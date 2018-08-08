@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { say, LANGUAGE_THAI } from '../../services/Voices';
+import { isPronunciation, say, LANGUAGE_THAI } from '../../services/Voices';
 
-const isPronunciation = property => property === 'ipa' || property === 'paiboon';
+
 class Question extends Component {
     componentDidMount() {
         const { property } = this.props;
@@ -17,7 +17,7 @@ class Question extends Component {
     }
     render() {
         const { word, property } = this.props;
-        if (isPronunciation(property)) return <div onClick={ () => this.speak() }>🔊</div>;
+        if (isPronunciation(property)) return <div className="question" onClick={ () => this.speak() }>Listen 🔊</div>;
         return <div className="question">{ word[property] }</div>;
     }
 }

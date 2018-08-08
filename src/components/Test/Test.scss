@@ -1,3 +1,140 @@
+@import '../common/constants';
+
 .test {
-    
+    .challenge {
+        // position: absolute;
+        transition: all 300ms;
+
+        &.challenge-container-enter {
+            opacity: 0.01;
+        }
+        &.challenge-container-enter-active {
+            opacity: 1;
+        }
+        &.challenge-container-exit {
+            opacity: 1;
+        }
+        &.challenge-container-exit-active {
+            opacity: 0.01;
+        }
+    }
+
+    .back-button {
+        position: absolute;
+        z-index: 1;
+    }
+    .content {
+        z-index: 0;
+    }
+    .answers {
+        display: flex;
+        flex: 1;
+    }
+    .left, .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .challenge {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .answer {
+        font-size: 1.5rem;
+        flex: 1;
+        display: flex;
+        text-align: center;
+        line-height: 3rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        border-radius: .25em;
+        transition: all 500ms 200ms;
+        color: $color-primary-0;
+        background-color: $white;
+        margin: .25rem;
+        cursor: pointer;
+
+        > button {
+            transition: opacity 300ms;
+            margin: 0 1em;
+            opacity: 0.25;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &.selected {
+            border-color: rgb(41, 39, 39);
+            color: rgb(0, 0, 0);
+        }
+        &.rejected {
+            color: $color-muted;
+        }
+        &.correct {
+            font-size: 2rem;
+            color: $color-success;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+        &.incorrect {
+            color: rgb(219, 0, 0);
+            text-decoration: line-through;
+        }
+        &.hidden {
+            background-color: $white;
+            color: $color-faint;
+        }
+    }
+    .question {
+        color: $color-primary-0;
+        font-size: 3.5rem;
+        text-align: center;
+        flex-basis: 1em;
+    }
+    .advancement {
+        display: flex;
+        font-size: 2em;
+        flex-basis: 2em;
+        flex-direction: row;
+        
+        padding: 1rem;
+        
+        button {
+            flex: 1;
+            line-height: 3rem;
+            border-radius: .25em;
+            margin: .25rem;
+            font-size: inherit;
+            background-color: $color-faint;
+            color: $color-primary-4;
+            transition: all 500ms 500ms;
+
+            &.small-text {
+                // font-size: 1em; 
+                // line-height: 1em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &.default {
+                box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px;
+            }
+            &.success {
+                background-color: #00c900;
+                color: white;
+            }
+            &.fail {
+                background-color: #f00;
+                color: white;
+            }
+        }
+    }
 }

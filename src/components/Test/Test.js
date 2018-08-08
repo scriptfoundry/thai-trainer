@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Stage from './Stage';
-import { makeSimilaritySorter } from '../../services/Utils';
-const Test = (props) => {
-    const { stage, type, setTestType, isComplete } = props;
-    // else if (isComplete) return <Report {...props } />;
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Challenge from './Challenge';
 
-    return <Stage {...props} />;
+const Test = (props) => {
+    return <div className="test">
+        <button className="back-button" onClick={ () => props.changeView('navigation') }>Back</button>
+        <TransitionGroup className="content">
+            <CSSTransition timeout={400} key={ props.index } classNames="challenge-container">
+                <Challenge key={ props.index } {...props} />
+            </CSSTransition>
+        </TransitionGroup>
+    </div>;
+
 };
 
 Test.propTypes = {
-    type: PropTypes.number,
-    testWords: PropTypes.array.isRequired,
-    stage: PropTypes.number,
-    isComplete: PropTypes.bool.isRequired,
-    index: PropTypes.number,
-    words: PropTypes.array.isRequired,
-
-    setTestType: PropTypes.func.isRequired
+    index: PropTypes.number.isRequired,
+    changeView: PropTypes.func.isRequired,
 };
-
 export default Test;

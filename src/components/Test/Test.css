@@ -1,0 +1,122 @@
+.test .challenge {
+  transition: all 300ms; }
+
+.test .challenge.challenge-container-enter {
+  opacity: 0.01; }
+
+.test .challenge.challenge-container-enter-active {
+  opacity: 1; }
+
+.test .challenge.challenge-container-exit {
+  opacity: 1; }
+
+.test .challenge.challenge-container-exit-active {
+  opacity: 0.01; }
+
+.test .back-button {
+  position: absolute;
+  z-index: 1; }
+
+.test .content {
+  z-index: 0; }
+
+.test .answers {
+  display: flex;
+  flex: 1; }
+
+.test .left, .test .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column; }
+
+.test .challenge {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0; }
+
+.test .answer {
+  font-size: 1.5rem;
+  flex: 1;
+  display: flex;
+  text-align: center;
+  line-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: .25em;
+  transition: all 500ms 200ms;
+  color: #2E4272;
+  background-color: #f8f8f8;
+  margin: .25rem;
+  cursor: pointer; }
+
+.test .answer > button {
+  transition: opacity 300ms;
+  margin: 0 1em;
+  opacity: 0.25; }
+
+.test .answer > button:hover {
+  opacity: 1; }
+
+.test .answer.selected {
+  border-color: #292727;
+  color: black; }
+
+.test .answer.rejected {
+  color: #b9b8b8; }
+
+.test .answer.correct {
+  font-size: 2rem;
+  color: #01b601;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); }
+
+.test .answer.incorrect {
+  color: #db0000;
+  text-decoration: line-through; }
+
+.test .answer.hidden {
+  background-color: #f8f8f8;
+  color: #e5e9f1; }
+
+.test .question {
+  color: #2E4272;
+  font-size: 3.5rem;
+  text-align: center;
+  flex-basis: 1em; }
+
+.test .advancement {
+  display: flex;
+  font-size: 2em;
+  flex-basis: 2em;
+  flex-direction: row;
+  padding: 1rem; }
+
+.test .advancement button {
+  flex: 1;
+  line-height: 3rem;
+  border-radius: .25em;
+  margin: .25rem;
+  font-size: inherit;
+  background-color: #e5e9f1;
+  color: #04184A;
+  transition: all 500ms 500ms; }
+
+.test .advancement button.small-text {
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.test .advancement button.default {
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px; }
+
+.test .advancement button.success {
+  background-color: #00c900;
+  color: white; }
+
+.test .advancement button.fail {
+  background-color: #f00;
+  color: white; }

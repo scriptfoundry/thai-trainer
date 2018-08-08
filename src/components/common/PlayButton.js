@@ -8,7 +8,8 @@ class PlayButton extends Component {
         super(...args);
         this.play = this.play.bind(this);
     }
-    async play() {
+    async play(evt) {
+        evt.stopPropagation();
         let { word: {thai}, saySample } = this.props;
         await  saySample(thai);
     }
