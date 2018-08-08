@@ -48,9 +48,9 @@ const setTestType = (type) => (dispatch, getState) => {
 
     dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
 };
-const submitAnswer = (answer) => (dispatch, getState) => {
-    let { test: { queue, index, scores, testWords } } = getState();
-    const score = answer === queue[index] ? 1 : -1;
+const submitAnswer = (correct) => (dispatch, getState) => {
+    let { test: { index, scores, testWords } } = getState();
+    const score = correct === null ? 0 : correct ? 1 : -1;
     scores = [...scores.slice(0, index), score, ...scores.slice(index + 1)];
     index += 1;
     const stage = Math.floor(index / testWords.length);

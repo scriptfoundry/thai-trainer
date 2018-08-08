@@ -1,5 +1,5 @@
 import { STATUS_PRACTICE } from '../services/Leitner';
-import { TEST_SETTESTTYPE } from './test';
+import { TEST_SETTESTTYPE } from './tests';
 const VIEW_CHANGEVIEW = 'view/changeview';
 const VIEW_CHANGEPREVIEWFILTER = 'view_changepreviewfilter';
 
