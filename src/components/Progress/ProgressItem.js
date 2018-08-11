@@ -10,13 +10,12 @@ const ProgressItem = ({ word, pronunciationType }) => {
     const { term, thai, ipa, paiboon, scores=[0, 0, 0] } = word;
     const progressIcons = scores.map((score, index) => <ProgressIcon key={index} progress={ score / 5 } /> );
 
-    return <div>
-        <div>{ term }</div>
-        <div>{ thai }</div>
-        <div>{ getPronunciation(ipa, paiboon, pronunciationType) }</div>
-        <div><PlayButton word={word} /></div>
-        <div className="progress-icons">{ progressIcons }</div>
-    </div>;
+    return <tr>
+        <td>{ term }</td>
+        <td>{ thai }</td>
+        <td><PlayButton word={word} /> { getPronunciation(ipa, paiboon, pronunciationType) }</td>
+        <td className="progress-icons">{ progressIcons }</td>
+    </tr>;
 };
 
 ProgressItem.propTypes = {

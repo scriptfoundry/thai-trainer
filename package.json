@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bulma": "^0.7.1",
     "fast-levenshtein": "^2.0.6",
     "history": "^4.7.2",
     "localforage": "^1.7.2",

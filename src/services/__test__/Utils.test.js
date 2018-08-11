@@ -223,4 +223,24 @@ describe('UtilsService', () => {
         expect(moveArrayItem([1, 2, 3], -1, 2)).toEqual([1, 2, 3]);
         expect(moveArrayItem([1, 2, 3], -2, -1)).toEqual([1, 2, 3]);
     });
+    it('excludes values from two arrays', () => {
+        const { makeExclude } = require('../Utils');
+        let exclude = makeExclude((a, b) => a.id === b.id);
+        let arr1 = [
+            {id: 1},
+            {id: 2},
+            {id: 3},
+            {id: 4},
+            {id: 5},
+            {id: 6},
+        ];
+        expect(exclude(arr1, [])).toEqual(arr1);
+        expect(exclude(arr1, [{id: 6}, {id: 1}])).toEqual(arr1.slice(1, 5));
+        expect(exclude(arr1, [...arr1])).toEqual([]);
+
+        exclude = makeExclude((a, b) => a.id === b.id + 1);
+        expect(exclude(arr1, [])).toEqual(arr1);
+        expect(exclude(arr1, [{id: 6}, {id: 1}])).toEqual([{id: 1}, ...arr1.slice(2)]);
+        expect(exclude(arr1, [...arr1])).toEqual([{ id: 1}]);
+    });
 });

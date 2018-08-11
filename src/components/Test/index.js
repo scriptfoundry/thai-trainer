@@ -14,7 +14,6 @@ const mapStateToProps = state => ({
     submitAnswer: state.test.submitAnswer,
     index: state.test.index,
     words: state.words.words,
-    changeView: state.view.changeView,
 });
 
 export default connect(mapStateToProps, operations)(Test);

@@ -30,7 +30,7 @@ export default class Practice extends Component {
         else if (code === 'ArrowLeft' || code === 'ArrowUp') this.advance(-1);
     }
     render() {
-        const { changeView, pronunciationType, queue, currentIndex, currentStage, practiceAllAtOnce, practiceOrder } = this.props;
+        const { pronunciationType, queue, currentIndex, currentStage, practiceAllAtOnce, practiceOrder } = this.props;
         const word = queue[currentIndex];
 
         if (!word) return null;
@@ -42,7 +42,6 @@ export default class Practice extends Component {
         </CSSTransition>);
 
         return (<div className="practice">
-            <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>
             <h1>Practice</h1>
             <TransitionGroup className="container">{ card }</TransitionGroup>
         </div>);
@@ -61,7 +60,6 @@ Practice.propTypes = {
 
     advancePractice: PropTypes.func.isRequired,
     nudgePractice: PropTypes.func.isRequired,
-    changeView: PropTypes.func.isRequired,
     closePractice: PropTypes.func.isRequired,
     seedPractice: PropTypes.func.isRequired,
 };

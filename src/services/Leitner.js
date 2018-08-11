@@ -98,13 +98,22 @@ export function applyScoresToWords(scores, words) {
 }
 
 /**
+ * Gets all words that have been mastered
+ * @param {Object[]} words An array of word objects having optional progress data
+ * @returns {Object[]} All words having been mastered
+ */
+export function getMasteredWords(words) {
+    return words.filter(({ aspectScores=null }) => aspectScores !== null && Math.min(...aspectScores) > 4);
+}
+
+/**
  * Gets all words due to be tested as of a provided date
  * @param {Object[]} words An array of word objects having optional progress data
  * @param {Number} date The day of the epoch
  * @returns {Object[]} A new list of words
  */
 export function getOutstandingWords(words, date) {
-    const filter = ({ dueDate, aspectScores }) => dueDate <= date && Math.min(...aspectScores) <= 4;
+    const filter = ({ dueDate, aspectScores }) => dueDate <= date && Math.min(...aspectScores) > 0 && Math.min(...aspectScores) <= 4;
     const sorter = (a, b) => {
         if (a.dueDate !== b.dueDate) return a.dueDate > b.dueDate ? 1 : -1;
 
@@ -143,9 +152,11 @@ export function refreshPracticeWords(words, limit, date) {
     let currentWords = words.filter(filterCurrent);
 
     const filterPending = ({ aspectScores=null}) => aspectScores === null;
-    let pendingWords = words.filter(filterPending).slice(0, Math.max(0, limit - currentWords.length)).map(w => ({ ...w, date, dueDate: date, aspectScores: [0, 0, 0]}));
+    let pendingWords = words
+        .filter(filterPending)
+        .map(w => ({ ...w, date, dueDate: date, aspectScores: [0, 0, 0]}));
 
-    return [...currentWords, ...pendingWords];
+    return [...currentWords, ...pendingWords].slice(0, limit);
 }
 
 /**

@@ -8,7 +8,10 @@ import Progress from './components/Progress';
 import Settings from './components/Settings';
 import Practice from './components/Practice';
 import TestSelector from './components/TestSelector';
+import TestResults from './components/TestResults';
 import Test from './components/Test';
+
+import './App.css';
 
 class App extends Component {
   async componentDidMount() {
@@ -24,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    let { loaded, view } = this.props;
+    let { changeView, loaded, view } = this.props;
     let content = null;
 
     if (!loaded) content = <Loading/>;
@@ -32,20 +35,20 @@ class App extends Component {
     else if (view === 'navigation') content = <Navigation />;
     else if (view === 'progress') content = <Progress />;
     else if (view === 'practice') content = <Practice />;
+    else if (view === 'testresults') content = <TestResults />;
     else if (view === 'testselector') content = <TestSelector />;
     else if (view === 'test') content = <Test />;
 
-    return (
-      <div className="App">
-        <header>
-          { content }
-        </header>
-      </div>
-    );
+    const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>;
+    return <div>
+      { backbutton }
+      { content }
+    </div>;
   }
 }
 
 App.propTypes = {
+  changeView: PropTypes.func.isRequired,
   loaded: PropTypes.bool.isRequired,
   view: PropTypes.string
 };

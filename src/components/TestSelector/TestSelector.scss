@@ -1,0 +1,17 @@
+@import '../common/constants';
+@import "../../../node_modules/bulma/bulma";
+
+.test-selector {
+    @extend .container;
+    @extend .section;
+    @extend .hero;
+    @extend .is-halfheight;
+
+    justify-content: space-evenly;
+
+    button {
+        @extend .button;
+        @extend .is-large;
+        // @extend .is-primary;
+    }
+}

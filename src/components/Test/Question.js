@@ -17,7 +17,7 @@ class Question extends Component {
     }
     render() {
         const { word, property } = this.props;
-        if (isPronunciation(property)) return <div className="question" onClick={ () => this.speak() }>Listen 🔊</div>;
+        if (isPronunciation(property)) return <div className="question" onClick={ () => this.speak() }>Listen <span role="img" aria-label="Listen">🔊</span></div>;
         return <div className="question">{ word[property] }</div>;
     }
 }

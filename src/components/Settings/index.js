@@ -5,7 +5,7 @@ import Settings from './Settings';
 const mapStateToProps = ({
     voice: {thaiVoice, thaiVoices, englishVoice, englishVoices, rate},
     words: { words },
-    settings: { pronunciationType, practiceWordLimit, practiceOrder, practiceAllAtOnce },
+    settings: { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce },
 }) => ({
     words,
     englishVoice,
@@ -15,6 +15,7 @@ const mapStateToProps = ({
     rate,
     pronunciationType,
     practiceWordLimit,
+    testingWordLimit,
     practiceOrder,
     practiceAllAtOnce,
 });

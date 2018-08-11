@@ -1,6 +1,6 @@
 import { STATUS_PRACTICE } from '../services/Leitner';
-import { TEST_SETTESTTYPE } from './tests';
-const VIEW_CHANGEVIEW = 'view/changeview';
+import { TEST_SETTESTTYPE, TEST_COMPLETETEST } from './tests';
+export const VIEW_CHANGEVIEW = 'view/changeview';
 const VIEW_CHANGEPREVIEWFILTER = 'view_changepreviewfilter';
 
 
@@ -12,6 +12,7 @@ const defaultState = {
 export const reducer = (state=defaultState, { type, payload }) => {
     if (type === VIEW_CHANGEVIEW) return { ...state, currentView: payload };
     else if (type === TEST_SETTESTTYPE ) return { ...state, currentView: 'test' };
+    else if (type === TEST_COMPLETETEST) return { ...state, currentView: 'testresults' };
     else if (type === VIEW_CHANGEPREVIEWFILTER) {
         let previewFilter = state.previewFilter.filter(status => status !== payload);
         if (previewFilter.length === state.previewFilter.length) previewFilter.push(payload);

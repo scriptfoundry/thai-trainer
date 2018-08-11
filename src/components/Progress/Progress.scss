@@ -1,34 +1,41 @@
-.progress {
-    .thead {
-        display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-end;
-        height: 100%;
+@import '../common/constants';
+@import "../../../node_modules/bulma/bulma";
+
+.progress-page {
+    @extend .container;
+    @extend .section;
+
+
+    .filter {
+        @extend .buttons;
+        @extend .has-addons;
+        @extend .is-fullwidth;
 
         .toggle-header {
-            flex: 1;
-            text-align: center;
-            border: 1px solid grey;
+            @extend .button;
         }
         .selected {
-            color: white;
-            background-color: grey;
-            border-color: black;
+            @extend .is-selected;
+            @extend .is-primary;
         }
     }
-    .tbody > div {
-        display: flex;
 
-        > div {
-            flex: 1;
-        }
+    table {
+        @extend .table;
+        @extend .is-fullwidth;
     }
-    .progress-icons {
-        display: flex;
+    td {
+        line-height: 2em;
+    }
+    th:nth-child(4), td:nth-child(4) {
+        @extend .is-narrow;
+        @extend .has-text-centered;
+    }
 
-        > * {
-            flex-basis: 20px;
-        }
+    .progress-meter {
+        display: inline-block;
+        margin: .25em;
+        width: 1.5em;
+        height: 1.5em;
     }
 }

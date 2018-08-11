@@ -39,6 +39,8 @@ export const pipe = (...args) => {
     };
 };
 
+export const makeExclude = equality => (arr1, arr2) => arr1.filter(v1 => arr2.some(v2 => equality(v1, v2)) === false);
+
 /**
  * Converge a list of functions to the arguments of a core function (similar to compose)
  * @param {function} core The function to be decorated

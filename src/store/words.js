@@ -7,7 +7,6 @@ const WORDS_ADVANCE = 'words/advance';
 const WORDS_NUDGE = 'words/nudge';
 const WORDS_RESEED = 'words/reseed';
 const WORDS_CLOSE = 'words/close';
-// const WORDS_SAVEPROGRESS = 'words/saveprogress';
 
 const defaultState = {
     currentIndex: 0,
@@ -41,7 +40,7 @@ export const reducer = (state = defaultState, { type, payload }) => {
     }
     if (type === WORDS_CLOSE) return { ...state, queue: [], currentIndex: 0 };
     if (type === WORDS_SETWORDS) return {...state, words: payload, wordsLoaded: true };
-    // if (type === WORDS_SAVEPROGRESS)
+
     return state;
 };
 
@@ -54,6 +53,5 @@ const seedPractice = (words, limit) => dispatch => dispatch({ type: WORDS_RESEED
 const advancePractice = direction => dispatch => dispatch({ type: WORDS_ADVANCE, payload: direction });
 const nudgePractice = (shouldJustAdvance) => dispatch => dispatch({ type: shouldJustAdvance ? WORDS_ADVANCE : WORDS_NUDGE });
 const closePractice = () => dispatch => dispatch({ type: WORDS_CLOSE });
-// const save
 
 export const operations = { initializeWordsManager, seedPractice, advancePractice, nudgePractice, closePractice };

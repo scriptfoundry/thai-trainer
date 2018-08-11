@@ -10,5 +10,5 @@ const mapStateToProps = state => ({
     previewFilter: state.view.previewFilter,
 });
 
-const { changeView, togglePreviewFilterStatus } = operations;
-export default connect(mapStateToProps, { changeView, togglePreviewFilterStatus })(Progress);
+const { togglePreviewFilterStatus } = operations;
+export default connect(mapStateToProps, { togglePreviewFilterStatus })(Progress);

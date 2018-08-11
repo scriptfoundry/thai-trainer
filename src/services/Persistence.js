@@ -35,8 +35,8 @@ export const saveVoices = async (voiceSettings) => {
 
 export const loadSettings = async () => {
     let settings = await localforage.getItem('settings');
-    let { pronunciationType, practiceWordLimit=20, practiceOrder=['term', 'thai', 'pronunciation'], practiceAllAtOnce=false } = settings || {};
-    return { pronunciationType, practiceWordLimit, practiceOrder, practiceAllAtOnce };
+    let { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce } = settings || {};
+    return { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce };
 };
 
 export const saveSettings = async (settings) => {

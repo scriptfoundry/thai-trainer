@@ -1,0 +1,48 @@
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import './components/common/constants';
+$primary: red;
+$info: orange;
+$success: green;
+$warning: blue;
+$danger: indigo;
+$light: lightgrey;
+$dark: darkgrey;
+@import "../node_modules/bulma/bulma";
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: $black;
+}
+
+button.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+button {
+    @extend .button;
+    // @extend .is-large;
+    // cursor: pointer;
+    &:disabled {
+        // @extend .is-disabled;
+    }
+}
+h1, h2, h3 {
+    // @extend .title;
+    text-align: center;
+}
+h1 { @extend .title; }
+h2 { @extend .subtitle; }
+aside {
+    @extend .has-text-weight-light;
+    color: $color-muted; 
+    text-align: center;
+}
+#root {
+    height: 100%;
+    position: relative;
+}

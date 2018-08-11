@@ -21,12 +21,12 @@ class Challenge extends PureComponent {
     constructor(...args) {
         super(...args);
 
-        let { queue, index, stage, testWords, pronunciationType } = this.props;
+        let { queue, index, stage, words, pronunciationType } = this.props;
         let leftProperty = keyToProperty(stageTestTargets[stage].answer[0], pronunciationType);
         let rightProperty = keyToProperty(stageTestTargets[stage].answer[1], pronunciationType);
 
-        const leftAnswers  = shuffle([...sortBySimilarity(queue[index], leftProperty, testWords).slice(0, 9), queue[index]]);
-        const rightAnswers = shuffle([...sortBySimilarity(queue[index], rightProperty, testWords).slice(0, 9), queue[index]]);
+        const leftAnswers  = shuffle([...sortBySimilarity(queue[index], leftProperty, words).slice(0, 9), queue[index]]);
+        const rightAnswers = shuffle([...sortBySimilarity(queue[index], rightProperty, words).slice(0, 9), queue[index]]);
         this.state = {
             leftProperty,
             rightProperty,
@@ -61,7 +61,7 @@ class Challenge extends PureComponent {
                 <div className="right">{ rightSide }</div>
             </div>
 
-            <Advancement isCorrect={ correctAnswer === selectedRight && correctAnswer === selectedLeft} index={ index } isAnswered={ isAnswered } submitAnswer={ submitAnswer } />
+            <Advancement isLastQuestion={index === queue.length - 1} isCorrect={ correctAnswer === selectedRight && correctAnswer === selectedLeft} index={ index } isAnswered={ isAnswered } submitAnswer={ submitAnswer } />
 
         </div>;
 
@@ -72,7 +72,7 @@ Challenge.propTypes = {
     queue: PropTypes.array.isRequired,
     index: PropTypes.number.isRequired,
     stage: PropTypes.number.isRequired,
-    testWords: PropTypes.array.isRequired,
+    words: PropTypes.array.isRequired,
     pronunciationType: PropTypes.string.isRequired,
     submitAnswer: PropTypes.func.isRequired,
 };

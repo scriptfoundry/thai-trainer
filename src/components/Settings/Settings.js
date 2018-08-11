@@ -4,6 +4,7 @@ import VoiceSelector from './VoiceSelector';
 import RateSelector from './RateSelector';
 import PronunciationSelector from './PronunciationSelector';
 import PracticeOrderSelector from './PracticeOrderSelector';
+import RangedNumberSelector from './RangedNumberSelector';
 
 import './Settings.css';
 import 'rc-slider/assets/index.css';
@@ -18,12 +19,14 @@ const Settings = (props) => {
         thaiVoices,
         words,
         practiceWordLimit,
+        testingWordLimit,
         practiceOrder,
         practiceAllAtOnce,
 
         changePracticeDisplayOrder,
         changePronunciationType,
-        changeView,
+        changePracticeWordLimit,
+        changeTestingWordLimit,
         saySample,
         setEnglishVoice,
         setRate,
@@ -31,7 +34,6 @@ const Settings = (props) => {
     } = props;
 
     return <div className="settings">
-        <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>
         <section>
             <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } saySample={ saySample } />
         </section>
@@ -43,6 +45,12 @@ const Settings = (props) => {
         </section>
         <section>
             <RateSelector value={ rate } onChange={setRate} />
+        </section>
+        <section>
+            <RangedNumberSelector heading="Ideal number of words to practice at once" min={5} max={30} value={ practiceWordLimit } onChange={ changePracticeWordLimit } />
+        </section>
+        <section>
+            <RangedNumberSelector heading="Maximum number of words to test at once" min={5} max={30} value={ testingWordLimit } onChange={ changeTestingWordLimit } />
         </section>
         <section>
             <PracticeOrderSelector changePracticeDisplayOrder={ changePracticeDisplayOrder } practiceWordLimit={ practiceWordLimit } practiceOrder={ practiceOrder } practiceAllAtOnce={ practiceAllAtOnce } />
@@ -60,6 +68,7 @@ Settings.propTypes = {
     practiceAllAtOnce: PropTypes.bool.isRequired,
     practiceOrder: PropTypes.array.isRequired,
     practiceWordLimit: PropTypes.number.isRequired,
+    testingWordLimit: PropTypes.number.isRequired,
     pronunciationType: PropTypes.string.isRequired,
     rate: PropTypes.number.isRequired,
     thaiVoice: voicePropType.isRequired,
@@ -72,11 +81,12 @@ Settings.propTypes = {
 
     changePracticeDisplayOrder: PropTypes.func.isRequired,
     changePronunciationType: PropTypes.func.isRequired,
-    changeView: PropTypes.func.isRequired,
+    changePracticeWordLimit: PropTypes.func.isRequired,
     saySample: PropTypes.func.isRequired,
     setEnglishVoice: PropTypes.func.isRequired,
     setRate: PropTypes.func.isRequired,
     setThaiVoice: PropTypes.func.isRequired,
+    changeTestingWordLimit: PropTypes.func.isRequired,
 };
 
 export default Settings;

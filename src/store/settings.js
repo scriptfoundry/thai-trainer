@@ -1,15 +1,16 @@
 import { loadSettings, saveSettings } from '../services/Persistence';
 import { PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON } from '../services/WordManager';
 
-const SETTINGS_INITIALIZE = 'settings/initialize';
 const SETTINGS_SETPRONUNCIATIONTYPE = 'settings/setpronunciationtype';
 const SETTINGS_SETPRACTICEDISPLAYORDER = 'settings/setpracticedisplayorder';
+const SETTINGS_CHANGESETTINGS = 'settings/changesettings';
 const SETTINGS_TOGGLEALLATONCE = 'settings/toggleallatonce';
 
 const defaultState = {
     pronunciationType: PRONUNCIATIONTYPE_IPA,
     practiceWordLimit: 20,
-    practiceOrder: ['term', 'thai', 'pronunciation'],
+    testingWordLimit: 20,
+    practiceOrder: ['thai', 'pronunciation', 'term'],
     practiceAllAtOnce: false,
 };
 
@@ -17,7 +18,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
     if (type === SETTINGS_SETPRONUNCIATIONTYPE) return { ...state, pronunciationType: payload === PRONUNCIATIONTYPE_IPA ? PRONUNCIATIONTYPE_IPA : PRONUNCIATIONTYPE_PAIBOON };
     if (type === SETTINGS_TOGGLEALLATONCE) return { ...state, practiceAllAtOnce: payload.practiceAllAtOnce };
     if (type === SETTINGS_SETPRACTICEDISPLAYORDER) return { ...state, ...payload };
-    if (type === SETTINGS_INITIALIZE) return { ...state, ...payload };
+    if (type === SETTINGS_CHANGESETTINGS) return { ...state, ...payload };
     return state;
 };
 
@@ -36,12 +37,28 @@ const changePracticeDisplayOrder = ({practiceOrder, practiceAllAtOnce }) => disp
     }
 };
 const initializeSettings = () => async dispatch => {
-    let { pronunciationType=PRONUNCIATIONTYPE_IPA, practiceAllAtOnce=false, practiceOrder=['term', 'thai', 'pronunciation'] } = await loadSettings();
-    dispatch({ type: SETTINGS_INITIALIZE, payload: { practiceAllAtOnce, practiceOrder, pronunciationType } });
+    let {
+        practiceWordLimit=defaultState.practiceWordLimit,
+        pronunciationType=defaultState.pronunciationType,
+        practiceAllAtOnce=defaultState.practiceAllAtOnce,
+        practiceOrder=defaultState.practiceOrder,
+        testingWordLimit=defaultState.testingWordLimit,
+    } = await loadSettings();
+    dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { practiceWordLimit, practiceAllAtOnce, practiceOrder, pronunciationType, testingWordLimit } });
+};
+const changePracticeWordLimit = practiceWordLimit => dispatch => {
+    dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { practiceWordLimit }});
+    saveSettings({ practiceWordLimit });
+};
+const changeTestingWordLimit = testingWordLimit => dispatch => {
+    dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { testingWordLimit }});
+    saveSettings({ testingWordLimit });
 };
 
 export const operations = {
     changePracticeDisplayOrder,
     changePronunciationType,
+    changePracticeWordLimit,
+    changeTestingWordLimit,
     initializeSettings,
 };

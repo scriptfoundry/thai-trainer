@@ -15,6 +15,6 @@ const mapStateToProps = ({ words, settings }) => ({
     practiceAllAtOnce: settings.practiceAllAtOnce,
 });
 
-const { changeView, seedPractice, advancePractice, nudgePractice, closePractice } = operations;
+const { seedPractice, advancePractice, nudgePractice, closePractice } = operations;
 
-export default connect(mapStateToProps, { changeView, seedPractice, advancePractice, nudgePractice, closePractice })(Practice);
+export default connect(mapStateToProps, { seedPractice, advancePractice, nudgePractice, closePractice })(Practice);
