@@ -6,7 +6,7 @@ import ProgressIcon from '../common/ProgressIcon';
 
 const getPronunciation = (ipa, paiboon, pronunciationType) => pronunciationType === PRONUNCIATIONTYPE_IPA ? ipa : paiboon;
 
-const ProgressItem = ({ word, pronunciationType }) => {
+const ProgressItem = ({ word, pronunciationType, showProgress }) => {
     const { term, thai, ipa, paiboon, scores=[0, 0, 0] } = word;
     const progressIcons = scores.map((score, index) => <ProgressIcon key={index} progress={ score / 5 } /> );
 
@@ -14,7 +14,7 @@ const ProgressItem = ({ word, pronunciationType }) => {
         <td>{ term }</td>
         <td>{ thai }</td>
         <td><PlayButton word={word} /> { getPronunciation(ipa, paiboon, pronunciationType) }</td>
-        <td className="progress-icons">{ progressIcons }</td>
+        { showProgress ? <td className="progress-icons">{ progressIcons }</td> : null }
     </tr>;
 };
 
@@ -27,7 +27,8 @@ ProgressItem.propTypes = {
         ipa: PropTypes.string.isRequired,
         paiboon: PropTypes.string.isRequired,
     }),
-    pronunciationType: PropTypes.oneOf([ PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON])
+    pronunciationType: PropTypes.oneOf([ PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON]),
+    showProgress: PropTypes.bool.isRequired,
 };
 
 export default ProgressItem;

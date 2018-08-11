@@ -31,7 +31,7 @@
   transform-origin: center;
   width: 0.625em; }
 
-.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .progress-page table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
+.box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child),
 .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .tabs:not(:last-child) {
   margin-bottom: 1.5rem; }
 
@@ -485,7 +485,7 @@ table th {
   .is-size-7-fullhd {
     font-size: 0.75rem !important; } }
 
-.has-text-centered, .progress-page th:nth-child(4), .progress-page td:nth-child(4) {
+.has-text-centered {
   text-align: center !important; }
 
 .has-text-justified {
@@ -1961,7 +1961,7 @@ a.box:active {
   box-shadow: none;
   opacity: 0.5; }
 
-.button.is-fullwidth, .progress-page .button.filter, .progress-page .filter .filter.toggle-header, .progress-page .filter .is-fullwidth.toggle-header, .progress-page .filter table.toggle-header, .progress-page table.button {
+.button.is-fullwidth, .progress-page .button.filter, .progress-page .filter .filter.toggle-header, .progress-page .filter .is-fullwidth.toggle-header {
   display: flex;
   width: 100%; }
 
@@ -2407,10 +2407,9 @@ a.box:active {
 .textarea.is-large {
   font-size: 1.5rem; }
 
-.input.is-fullwidth, .progress-page .input.filter, .progress-page table.input,
+.input.is-fullwidth, .progress-page .input.filter,
 .textarea.is-fullwidth,
-.progress-page .textarea.filter,
-.progress-page table.textarea {
+.progress-page .textarea.filter {
   display: block;
   width: 100%; }
 
@@ -2688,10 +2687,10 @@ a.box:active {
 .select.is-disabled::after {
   border-color: #7a7a7a; }
 
-.select.is-fullwidth, .progress-page .select.filter, .progress-page table.select {
+.select.is-fullwidth, .progress-page .select.filter {
   width: 100%; }
 
-.select.is-fullwidth select, .progress-page .select.filter select, .progress-page table.select select {
+.select.is-fullwidth select, .progress-page .select.filter select {
   width: 100%; }
 
 .select.is-loading::after {
@@ -2982,10 +2981,10 @@ a.box:active {
 .file.is-centered {
   justify-content: center; }
 
-.file.is-fullwidth .file-label, .progress-page .file.filter .file-label, .progress-page table.file .file-label {
+.file.is-fullwidth .file-label, .progress-page .file.filter .file-label {
   width: 100%; }
 
-.file.is-fullwidth .file-name, .progress-page .file.filter .file-name, .progress-page table.file .file-name {
+.file.is-fullwidth .file-name, .progress-page .file.filter .file-name {
   flex-grow: 1;
   max-width: none; }
 
@@ -3690,204 +3689,160 @@ a.box:active {
 .progress.is-large {
   height: 1.5rem; }
 
-.table, .progress-page table {
+.table {
   background-color: #f8f8f8;
   color: #363636; }
 
-.table td, .progress-page table td,
-.table th,
-.progress-page table th {
+.table td,
+.table th {
   border: 1px solid #dbdbdb;
   border-width: 0 0 1px;
   padding: 0.5em 0.75em;
   vertical-align: top; }
 
-.table td.is-white, .progress-page table td.is-white,
-.table th.is-white,
-.progress-page table th.is-white {
+.table td.is-white,
+.table th.is-white {
   background-color: #f8f8f8;
   border-color: #f8f8f8;
   color: #333; }
 
-.table td.is-black, .progress-page table td.is-black,
-.table th.is-black,
-.progress-page table th.is-black {
+.table td.is-black,
+.table th.is-black {
   background-color: #333;
   border-color: #333;
   color: #f8f8f8; }
 
-.table td.is-light, .progress-page table td.is-light,
-.table th.is-light,
-.progress-page table th.is-light {
+.table td.is-light,
+.table th.is-light {
   background-color: whitesmoke;
   border-color: whitesmoke;
   color: #363636; }
 
-.table td.is-dark, .progress-page table td.is-dark,
-.table th.is-dark,
-.progress-page table th.is-dark {
+.table td.is-dark,
+.table th.is-dark {
   background-color: #363636;
   border-color: #363636;
   color: whitesmoke; }
 
-.table td.is-primary, .progress-page table td.is-primary, .table .progress-page .filter td.selected, .progress-page .filter .table td.selected, .progress-page table .filter td.selected, .progress-page .filter table td.selected,
+.table td.is-primary, .table .progress-page .filter td.selected, .progress-page .filter .table td.selected,
 .table th.is-primary,
-.progress-page table th.is-primary,
 .table .progress-page .filter th.selected,
-.progress-page .filter .table th.selected,
-.progress-page table .filter th.selected,
-.progress-page .filter table th.selected {
+.progress-page .filter .table th.selected {
   background-color: #00d1b2;
   border-color: #00d1b2;
   color: #fff; }
 
-.table td.is-link, .progress-page table td.is-link,
-.table th.is-link,
-.progress-page table th.is-link {
+.table td.is-link,
+.table th.is-link {
   background-color: #3273dc;
   border-color: #3273dc;
   color: #fff; }
 
-.table td.is-info, .progress-page table td.is-info,
-.table th.is-info,
-.progress-page table th.is-info {
+.table td.is-info,
+.table th.is-info {
   background-color: #209cee;
   border-color: #209cee;
   color: #fff; }
 
-.table td.is-success, .progress-page table td.is-success,
-.table th.is-success,
-.progress-page table th.is-success {
+.table td.is-success,
+.table th.is-success {
   background-color: #23d160;
   border-color: #23d160;
   color: #fff; }
 
-.table td.is-warning, .progress-page table td.is-warning,
-.table th.is-warning,
-.progress-page table th.is-warning {
+.table td.is-warning,
+.table th.is-warning {
   background-color: #ffdd57;
   border-color: #ffdd57;
   color: rgba(0, 0, 0, 0.7); }
 
-.table td.is-danger, .progress-page table td.is-danger,
-.table th.is-danger,
-.progress-page table th.is-danger {
+.table td.is-danger,
+.table th.is-danger {
   background-color: #ff3860;
   border-color: #ff3860;
   color: #fff; }
 
-.table td.is-narrow, .progress-page table td.is-narrow, .table .progress-page td:nth-child(4), .progress-page .table td:nth-child(4), .progress-page table td:nth-child(4),
-.table th.is-narrow,
-.progress-page table th.is-narrow,
-.table .progress-page th:nth-child(4),
-.progress-page .table th:nth-child(4),
-.progress-page table th:nth-child(4) {
+.table td.is-narrow,
+.table th.is-narrow {
   white-space: nowrap;
   width: 1%; }
 
-.table td.is-selected, .progress-page table td.is-selected, .table .progress-page .filter td.selected, .progress-page .filter .table td.selected, .progress-page table .filter td.selected, .progress-page .filter table td.selected,
+.table td.is-selected, .table .progress-page .filter td.selected, .progress-page .filter .table td.selected,
 .table th.is-selected,
-.progress-page table th.is-selected,
 .table .progress-page .filter th.selected,
-.progress-page .filter .table th.selected,
-.progress-page table .filter th.selected,
-.progress-page .filter table th.selected {
+.progress-page .filter .table th.selected {
   background-color: #00d1b2;
   color: #fff; }
 
-.table td.is-selected a, .progress-page table td.is-selected a, .table .progress-page .filter td.selected a, .progress-page .filter .table td.selected a, .progress-page table .filter td.selected a, .progress-page .filter table td.selected a,
+.table td.is-selected a, .table .progress-page .filter td.selected a, .progress-page .filter .table td.selected a,
 .table td.is-selected strong,
-.progress-page table td.is-selected strong,
 .table .progress-page .filter td.selected strong,
 .progress-page .filter .table td.selected strong,
-.progress-page table .filter td.selected strong,
-.progress-page .filter table td.selected strong,
 .table th.is-selected a,
-.progress-page table th.is-selected a,
 .table .progress-page .filter th.selected a,
 .progress-page .filter .table th.selected a,
-.progress-page table .filter th.selected a,
-.progress-page .filter table th.selected a,
 .table th.is-selected strong,
-.progress-page table th.is-selected strong,
 .table .progress-page .filter th.selected strong,
-.progress-page .filter .table th.selected strong,
-.progress-page table .filter th.selected strong,
-.progress-page .filter table th.selected strong {
+.progress-page .filter .table th.selected strong {
   color: currentColor; }
 
-.table th,
-.progress-page table th {
+.table th {
   color: #363636;
   text-align: left; }
 
-.table tr.is-selected, .progress-page table tr.is-selected, .table .progress-page .filter tr.selected, .progress-page .filter .table tr.selected, .progress-page table .filter tr.selected, .progress-page .filter table tr.selected {
+.table tr.is-selected, .table .progress-page .filter tr.selected, .progress-page .filter .table tr.selected {
   background-color: #00d1b2;
   color: #fff; }
 
-.table tr.is-selected a, .progress-page table tr.is-selected a, .table .progress-page .filter tr.selected a, .progress-page .filter .table tr.selected a, .progress-page table .filter tr.selected a, .progress-page .filter table tr.selected a,
+.table tr.is-selected a, .table .progress-page .filter tr.selected a, .progress-page .filter .table tr.selected a,
 .table tr.is-selected strong,
-.progress-page table tr.is-selected strong,
 .table .progress-page .filter tr.selected strong,
-.progress-page .filter .table tr.selected strong,
-.progress-page table .filter tr.selected strong,
-.progress-page .filter table tr.selected strong {
+.progress-page .filter .table tr.selected strong {
   color: currentColor; }
 
-.table tr.is-selected td, .progress-page table tr.is-selected td, .table .progress-page .filter tr.selected td, .progress-page .filter .table tr.selected td, .progress-page table .filter tr.selected td, .progress-page .filter table tr.selected td,
+.table tr.is-selected td, .table .progress-page .filter tr.selected td, .progress-page .filter .table tr.selected td,
 .table tr.is-selected th,
-.progress-page table tr.is-selected th,
 .table .progress-page .filter tr.selected th,
-.progress-page .filter .table tr.selected th,
-.progress-page table .filter tr.selected th,
-.progress-page .filter table tr.selected th {
+.progress-page .filter .table tr.selected th {
   border-color: #fff;
   color: currentColor; }
 
-.table thead td, .progress-page table thead td,
-.table thead th,
-.progress-page table thead th {
+.table thead td,
+.table thead th {
   border-width: 0 0 2px;
   color: #363636; }
 
-.table tfoot td, .progress-page table tfoot td,
-.table tfoot th,
-.progress-page table tfoot th {
+.table tfoot td,
+.table tfoot th {
   border-width: 2px 0 0;
   color: #363636; }
 
-.table tbody tr:last-child td, .progress-page table tbody tr:last-child td,
-.table tbody tr:last-child th,
-.progress-page table tbody tr:last-child th {
+.table tbody tr:last-child td,
+.table tbody tr:last-child th {
   border-bottom-width: 0; }
 
-.table.is-bordered td, .progress-page table.is-bordered td,
-.table.is-bordered th,
-.progress-page table.is-bordered th {
+.table.is-bordered td,
+.table.is-bordered th {
   border-width: 1px; }
 
-.table.is-bordered tr:last-child td, .progress-page table.is-bordered tr:last-child td,
-.table.is-bordered tr:last-child th,
-.progress-page table.is-bordered tr:last-child th {
+.table.is-bordered tr:last-child td,
+.table.is-bordered tr:last-child th {
   border-bottom-width: 1px; }
 
-.table.is-fullwidth, .progress-page .table.filter, .progress-page table.filter, .progress-page table {
+.table.is-fullwidth, .progress-page .table.filter {
   width: 100%; }
 
-.table.is-hoverable tbody tr:not(.is-selected):hover, .progress-page table.is-hoverable tbody tr:not(.is-selected):hover {
+.table.is-hoverable tbody tr:not(.is-selected):hover {
   background-color: #fafafa; }
 
-.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover, .progress-page table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
+.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
   background-color: whitesmoke; }
 
-.table.is-narrow td, .progress-page table.is-narrow td, .progress-page th.table:nth-child(4) td, .progress-page td.table:nth-child(4) td,
-.table.is-narrow th,
-.progress-page table.is-narrow th,
-.progress-page th.table:nth-child(4) th,
-.progress-page td.table:nth-child(4) th {
+.table.is-narrow td,
+.table.is-narrow th {
   padding: 0.25em 0.5em; }
 
-.table.is-striped tbody tr:not(.is-selected):nth-child(even), .progress-page table.is-striped tbody tr:not(.is-selected):nth-child(even) {
+.table.is-striped tbody tr:not(.is-selected):nth-child(even) {
   background-color: #fafafa; }
 
 .table-container {
@@ -5912,7 +5867,7 @@ label.panel-block:hover {
   border-color: #dbdbdb;
   border-bottom-color: transparent !important; }
 
-.tabs.is-fullwidth li, .progress-page .tabs.filter li, .progress-page table.tabs li {
+.tabs.is-fullwidth li, .progress-page .tabs.filter li {
   flex-grow: 1;
   flex-shrink: 0; }
 
@@ -5972,7 +5927,7 @@ label.panel-block:hover {
   flex-shrink: 1;
   padding: 0.75rem; }
 
-.columns.is-mobile > .column.is-narrow, .progress-page .columns.is-mobile > th.column:nth-child(4), .progress-page .columns.is-mobile > td.column:nth-child(4) {
+.columns.is-mobile > .column.is-narrow {
   flex: none; }
 
 .columns.is-mobile > .column.is-full {
@@ -6239,7 +6194,7 @@ label.panel-block:hover {
     margin-left: 100%; } }
 
 @media screen and (min-width: 769px), print {
-  .column.is-narrow, .progress-page th.column:nth-child(4), .progress-page td.column:nth-child(4), .column.is-narrow-tablet {
+  .column.is-narrow, .column.is-narrow-tablet {
     flex: none; }
   .column.is-full, .column.is-full-tablet {
     flex: none;
@@ -7652,12 +7607,3 @@ label.panel-block:hover {
 .footer {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
-
-.progress-page td {
-  line-height: 2em; }
-
-.progress-page .progress-meter {
-  display: inline-block;
-  margin: .25em;
-  width: 1.5em;
-  height: 1.5em; }

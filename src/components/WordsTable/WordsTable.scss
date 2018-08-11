@@ -1,0 +1,25 @@
+@import '../common/constants';
+@import "../../../node_modules/bulma/bulma";
+
+.words-table {
+
+    table {
+        @extend .table;
+        @extend .is-fullwidth;
+    }
+
+    td {
+        line-height: 2em;
+    }
+    th:nth-child(4), td:nth-child(4) {
+        @extend .is-narrow;
+        @extend .has-text-centered;
+    }
+
+    .progress-meter {
+        display: inline-block;
+        margin: .25em;
+        width: 1.5em;
+        height: 1.5em;
+    }    
+}
