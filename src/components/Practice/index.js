@@ -4,7 +4,7 @@ import Practice from './Practice';
 
 import './Practice.css';
 
-const mapStateToProps = ({ words, settings }) => ({
+const mapStateToProps = ({ words, settings, view }) => ({
     currentIndex: words.currentIndex,
     currentStage: words.currentStage,
     queue: words.queue,
@@ -13,8 +13,9 @@ const mapStateToProps = ({ words, settings }) => ({
     pronunciationType: settings.pronunciationType,
     practiceOrder: settings.practiceOrder,
     practiceAllAtOnce: settings.practiceAllAtOnce,
+    subview: view.subview
 });
 
-const { seedPractice, advancePractice, nudgePractice, closePractice } = operations;
+const { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview } = operations;
 
-export default connect(mapStateToProps, { seedPractice, advancePractice, nudgePractice, closePractice })(Practice);
+export default connect(mapStateToProps, { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview })(Practice);

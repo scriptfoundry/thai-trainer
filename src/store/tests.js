@@ -2,7 +2,7 @@ import { getDayOfEpoch, buildRandomizedValuesQueue } from '../services/Utils';
 import { getOutstandingWords, getCurrentPracticeWords } from '../services/Leitner';
 
 import { TEST_TYPECURRENT, TEST_STAGE1 } from '../services/Leitner';
-import { VIEW_CHANGEVIEW } from '../store/view';
+import { VIEW_CHANGEVIEW } from './view';
 
 export const TEST_SETTESTTYPE = 'test/settesttype';
 export const TEST_COMPLETETEST = 'test/completetest';
@@ -11,7 +11,6 @@ const TEST_ACCEPTANSWER = 'test/acceptanswer';
 
 const getRandomQueue = buildRandomizedValuesQueue(3);
 
-// TODO: Remove stub values
 const defaultState = {
     testWords: [],
     queue: [],

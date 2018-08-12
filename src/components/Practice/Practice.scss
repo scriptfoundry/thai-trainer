@@ -1,6 +1,21 @@
-.practice {
-    .container {
+@import '../common/constants';
+@import "../../../node_modules/bulma/bulma";
 
+.practice {
+    .preview {
+        @extend .container;
+        text-align: center;
+
+        section {
+            @extend .section;
+        }
+
+        .start-button {
+            @extend .button;
+            @extend .is-large;
+            @extend .is-primary;
+            width: 50%;
+        }
     }
     .card {
         width: 100%;
