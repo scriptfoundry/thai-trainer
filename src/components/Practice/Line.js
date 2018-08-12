@@ -12,6 +12,7 @@ const Line = ({ index, word, stage, practiceAllAtOnce, order, pronunciationType 
     const isVisible = practiceAllAtOnce || stage >= index;
     const classes = isVisible ? 'visible' : null;
     const handleClick = (evt) => {
+        console.log(123)
         evt.stopPropagation();
         say(LANGUAGE_THAI, word.thai);
     };

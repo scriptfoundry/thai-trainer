@@ -33,18 +33,20 @@ export default class DragDropSorter extends Component {
         this.props.onChange(order);
     }
     render() {
-        const { disabled } = this.props;
-        return <DragDropContext onDragEnd={ this.onDragEnd }>
-             <Droppable droppableId="droppable" isDropDisabled={ disabled }>
-                 {(provided, snapshot) => <div ref={ provided.innerRef } style={ getListStyle(snapshot.isDraggingOver) }>
-                    {
-                        this.props.order.map((childOrder, index) => <Draggable key={childOrder} draggableId={childOrder} index={index} isDragDisabled={ disabled }>
-                            {(provided, snapshot) => <div ref={ provided.innerRef } { ...provided.draggableProps } { ...provided.dragHandleProps } style={ getItemStyle(snapshot.isDragging, provided.draggableProps.style, disabled) } >{ childOrder }</div>}
-                        </Draggable>)
-                    }
-                 </div>}
-             </Droppable>
-        </DragDropContext>;
+        const { className, disabled } = this.props;
+        return <div className={ className }>
+            <DragDropContext onDragEnd={ this.onDragEnd }>
+                <Droppable droppableId="droppable" isDropDisabled={ disabled }>
+                    {(provided, snapshot) => <div ref={ provided.innerRef } style={ getListStyle(snapshot.isDraggingOver) }>
+                        {
+                            this.props.order.map((childOrder, index) => <Draggable key={childOrder} draggableId={childOrder} index={index} isDragDisabled={ disabled }>
+                                {(provided, snapshot) => <div ref={ provided.innerRef } { ...provided.draggableProps } { ...provided.dragHandleProps } style={ getItemStyle(snapshot.isDragging, provided.draggableProps.style, disabled) } >{ childOrder }</div>}
+                            </Draggable>)
+                        }
+                    </div>}
+                </Droppable>
+            </DragDropContext>
+        </div>;
     }
 }
 
@@ -52,4 +54,5 @@ DragDropSorter.propTypes = {
     disabled: PropTypes.bool.isRequired,
     order: PropTypes.arrayOf(PropTypes.string).isRequired,
     onChange: PropTypes.func.isRequired,
+    className: PropTypes.string
 };

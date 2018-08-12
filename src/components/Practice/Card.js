@@ -5,7 +5,7 @@ import { classNames } from '../../services/Utils';
 
 const Card = ({ word, onClick, pronunciationType, stage, practiceOrder, practiceAllAtOnce }) => {
     const lines = practiceOrder.map((prop, index) => <Line key={prop} index={index} order={practiceOrder} practiceAllAtOnce={practiceAllAtOnce} pronunciationType={pronunciationType} stage={stage} word={word}  />);
-    return <div onClick={ onClick } className={ classNames({card: true, practiceAllAtOnce}) }>{ lines }</div>;
+    return <div onClick={ onClick } className={ classNames({ card: true, practiceAllAtOnce }) }>{ lines }</div>;
 };
 
 Card.propTypes = {

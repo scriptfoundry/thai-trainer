@@ -7755,7 +7755,8 @@ button.back-button {
   z-index: 1; }
 
 h1, h2, h3 {
-  text-align: center; }
+  text-align: center;
+  font-weight: lighter; }
 
 aside {
   color: #b9b8b8;

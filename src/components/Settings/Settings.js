@@ -34,6 +34,7 @@ const Settings = (props) => {
     } = props;
 
     return <div className="settings">
+        <h1>Settings</h1>
         <section>
             <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } saySample={ saySample } />
         </section>
@@ -52,7 +53,7 @@ const Settings = (props) => {
         <section>
             <RangedNumberSelector heading="Maximum number of words to test at once" min={5} max={30} value={ testingWordLimit } onChange={ changeTestingWordLimit } />
         </section>
-        <section>
+        <section className="practice-order">
             <PracticeOrderSelector changePracticeDisplayOrder={ changePracticeDisplayOrder } practiceWordLimit={ practiceWordLimit } practiceOrder={ practiceOrder } practiceAllAtOnce={ practiceAllAtOnce } />
         </section>
     </div>;

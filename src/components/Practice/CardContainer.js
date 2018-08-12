@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Card from './Card';
+import HelpButton from './HelpButton';
 import { say, LANGUAGE_THAI, LANGUAGE_ENGLISH } from '../../services/Voices';
 
 export default class CardContainer extends Component {
@@ -40,7 +41,10 @@ export default class CardContainer extends Component {
             <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ this.nudge } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } />
         </CSSTransition>);
 
-        return <TransitionGroup className="container">{ card }</TransitionGroup>;
+        return <TransitionGroup className="cards">
+            <HelpButton showHelp={ () => {}} />
+            { card }
+        </TransitionGroup>;
     }
 }
 

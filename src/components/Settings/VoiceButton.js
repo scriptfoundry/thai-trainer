@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const VoiceButton = ({ label, disabled, onClick }) => <button onClick={ onClick } disabled={ disabled }>{ label }</button>;
+const VoiceButton = ({ label, disabled, onClick }) => <button onClick={ onClick } className={ disabled ? 'selected' : null}>{ label }</button>;
 
 VoiceButton.propTypes = {
     label: PropTypes.string.isRequired,

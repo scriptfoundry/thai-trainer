@@ -5,7 +5,7 @@
   to {
     transform: rotate(359deg); } }
 
-.delete, .modal-close, .is-unselectable, .button, .practice .test-button, .practice .preview .start-button, .file, .breadcrumb, .pagination-previous,
+.delete, .modal-close, .is-unselectable, .button, .practice .test-button, .practice .preview .start-button, .practice .help-button, .file, .breadcrumb, .pagination-previous,
 .pagination-next,
 .pagination-link,
 .pagination-ellipsis, .tabs {
@@ -96,7 +96,7 @@
   min-width: 24px;
   width: 24px; }
 
-.is-large.delete, .practice .preview .delete.start-button, .is-large.modal-close, .practice .preview .modal-close.start-button {
+.is-large.delete, .practice .preview .delete.start-button, .practice .delete.help-button, .is-large.modal-close, .practice .preview .modal-close.start-button, .practice .modal-close.help-button {
   height: 32px;
   max-height: 32px;
   max-width: 32px;
@@ -104,7 +104,7 @@
   min-width: 32px;
   width: 32px; }
 
-.button.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-loading.start-button::after, .select.is-loading::after, .control.is-loading::after, .loader {
+.button.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-loading.start-button::after, .practice .is-loading.help-button::after, .select.is-loading::after, .control.is-loading::after, .loader {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -123,7 +123,7 @@
   right: 0;
   top: 0; }
 
-.button, .practice .test-button, .practice .preview .start-button, .input,
+.button, .practice .test-button, .practice .preview .start-button, .practice .help-button, .input,
 .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,
 .pagination-next,
@@ -147,22 +147,22 @@
   position: relative;
   vertical-align: top; }
 
-.button:focus, .practice .test-button:focus, .practice .preview .start-button:focus, .input:focus,
+.button:focus, .practice .test-button:focus, .practice .preview .start-button:focus, .practice .help-button:focus, .input:focus,
 .textarea:focus, .select select:focus, .file-cta:focus,
 .file-name:focus, .pagination-previous:focus,
 .pagination-next:focus,
 .pagination-link:focus,
-.pagination-ellipsis:focus, .is-focused.button, .practice .is-focused.test-button, .practice .preview .is-focused.start-button, .is-focused.input,
+.pagination-ellipsis:focus, .is-focused.button, .practice .is-focused.test-button, .practice .preview .is-focused.start-button, .practice .is-focused.help-button, .is-focused.input,
 .is-focused.textarea, .select select.is-focused, .is-focused.file-cta,
 .is-focused.file-name, .is-focused.pagination-previous,
 .is-focused.pagination-next,
 .is-focused.pagination-link,
-.is-focused.pagination-ellipsis, .button:active, .practice .test-button:active, .practice .preview .start-button:active, .input:active,
+.is-focused.pagination-ellipsis, .button:active, .practice .test-button:active, .practice .preview .start-button:active, .practice .help-button:active, .input:active,
 .textarea:active, .select select:active, .file-cta:active,
 .file-name:active, .pagination-previous:active,
 .pagination-next:active,
 .pagination-link:active,
-.pagination-ellipsis:active, .is-active.button, .practice .is-active.test-button, .practice .preview .is-active.start-button, .is-active.input,
+.pagination-ellipsis:active, .is-active.button, .practice .is-active.test-button, .practice .preview .is-active.start-button, .practice .is-active.help-button, .is-active.input,
 .is-active.textarea, .select select.is-active, .is-active.file-cta,
 .is-active.file-name, .is-active.pagination-previous,
 .is-active.pagination-next,
@@ -170,7 +170,7 @@
 .is-active.pagination-ellipsis {
   outline: none; }
 
-.button[disabled], .practice .test-button[disabled], .practice .preview .start-button[disabled], .input[disabled],
+.button[disabled], .practice .test-button[disabled], .practice .preview .start-button[disabled], .practice .help-button[disabled], .input[disabled],
 .textarea[disabled], .select select[disabled], .file-cta[disabled],
 .file-name[disabled], .pagination-previous[disabled],
 .pagination-next[disabled],
@@ -1108,7 +1108,7 @@ a.box:hover, a.box:focus {
 a.box:active {
   box-shadow: inset 0 1px 2px rgba(51, 51, 51, 0.2), 0 0 0 1px #3273dc; }
 
-.button, .practice .test-button, .practice .preview .start-button {
+.button, .practice .test-button, .practice .preview .start-button, .practice .help-button {
   background-color: #f8f8f8;
   border-color: #dbdbdb;
   border-width: 1px;
@@ -1122,867 +1122,867 @@ a.box:active {
   text-align: center;
   white-space: nowrap; }
 
-.button strong, .practice .test-button strong, .practice .preview .start-button strong {
+.button strong, .practice .test-button strong, .practice .preview .start-button strong, .practice .help-button strong {
   color: inherit; }
 
-.button .icon, .practice .test-button .icon, .practice .preview .start-button .icon, .button .icon.is-small, .practice .test-button .icon.is-small, .practice .preview .start-button .icon.is-small, .button .icon.is-medium, .practice .test-button .icon.is-medium, .practice .preview .start-button .icon.is-medium, .button .icon.is-large, .practice .test-button .icon.is-large, .practice .preview .start-button .icon.is-large, .button .practice .preview .icon.start-button, .practice .preview .button .icon.start-button, .practice .test-button .preview .icon.start-button, .practice .preview .test-button .icon.start-button, .practice .preview .start-button .icon.start-button {
+.button .icon, .practice .test-button .icon, .practice .preview .start-button .icon, .practice .help-button .icon, .button .icon.is-small, .practice .test-button .icon.is-small, .practice .preview .start-button .icon.is-small, .practice .help-button .icon.is-small, .button .icon.is-medium, .practice .test-button .icon.is-medium, .practice .preview .start-button .icon.is-medium, .practice .help-button .icon.is-medium, .button .icon.is-large, .practice .test-button .icon.is-large, .practice .preview .start-button .icon.is-large, .practice .help-button .icon.is-large, .button .practice .preview .icon.start-button, .practice .preview .button .icon.start-button, .practice .test-button .preview .icon.start-button, .practice .preview .test-button .icon.start-button, .practice .preview .start-button .icon.start-button, .practice .help-button .preview .icon.start-button, .practice .preview .help-button .icon.start-button, .button .practice .icon.help-button, .practice .button .icon.help-button, .practice .test-button .icon.help-button, .practice .preview .start-button .icon.help-button, .practice .help-button .icon.help-button {
   height: 1.5em;
   width: 1.5em; }
 
-.button .icon:first-child:not(:last-child), .practice .test-button .icon:first-child:not(:last-child), .practice .preview .start-button .icon:first-child:not(:last-child) {
+.button .icon:first-child:not(:last-child), .practice .test-button .icon:first-child:not(:last-child), .practice .preview .start-button .icon:first-child:not(:last-child), .practice .help-button .icon:first-child:not(:last-child) {
   margin-left: calc(-0.375em - 1px);
   margin-right: 0.1875em; }
 
-.button .icon:last-child:not(:first-child), .practice .test-button .icon:last-child:not(:first-child), .practice .preview .start-button .icon:last-child:not(:first-child) {
+.button .icon:last-child:not(:first-child), .practice .test-button .icon:last-child:not(:first-child), .practice .preview .start-button .icon:last-child:not(:first-child), .practice .help-button .icon:last-child:not(:first-child) {
   margin-left: 0.1875em;
   margin-right: calc(-0.375em - 1px); }
 
-.button .icon:first-child:last-child, .practice .test-button .icon:first-child:last-child, .practice .preview .start-button .icon:first-child:last-child {
+.button .icon:first-child:last-child, .practice .test-button .icon:first-child:last-child, .practice .preview .start-button .icon:first-child:last-child, .practice .help-button .icon:first-child:last-child {
   margin-left: calc(-0.375em - 1px);
   margin-right: calc(-0.375em - 1px); }
 
-.button:hover, .practice .test-button:hover, .practice .preview .start-button:hover, .button.is-hovered, .practice .is-hovered.test-button, .practice .preview .is-hovered.start-button {
+.button:hover, .practice .test-button:hover, .practice .preview .start-button:hover, .practice .help-button:hover, .button.is-hovered, .practice .is-hovered.test-button, .practice .preview .is-hovered.start-button, .practice .is-hovered.help-button {
   border-color: #b5b5b5;
   color: #363636; }
 
-.button:focus, .practice .test-button:focus, .practice .preview .start-button:focus, .button.is-focused, .practice .is-focused.test-button, .practice .preview .is-focused.start-button {
+.button:focus, .practice .test-button:focus, .practice .preview .start-button:focus, .practice .help-button:focus, .button.is-focused, .practice .is-focused.test-button, .practice .preview .is-focused.start-button, .practice .is-focused.help-button {
   border-color: #3273dc;
   color: #363636; }
 
-.button:focus:not(:active), .practice .test-button:focus:not(:active), .practice .preview .start-button:focus:not(:active), .button.is-focused:not(:active), .practice .is-focused.test-button:not(:active), .practice .preview .is-focused.start-button:not(:active) {
+.button:focus:not(:active), .practice .test-button:focus:not(:active), .practice .preview .start-button:focus:not(:active), .practice .help-button:focus:not(:active), .button.is-focused:not(:active), .practice .is-focused.test-button:not(:active), .practice .preview .is-focused.start-button:not(:active), .practice .is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
 
-.button:active, .practice .test-button:active, .practice .preview .start-button:active, .button.is-active, .practice .is-active.test-button, .practice .preview .is-active.start-button {
+.button:active, .practice .test-button:active, .practice .preview .start-button:active, .practice .help-button:active, .button.is-active, .practice .is-active.test-button, .practice .preview .is-active.start-button, .practice .is-active.help-button {
   border-color: #4a4a4a;
   color: #363636; }
 
-.button.is-text, .practice .is-text.test-button, .practice .preview .is-text.start-button {
+.button.is-text, .practice .is-text.test-button, .practice .preview .is-text.start-button, .practice .is-text.help-button {
   background-color: transparent;
   border-color: transparent;
   color: #4a4a4a;
   text-decoration: underline; }
 
-.button.is-text:hover, .practice .is-text.test-button:hover, .practice .preview .is-text.start-button:hover, .button.is-text.is-hovered, .practice .is-text.is-hovered.test-button, .practice .preview .is-text.is-hovered.start-button, .button.is-text:focus, .practice .is-text.test-button:focus, .practice .preview .is-text.start-button:focus, .button.is-text.is-focused, .practice .is-text.is-focused.test-button, .practice .preview .is-text.is-focused.start-button {
+.button.is-text:hover, .practice .is-text.test-button:hover, .practice .preview .is-text.start-button:hover, .practice .is-text.help-button:hover, .button.is-text.is-hovered, .practice .is-text.is-hovered.test-button, .practice .preview .is-text.is-hovered.start-button, .practice .is-text.is-hovered.help-button, .button.is-text:focus, .practice .is-text.test-button:focus, .practice .preview .is-text.start-button:focus, .practice .is-text.help-button:focus, .button.is-text.is-focused, .practice .is-text.is-focused.test-button, .practice .preview .is-text.is-focused.start-button, .practice .is-text.is-focused.help-button {
   background-color: whitesmoke;
   color: #363636; }
 
-.button.is-text:active, .practice .is-text.test-button:active, .practice .preview .is-text.start-button:active, .button.is-text.is-active, .practice .is-text.is-active.test-button, .practice .preview .is-text.is-active.start-button {
+.button.is-text:active, .practice .is-text.test-button:active, .practice .preview .is-text.start-button:active, .practice .is-text.help-button:active, .button.is-text.is-active, .practice .is-text.is-active.test-button, .practice .preview .is-text.is-active.start-button, .practice .is-text.is-active.help-button {
   background-color: #e8e8e8;
   color: #363636; }
 
-.button.is-text[disabled], .practice .is-text.test-button[disabled], .practice .preview .is-text.start-button[disabled] {
+.button.is-text[disabled], .practice .is-text.test-button[disabled], .practice .preview .is-text.start-button[disabled], .practice .is-text.help-button[disabled] {
   background-color: transparent;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-white, .practice .is-white.test-button, .practice .preview .is-white.start-button {
+.button.is-white, .practice .is-white.test-button, .practice .preview .is-white.start-button, .practice .is-white.help-button {
   background-color: #f8f8f8;
   border-color: transparent;
   color: #333; }
 
-.button.is-white:hover, .practice .is-white.test-button:hover, .practice .preview .is-white.start-button:hover, .button.is-white.is-hovered, .practice .is-white.is-hovered.test-button, .practice .preview .is-white.is-hovered.start-button {
+.button.is-white:hover, .practice .is-white.test-button:hover, .practice .preview .is-white.start-button:hover, .practice .is-white.help-button:hover, .button.is-white.is-hovered, .practice .is-white.is-hovered.test-button, .practice .preview .is-white.is-hovered.start-button, .practice .is-white.is-hovered.help-button {
   background-color: #f2f2f2;
   border-color: transparent;
   color: #333; }
 
-.button.is-white:focus, .practice .is-white.test-button:focus, .practice .preview .is-white.start-button:focus, .button.is-white.is-focused, .practice .is-white.is-focused.test-button, .practice .preview .is-white.is-focused.start-button {
+.button.is-white:focus, .practice .is-white.test-button:focus, .practice .preview .is-white.start-button:focus, .practice .is-white.help-button:focus, .button.is-white.is-focused, .practice .is-white.is-focused.test-button, .practice .preview .is-white.is-focused.start-button, .practice .is-white.is-focused.help-button {
   border-color: transparent;
   color: #333; }
 
-.button.is-white:focus:not(:active), .practice .is-white.test-button:focus:not(:active), .practice .preview .is-white.start-button:focus:not(:active), .button.is-white.is-focused:not(:active), .practice .is-white.is-focused.test-button:not(:active), .practice .preview .is-white.is-focused.start-button:not(:active) {
+.button.is-white:focus:not(:active), .practice .is-white.test-button:focus:not(:active), .practice .preview .is-white.start-button:focus:not(:active), .practice .is-white.help-button:focus:not(:active), .button.is-white.is-focused:not(:active), .practice .is-white.is-focused.test-button:not(:active), .practice .preview .is-white.is-focused.start-button:not(:active), .practice .is-white.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(248, 248, 248, 0.25); }
 
-.button.is-white:active, .practice .is-white.test-button:active, .practice .preview .is-white.start-button:active, .button.is-white.is-active, .practice .is-white.is-active.test-button, .practice .preview .is-white.is-active.start-button {
+.button.is-white:active, .practice .is-white.test-button:active, .practice .preview .is-white.start-button:active, .practice .is-white.help-button:active, .button.is-white.is-active, .practice .is-white.is-active.test-button, .practice .preview .is-white.is-active.start-button, .practice .is-white.is-active.help-button {
   background-color: #ebebeb;
   border-color: transparent;
   color: #333; }
 
-.button.is-white[disabled], .practice .is-white.test-button[disabled], .practice .preview .is-white.start-button[disabled] {
+.button.is-white[disabled], .practice .is-white.test-button[disabled], .practice .preview .is-white.start-button[disabled], .practice .is-white.help-button[disabled] {
   background-color: #f8f8f8;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-white.is-inverted, .practice .is-white.is-inverted.test-button, .practice .preview .is-white.is-inverted.start-button {
+.button.is-white.is-inverted, .practice .is-white.is-inverted.test-button, .practice .preview .is-white.is-inverted.start-button, .practice .is-white.is-inverted.help-button {
   background-color: #333;
   color: #f8f8f8; }
 
-.button.is-white.is-inverted:hover, .practice .is-white.is-inverted.test-button:hover, .practice .preview .is-white.is-inverted.start-button:hover {
+.button.is-white.is-inverted:hover, .practice .is-white.is-inverted.test-button:hover, .practice .preview .is-white.is-inverted.start-button:hover, .practice .is-white.is-inverted.help-button:hover {
   background-color: #262626; }
 
-.button.is-white.is-inverted[disabled], .practice .is-white.is-inverted.test-button[disabled], .practice .preview .is-white.is-inverted.start-button[disabled] {
+.button.is-white.is-inverted[disabled], .practice .is-white.is-inverted.test-button[disabled], .practice .preview .is-white.is-inverted.start-button[disabled], .practice .is-white.is-inverted.help-button[disabled] {
   background-color: #333;
   border-color: transparent;
   box-shadow: none;
   color: #f8f8f8; }
 
-.button.is-white.is-loading::after, .practice .is-white.is-loading.test-button::after, .practice .preview .is-white.is-loading.start-button::after {
+.button.is-white.is-loading::after, .practice .is-white.is-loading.test-button::after, .practice .preview .is-white.is-loading.start-button::after, .practice .is-white.is-loading.help-button::after {
   border-color: transparent transparent #333 #333 !important; }
 
-.button.is-white.is-outlined, .practice .is-white.is-outlined.test-button, .practice .preview .is-white.is-outlined.start-button {
+.button.is-white.is-outlined, .practice .is-white.is-outlined.test-button, .practice .preview .is-white.is-outlined.start-button, .practice .is-white.help-button {
   background-color: transparent;
   border-color: #f8f8f8;
   color: #f8f8f8; }
 
-.button.is-white.is-outlined:hover, .practice .is-white.is-outlined.test-button:hover, .practice .preview .is-white.is-outlined.start-button:hover, .button.is-white.is-outlined:focus, .practice .is-white.is-outlined.test-button:focus, .practice .preview .is-white.is-outlined.start-button:focus {
+.button.is-white.is-outlined:hover, .practice .is-white.is-outlined.test-button:hover, .practice .preview .is-white.is-outlined.start-button:hover, .practice .is-white.help-button:hover, .button.is-white.is-outlined:focus, .practice .is-white.is-outlined.test-button:focus, .practice .preview .is-white.is-outlined.start-button:focus, .practice .is-white.help-button:focus {
   background-color: #f8f8f8;
   border-color: #f8f8f8;
   color: #333; }
 
-.button.is-white.is-outlined.is-loading::after, .practice .is-white.is-outlined.is-loading.test-button::after, .practice .preview .is-white.is-outlined.is-loading.start-button::after {
+.button.is-white.is-outlined.is-loading::after, .practice .is-white.is-outlined.is-loading.test-button::after, .practice .preview .is-white.is-outlined.is-loading.start-button::after, .practice .is-white.is-loading.help-button::after {
   border-color: transparent transparent #f8f8f8 #f8f8f8 !important; }
 
-.button.is-white.is-outlined[disabled], .practice .is-white.is-outlined.test-button[disabled], .practice .preview .is-white.is-outlined.start-button[disabled] {
+.button.is-white.is-outlined[disabled], .practice .is-white.is-outlined.test-button[disabled], .practice .preview .is-white.is-outlined.start-button[disabled], .practice .is-white.help-button[disabled] {
   background-color: transparent;
   border-color: #f8f8f8;
   box-shadow: none;
   color: #f8f8f8; }
 
-.button.is-white.is-inverted.is-outlined, .practice .is-white.is-inverted.is-outlined.test-button, .practice .preview .is-white.is-inverted.is-outlined.start-button {
+.button.is-white.is-inverted.is-outlined, .practice .is-white.is-inverted.is-outlined.test-button, .practice .preview .is-white.is-inverted.is-outlined.start-button, .practice .is-white.is-inverted.help-button {
   background-color: transparent;
   border-color: #333;
   color: #333; }
 
-.button.is-white.is-inverted.is-outlined:hover, .practice .is-white.is-inverted.is-outlined.test-button:hover, .practice .preview .is-white.is-inverted.is-outlined.start-button:hover, .button.is-white.is-inverted.is-outlined:focus, .practice .is-white.is-inverted.is-outlined.test-button:focus, .practice .preview .is-white.is-inverted.is-outlined.start-button:focus {
+.button.is-white.is-inverted.is-outlined:hover, .practice .is-white.is-inverted.is-outlined.test-button:hover, .practice .preview .is-white.is-inverted.is-outlined.start-button:hover, .practice .is-white.is-inverted.help-button:hover, .button.is-white.is-inverted.is-outlined:focus, .practice .is-white.is-inverted.is-outlined.test-button:focus, .practice .preview .is-white.is-inverted.is-outlined.start-button:focus, .practice .is-white.is-inverted.help-button:focus {
   background-color: #333;
   color: #f8f8f8; }
 
-.button.is-white.is-inverted.is-outlined[disabled], .practice .is-white.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-white.is-inverted.is-outlined.start-button[disabled] {
+.button.is-white.is-inverted.is-outlined[disabled], .practice .is-white.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-white.is-inverted.is-outlined.start-button[disabled], .practice .is-white.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #333;
   box-shadow: none;
   color: #333; }
 
-.button.is-black, .practice .is-black.test-button, .practice .preview .is-black.start-button {
+.button.is-black, .practice .is-black.test-button, .practice .preview .is-black.start-button, .practice .is-black.help-button {
   background-color: #333;
   border-color: transparent;
   color: #f8f8f8; }
 
-.button.is-black:hover, .practice .is-black.test-button:hover, .practice .preview .is-black.start-button:hover, .button.is-black.is-hovered, .practice .is-black.is-hovered.test-button, .practice .preview .is-black.is-hovered.start-button {
+.button.is-black:hover, .practice .is-black.test-button:hover, .practice .preview .is-black.start-button:hover, .practice .is-black.help-button:hover, .button.is-black.is-hovered, .practice .is-black.is-hovered.test-button, .practice .preview .is-black.is-hovered.start-button, .practice .is-black.is-hovered.help-button {
   background-color: #2d2d2d;
   border-color: transparent;
   color: #f8f8f8; }
 
-.button.is-black:focus, .practice .is-black.test-button:focus, .practice .preview .is-black.start-button:focus, .button.is-black.is-focused, .practice .is-black.is-focused.test-button, .practice .preview .is-black.is-focused.start-button {
+.button.is-black:focus, .practice .is-black.test-button:focus, .practice .preview .is-black.start-button:focus, .practice .is-black.help-button:focus, .button.is-black.is-focused, .practice .is-black.is-focused.test-button, .practice .preview .is-black.is-focused.start-button, .practice .is-black.is-focused.help-button {
   border-color: transparent;
   color: #f8f8f8; }
 
-.button.is-black:focus:not(:active), .practice .is-black.test-button:focus:not(:active), .practice .preview .is-black.start-button:focus:not(:active), .button.is-black.is-focused:not(:active), .practice .is-black.is-focused.test-button:not(:active), .practice .preview .is-black.is-focused.start-button:not(:active) {
+.button.is-black:focus:not(:active), .practice .is-black.test-button:focus:not(:active), .practice .preview .is-black.start-button:focus:not(:active), .practice .is-black.help-button:focus:not(:active), .button.is-black.is-focused:not(:active), .practice .is-black.is-focused.test-button:not(:active), .practice .preview .is-black.is-focused.start-button:not(:active), .practice .is-black.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(51, 51, 51, 0.25); }
 
-.button.is-black:active, .practice .is-black.test-button:active, .practice .preview .is-black.start-button:active, .button.is-black.is-active, .practice .is-black.is-active.test-button, .practice .preview .is-black.is-active.start-button {
+.button.is-black:active, .practice .is-black.test-button:active, .practice .preview .is-black.start-button:active, .practice .is-black.help-button:active, .button.is-black.is-active, .practice .is-black.is-active.test-button, .practice .preview .is-black.is-active.start-button, .practice .is-black.is-active.help-button {
   background-color: #262626;
   border-color: transparent;
   color: #f8f8f8; }
 
-.button.is-black[disabled], .practice .is-black.test-button[disabled], .practice .preview .is-black.start-button[disabled] {
+.button.is-black[disabled], .practice .is-black.test-button[disabled], .practice .preview .is-black.start-button[disabled], .practice .is-black.help-button[disabled] {
   background-color: #333;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-black.is-inverted, .practice .is-black.is-inverted.test-button, .practice .preview .is-black.is-inverted.start-button {
+.button.is-black.is-inverted, .practice .is-black.is-inverted.test-button, .practice .preview .is-black.is-inverted.start-button, .practice .is-black.is-inverted.help-button {
   background-color: #f8f8f8;
   color: #333; }
 
-.button.is-black.is-inverted:hover, .practice .is-black.is-inverted.test-button:hover, .practice .preview .is-black.is-inverted.start-button:hover {
+.button.is-black.is-inverted:hover, .practice .is-black.is-inverted.test-button:hover, .practice .preview .is-black.is-inverted.start-button:hover, .practice .is-black.is-inverted.help-button:hover {
   background-color: #ebebeb; }
 
-.button.is-black.is-inverted[disabled], .practice .is-black.is-inverted.test-button[disabled], .practice .preview .is-black.is-inverted.start-button[disabled] {
+.button.is-black.is-inverted[disabled], .practice .is-black.is-inverted.test-button[disabled], .practice .preview .is-black.is-inverted.start-button[disabled], .practice .is-black.is-inverted.help-button[disabled] {
   background-color: #f8f8f8;
   border-color: transparent;
   box-shadow: none;
   color: #333; }
 
-.button.is-black.is-loading::after, .practice .is-black.is-loading.test-button::after, .practice .preview .is-black.is-loading.start-button::after {
+.button.is-black.is-loading::after, .practice .is-black.is-loading.test-button::after, .practice .preview .is-black.is-loading.start-button::after, .practice .is-black.is-loading.help-button::after {
   border-color: transparent transparent #f8f8f8 #f8f8f8 !important; }
 
-.button.is-black.is-outlined, .practice .is-black.is-outlined.test-button, .practice .preview .is-black.is-outlined.start-button {
+.button.is-black.is-outlined, .practice .is-black.is-outlined.test-button, .practice .preview .is-black.is-outlined.start-button, .practice .is-black.help-button {
   background-color: transparent;
   border-color: #333;
   color: #333; }
 
-.button.is-black.is-outlined:hover, .practice .is-black.is-outlined.test-button:hover, .practice .preview .is-black.is-outlined.start-button:hover, .button.is-black.is-outlined:focus, .practice .is-black.is-outlined.test-button:focus, .practice .preview .is-black.is-outlined.start-button:focus {
+.button.is-black.is-outlined:hover, .practice .is-black.is-outlined.test-button:hover, .practice .preview .is-black.is-outlined.start-button:hover, .practice .is-black.help-button:hover, .button.is-black.is-outlined:focus, .practice .is-black.is-outlined.test-button:focus, .practice .preview .is-black.is-outlined.start-button:focus, .practice .is-black.help-button:focus {
   background-color: #333;
   border-color: #333;
   color: #f8f8f8; }
 
-.button.is-black.is-outlined.is-loading::after, .practice .is-black.is-outlined.is-loading.test-button::after, .practice .preview .is-black.is-outlined.is-loading.start-button::after {
+.button.is-black.is-outlined.is-loading::after, .practice .is-black.is-outlined.is-loading.test-button::after, .practice .preview .is-black.is-outlined.is-loading.start-button::after, .practice .is-black.is-loading.help-button::after {
   border-color: transparent transparent #333 #333 !important; }
 
-.button.is-black.is-outlined[disabled], .practice .is-black.is-outlined.test-button[disabled], .practice .preview .is-black.is-outlined.start-button[disabled] {
+.button.is-black.is-outlined[disabled], .practice .is-black.is-outlined.test-button[disabled], .practice .preview .is-black.is-outlined.start-button[disabled], .practice .is-black.help-button[disabled] {
   background-color: transparent;
   border-color: #333;
   box-shadow: none;
   color: #333; }
 
-.button.is-black.is-inverted.is-outlined, .practice .is-black.is-inverted.is-outlined.test-button, .practice .preview .is-black.is-inverted.is-outlined.start-button {
+.button.is-black.is-inverted.is-outlined, .practice .is-black.is-inverted.is-outlined.test-button, .practice .preview .is-black.is-inverted.is-outlined.start-button, .practice .is-black.is-inverted.help-button {
   background-color: transparent;
   border-color: #f8f8f8;
   color: #f8f8f8; }
 
-.button.is-black.is-inverted.is-outlined:hover, .practice .is-black.is-inverted.is-outlined.test-button:hover, .practice .preview .is-black.is-inverted.is-outlined.start-button:hover, .button.is-black.is-inverted.is-outlined:focus, .practice .is-black.is-inverted.is-outlined.test-button:focus, .practice .preview .is-black.is-inverted.is-outlined.start-button:focus {
+.button.is-black.is-inverted.is-outlined:hover, .practice .is-black.is-inverted.is-outlined.test-button:hover, .practice .preview .is-black.is-inverted.is-outlined.start-button:hover, .practice .is-black.is-inverted.help-button:hover, .button.is-black.is-inverted.is-outlined:focus, .practice .is-black.is-inverted.is-outlined.test-button:focus, .practice .preview .is-black.is-inverted.is-outlined.start-button:focus, .practice .is-black.is-inverted.help-button:focus {
   background-color: #f8f8f8;
   color: #333; }
 
-.button.is-black.is-inverted.is-outlined[disabled], .practice .is-black.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-black.is-inverted.is-outlined.start-button[disabled] {
+.button.is-black.is-inverted.is-outlined[disabled], .practice .is-black.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-black.is-inverted.is-outlined.start-button[disabled], .practice .is-black.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #f8f8f8;
   box-shadow: none;
   color: #f8f8f8; }
 
-.button.is-light, .practice .is-light.test-button, .practice .preview .is-light.start-button {
+.button.is-light, .practice .test-button, .practice .preview .is-light.start-button, .practice .preview .start-button.test-button, .practice .is-light.help-button {
   background-color: whitesmoke;
   border-color: transparent;
   color: #363636; }
 
-.button.is-light:hover, .practice .is-light.test-button:hover, .practice .preview .is-light.start-button:hover, .button.is-light.is-hovered, .practice .is-light.is-hovered.test-button, .practice .preview .is-light.is-hovered.start-button {
+.button.is-light:hover, .practice .test-button:hover, .practice .preview .is-light.start-button:hover, .practice .is-light.help-button:hover, .button.is-light.is-hovered, .practice .is-hovered.test-button, .practice .preview .is-light.is-hovered.start-button, .practice .is-light.is-hovered.help-button {
   background-color: #eeeeee;
   border-color: transparent;
   color: #363636; }
 
-.button.is-light:focus, .practice .is-light.test-button:focus, .practice .preview .is-light.start-button:focus, .button.is-light.is-focused, .practice .is-light.is-focused.test-button, .practice .preview .is-light.is-focused.start-button {
+.button.is-light:focus, .practice .test-button:focus, .practice .preview .is-light.start-button:focus, .practice .is-light.help-button:focus, .button.is-light.is-focused, .practice .is-focused.test-button, .practice .preview .is-light.is-focused.start-button, .practice .is-light.is-focused.help-button {
   border-color: transparent;
   color: #363636; }
 
-.button.is-light:focus:not(:active), .practice .is-light.test-button:focus:not(:active), .practice .preview .is-light.start-button:focus:not(:active), .button.is-light.is-focused:not(:active), .practice .is-light.is-focused.test-button:not(:active), .practice .preview .is-light.is-focused.start-button:not(:active) {
+.button.is-light:focus:not(:active), .practice .test-button:focus:not(:active), .practice .preview .is-light.start-button:focus:not(:active), .practice .is-light.help-button:focus:not(:active), .button.is-light.is-focused:not(:active), .practice .is-focused.test-button:not(:active), .practice .preview .is-light.is-focused.start-button:not(:active), .practice .is-light.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
 
-.button.is-light:active, .practice .is-light.test-button:active, .practice .preview .is-light.start-button:active, .button.is-light.is-active, .practice .is-light.is-active.test-button, .practice .preview .is-light.is-active.start-button {
+.button.is-light:active, .practice .test-button:active, .practice .preview .is-light.start-button:active, .practice .is-light.help-button:active, .button.is-light.is-active, .practice .is-active.test-button, .practice .preview .is-light.is-active.start-button, .practice .is-light.is-active.help-button {
   background-color: #e8e8e8;
   border-color: transparent;
   color: #363636; }
 
-.button.is-light[disabled], .practice .is-light.test-button[disabled], .practice .preview .is-light.start-button[disabled] {
+.button.is-light[disabled], .practice .test-button[disabled], .practice .preview .is-light.start-button[disabled], .practice .is-light.help-button[disabled] {
   background-color: whitesmoke;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-light.is-inverted, .practice .is-light.is-inverted.test-button, .practice .preview .is-light.is-inverted.start-button {
+.button.is-light.is-inverted, .practice .is-inverted.test-button, .practice .preview .is-light.is-inverted.start-button, .practice .is-light.is-inverted.help-button {
   background-color: #363636;
   color: whitesmoke; }
 
-.button.is-light.is-inverted:hover, .practice .is-light.is-inverted.test-button:hover, .practice .preview .is-light.is-inverted.start-button:hover {
+.button.is-light.is-inverted:hover, .practice .is-inverted.test-button:hover, .practice .preview .is-light.is-inverted.start-button:hover, .practice .is-light.is-inverted.help-button:hover {
   background-color: #292929; }
 
-.button.is-light.is-inverted[disabled], .practice .is-light.is-inverted.test-button[disabled], .practice .preview .is-light.is-inverted.start-button[disabled] {
+.button.is-light.is-inverted[disabled], .practice .is-inverted.test-button[disabled], .practice .preview .is-light.is-inverted.start-button[disabled], .practice .is-light.is-inverted.help-button[disabled] {
   background-color: #363636;
   border-color: transparent;
   box-shadow: none;
   color: whitesmoke; }
 
-.button.is-light.is-loading::after, .practice .is-light.is-loading.test-button::after, .practice .preview .is-light.is-loading.start-button::after {
+.button.is-light.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-light.is-loading.start-button::after, .practice .is-light.is-loading.help-button::after {
   border-color: transparent transparent #363636 #363636 !important; }
 
-.button.is-light.is-outlined, .practice .is-light.is-outlined.test-button, .practice .preview .is-light.is-outlined.start-button {
+.button.is-light.is-outlined, .practice .is-outlined.test-button, .practice .test-button.help-button, .practice .preview .is-light.is-outlined.start-button, .practice .is-light.help-button {
   background-color: transparent;
   border-color: whitesmoke;
   color: whitesmoke; }
 
-.button.is-light.is-outlined:hover, .practice .is-light.is-outlined.test-button:hover, .practice .preview .is-light.is-outlined.start-button:hover, .button.is-light.is-outlined:focus, .practice .is-light.is-outlined.test-button:focus, .practice .preview .is-light.is-outlined.start-button:focus {
+.button.is-light.is-outlined:hover, .practice .is-outlined.test-button:hover, .practice .test-button.help-button:hover, .practice .preview .is-light.is-outlined.start-button:hover, .practice .is-light.help-button:hover, .button.is-light.is-outlined:focus, .practice .is-outlined.test-button:focus, .practice .test-button.help-button:focus, .practice .preview .is-light.is-outlined.start-button:focus, .practice .is-light.help-button:focus {
   background-color: whitesmoke;
   border-color: whitesmoke;
   color: #363636; }
 
-.button.is-light.is-outlined.is-loading::after, .practice .is-light.is-outlined.is-loading.test-button::after, .practice .preview .is-light.is-outlined.is-loading.start-button::after {
+.button.is-light.is-outlined.is-loading::after, .practice .is-outlined.is-loading.test-button::after, .practice .is-loading.test-button.help-button::after, .practice .preview .is-light.is-outlined.is-loading.start-button::after, .practice .is-light.is-loading.help-button::after {
   border-color: transparent transparent whitesmoke whitesmoke !important; }
 
-.button.is-light.is-outlined[disabled], .practice .is-light.is-outlined.test-button[disabled], .practice .preview .is-light.is-outlined.start-button[disabled] {
+.button.is-light.is-outlined[disabled], .practice .is-outlined.test-button[disabled], .practice .test-button.help-button[disabled], .practice .preview .is-light.is-outlined.start-button[disabled], .practice .is-light.help-button[disabled] {
   background-color: transparent;
   border-color: whitesmoke;
   box-shadow: none;
   color: whitesmoke; }
 
-.button.is-light.is-inverted.is-outlined, .practice .is-light.is-inverted.is-outlined.test-button, .practice .preview .is-light.is-inverted.is-outlined.start-button {
+.button.is-light.is-inverted.is-outlined, .practice .is-inverted.is-outlined.test-button, .practice .is-inverted.test-button.help-button, .practice .preview .is-light.is-inverted.is-outlined.start-button, .practice .is-light.is-inverted.help-button {
   background-color: transparent;
   border-color: #363636;
   color: #363636; }
 
-.button.is-light.is-inverted.is-outlined:hover, .practice .is-light.is-inverted.is-outlined.test-button:hover, .practice .preview .is-light.is-inverted.is-outlined.start-button:hover, .button.is-light.is-inverted.is-outlined:focus, .practice .is-light.is-inverted.is-outlined.test-button:focus, .practice .preview .is-light.is-inverted.is-outlined.start-button:focus {
+.button.is-light.is-inverted.is-outlined:hover, .practice .is-inverted.is-outlined.test-button:hover, .practice .is-inverted.test-button.help-button:hover, .practice .preview .is-light.is-inverted.is-outlined.start-button:hover, .practice .is-light.is-inverted.help-button:hover, .button.is-light.is-inverted.is-outlined:focus, .practice .is-inverted.is-outlined.test-button:focus, .practice .is-inverted.test-button.help-button:focus, .practice .preview .is-light.is-inverted.is-outlined.start-button:focus, .practice .is-light.is-inverted.help-button:focus {
   background-color: #363636;
   color: whitesmoke; }
 
-.button.is-light.is-inverted.is-outlined[disabled], .practice .is-light.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-light.is-inverted.is-outlined.start-button[disabled] {
+.button.is-light.is-inverted.is-outlined[disabled], .practice .is-inverted.is-outlined.test-button[disabled], .practice .is-inverted.test-button.help-button[disabled], .practice .preview .is-light.is-inverted.is-outlined.start-button[disabled], .practice .is-light.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #363636;
   box-shadow: none;
   color: #363636; }
 
-.button.is-dark, .practice .is-dark.test-button, .practice .preview .is-dark.start-button {
+.button.is-dark, .practice .is-dark.test-button, .practice .preview .is-dark.start-button, .practice .is-dark.help-button {
   background-color: #363636;
   border-color: transparent;
   color: whitesmoke; }
 
-.button.is-dark:hover, .practice .is-dark.test-button:hover, .practice .preview .is-dark.start-button:hover, .button.is-dark.is-hovered, .practice .is-dark.is-hovered.test-button, .practice .preview .is-dark.is-hovered.start-button {
+.button.is-dark:hover, .practice .is-dark.test-button:hover, .practice .preview .is-dark.start-button:hover, .practice .is-dark.help-button:hover, .button.is-dark.is-hovered, .practice .is-dark.is-hovered.test-button, .practice .preview .is-dark.is-hovered.start-button, .practice .is-dark.is-hovered.help-button {
   background-color: #2f2f2f;
   border-color: transparent;
   color: whitesmoke; }
 
-.button.is-dark:focus, .practice .is-dark.test-button:focus, .practice .preview .is-dark.start-button:focus, .button.is-dark.is-focused, .practice .is-dark.is-focused.test-button, .practice .preview .is-dark.is-focused.start-button {
+.button.is-dark:focus, .practice .is-dark.test-button:focus, .practice .preview .is-dark.start-button:focus, .practice .is-dark.help-button:focus, .button.is-dark.is-focused, .practice .is-dark.is-focused.test-button, .practice .preview .is-dark.is-focused.start-button, .practice .is-dark.is-focused.help-button {
   border-color: transparent;
   color: whitesmoke; }
 
-.button.is-dark:focus:not(:active), .practice .is-dark.test-button:focus:not(:active), .practice .preview .is-dark.start-button:focus:not(:active), .button.is-dark.is-focused:not(:active), .practice .is-dark.is-focused.test-button:not(:active), .practice .preview .is-dark.is-focused.start-button:not(:active) {
+.button.is-dark:focus:not(:active), .practice .is-dark.test-button:focus:not(:active), .practice .preview .is-dark.start-button:focus:not(:active), .practice .is-dark.help-button:focus:not(:active), .button.is-dark.is-focused:not(:active), .practice .is-dark.is-focused.test-button:not(:active), .practice .preview .is-dark.is-focused.start-button:not(:active), .practice .is-dark.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
 
-.button.is-dark:active, .practice .is-dark.test-button:active, .practice .preview .is-dark.start-button:active, .button.is-dark.is-active, .practice .is-dark.is-active.test-button, .practice .preview .is-dark.is-active.start-button {
+.button.is-dark:active, .practice .is-dark.test-button:active, .practice .preview .is-dark.start-button:active, .practice .is-dark.help-button:active, .button.is-dark.is-active, .practice .is-dark.is-active.test-button, .practice .preview .is-dark.is-active.start-button, .practice .is-dark.is-active.help-button {
   background-color: #292929;
   border-color: transparent;
   color: whitesmoke; }
 
-.button.is-dark[disabled], .practice .is-dark.test-button[disabled], .practice .preview .is-dark.start-button[disabled] {
+.button.is-dark[disabled], .practice .is-dark.test-button[disabled], .practice .preview .is-dark.start-button[disabled], .practice .is-dark.help-button[disabled] {
   background-color: #363636;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-dark.is-inverted, .practice .is-dark.is-inverted.test-button, .practice .preview .is-dark.is-inverted.start-button {
+.button.is-dark.is-inverted, .practice .is-dark.is-inverted.test-button, .practice .preview .is-dark.is-inverted.start-button, .practice .is-dark.is-inverted.help-button {
   background-color: whitesmoke;
   color: #363636; }
 
-.button.is-dark.is-inverted:hover, .practice .is-dark.is-inverted.test-button:hover, .practice .preview .is-dark.is-inverted.start-button:hover {
+.button.is-dark.is-inverted:hover, .practice .is-dark.is-inverted.test-button:hover, .practice .preview .is-dark.is-inverted.start-button:hover, .practice .is-dark.is-inverted.help-button:hover {
   background-color: #e8e8e8; }
 
-.button.is-dark.is-inverted[disabled], .practice .is-dark.is-inverted.test-button[disabled], .practice .preview .is-dark.is-inverted.start-button[disabled] {
+.button.is-dark.is-inverted[disabled], .practice .is-dark.is-inverted.test-button[disabled], .practice .preview .is-dark.is-inverted.start-button[disabled], .practice .is-dark.is-inverted.help-button[disabled] {
   background-color: whitesmoke;
   border-color: transparent;
   box-shadow: none;
   color: #363636; }
 
-.button.is-dark.is-loading::after, .practice .is-dark.is-loading.test-button::after, .practice .preview .is-dark.is-loading.start-button::after {
+.button.is-dark.is-loading::after, .practice .is-dark.is-loading.test-button::after, .practice .preview .is-dark.is-loading.start-button::after, .practice .is-dark.is-loading.help-button::after {
   border-color: transparent transparent whitesmoke whitesmoke !important; }
 
-.button.is-dark.is-outlined, .practice .is-dark.is-outlined.test-button, .practice .preview .is-dark.is-outlined.start-button {
+.button.is-dark.is-outlined, .practice .is-dark.is-outlined.test-button, .practice .preview .is-dark.is-outlined.start-button, .practice .is-dark.help-button {
   background-color: transparent;
   border-color: #363636;
   color: #363636; }
 
-.button.is-dark.is-outlined:hover, .practice .is-dark.is-outlined.test-button:hover, .practice .preview .is-dark.is-outlined.start-button:hover, .button.is-dark.is-outlined:focus, .practice .is-dark.is-outlined.test-button:focus, .practice .preview .is-dark.is-outlined.start-button:focus {
+.button.is-dark.is-outlined:hover, .practice .is-dark.is-outlined.test-button:hover, .practice .preview .is-dark.is-outlined.start-button:hover, .practice .is-dark.help-button:hover, .button.is-dark.is-outlined:focus, .practice .is-dark.is-outlined.test-button:focus, .practice .preview .is-dark.is-outlined.start-button:focus, .practice .is-dark.help-button:focus {
   background-color: #363636;
   border-color: #363636;
   color: whitesmoke; }
 
-.button.is-dark.is-outlined.is-loading::after, .practice .is-dark.is-outlined.is-loading.test-button::after, .practice .preview .is-dark.is-outlined.is-loading.start-button::after {
+.button.is-dark.is-outlined.is-loading::after, .practice .is-dark.is-outlined.is-loading.test-button::after, .practice .preview .is-dark.is-outlined.is-loading.start-button::after, .practice .is-dark.is-loading.help-button::after {
   border-color: transparent transparent #363636 #363636 !important; }
 
-.button.is-dark.is-outlined[disabled], .practice .is-dark.is-outlined.test-button[disabled], .practice .preview .is-dark.is-outlined.start-button[disabled] {
+.button.is-dark.is-outlined[disabled], .practice .is-dark.is-outlined.test-button[disabled], .practice .preview .is-dark.is-outlined.start-button[disabled], .practice .is-dark.help-button[disabled] {
   background-color: transparent;
   border-color: #363636;
   box-shadow: none;
   color: #363636; }
 
-.button.is-dark.is-inverted.is-outlined, .practice .is-dark.is-inverted.is-outlined.test-button, .practice .preview .is-dark.is-inverted.is-outlined.start-button {
+.button.is-dark.is-inverted.is-outlined, .practice .is-dark.is-inverted.is-outlined.test-button, .practice .preview .is-dark.is-inverted.is-outlined.start-button, .practice .is-dark.is-inverted.help-button {
   background-color: transparent;
   border-color: whitesmoke;
   color: whitesmoke; }
 
-.button.is-dark.is-inverted.is-outlined:hover, .practice .is-dark.is-inverted.is-outlined.test-button:hover, .practice .preview .is-dark.is-inverted.is-outlined.start-button:hover, .button.is-dark.is-inverted.is-outlined:focus, .practice .is-dark.is-inverted.is-outlined.test-button:focus, .practice .preview .is-dark.is-inverted.is-outlined.start-button:focus {
+.button.is-dark.is-inverted.is-outlined:hover, .practice .is-dark.is-inverted.is-outlined.test-button:hover, .practice .preview .is-dark.is-inverted.is-outlined.start-button:hover, .practice .is-dark.is-inverted.help-button:hover, .button.is-dark.is-inverted.is-outlined:focus, .practice .is-dark.is-inverted.is-outlined.test-button:focus, .practice .preview .is-dark.is-inverted.is-outlined.start-button:focus, .practice .is-dark.is-inverted.help-button:focus {
   background-color: whitesmoke;
   color: #363636; }
 
-.button.is-dark.is-inverted.is-outlined[disabled], .practice .is-dark.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-dark.is-inverted.is-outlined.start-button[disabled] {
+.button.is-dark.is-inverted.is-outlined[disabled], .practice .is-dark.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-dark.is-inverted.is-outlined.start-button[disabled], .practice .is-dark.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: whitesmoke;
   box-shadow: none;
   color: whitesmoke; }
 
-.button.is-primary, .practice .test-button, .practice .preview .start-button {
+.button.is-primary, .practice .is-primary.test-button, .practice .preview .start-button, .practice .is-primary.help-button {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:hover, .practice .test-button:hover, .practice .preview .start-button:hover, .button.is-primary.is-hovered, .practice .is-hovered.test-button, .practice .preview .is-hovered.start-button {
+.button.is-primary:hover, .practice .is-primary.test-button:hover, .practice .preview .start-button:hover, .practice .is-primary.help-button:hover, .button.is-primary.is-hovered, .practice .is-primary.is-hovered.test-button, .practice .preview .is-hovered.start-button, .practice .is-primary.is-hovered.help-button {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:focus, .practice .test-button:focus, .practice .preview .start-button:focus, .button.is-primary.is-focused, .practice .is-focused.test-button, .practice .preview .is-focused.start-button {
+.button.is-primary:focus, .practice .is-primary.test-button:focus, .practice .preview .start-button:focus, .practice .is-primary.help-button:focus, .button.is-primary.is-focused, .practice .is-primary.is-focused.test-button, .practice .preview .is-focused.start-button, .practice .is-primary.is-focused.help-button {
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:focus:not(:active), .practice .test-button:focus:not(:active), .practice .preview .start-button:focus:not(:active), .button.is-primary.is-focused:not(:active), .practice .is-focused.test-button:not(:active), .practice .preview .is-focused.start-button:not(:active) {
+.button.is-primary:focus:not(:active), .practice .is-primary.test-button:focus:not(:active), .practice .preview .start-button:focus:not(:active), .practice .is-primary.help-button:focus:not(:active), .button.is-primary.is-focused:not(:active), .practice .is-primary.is-focused.test-button:not(:active), .practice .preview .is-focused.start-button:not(:active), .practice .is-primary.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
-.button.is-primary:active, .practice .test-button:active, .practice .preview .start-button:active, .button.is-primary.is-active, .practice .is-active.test-button, .practice .preview .is-active.start-button {
+.button.is-primary:active, .practice .is-primary.test-button:active, .practice .preview .start-button:active, .practice .is-primary.help-button:active, .button.is-primary.is-active, .practice .is-primary.is-active.test-button, .practice .preview .is-active.start-button, .practice .is-primary.is-active.help-button {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary[disabled], .practice .test-button[disabled], .practice .preview .start-button[disabled] {
+.button.is-primary[disabled], .practice .is-primary.test-button[disabled], .practice .preview .start-button[disabled], .practice .is-primary.help-button[disabled] {
   background-color: #00d1b2;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-primary.is-inverted, .practice .is-inverted.test-button, .practice .preview .is-inverted.start-button {
+.button.is-primary.is-inverted, .practice .is-primary.is-inverted.test-button, .practice .preview .is-inverted.start-button, .practice .is-primary.is-inverted.help-button {
   background-color: #fff;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted:hover, .practice .is-inverted.test-button:hover, .practice .preview .is-inverted.start-button:hover {
+.button.is-primary.is-inverted:hover, .practice .is-primary.is-inverted.test-button:hover, .practice .preview .is-inverted.start-button:hover, .practice .is-primary.is-inverted.help-button:hover {
   background-color: #f2f2f2; }
 
-.button.is-primary.is-inverted[disabled], .practice .is-inverted.test-button[disabled], .practice .preview .is-inverted.start-button[disabled] {
+.button.is-primary.is-inverted[disabled], .practice .is-primary.is-inverted.test-button[disabled], .practice .preview .is-inverted.start-button[disabled], .practice .is-primary.is-inverted.help-button[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #00d1b2; }
 
-.button.is-primary.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-loading.start-button::after {
+.button.is-primary.is-loading::after, .practice .is-primary.is-loading.test-button::after, .practice .preview .is-loading.start-button::after, .practice .is-primary.is-loading.help-button::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-primary.is-outlined, .practice .is-outlined.test-button, .practice .preview .is-outlined.start-button {
+.button.is-primary.is-outlined, .practice .is-primary.is-outlined.test-button, .practice .preview .is-outlined.start-button, .practice .preview .start-button.help-button, .practice .is-primary.help-button {
   background-color: transparent;
   border-color: #00d1b2;
   color: #00d1b2; }
 
-.button.is-primary.is-outlined:hover, .practice .is-outlined.test-button:hover, .practice .preview .is-outlined.start-button:hover, .button.is-primary.is-outlined:focus, .practice .is-outlined.test-button:focus, .practice .preview .is-outlined.start-button:focus {
+.button.is-primary.is-outlined:hover, .practice .is-primary.is-outlined.test-button:hover, .practice .preview .is-outlined.start-button:hover, .practice .preview .start-button.help-button:hover, .practice .is-primary.help-button:hover, .button.is-primary.is-outlined:focus, .practice .is-primary.is-outlined.test-button:focus, .practice .preview .is-outlined.start-button:focus, .practice .preview .start-button.help-button:focus, .practice .is-primary.help-button:focus {
   background-color: #00d1b2;
   border-color: #00d1b2;
   color: #fff; }
 
-.button.is-primary.is-outlined.is-loading::after, .practice .is-outlined.is-loading.test-button::after, .practice .preview .is-outlined.is-loading.start-button::after {
+.button.is-primary.is-outlined.is-loading::after, .practice .is-primary.is-outlined.is-loading.test-button::after, .practice .preview .is-outlined.is-loading.start-button::after, .practice .preview .is-loading.start-button.help-button::after, .practice .is-primary.is-loading.help-button::after {
   border-color: transparent transparent #00d1b2 #00d1b2 !important; }
 
-.button.is-primary.is-outlined[disabled], .practice .is-outlined.test-button[disabled], .practice .preview .is-outlined.start-button[disabled] {
+.button.is-primary.is-outlined[disabled], .practice .is-primary.is-outlined.test-button[disabled], .practice .preview .is-outlined.start-button[disabled], .practice .preview .start-button.help-button[disabled], .practice .is-primary.help-button[disabled] {
   background-color: transparent;
   border-color: #00d1b2;
   box-shadow: none;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted.is-outlined, .practice .is-inverted.is-outlined.test-button, .practice .preview .is-inverted.is-outlined.start-button {
+.button.is-primary.is-inverted.is-outlined, .practice .is-primary.is-inverted.is-outlined.test-button, .practice .preview .is-inverted.is-outlined.start-button, .practice .preview .is-inverted.start-button.help-button, .practice .is-primary.is-inverted.help-button {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-primary.is-inverted.is-outlined:hover, .practice .is-inverted.is-outlined.test-button:hover, .practice .preview .is-inverted.is-outlined.start-button:hover, .button.is-primary.is-inverted.is-outlined:focus, .practice .is-inverted.is-outlined.test-button:focus, .practice .preview .is-inverted.is-outlined.start-button:focus {
+.button.is-primary.is-inverted.is-outlined:hover, .practice .is-primary.is-inverted.is-outlined.test-button:hover, .practice .preview .is-inverted.is-outlined.start-button:hover, .practice .preview .is-inverted.start-button.help-button:hover, .practice .is-primary.is-inverted.help-button:hover, .button.is-primary.is-inverted.is-outlined:focus, .practice .is-primary.is-inverted.is-outlined.test-button:focus, .practice .preview .is-inverted.is-outlined.start-button:focus, .practice .preview .is-inverted.start-button.help-button:focus, .practice .is-primary.is-inverted.help-button:focus {
   background-color: #fff;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted.is-outlined[disabled], .practice .is-inverted.is-outlined.test-button[disabled], .practice .preview .is-inverted.is-outlined.start-button[disabled] {
+.button.is-primary.is-inverted.is-outlined[disabled], .practice .is-primary.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-inverted.is-outlined.start-button[disabled], .practice .preview .is-inverted.start-button.help-button[disabled], .practice .is-primary.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
   color: #fff; }
 
-.button.is-link, .practice .is-link.test-button, .practice .preview .is-link.start-button {
+.button.is-link, .practice .is-link.test-button, .practice .preview .is-link.start-button, .practice .is-link.help-button {
   background-color: #3273dc;
   border-color: transparent;
   color: #fff; }
 
-.button.is-link:hover, .practice .is-link.test-button:hover, .practice .preview .is-link.start-button:hover, .button.is-link.is-hovered, .practice .is-link.is-hovered.test-button, .practice .preview .is-link.is-hovered.start-button {
+.button.is-link:hover, .practice .is-link.test-button:hover, .practice .preview .is-link.start-button:hover, .practice .is-link.help-button:hover, .button.is-link.is-hovered, .practice .is-link.is-hovered.test-button, .practice .preview .is-link.is-hovered.start-button, .practice .is-link.is-hovered.help-button {
   background-color: #276cda;
   border-color: transparent;
   color: #fff; }
 
-.button.is-link:focus, .practice .is-link.test-button:focus, .practice .preview .is-link.start-button:focus, .button.is-link.is-focused, .practice .is-link.is-focused.test-button, .practice .preview .is-link.is-focused.start-button {
+.button.is-link:focus, .practice .is-link.test-button:focus, .practice .preview .is-link.start-button:focus, .practice .is-link.help-button:focus, .button.is-link.is-focused, .practice .is-link.is-focused.test-button, .practice .preview .is-link.is-focused.start-button, .practice .is-link.is-focused.help-button {
   border-color: transparent;
   color: #fff; }
 
-.button.is-link:focus:not(:active), .practice .is-link.test-button:focus:not(:active), .practice .preview .is-link.start-button:focus:not(:active), .button.is-link.is-focused:not(:active), .practice .is-link.is-focused.test-button:not(:active), .practice .preview .is-link.is-focused.start-button:not(:active) {
+.button.is-link:focus:not(:active), .practice .is-link.test-button:focus:not(:active), .practice .preview .is-link.start-button:focus:not(:active), .practice .is-link.help-button:focus:not(:active), .button.is-link.is-focused:not(:active), .practice .is-link.is-focused.test-button:not(:active), .practice .preview .is-link.is-focused.start-button:not(:active), .practice .is-link.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
 
-.button.is-link:active, .practice .is-link.test-button:active, .practice .preview .is-link.start-button:active, .button.is-link.is-active, .practice .is-link.is-active.test-button, .practice .preview .is-link.is-active.start-button {
+.button.is-link:active, .practice .is-link.test-button:active, .practice .preview .is-link.start-button:active, .practice .is-link.help-button:active, .button.is-link.is-active, .practice .is-link.is-active.test-button, .practice .preview .is-link.is-active.start-button, .practice .is-link.is-active.help-button {
   background-color: #2366d1;
   border-color: transparent;
   color: #fff; }
 
-.button.is-link[disabled], .practice .is-link.test-button[disabled], .practice .preview .is-link.start-button[disabled] {
+.button.is-link[disabled], .practice .is-link.test-button[disabled], .practice .preview .is-link.start-button[disabled], .practice .is-link.help-button[disabled] {
   background-color: #3273dc;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-link.is-inverted, .practice .is-link.is-inverted.test-button, .practice .preview .is-link.is-inverted.start-button {
+.button.is-link.is-inverted, .practice .is-link.is-inverted.test-button, .practice .preview .is-link.is-inverted.start-button, .practice .is-link.is-inverted.help-button {
   background-color: #fff;
   color: #3273dc; }
 
-.button.is-link.is-inverted:hover, .practice .is-link.is-inverted.test-button:hover, .practice .preview .is-link.is-inverted.start-button:hover {
+.button.is-link.is-inverted:hover, .practice .is-link.is-inverted.test-button:hover, .practice .preview .is-link.is-inverted.start-button:hover, .practice .is-link.is-inverted.help-button:hover {
   background-color: #f2f2f2; }
 
-.button.is-link.is-inverted[disabled], .practice .is-link.is-inverted.test-button[disabled], .practice .preview .is-link.is-inverted.start-button[disabled] {
+.button.is-link.is-inverted[disabled], .practice .is-link.is-inverted.test-button[disabled], .practice .preview .is-link.is-inverted.start-button[disabled], .practice .is-link.is-inverted.help-button[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #3273dc; }
 
-.button.is-link.is-loading::after, .practice .is-link.is-loading.test-button::after, .practice .preview .is-link.is-loading.start-button::after {
+.button.is-link.is-loading::after, .practice .is-link.is-loading.test-button::after, .practice .preview .is-link.is-loading.start-button::after, .practice .is-link.is-loading.help-button::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-link.is-outlined, .practice .is-link.is-outlined.test-button, .practice .preview .is-link.is-outlined.start-button {
+.button.is-link.is-outlined, .practice .is-link.is-outlined.test-button, .practice .preview .is-link.is-outlined.start-button, .practice .is-link.help-button {
   background-color: transparent;
   border-color: #3273dc;
   color: #3273dc; }
 
-.button.is-link.is-outlined:hover, .practice .is-link.is-outlined.test-button:hover, .practice .preview .is-link.is-outlined.start-button:hover, .button.is-link.is-outlined:focus, .practice .is-link.is-outlined.test-button:focus, .practice .preview .is-link.is-outlined.start-button:focus {
+.button.is-link.is-outlined:hover, .practice .is-link.is-outlined.test-button:hover, .practice .preview .is-link.is-outlined.start-button:hover, .practice .is-link.help-button:hover, .button.is-link.is-outlined:focus, .practice .is-link.is-outlined.test-button:focus, .practice .preview .is-link.is-outlined.start-button:focus, .practice .is-link.help-button:focus {
   background-color: #3273dc;
   border-color: #3273dc;
   color: #fff; }
 
-.button.is-link.is-outlined.is-loading::after, .practice .is-link.is-outlined.is-loading.test-button::after, .practice .preview .is-link.is-outlined.is-loading.start-button::after {
+.button.is-link.is-outlined.is-loading::after, .practice .is-link.is-outlined.is-loading.test-button::after, .practice .preview .is-link.is-outlined.is-loading.start-button::after, .practice .is-link.is-loading.help-button::after {
   border-color: transparent transparent #3273dc #3273dc !important; }
 
-.button.is-link.is-outlined[disabled], .practice .is-link.is-outlined.test-button[disabled], .practice .preview .is-link.is-outlined.start-button[disabled] {
+.button.is-link.is-outlined[disabled], .practice .is-link.is-outlined.test-button[disabled], .practice .preview .is-link.is-outlined.start-button[disabled], .practice .is-link.help-button[disabled] {
   background-color: transparent;
   border-color: #3273dc;
   box-shadow: none;
   color: #3273dc; }
 
-.button.is-link.is-inverted.is-outlined, .practice .is-link.is-inverted.is-outlined.test-button, .practice .preview .is-link.is-inverted.is-outlined.start-button {
+.button.is-link.is-inverted.is-outlined, .practice .is-link.is-inverted.is-outlined.test-button, .practice .preview .is-link.is-inverted.is-outlined.start-button, .practice .is-link.is-inverted.help-button {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-link.is-inverted.is-outlined:hover, .practice .is-link.is-inverted.is-outlined.test-button:hover, .practice .preview .is-link.is-inverted.is-outlined.start-button:hover, .button.is-link.is-inverted.is-outlined:focus, .practice .is-link.is-inverted.is-outlined.test-button:focus, .practice .preview .is-link.is-inverted.is-outlined.start-button:focus {
+.button.is-link.is-inverted.is-outlined:hover, .practice .is-link.is-inverted.is-outlined.test-button:hover, .practice .preview .is-link.is-inverted.is-outlined.start-button:hover, .practice .is-link.is-inverted.help-button:hover, .button.is-link.is-inverted.is-outlined:focus, .practice .is-link.is-inverted.is-outlined.test-button:focus, .practice .preview .is-link.is-inverted.is-outlined.start-button:focus, .practice .is-link.is-inverted.help-button:focus {
   background-color: #fff;
   color: #3273dc; }
 
-.button.is-link.is-inverted.is-outlined[disabled], .practice .is-link.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-link.is-inverted.is-outlined.start-button[disabled] {
+.button.is-link.is-inverted.is-outlined[disabled], .practice .is-link.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-link.is-inverted.is-outlined.start-button[disabled], .practice .is-link.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
   color: #fff; }
 
-.button.is-info, .practice .is-info.test-button, .practice .preview .is-info.start-button {
+.button.is-info, .practice .is-info.test-button, .practice .preview .is-info.start-button, .practice .is-info.help-button {
   background-color: #209cee;
   border-color: transparent;
   color: #fff; }
 
-.button.is-info:hover, .practice .is-info.test-button:hover, .practice .preview .is-info.start-button:hover, .button.is-info.is-hovered, .practice .is-info.is-hovered.test-button, .practice .preview .is-info.is-hovered.start-button {
+.button.is-info:hover, .practice .is-info.test-button:hover, .practice .preview .is-info.start-button:hover, .practice .is-info.help-button:hover, .button.is-info.is-hovered, .practice .is-info.is-hovered.test-button, .practice .preview .is-info.is-hovered.start-button, .practice .is-info.is-hovered.help-button {
   background-color: #1496ed;
   border-color: transparent;
   color: #fff; }
 
-.button.is-info:focus, .practice .is-info.test-button:focus, .practice .preview .is-info.start-button:focus, .button.is-info.is-focused, .practice .is-info.is-focused.test-button, .practice .preview .is-info.is-focused.start-button {
+.button.is-info:focus, .practice .is-info.test-button:focus, .practice .preview .is-info.start-button:focus, .practice .is-info.help-button:focus, .button.is-info.is-focused, .practice .is-info.is-focused.test-button, .practice .preview .is-info.is-focused.start-button, .practice .is-info.is-focused.help-button {
   border-color: transparent;
   color: #fff; }
 
-.button.is-info:focus:not(:active), .practice .is-info.test-button:focus:not(:active), .practice .preview .is-info.start-button:focus:not(:active), .button.is-info.is-focused:not(:active), .practice .is-info.is-focused.test-button:not(:active), .practice .preview .is-info.is-focused.start-button:not(:active) {
+.button.is-info:focus:not(:active), .practice .is-info.test-button:focus:not(:active), .practice .preview .is-info.start-button:focus:not(:active), .practice .is-info.help-button:focus:not(:active), .button.is-info.is-focused:not(:active), .practice .is-info.is-focused.test-button:not(:active), .practice .preview .is-info.is-focused.start-button:not(:active), .practice .is-info.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25); }
 
-.button.is-info:active, .practice .is-info.test-button:active, .practice .preview .is-info.start-button:active, .button.is-info.is-active, .practice .is-info.is-active.test-button, .practice .preview .is-info.is-active.start-button {
+.button.is-info:active, .practice .is-info.test-button:active, .practice .preview .is-info.start-button:active, .practice .is-info.help-button:active, .button.is-info.is-active, .practice .is-info.is-active.test-button, .practice .preview .is-info.is-active.start-button, .practice .is-info.is-active.help-button {
   background-color: #118fe4;
   border-color: transparent;
   color: #fff; }
 
-.button.is-info[disabled], .practice .is-info.test-button[disabled], .practice .preview .is-info.start-button[disabled] {
+.button.is-info[disabled], .practice .is-info.test-button[disabled], .practice .preview .is-info.start-button[disabled], .practice .is-info.help-button[disabled] {
   background-color: #209cee;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-info.is-inverted, .practice .is-info.is-inverted.test-button, .practice .preview .is-info.is-inverted.start-button {
+.button.is-info.is-inverted, .practice .is-info.is-inverted.test-button, .practice .preview .is-info.is-inverted.start-button, .practice .is-info.is-inverted.help-button {
   background-color: #fff;
   color: #209cee; }
 
-.button.is-info.is-inverted:hover, .practice .is-info.is-inverted.test-button:hover, .practice .preview .is-info.is-inverted.start-button:hover {
+.button.is-info.is-inverted:hover, .practice .is-info.is-inverted.test-button:hover, .practice .preview .is-info.is-inverted.start-button:hover, .practice .is-info.is-inverted.help-button:hover {
   background-color: #f2f2f2; }
 
-.button.is-info.is-inverted[disabled], .practice .is-info.is-inverted.test-button[disabled], .practice .preview .is-info.is-inverted.start-button[disabled] {
+.button.is-info.is-inverted[disabled], .practice .is-info.is-inverted.test-button[disabled], .practice .preview .is-info.is-inverted.start-button[disabled], .practice .is-info.is-inverted.help-button[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #209cee; }
 
-.button.is-info.is-loading::after, .practice .is-info.is-loading.test-button::after, .practice .preview .is-info.is-loading.start-button::after {
+.button.is-info.is-loading::after, .practice .is-info.is-loading.test-button::after, .practice .preview .is-info.is-loading.start-button::after, .practice .is-info.is-loading.help-button::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-info.is-outlined, .practice .is-info.is-outlined.test-button, .practice .preview .is-info.is-outlined.start-button {
+.button.is-info.is-outlined, .practice .is-info.is-outlined.test-button, .practice .preview .is-info.is-outlined.start-button, .practice .is-info.help-button {
   background-color: transparent;
   border-color: #209cee;
   color: #209cee; }
 
-.button.is-info.is-outlined:hover, .practice .is-info.is-outlined.test-button:hover, .practice .preview .is-info.is-outlined.start-button:hover, .button.is-info.is-outlined:focus, .practice .is-info.is-outlined.test-button:focus, .practice .preview .is-info.is-outlined.start-button:focus {
+.button.is-info.is-outlined:hover, .practice .is-info.is-outlined.test-button:hover, .practice .preview .is-info.is-outlined.start-button:hover, .practice .is-info.help-button:hover, .button.is-info.is-outlined:focus, .practice .is-info.is-outlined.test-button:focus, .practice .preview .is-info.is-outlined.start-button:focus, .practice .is-info.help-button:focus {
   background-color: #209cee;
   border-color: #209cee;
   color: #fff; }
 
-.button.is-info.is-outlined.is-loading::after, .practice .is-info.is-outlined.is-loading.test-button::after, .practice .preview .is-info.is-outlined.is-loading.start-button::after {
+.button.is-info.is-outlined.is-loading::after, .practice .is-info.is-outlined.is-loading.test-button::after, .practice .preview .is-info.is-outlined.is-loading.start-button::after, .practice .is-info.is-loading.help-button::after {
   border-color: transparent transparent #209cee #209cee !important; }
 
-.button.is-info.is-outlined[disabled], .practice .is-info.is-outlined.test-button[disabled], .practice .preview .is-info.is-outlined.start-button[disabled] {
+.button.is-info.is-outlined[disabled], .practice .is-info.is-outlined.test-button[disabled], .practice .preview .is-info.is-outlined.start-button[disabled], .practice .is-info.help-button[disabled] {
   background-color: transparent;
   border-color: #209cee;
   box-shadow: none;
   color: #209cee; }
 
-.button.is-info.is-inverted.is-outlined, .practice .is-info.is-inverted.is-outlined.test-button, .practice .preview .is-info.is-inverted.is-outlined.start-button {
+.button.is-info.is-inverted.is-outlined, .practice .is-info.is-inverted.is-outlined.test-button, .practice .preview .is-info.is-inverted.is-outlined.start-button, .practice .is-info.is-inverted.help-button {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-info.is-inverted.is-outlined:hover, .practice .is-info.is-inverted.is-outlined.test-button:hover, .practice .preview .is-info.is-inverted.is-outlined.start-button:hover, .button.is-info.is-inverted.is-outlined:focus, .practice .is-info.is-inverted.is-outlined.test-button:focus, .practice .preview .is-info.is-inverted.is-outlined.start-button:focus {
+.button.is-info.is-inverted.is-outlined:hover, .practice .is-info.is-inverted.is-outlined.test-button:hover, .practice .preview .is-info.is-inverted.is-outlined.start-button:hover, .practice .is-info.is-inverted.help-button:hover, .button.is-info.is-inverted.is-outlined:focus, .practice .is-info.is-inverted.is-outlined.test-button:focus, .practice .preview .is-info.is-inverted.is-outlined.start-button:focus, .practice .is-info.is-inverted.help-button:focus {
   background-color: #fff;
   color: #209cee; }
 
-.button.is-info.is-inverted.is-outlined[disabled], .practice .is-info.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-info.is-inverted.is-outlined.start-button[disabled] {
+.button.is-info.is-inverted.is-outlined[disabled], .practice .is-info.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-info.is-inverted.is-outlined.start-button[disabled], .practice .is-info.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
   color: #fff; }
 
-.button.is-success, .practice .is-success.test-button, .practice .preview .is-success.start-button {
+.button.is-success, .practice .is-success.test-button, .practice .preview .is-success.start-button, .practice .is-success.help-button {
   background-color: #23d160;
   border-color: transparent;
   color: #fff; }
 
-.button.is-success:hover, .practice .is-success.test-button:hover, .practice .preview .is-success.start-button:hover, .button.is-success.is-hovered, .practice .is-success.is-hovered.test-button, .practice .preview .is-success.is-hovered.start-button {
+.button.is-success:hover, .practice .is-success.test-button:hover, .practice .preview .is-success.start-button:hover, .practice .is-success.help-button:hover, .button.is-success.is-hovered, .practice .is-success.is-hovered.test-button, .practice .preview .is-success.is-hovered.start-button, .practice .is-success.is-hovered.help-button {
   background-color: #22c65b;
   border-color: transparent;
   color: #fff; }
 
-.button.is-success:focus, .practice .is-success.test-button:focus, .practice .preview .is-success.start-button:focus, .button.is-success.is-focused, .practice .is-success.is-focused.test-button, .practice .preview .is-success.is-focused.start-button {
+.button.is-success:focus, .practice .is-success.test-button:focus, .practice .preview .is-success.start-button:focus, .practice .is-success.help-button:focus, .button.is-success.is-focused, .practice .is-success.is-focused.test-button, .practice .preview .is-success.is-focused.start-button, .practice .is-success.is-focused.help-button {
   border-color: transparent;
   color: #fff; }
 
-.button.is-success:focus:not(:active), .practice .is-success.test-button:focus:not(:active), .practice .preview .is-success.start-button:focus:not(:active), .button.is-success.is-focused:not(:active), .practice .is-success.is-focused.test-button:not(:active), .practice .preview .is-success.is-focused.start-button:not(:active) {
+.button.is-success:focus:not(:active), .practice .is-success.test-button:focus:not(:active), .practice .preview .is-success.start-button:focus:not(:active), .practice .is-success.help-button:focus:not(:active), .button.is-success.is-focused:not(:active), .practice .is-success.is-focused.test-button:not(:active), .practice .preview .is-success.is-focused.start-button:not(:active), .practice .is-success.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(35, 209, 96, 0.25); }
 
-.button.is-success:active, .practice .is-success.test-button:active, .practice .preview .is-success.start-button:active, .button.is-success.is-active, .practice .is-success.is-active.test-button, .practice .preview .is-success.is-active.start-button {
+.button.is-success:active, .practice .is-success.test-button:active, .practice .preview .is-success.start-button:active, .practice .is-success.help-button:active, .button.is-success.is-active, .practice .is-success.is-active.test-button, .practice .preview .is-success.is-active.start-button, .practice .is-success.is-active.help-button {
   background-color: #20bc56;
   border-color: transparent;
   color: #fff; }
 
-.button.is-success[disabled], .practice .is-success.test-button[disabled], .practice .preview .is-success.start-button[disabled] {
+.button.is-success[disabled], .practice .is-success.test-button[disabled], .practice .preview .is-success.start-button[disabled], .practice .is-success.help-button[disabled] {
   background-color: #23d160;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-success.is-inverted, .practice .is-success.is-inverted.test-button, .practice .preview .is-success.is-inverted.start-button {
+.button.is-success.is-inverted, .practice .is-success.is-inverted.test-button, .practice .preview .is-success.is-inverted.start-button, .practice .is-success.is-inverted.help-button {
   background-color: #fff;
   color: #23d160; }
 
-.button.is-success.is-inverted:hover, .practice .is-success.is-inverted.test-button:hover, .practice .preview .is-success.is-inverted.start-button:hover {
+.button.is-success.is-inverted:hover, .practice .is-success.is-inverted.test-button:hover, .practice .preview .is-success.is-inverted.start-button:hover, .practice .is-success.is-inverted.help-button:hover {
   background-color: #f2f2f2; }
 
-.button.is-success.is-inverted[disabled], .practice .is-success.is-inverted.test-button[disabled], .practice .preview .is-success.is-inverted.start-button[disabled] {
+.button.is-success.is-inverted[disabled], .practice .is-success.is-inverted.test-button[disabled], .practice .preview .is-success.is-inverted.start-button[disabled], .practice .is-success.is-inverted.help-button[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #23d160; }
 
-.button.is-success.is-loading::after, .practice .is-success.is-loading.test-button::after, .practice .preview .is-success.is-loading.start-button::after {
+.button.is-success.is-loading::after, .practice .is-success.is-loading.test-button::after, .practice .preview .is-success.is-loading.start-button::after, .practice .is-success.is-loading.help-button::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-success.is-outlined, .practice .is-success.is-outlined.test-button, .practice .preview .is-success.is-outlined.start-button {
+.button.is-success.is-outlined, .practice .is-success.is-outlined.test-button, .practice .preview .is-success.is-outlined.start-button, .practice .is-success.help-button {
   background-color: transparent;
   border-color: #23d160;
   color: #23d160; }
 
-.button.is-success.is-outlined:hover, .practice .is-success.is-outlined.test-button:hover, .practice .preview .is-success.is-outlined.start-button:hover, .button.is-success.is-outlined:focus, .practice .is-success.is-outlined.test-button:focus, .practice .preview .is-success.is-outlined.start-button:focus {
+.button.is-success.is-outlined:hover, .practice .is-success.is-outlined.test-button:hover, .practice .preview .is-success.is-outlined.start-button:hover, .practice .is-success.help-button:hover, .button.is-success.is-outlined:focus, .practice .is-success.is-outlined.test-button:focus, .practice .preview .is-success.is-outlined.start-button:focus, .practice .is-success.help-button:focus {
   background-color: #23d160;
   border-color: #23d160;
   color: #fff; }
 
-.button.is-success.is-outlined.is-loading::after, .practice .is-success.is-outlined.is-loading.test-button::after, .practice .preview .is-success.is-outlined.is-loading.start-button::after {
+.button.is-success.is-outlined.is-loading::after, .practice .is-success.is-outlined.is-loading.test-button::after, .practice .preview .is-success.is-outlined.is-loading.start-button::after, .practice .is-success.is-loading.help-button::after {
   border-color: transparent transparent #23d160 #23d160 !important; }
 
-.button.is-success.is-outlined[disabled], .practice .is-success.is-outlined.test-button[disabled], .practice .preview .is-success.is-outlined.start-button[disabled] {
+.button.is-success.is-outlined[disabled], .practice .is-success.is-outlined.test-button[disabled], .practice .preview .is-success.is-outlined.start-button[disabled], .practice .is-success.help-button[disabled] {
   background-color: transparent;
   border-color: #23d160;
   box-shadow: none;
   color: #23d160; }
 
-.button.is-success.is-inverted.is-outlined, .practice .is-success.is-inverted.is-outlined.test-button, .practice .preview .is-success.is-inverted.is-outlined.start-button {
+.button.is-success.is-inverted.is-outlined, .practice .is-success.is-inverted.is-outlined.test-button, .practice .preview .is-success.is-inverted.is-outlined.start-button, .practice .is-success.is-inverted.help-button {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-success.is-inverted.is-outlined:hover, .practice .is-success.is-inverted.is-outlined.test-button:hover, .practice .preview .is-success.is-inverted.is-outlined.start-button:hover, .button.is-success.is-inverted.is-outlined:focus, .practice .is-success.is-inverted.is-outlined.test-button:focus, .practice .preview .is-success.is-inverted.is-outlined.start-button:focus {
+.button.is-success.is-inverted.is-outlined:hover, .practice .is-success.is-inverted.is-outlined.test-button:hover, .practice .preview .is-success.is-inverted.is-outlined.start-button:hover, .practice .is-success.is-inverted.help-button:hover, .button.is-success.is-inverted.is-outlined:focus, .practice .is-success.is-inverted.is-outlined.test-button:focus, .practice .preview .is-success.is-inverted.is-outlined.start-button:focus, .practice .is-success.is-inverted.help-button:focus {
   background-color: #fff;
   color: #23d160; }
 
-.button.is-success.is-inverted.is-outlined[disabled], .practice .is-success.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-success.is-inverted.is-outlined.start-button[disabled] {
+.button.is-success.is-inverted.is-outlined[disabled], .practice .is-success.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-success.is-inverted.is-outlined.start-button[disabled], .practice .is-success.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
   color: #fff; }
 
-.button.is-warning, .practice .is-warning.test-button, .practice .preview .is-warning.start-button {
+.button.is-warning, .practice .is-warning.test-button, .practice .preview .is-warning.start-button, .practice .is-warning.help-button {
   background-color: #ffdd57;
   border-color: transparent;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning:hover, .practice .is-warning.test-button:hover, .practice .preview .is-warning.start-button:hover, .button.is-warning.is-hovered, .practice .is-warning.is-hovered.test-button, .practice .preview .is-warning.is-hovered.start-button {
+.button.is-warning:hover, .practice .is-warning.test-button:hover, .practice .preview .is-warning.start-button:hover, .practice .is-warning.help-button:hover, .button.is-warning.is-hovered, .practice .is-warning.is-hovered.test-button, .practice .preview .is-warning.is-hovered.start-button, .practice .is-warning.is-hovered.help-button {
   background-color: #ffdb4a;
   border-color: transparent;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning:focus, .practice .is-warning.test-button:focus, .practice .preview .is-warning.start-button:focus, .button.is-warning.is-focused, .practice .is-warning.is-focused.test-button, .practice .preview .is-warning.is-focused.start-button {
+.button.is-warning:focus, .practice .is-warning.test-button:focus, .practice .preview .is-warning.start-button:focus, .practice .is-warning.help-button:focus, .button.is-warning.is-focused, .practice .is-warning.is-focused.test-button, .practice .preview .is-warning.is-focused.start-button, .practice .is-warning.is-focused.help-button {
   border-color: transparent;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning:focus:not(:active), .practice .is-warning.test-button:focus:not(:active), .practice .preview .is-warning.start-button:focus:not(:active), .button.is-warning.is-focused:not(:active), .practice .is-warning.is-focused.test-button:not(:active), .practice .preview .is-warning.is-focused.start-button:not(:active) {
+.button.is-warning:focus:not(:active), .practice .is-warning.test-button:focus:not(:active), .practice .preview .is-warning.start-button:focus:not(:active), .practice .is-warning.help-button:focus:not(:active), .button.is-warning.is-focused:not(:active), .practice .is-warning.is-focused.test-button:not(:active), .practice .preview .is-warning.is-focused.start-button:not(:active), .practice .is-warning.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25); }
 
-.button.is-warning:active, .practice .is-warning.test-button:active, .practice .preview .is-warning.start-button:active, .button.is-warning.is-active, .practice .is-warning.is-active.test-button, .practice .preview .is-warning.is-active.start-button {
+.button.is-warning:active, .practice .is-warning.test-button:active, .practice .preview .is-warning.start-button:active, .practice .is-warning.help-button:active, .button.is-warning.is-active, .practice .is-warning.is-active.test-button, .practice .preview .is-warning.is-active.start-button, .practice .is-warning.is-active.help-button {
   background-color: #ffd83d;
   border-color: transparent;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning[disabled], .practice .is-warning.test-button[disabled], .practice .preview .is-warning.start-button[disabled] {
+.button.is-warning[disabled], .practice .is-warning.test-button[disabled], .practice .preview .is-warning.start-button[disabled], .practice .is-warning.help-button[disabled] {
   background-color: #ffdd57;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-warning.is-inverted, .practice .is-warning.is-inverted.test-button, .practice .preview .is-warning.is-inverted.start-button {
+.button.is-warning.is-inverted, .practice .is-warning.is-inverted.test-button, .practice .preview .is-warning.is-inverted.start-button, .practice .is-warning.is-inverted.help-button {
   background-color: rgba(0, 0, 0, 0.7);
   color: #ffdd57; }
 
-.button.is-warning.is-inverted:hover, .practice .is-warning.is-inverted.test-button:hover, .practice .preview .is-warning.is-inverted.start-button:hover {
+.button.is-warning.is-inverted:hover, .practice .is-warning.is-inverted.test-button:hover, .practice .preview .is-warning.is-inverted.start-button:hover, .practice .is-warning.is-inverted.help-button:hover {
   background-color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning.is-inverted[disabled], .practice .is-warning.is-inverted.test-button[disabled], .practice .preview .is-warning.is-inverted.start-button[disabled] {
+.button.is-warning.is-inverted[disabled], .practice .is-warning.is-inverted.test-button[disabled], .practice .preview .is-warning.is-inverted.start-button[disabled], .practice .is-warning.is-inverted.help-button[disabled] {
   background-color: rgba(0, 0, 0, 0.7);
   border-color: transparent;
   box-shadow: none;
   color: #ffdd57; }
 
-.button.is-warning.is-loading::after, .practice .is-warning.is-loading.test-button::after, .practice .preview .is-warning.is-loading.start-button::after {
+.button.is-warning.is-loading::after, .practice .is-warning.is-loading.test-button::after, .practice .preview .is-warning.is-loading.start-button::after, .practice .is-warning.is-loading.help-button::after {
   border-color: transparent transparent rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7) !important; }
 
-.button.is-warning.is-outlined, .practice .is-warning.is-outlined.test-button, .practice .preview .is-warning.is-outlined.start-button {
+.button.is-warning.is-outlined, .practice .is-warning.is-outlined.test-button, .practice .preview .is-warning.is-outlined.start-button, .practice .is-warning.help-button {
   background-color: transparent;
   border-color: #ffdd57;
   color: #ffdd57; }
 
-.button.is-warning.is-outlined:hover, .practice .is-warning.is-outlined.test-button:hover, .practice .preview .is-warning.is-outlined.start-button:hover, .button.is-warning.is-outlined:focus, .practice .is-warning.is-outlined.test-button:focus, .practice .preview .is-warning.is-outlined.start-button:focus {
+.button.is-warning.is-outlined:hover, .practice .is-warning.is-outlined.test-button:hover, .practice .preview .is-warning.is-outlined.start-button:hover, .practice .is-warning.help-button:hover, .button.is-warning.is-outlined:focus, .practice .is-warning.is-outlined.test-button:focus, .practice .preview .is-warning.is-outlined.start-button:focus, .practice .is-warning.help-button:focus {
   background-color: #ffdd57;
   border-color: #ffdd57;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning.is-outlined.is-loading::after, .practice .is-warning.is-outlined.is-loading.test-button::after, .practice .preview .is-warning.is-outlined.is-loading.start-button::after {
+.button.is-warning.is-outlined.is-loading::after, .practice .is-warning.is-outlined.is-loading.test-button::after, .practice .preview .is-warning.is-outlined.is-loading.start-button::after, .practice .is-warning.is-loading.help-button::after {
   border-color: transparent transparent #ffdd57 #ffdd57 !important; }
 
-.button.is-warning.is-outlined[disabled], .practice .is-warning.is-outlined.test-button[disabled], .practice .preview .is-warning.is-outlined.start-button[disabled] {
+.button.is-warning.is-outlined[disabled], .practice .is-warning.is-outlined.test-button[disabled], .practice .preview .is-warning.is-outlined.start-button[disabled], .practice .is-warning.help-button[disabled] {
   background-color: transparent;
   border-color: #ffdd57;
   box-shadow: none;
   color: #ffdd57; }
 
-.button.is-warning.is-inverted.is-outlined, .practice .is-warning.is-inverted.is-outlined.test-button, .practice .preview .is-warning.is-inverted.is-outlined.start-button {
+.button.is-warning.is-inverted.is-outlined, .practice .is-warning.is-inverted.is-outlined.test-button, .practice .preview .is-warning.is-inverted.is-outlined.start-button, .practice .is-warning.is-inverted.help-button {
   background-color: transparent;
   border-color: rgba(0, 0, 0, 0.7);
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-warning.is-inverted.is-outlined:hover, .practice .is-warning.is-inverted.is-outlined.test-button:hover, .practice .preview .is-warning.is-inverted.is-outlined.start-button:hover, .button.is-warning.is-inverted.is-outlined:focus, .practice .is-warning.is-inverted.is-outlined.test-button:focus, .practice .preview .is-warning.is-inverted.is-outlined.start-button:focus {
+.button.is-warning.is-inverted.is-outlined:hover, .practice .is-warning.is-inverted.is-outlined.test-button:hover, .practice .preview .is-warning.is-inverted.is-outlined.start-button:hover, .practice .is-warning.is-inverted.help-button:hover, .button.is-warning.is-inverted.is-outlined:focus, .practice .is-warning.is-inverted.is-outlined.test-button:focus, .practice .preview .is-warning.is-inverted.is-outlined.start-button:focus, .practice .is-warning.is-inverted.help-button:focus {
   background-color: rgba(0, 0, 0, 0.7);
   color: #ffdd57; }
 
-.button.is-warning.is-inverted.is-outlined[disabled], .practice .is-warning.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-warning.is-inverted.is-outlined.start-button[disabled] {
+.button.is-warning.is-inverted.is-outlined[disabled], .practice .is-warning.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-warning.is-inverted.is-outlined.start-button[disabled], .practice .is-warning.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: rgba(0, 0, 0, 0.7);
   box-shadow: none;
   color: rgba(0, 0, 0, 0.7); }
 
-.button.is-danger, .practice .is-danger.test-button, .practice .preview .is-danger.start-button {
+.button.is-danger, .practice .is-danger.test-button, .practice .preview .is-danger.start-button, .practice .is-danger.help-button {
   background-color: #ff3860;
   border-color: transparent;
   color: #fff; }
 
-.button.is-danger:hover, .practice .is-danger.test-button:hover, .practice .preview .is-danger.start-button:hover, .button.is-danger.is-hovered, .practice .is-danger.is-hovered.test-button, .practice .preview .is-danger.is-hovered.start-button {
+.button.is-danger:hover, .practice .is-danger.test-button:hover, .practice .preview .is-danger.start-button:hover, .practice .is-danger.help-button:hover, .button.is-danger.is-hovered, .practice .is-danger.is-hovered.test-button, .practice .preview .is-danger.is-hovered.start-button, .practice .is-danger.is-hovered.help-button {
   background-color: #ff2b56;
   border-color: transparent;
   color: #fff; }
 
-.button.is-danger:focus, .practice .is-danger.test-button:focus, .practice .preview .is-danger.start-button:focus, .button.is-danger.is-focused, .practice .is-danger.is-focused.test-button, .practice .preview .is-danger.is-focused.start-button {
+.button.is-danger:focus, .practice .is-danger.test-button:focus, .practice .preview .is-danger.start-button:focus, .practice .is-danger.help-button:focus, .button.is-danger.is-focused, .practice .is-danger.is-focused.test-button, .practice .preview .is-danger.is-focused.start-button, .practice .is-danger.is-focused.help-button {
   border-color: transparent;
   color: #fff; }
 
-.button.is-danger:focus:not(:active), .practice .is-danger.test-button:focus:not(:active), .practice .preview .is-danger.start-button:focus:not(:active), .button.is-danger.is-focused:not(:active), .practice .is-danger.is-focused.test-button:not(:active), .practice .preview .is-danger.is-focused.start-button:not(:active) {
+.button.is-danger:focus:not(:active), .practice .is-danger.test-button:focus:not(:active), .practice .preview .is-danger.start-button:focus:not(:active), .practice .is-danger.help-button:focus:not(:active), .button.is-danger.is-focused:not(:active), .practice .is-danger.is-focused.test-button:not(:active), .practice .preview .is-danger.is-focused.start-button:not(:active), .practice .is-danger.is-focused.help-button:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(255, 56, 96, 0.25); }
 
-.button.is-danger:active, .practice .is-danger.test-button:active, .practice .preview .is-danger.start-button:active, .button.is-danger.is-active, .practice .is-danger.is-active.test-button, .practice .preview .is-danger.is-active.start-button {
+.button.is-danger:active, .practice .is-danger.test-button:active, .practice .preview .is-danger.start-button:active, .practice .is-danger.help-button:active, .button.is-danger.is-active, .practice .is-danger.is-active.test-button, .practice .preview .is-danger.is-active.start-button, .practice .is-danger.is-active.help-button {
   background-color: #ff1f4b;
   border-color: transparent;
   color: #fff; }
 
-.button.is-danger[disabled], .practice .is-danger.test-button[disabled], .practice .preview .is-danger.start-button[disabled] {
+.button.is-danger[disabled], .practice .is-danger.test-button[disabled], .practice .preview .is-danger.start-button[disabled], .practice .is-danger.help-button[disabled] {
   background-color: #ff3860;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-danger.is-inverted, .practice .is-danger.is-inverted.test-button, .practice .preview .is-danger.is-inverted.start-button {
+.button.is-danger.is-inverted, .practice .is-danger.is-inverted.test-button, .practice .preview .is-danger.is-inverted.start-button, .practice .is-danger.is-inverted.help-button {
   background-color: #fff;
   color: #ff3860; }
 
-.button.is-danger.is-inverted:hover, .practice .is-danger.is-inverted.test-button:hover, .practice .preview .is-danger.is-inverted.start-button:hover {
+.button.is-danger.is-inverted:hover, .practice .is-danger.is-inverted.test-button:hover, .practice .preview .is-danger.is-inverted.start-button:hover, .practice .is-danger.is-inverted.help-button:hover {
   background-color: #f2f2f2; }
 
-.button.is-danger.is-inverted[disabled], .practice .is-danger.is-inverted.test-button[disabled], .practice .preview .is-danger.is-inverted.start-button[disabled] {
+.button.is-danger.is-inverted[disabled], .practice .is-danger.is-inverted.test-button[disabled], .practice .preview .is-danger.is-inverted.start-button[disabled], .practice .is-danger.is-inverted.help-button[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #ff3860; }
 
-.button.is-danger.is-loading::after, .practice .is-danger.is-loading.test-button::after, .practice .preview .is-danger.is-loading.start-button::after {
+.button.is-danger.is-loading::after, .practice .is-danger.is-loading.test-button::after, .practice .preview .is-danger.is-loading.start-button::after, .practice .is-danger.is-loading.help-button::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-danger.is-outlined, .practice .is-danger.is-outlined.test-button, .practice .preview .is-danger.is-outlined.start-button {
+.button.is-danger.is-outlined, .practice .is-danger.is-outlined.test-button, .practice .preview .is-danger.is-outlined.start-button, .practice .is-danger.help-button {
   background-color: transparent;
   border-color: #ff3860;
   color: #ff3860; }
 
-.button.is-danger.is-outlined:hover, .practice .is-danger.is-outlined.test-button:hover, .practice .preview .is-danger.is-outlined.start-button:hover, .button.is-danger.is-outlined:focus, .practice .is-danger.is-outlined.test-button:focus, .practice .preview .is-danger.is-outlined.start-button:focus {
+.button.is-danger.is-outlined:hover, .practice .is-danger.is-outlined.test-button:hover, .practice .preview .is-danger.is-outlined.start-button:hover, .practice .is-danger.help-button:hover, .button.is-danger.is-outlined:focus, .practice .is-danger.is-outlined.test-button:focus, .practice .preview .is-danger.is-outlined.start-button:focus, .practice .is-danger.help-button:focus {
   background-color: #ff3860;
   border-color: #ff3860;
   color: #fff; }
 
-.button.is-danger.is-outlined.is-loading::after, .practice .is-danger.is-outlined.is-loading.test-button::after, .practice .preview .is-danger.is-outlined.is-loading.start-button::after {
+.button.is-danger.is-outlined.is-loading::after, .practice .is-danger.is-outlined.is-loading.test-button::after, .practice .preview .is-danger.is-outlined.is-loading.start-button::after, .practice .is-danger.is-loading.help-button::after {
   border-color: transparent transparent #ff3860 #ff3860 !important; }
 
-.button.is-danger.is-outlined[disabled], .practice .is-danger.is-outlined.test-button[disabled], .practice .preview .is-danger.is-outlined.start-button[disabled] {
+.button.is-danger.is-outlined[disabled], .practice .is-danger.is-outlined.test-button[disabled], .practice .preview .is-danger.is-outlined.start-button[disabled], .practice .is-danger.help-button[disabled] {
   background-color: transparent;
   border-color: #ff3860;
   box-shadow: none;
   color: #ff3860; }
 
-.button.is-danger.is-inverted.is-outlined, .practice .is-danger.is-inverted.is-outlined.test-button, .practice .preview .is-danger.is-inverted.is-outlined.start-button {
+.button.is-danger.is-inverted.is-outlined, .practice .is-danger.is-inverted.is-outlined.test-button, .practice .preview .is-danger.is-inverted.is-outlined.start-button, .practice .is-danger.is-inverted.help-button {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-danger.is-inverted.is-outlined:hover, .practice .is-danger.is-inverted.is-outlined.test-button:hover, .practice .preview .is-danger.is-inverted.is-outlined.start-button:hover, .button.is-danger.is-inverted.is-outlined:focus, .practice .is-danger.is-inverted.is-outlined.test-button:focus, .practice .preview .is-danger.is-inverted.is-outlined.start-button:focus {
+.button.is-danger.is-inverted.is-outlined:hover, .practice .is-danger.is-inverted.is-outlined.test-button:hover, .practice .preview .is-danger.is-inverted.is-outlined.start-button:hover, .practice .is-danger.is-inverted.help-button:hover, .button.is-danger.is-inverted.is-outlined:focus, .practice .is-danger.is-inverted.is-outlined.test-button:focus, .practice .preview .is-danger.is-inverted.is-outlined.start-button:focus, .practice .is-danger.is-inverted.help-button:focus {
   background-color: #fff;
   color: #ff3860; }
 
-.button.is-danger.is-inverted.is-outlined[disabled], .practice .is-danger.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-danger.is-inverted.is-outlined.start-button[disabled] {
+.button.is-danger.is-inverted.is-outlined[disabled], .practice .is-danger.is-inverted.is-outlined.test-button[disabled], .practice .preview .is-danger.is-inverted.is-outlined.start-button[disabled], .practice .is-danger.is-inverted.help-button[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
   color: #fff; }
 
-.button.is-small, .practice .is-small.test-button, .practice .preview .is-small.start-button {
+.button.is-small, .practice .is-small.test-button, .practice .preview .is-small.start-button, .practice .is-small.help-button {
   border-radius: 2px;
   font-size: 0.75rem; }
 
-.button.is-medium, .practice .is-medium.test-button, .practice .preview .is-medium.start-button {
+.button.is-medium, .practice .is-medium.test-button, .practice .preview .is-medium.start-button, .practice .is-medium.help-button {
   font-size: 1.25rem; }
 
-.button.is-large, .practice .is-large.test-button, .practice .preview .start-button {
+.button.is-large, .practice .is-large.test-button, .practice .preview .start-button, .practice .help-button {
   font-size: 1.5rem; }
 
-.button[disabled], .practice .test-button[disabled], .practice .preview .start-button[disabled] {
+.button[disabled], .practice .test-button[disabled], .practice .preview .start-button[disabled], .practice .help-button[disabled] {
   background-color: #f8f8f8;
   border-color: #dbdbdb;
   box-shadow: none;
   opacity: 0.5; }
 
-.button.is-fullwidth, .practice .is-fullwidth.test-button, .practice .preview .is-fullwidth.start-button {
+.button.is-fullwidth, .practice .is-fullwidth.test-button, .practice .test-button.cards, .practice .preview .is-fullwidth.start-button, .practice .preview .start-button.cards, .practice .button.cards, .practice .cards.help-button, .practice .is-fullwidth.help-button {
   display: flex;
   width: 100%; }
 
-.button.is-loading, .practice .is-loading.test-button, .practice .preview .is-loading.start-button {
+.button.is-loading, .practice .is-loading.test-button, .practice .preview .is-loading.start-button, .practice .is-loading.help-button {
   color: transparent !important;
   pointer-events: none; }
 
-.button.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-loading.start-button::after {
+.button.is-loading::after, .practice .is-loading.test-button::after, .practice .preview .is-loading.start-button::after, .practice .is-loading.help-button::after {
   position: absolute;
   left: calc(50% - (1em / 2));
   top: calc(50% - (1em / 2));
   position: absolute !important; }
 
-.button.is-static, .practice .is-static.test-button, .practice .preview .is-static.start-button {
+.button.is-static, .practice .is-static.test-button, .practice .preview .is-static.start-button, .practice .is-static.help-button {
   background-color: whitesmoke;
   border-color: #dbdbdb;
   color: #7a7a7a;
   box-shadow: none;
   pointer-events: none; }
 
-.button.is-rounded, .practice .is-rounded.test-button, .practice .preview .is-rounded.start-button {
+.button.is-rounded, .practice .is-rounded.test-button, .practice .preview .is-rounded.start-button, .practice .preview .start-button.help-button, .practice .help-button {
   border-radius: 290486px;
   padding-left: 1em;
   padding-right: 1em; }
@@ -1993,10 +1993,10 @@ a.box:active {
   flex-wrap: wrap;
   justify-content: flex-start; }
 
-.buttons .button, .buttons .practice .test-button, .practice .buttons .test-button, .buttons .practice .preview .start-button, .practice .preview .buttons .start-button {
+.buttons .button, .buttons .practice .test-button, .practice .buttons .test-button, .buttons .practice .preview .start-button, .practice .preview .buttons .start-button, .buttons .practice .help-button, .practice .buttons .help-button {
   margin-bottom: 0.5rem; }
 
-.buttons .button:not(:last-child), .buttons .practice .test-button:not(:last-child), .practice .buttons .test-button:not(:last-child), .buttons .practice .preview .start-button:not(:last-child), .practice .preview .buttons .start-button:not(:last-child) {
+.buttons .button:not(:last-child), .buttons .practice .test-button:not(:last-child), .practice .buttons .test-button:not(:last-child), .buttons .practice .preview .start-button:not(:last-child), .practice .preview .buttons .start-button:not(:last-child), .buttons .practice .help-button:not(:last-child), .practice .buttons .help-button:not(:last-child) {
   margin-right: 0.5rem; }
 
 .buttons:last-child {
@@ -2005,28 +2005,28 @@ a.box:active {
 .buttons:not(:last-child) {
   margin-bottom: 1rem; }
 
-.buttons.has-addons .button:not(:first-child), .buttons.has-addons .practice .test-button:not(:first-child), .practice .buttons.has-addons .test-button:not(:first-child), .buttons.has-addons .practice .preview .start-button:not(:first-child), .practice .preview .buttons.has-addons .start-button:not(:first-child) {
+.buttons.has-addons .button:not(:first-child), .buttons.has-addons .practice .test-button:not(:first-child), .practice .buttons.has-addons .test-button:not(:first-child), .buttons.has-addons .practice .preview .start-button:not(:first-child), .practice .preview .buttons.has-addons .start-button:not(:first-child), .buttons.has-addons .practice .help-button:not(:first-child), .practice .buttons.has-addons .help-button:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
-.buttons.has-addons .button:not(:last-child), .buttons.has-addons .practice .test-button:not(:last-child), .practice .buttons.has-addons .test-button:not(:last-child), .buttons.has-addons .practice .preview .start-button:not(:last-child), .practice .preview .buttons.has-addons .start-button:not(:last-child) {
+.buttons.has-addons .button:not(:last-child), .buttons.has-addons .practice .test-button:not(:last-child), .practice .buttons.has-addons .test-button:not(:last-child), .buttons.has-addons .practice .preview .start-button:not(:last-child), .practice .preview .buttons.has-addons .start-button:not(:last-child), .buttons.has-addons .practice .help-button:not(:last-child), .practice .buttons.has-addons .help-button:not(:last-child) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   margin-right: -1px; }
 
-.buttons.has-addons .button:last-child, .buttons.has-addons .practice .test-button:last-child, .practice .buttons.has-addons .test-button:last-child, .buttons.has-addons .practice .preview .start-button:last-child, .practice .preview .buttons.has-addons .start-button:last-child {
+.buttons.has-addons .button:last-child, .buttons.has-addons .practice .test-button:last-child, .practice .buttons.has-addons .test-button:last-child, .buttons.has-addons .practice .preview .start-button:last-child, .practice .preview .buttons.has-addons .start-button:last-child, .buttons.has-addons .practice .help-button:last-child, .practice .buttons.has-addons .help-button:last-child {
   margin-right: 0; }
 
-.buttons.has-addons .button:hover, .buttons.has-addons .practice .test-button:hover, .practice .buttons.has-addons .test-button:hover, .buttons.has-addons .practice .preview .start-button:hover, .practice .preview .buttons.has-addons .start-button:hover, .buttons.has-addons .button.is-hovered, .buttons.has-addons .practice .is-hovered.test-button, .practice .buttons.has-addons .is-hovered.test-button, .buttons.has-addons .practice .preview .is-hovered.start-button, .practice .preview .buttons.has-addons .is-hovered.start-button {
+.buttons.has-addons .button:hover, .buttons.has-addons .practice .test-button:hover, .practice .buttons.has-addons .test-button:hover, .buttons.has-addons .practice .preview .start-button:hover, .practice .preview .buttons.has-addons .start-button:hover, .buttons.has-addons .practice .help-button:hover, .practice .buttons.has-addons .help-button:hover, .buttons.has-addons .button.is-hovered, .buttons.has-addons .practice .is-hovered.test-button, .practice .buttons.has-addons .is-hovered.test-button, .buttons.has-addons .practice .preview .is-hovered.start-button, .practice .preview .buttons.has-addons .is-hovered.start-button, .buttons.has-addons .practice .is-hovered.help-button, .practice .buttons.has-addons .is-hovered.help-button {
   z-index: 2; }
 
-.buttons.has-addons .button:focus, .buttons.has-addons .practice .test-button:focus, .practice .buttons.has-addons .test-button:focus, .buttons.has-addons .practice .preview .start-button:focus, .practice .preview .buttons.has-addons .start-button:focus, .buttons.has-addons .button.is-focused, .buttons.has-addons .practice .is-focused.test-button, .practice .buttons.has-addons .is-focused.test-button, .buttons.has-addons .practice .preview .is-focused.start-button, .practice .preview .buttons.has-addons .is-focused.start-button, .buttons.has-addons .button:active, .buttons.has-addons .practice .test-button:active, .practice .buttons.has-addons .test-button:active, .buttons.has-addons .practice .preview .start-button:active, .practice .preview .buttons.has-addons .start-button:active, .buttons.has-addons .button.is-active, .buttons.has-addons .practice .is-active.test-button, .practice .buttons.has-addons .is-active.test-button, .buttons.has-addons .practice .preview .is-active.start-button, .practice .preview .buttons.has-addons .is-active.start-button, .buttons.has-addons .button.is-selected, .buttons.has-addons .practice .is-selected.test-button, .practice .buttons.has-addons .is-selected.test-button, .buttons.has-addons .practice .preview .is-selected.start-button, .practice .preview .buttons.has-addons .is-selected.start-button {
+.buttons.has-addons .button:focus, .buttons.has-addons .practice .test-button:focus, .practice .buttons.has-addons .test-button:focus, .buttons.has-addons .practice .preview .start-button:focus, .practice .preview .buttons.has-addons .start-button:focus, .buttons.has-addons .practice .help-button:focus, .practice .buttons.has-addons .help-button:focus, .buttons.has-addons .button.is-focused, .buttons.has-addons .practice .is-focused.test-button, .practice .buttons.has-addons .is-focused.test-button, .buttons.has-addons .practice .preview .is-focused.start-button, .practice .preview .buttons.has-addons .is-focused.start-button, .buttons.has-addons .practice .is-focused.help-button, .practice .buttons.has-addons .is-focused.help-button, .buttons.has-addons .button:active, .buttons.has-addons .practice .test-button:active, .practice .buttons.has-addons .test-button:active, .buttons.has-addons .practice .preview .start-button:active, .practice .preview .buttons.has-addons .start-button:active, .buttons.has-addons .practice .help-button:active, .practice .buttons.has-addons .help-button:active, .buttons.has-addons .button.is-active, .buttons.has-addons .practice .is-active.test-button, .practice .buttons.has-addons .is-active.test-button, .buttons.has-addons .practice .preview .is-active.start-button, .practice .preview .buttons.has-addons .is-active.start-button, .buttons.has-addons .practice .is-active.help-button, .practice .buttons.has-addons .is-active.help-button, .buttons.has-addons .button.is-selected, .buttons.has-addons .practice .is-selected.test-button, .practice .buttons.has-addons .is-selected.test-button, .buttons.has-addons .practice .preview .is-selected.start-button, .practice .preview .buttons.has-addons .is-selected.start-button, .buttons.has-addons .practice .is-selected.help-button, .practice .buttons.has-addons .is-selected.help-button {
   z-index: 3; }
 
-.buttons.has-addons .button:focus:hover, .buttons.has-addons .practice .test-button:focus:hover, .practice .buttons.has-addons .test-button:focus:hover, .buttons.has-addons .practice .preview .start-button:focus:hover, .practice .preview .buttons.has-addons .start-button:focus:hover, .buttons.has-addons .button.is-focused:hover, .buttons.has-addons .practice .is-focused.test-button:hover, .practice .buttons.has-addons .is-focused.test-button:hover, .buttons.has-addons .practice .preview .is-focused.start-button:hover, .practice .preview .buttons.has-addons .is-focused.start-button:hover, .buttons.has-addons .button:active:hover, .buttons.has-addons .practice .test-button:active:hover, .practice .buttons.has-addons .test-button:active:hover, .buttons.has-addons .practice .preview .start-button:active:hover, .practice .preview .buttons.has-addons .start-button:active:hover, .buttons.has-addons .button.is-active:hover, .buttons.has-addons .practice .is-active.test-button:hover, .practice .buttons.has-addons .is-active.test-button:hover, .buttons.has-addons .practice .preview .is-active.start-button:hover, .practice .preview .buttons.has-addons .is-active.start-button:hover, .buttons.has-addons .button.is-selected:hover, .buttons.has-addons .practice .is-selected.test-button:hover, .practice .buttons.has-addons .is-selected.test-button:hover, .buttons.has-addons .practice .preview .is-selected.start-button:hover, .practice .preview .buttons.has-addons .is-selected.start-button:hover {
+.buttons.has-addons .button:focus:hover, .buttons.has-addons .practice .test-button:focus:hover, .practice .buttons.has-addons .test-button:focus:hover, .buttons.has-addons .practice .preview .start-button:focus:hover, .practice .preview .buttons.has-addons .start-button:focus:hover, .buttons.has-addons .practice .help-button:focus:hover, .practice .buttons.has-addons .help-button:focus:hover, .buttons.has-addons .button.is-focused:hover, .buttons.has-addons .practice .is-focused.test-button:hover, .practice .buttons.has-addons .is-focused.test-button:hover, .buttons.has-addons .practice .preview .is-focused.start-button:hover, .practice .preview .buttons.has-addons .is-focused.start-button:hover, .buttons.has-addons .practice .is-focused.help-button:hover, .practice .buttons.has-addons .is-focused.help-button:hover, .buttons.has-addons .button:active:hover, .buttons.has-addons .practice .test-button:active:hover, .practice .buttons.has-addons .test-button:active:hover, .buttons.has-addons .practice .preview .start-button:active:hover, .practice .preview .buttons.has-addons .start-button:active:hover, .buttons.has-addons .practice .help-button:active:hover, .practice .buttons.has-addons .help-button:active:hover, .buttons.has-addons .button.is-active:hover, .buttons.has-addons .practice .is-active.test-button:hover, .practice .buttons.has-addons .is-active.test-button:hover, .buttons.has-addons .practice .preview .is-active.start-button:hover, .practice .preview .buttons.has-addons .is-active.start-button:hover, .buttons.has-addons .practice .is-active.help-button:hover, .practice .buttons.has-addons .is-active.help-button:hover, .buttons.has-addons .button.is-selected:hover, .buttons.has-addons .practice .is-selected.test-button:hover, .practice .buttons.has-addons .is-selected.test-button:hover, .buttons.has-addons .practice .preview .is-selected.start-button:hover, .practice .preview .buttons.has-addons .is-selected.start-button:hover, .buttons.has-addons .practice .is-selected.help-button:hover, .practice .buttons.has-addons .is-selected.help-button:hover {
   z-index: 4; }
 
-.buttons.has-addons .button.is-expanded, .buttons.has-addons .practice .is-expanded.test-button, .practice .buttons.has-addons .is-expanded.test-button, .buttons.has-addons .practice .preview .is-expanded.start-button, .practice .preview .buttons.has-addons .is-expanded.start-button {
+.buttons.has-addons .button.is-expanded, .buttons.has-addons .practice .is-expanded.test-button, .practice .buttons.has-addons .is-expanded.test-button, .buttons.has-addons .practice .preview .is-expanded.start-button, .practice .preview .buttons.has-addons .is-expanded.start-button, .buttons.has-addons .practice .is-expanded.help-button, .practice .buttons.has-addons .is-expanded.help-button {
   flex-grow: 1; }
 
 .buttons.is-centered {
@@ -2035,37 +2035,37 @@ a.box:active {
 .buttons.is-right {
   justify-content: flex-end; }
 
-.container, .practice .preview {
+.container, .practice, .practice .preview {
   margin: 0 auto;
   position: relative; }
 
 @media screen and (min-width: 1088px) {
-  .container, .practice .preview {
+  .container, .practice, .practice .preview {
     max-width: 960px;
     width: 960px; }
-  .container.is-fluid, .practice .is-fluid.preview {
+  .container.is-fluid, .is-fluid.practice, .practice .is-fluid.preview {
     margin-left: 64px;
     margin-right: 64px;
     max-width: none;
     width: auto; } }
 
 @media screen and (max-width: 1279px) {
-  .container.is-widescreen, .practice .is-widescreen.preview {
+  .container.is-widescreen, .is-widescreen.practice, .practice .is-widescreen.preview {
     max-width: 1152px;
     width: auto; } }
 
 @media screen and (max-width: 1471px) {
-  .container.is-fullhd, .practice .is-fullhd.preview {
+  .container.is-fullhd, .is-fullhd.practice, .practice .is-fullhd.preview {
     max-width: 1344px;
     width: auto; } }
 
 @media screen and (min-width: 1280px) {
-  .container, .practice .preview {
+  .container, .practice, .practice .preview {
     max-width: 1152px;
     width: 1152px; } }
 
 @media screen and (min-width: 1472px) {
-  .container, .practice .preview {
+  .container, .practice, .practice .preview {
     max-width: 1344px;
     width: 1344px; } }
 
@@ -2211,7 +2211,7 @@ a.box:active {
 .content.is-medium {
   font-size: 1.25rem; }
 
-.content.is-large, .practice .preview .content.start-button {
+.content.is-large, .practice .preview .content.start-button, .practice .content.help-button {
   font-size: 1.5rem; }
 
 .input,
@@ -2301,15 +2301,20 @@ a.box:active {
 .textarea.is-black.is-active {
   box-shadow: 0 0 0 0.125em rgba(51, 51, 51, 0.25); }
 
-.input.is-light,
-.textarea.is-light {
+.input.is-light, .practice .input.test-button,
+.textarea.is-light,
+.practice .textarea.test-button {
   border-color: whitesmoke; }
 
-.input.is-light:focus, .input.is-light.is-focused, .input.is-light:active, .input.is-light.is-active,
+.input.is-light:focus, .practice .input.test-button:focus, .input.is-light.is-focused, .practice .input.is-focused.test-button, .input.is-light:active, .practice .input.test-button:active, .input.is-light.is-active, .practice .input.is-active.test-button,
 .textarea.is-light:focus,
+.practice .textarea.test-button:focus,
 .textarea.is-light.is-focused,
+.practice .textarea.is-focused.test-button,
 .textarea.is-light:active,
-.textarea.is-light.is-active {
+.practice .textarea.test-button:active,
+.textarea.is-light.is-active,
+.practice .textarea.is-active.test-button {
   box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
 
 .input.is-dark,
@@ -2323,24 +2328,19 @@ a.box:active {
 .textarea.is-dark.is-active {
   box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
 
-.input.is-primary, .practice .input.test-button, .practice .preview .input.start-button,
+.input.is-primary, .practice .preview .input.start-button,
 .textarea.is-primary,
-.practice .textarea.test-button,
 .practice .preview .textarea.start-button {
   border-color: #00d1b2; }
 
-.input.is-primary:focus, .practice .input.test-button:focus, .practice .preview .input.start-button:focus, .input.is-primary.is-focused, .practice .input.is-focused.test-button, .practice .preview .input.is-focused.start-button, .input.is-primary:active, .practice .input.test-button:active, .practice .preview .input.start-button:active, .input.is-primary.is-active, .practice .input.is-active.test-button, .practice .preview .input.is-active.start-button,
+.input.is-primary:focus, .practice .preview .input.start-button:focus, .input.is-primary.is-focused, .practice .preview .input.is-focused.start-button, .input.is-primary:active, .practice .preview .input.start-button:active, .input.is-primary.is-active, .practice .preview .input.is-active.start-button,
 .textarea.is-primary:focus,
-.practice .textarea.test-button:focus,
 .practice .preview .textarea.start-button:focus,
 .textarea.is-primary.is-focused,
-.practice .textarea.is-focused.test-button,
 .practice .preview .textarea.is-focused.start-button,
 .textarea.is-primary:active,
-.practice .textarea.test-button:active,
 .practice .preview .textarea.start-button:active,
 .textarea.is-primary.is-active,
-.practice .textarea.is-active.test-button,
 .practice .preview .textarea.is-active.start-button {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
@@ -2408,13 +2408,15 @@ a.box:active {
 .textarea.is-medium {
   font-size: 1.25rem; }
 
-.input.is-large, .practice .preview .input.start-button,
+.input.is-large, .practice .preview .input.start-button, .practice .input.help-button,
 .textarea.is-large,
-.practice .preview .textarea.start-button {
+.practice .preview .textarea.start-button,
+.practice .textarea.help-button {
   font-size: 1.5rem; }
 
-.input.is-fullwidth,
-.textarea.is-fullwidth {
+.input.is-fullwidth, .practice .input.cards,
+.textarea.is-fullwidth,
+.practice .textarea.cards {
   display: block;
   width: 100%; }
 
@@ -2423,7 +2425,7 @@ a.box:active {
   display: inline;
   width: auto; }
 
-.input.is-rounded {
+.input.is-rounded, .practice .input.help-button {
   border-radius: 290486px;
   padding-left: 1em;
   padding-right: 1em; }
@@ -2489,7 +2491,7 @@ a.box:active {
   right: 1.125em;
   z-index: 4; }
 
-.select.is-rounded select {
+.select.is-rounded select, .practice .select.help-button select {
   border-radius: 290486px;
   padding-left: 1em; }
 
@@ -2583,16 +2585,16 @@ a.box:active {
 .select.is-black select:focus, .select.is-black select.is-focused, .select.is-black select:active, .select.is-black select.is-active {
   box-shadow: 0 0 0 0.125em rgba(51, 51, 51, 0.25); }
 
-.select.is-light:not(:hover)::after {
+.select.is-light:not(:hover)::after, .practice .select.test-button:not(:hover)::after {
   border-color: whitesmoke; }
 
-.select.is-light select {
+.select.is-light select, .practice .select.test-button select {
   border-color: whitesmoke; }
 
-.select.is-light select:hover, .select.is-light select.is-hovered {
+.select.is-light select:hover, .practice .select.test-button select:hover, .select.is-light select.is-hovered, .practice .select.test-button select.is-hovered {
   border-color: #e8e8e8; }
 
-.select.is-light select:focus, .select.is-light select.is-focused, .select.is-light select:active, .select.is-light select.is-active {
+.select.is-light select:focus, .practice .select.test-button select:focus, .select.is-light select.is-focused, .practice .select.test-button select.is-focused, .select.is-light select:active, .practice .select.test-button select:active, .select.is-light select.is-active, .practice .select.test-button select.is-active {
   box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
 
 .select.is-dark:not(:hover)::after {
@@ -2607,16 +2609,16 @@ a.box:active {
 .select.is-dark select:focus, .select.is-dark select.is-focused, .select.is-dark select:active, .select.is-dark select.is-active {
   box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
 
-.select.is-primary:not(:hover)::after, .practice .select.test-button:not(:hover)::after, .practice .preview .select.start-button:not(:hover)::after {
+.select.is-primary:not(:hover)::after, .practice .preview .select.start-button:not(:hover)::after {
   border-color: #00d1b2; }
 
-.select.is-primary select, .practice .select.test-button select, .practice .preview .select.start-button select {
+.select.is-primary select, .practice .preview .select.start-button select {
   border-color: #00d1b2; }
 
-.select.is-primary select:hover, .practice .select.test-button select:hover, .practice .preview .select.start-button select:hover, .select.is-primary select.is-hovered, .practice .select.test-button select.is-hovered, .practice .preview .select.start-button select.is-hovered {
+.select.is-primary select:hover, .practice .preview .select.start-button select:hover, .select.is-primary select.is-hovered, .practice .preview .select.start-button select.is-hovered {
   border-color: #00b89c; }
 
-.select.is-primary select:focus, .practice .select.test-button select:focus, .practice .preview .select.start-button select:focus, .select.is-primary select.is-focused, .practice .select.test-button select.is-focused, .practice .preview .select.start-button select.is-focused, .select.is-primary select:active, .practice .select.test-button select:active, .practice .preview .select.start-button select:active, .select.is-primary select.is-active, .practice .select.test-button select.is-active, .practice .preview .select.start-button select.is-active {
+.select.is-primary select:focus, .practice .preview .select.start-button select:focus, .select.is-primary select.is-focused, .practice .preview .select.start-button select.is-focused, .select.is-primary select:active, .practice .preview .select.start-button select:active, .select.is-primary select.is-active, .practice .preview .select.start-button select.is-active {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
 .select.is-link:not(:hover)::after {
@@ -2686,16 +2688,16 @@ a.box:active {
 .select.is-medium {
   font-size: 1.25rem; }
 
-.select.is-large, .practice .preview .select.start-button {
+.select.is-large, .practice .preview .select.start-button, .practice .select.help-button {
   font-size: 1.5rem; }
 
 .select.is-disabled::after {
   border-color: #7a7a7a; }
 
-.select.is-fullwidth {
+.select.is-fullwidth, .practice .select.cards {
   width: 100%; }
 
-.select.is-fullwidth select {
+.select.is-fullwidth select, .practice .select.cards select {
   width: 100%; }
 
 .select.is-loading::after {
@@ -2711,7 +2713,7 @@ a.box:active {
 .select.is-loading.is-medium:after {
   font-size: 1.25rem; }
 
-.select.is-loading.is-large:after, .practice .preview .select.is-loading.start-button:after {
+.select.is-loading.is-large:after, .practice .preview .select.is-loading.start-button:after, .practice .select.is-loading.help-button:after {
   font-size: 1.5rem; }
 
 .file {
@@ -2760,22 +2762,22 @@ a.box:active {
   border-color: transparent;
   color: #f8f8f8; }
 
-.file.is-light .file-cta {
+.file.is-light .file-cta, .practice .file.test-button .file-cta {
   background-color: whitesmoke;
   border-color: transparent;
   color: #363636; }
 
-.file.is-light:hover .file-cta, .file.is-light.is-hovered .file-cta {
+.file.is-light:hover .file-cta, .practice .file.test-button:hover .file-cta, .file.is-light.is-hovered .file-cta, .practice .file.is-hovered.test-button .file-cta {
   background-color: #eeeeee;
   border-color: transparent;
   color: #363636; }
 
-.file.is-light:focus .file-cta, .file.is-light.is-focused .file-cta {
+.file.is-light:focus .file-cta, .practice .file.test-button:focus .file-cta, .file.is-light.is-focused .file-cta, .practice .file.is-focused.test-button .file-cta {
   border-color: transparent;
   box-shadow: 0 0 0.5em rgba(245, 245, 245, 0.25);
   color: #363636; }
 
-.file.is-light:active .file-cta, .file.is-light.is-active .file-cta {
+.file.is-light:active .file-cta, .practice .file.test-button:active .file-cta, .file.is-light.is-active .file-cta, .practice .file.is-active.test-button .file-cta {
   background-color: #e8e8e8;
   border-color: transparent;
   color: #363636; }
@@ -2800,22 +2802,22 @@ a.box:active {
   border-color: transparent;
   color: whitesmoke; }
 
-.file.is-primary .file-cta, .practice .file.test-button .file-cta, .practice .preview .file.start-button .file-cta {
+.file.is-primary .file-cta, .practice .preview .file.start-button .file-cta {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff; }
 
-.file.is-primary:hover .file-cta, .practice .file.test-button:hover .file-cta, .practice .preview .file.start-button:hover .file-cta, .file.is-primary.is-hovered .file-cta, .practice .file.is-hovered.test-button .file-cta, .practice .preview .file.is-hovered.start-button .file-cta {
+.file.is-primary:hover .file-cta, .practice .preview .file.start-button:hover .file-cta, .file.is-primary.is-hovered .file-cta, .practice .preview .file.is-hovered.start-button .file-cta {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff; }
 
-.file.is-primary:focus .file-cta, .practice .file.test-button:focus .file-cta, .practice .preview .file.start-button:focus .file-cta, .file.is-primary.is-focused .file-cta, .practice .file.is-focused.test-button .file-cta, .practice .preview .file.is-focused.start-button .file-cta {
+.file.is-primary:focus .file-cta, .practice .preview .file.start-button:focus .file-cta, .file.is-primary.is-focused .file-cta, .practice .preview .file.is-focused.start-button .file-cta {
   border-color: transparent;
   box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.25);
   color: #fff; }
 
-.file.is-primary:active .file-cta, .practice .file.test-button:active .file-cta, .practice .preview .file.start-button:active .file-cta, .file.is-primary.is-active .file-cta, .practice .file.is-active.test-button .file-cta, .practice .preview .file.is-active.start-button .file-cta {
+.file.is-primary:active .file-cta, .practice .preview .file.start-button:active .file-cta, .file.is-primary.is-active .file-cta, .practice .preview .file.is-active.start-button .file-cta {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff; }
@@ -2929,10 +2931,10 @@ a.box:active {
 .file.is-medium .file-icon .fa {
   font-size: 21px; }
 
-.file.is-large, .practice .preview .file.start-button {
+.file.is-large, .practice .preview .file.start-button, .practice .file.help-button {
   font-size: 1.5rem; }
 
-.file.is-large .file-icon .fa, .practice .preview .file.start-button .file-icon .fa {
+.file.is-large .file-icon .fa, .practice .preview .file.start-button .file-icon .fa, .practice .file.help-button .file-icon .fa {
   font-size: 28px; }
 
 .file.has-name .file-cta {
@@ -2973,7 +2975,7 @@ a.box:active {
 .file.is-boxed.is-medium .file-icon .fa {
   font-size: 28px; }
 
-.file.is-boxed.is-large .file-icon .fa, .practice .preview .file.is-boxed.start-button .file-icon .fa {
+.file.is-boxed.is-large .file-icon .fa, .practice .preview .file.is-boxed.start-button .file-icon .fa, .practice .file.is-boxed.help-button .file-icon .fa {
   font-size: 35px; }
 
 .file.is-boxed.has-name .file-cta {
@@ -2986,10 +2988,10 @@ a.box:active {
 .file.is-centered {
   justify-content: center; }
 
-.file.is-fullwidth .file-label {
+.file.is-fullwidth .file-label, .practice .file.cards .file-label {
   width: 100%; }
 
-.file.is-fullwidth .file-name {
+.file.is-fullwidth .file-name, .practice .file.cards .file-name {
   flex-grow: 1;
   max-width: none; }
 
@@ -3083,7 +3085,7 @@ a.box:active {
 .label.is-medium {
   font-size: 1.25rem; }
 
-.label.is-large, .practice .preview .label.start-button {
+.label.is-large, .practice .preview .label.start-button, .practice .label.help-button {
   font-size: 1.5rem; }
 
 .help {
@@ -3097,13 +3099,13 @@ a.box:active {
 .help.is-black {
   color: #333; }
 
-.help.is-light {
+.help.is-light, .practice .help.test-button {
   color: whitesmoke; }
 
 .help.is-dark {
   color: #363636; }
 
-.help.is-primary, .practice .help.test-button, .practice .preview .help.start-button {
+.help.is-primary, .practice .preview .help.start-button {
   color: #00d1b2; }
 
 .help.is-link {
@@ -3131,31 +3133,31 @@ a.box:active {
 .field.has-addons .control:not(:last-child) {
   margin-right: -1px; }
 
-.field.has-addons .control:not(:first-child):not(:last-child) .button, .field.has-addons .control:not(:first-child):not(:last-child) .practice .test-button, .practice .field.has-addons .control:not(:first-child):not(:last-child) .test-button, .field.has-addons .control:not(:first-child):not(:last-child) .practice .preview .start-button, .practice .preview .field.has-addons .control:not(:first-child):not(:last-child) .start-button,
+.field.has-addons .control:not(:first-child):not(:last-child) .button, .field.has-addons .control:not(:first-child):not(:last-child) .practice .test-button, .practice .field.has-addons .control:not(:first-child):not(:last-child) .test-button, .field.has-addons .control:not(:first-child):not(:last-child) .practice .preview .start-button, .practice .preview .field.has-addons .control:not(:first-child):not(:last-child) .start-button, .field.has-addons .control:not(:first-child):not(:last-child) .practice .help-button, .practice .field.has-addons .control:not(:first-child):not(:last-child) .help-button,
 .field.has-addons .control:not(:first-child):not(:last-child) .input,
 .field.has-addons .control:not(:first-child):not(:last-child) .select select {
   border-radius: 0; }
 
-.field.has-addons .control:first-child .button, .field.has-addons .control:first-child .practice .test-button, .practice .field.has-addons .control:first-child .test-button, .field.has-addons .control:first-child .practice .preview .start-button, .practice .preview .field.has-addons .control:first-child .start-button,
+.field.has-addons .control:first-child .button, .field.has-addons .control:first-child .practice .test-button, .practice .field.has-addons .control:first-child .test-button, .field.has-addons .control:first-child .practice .preview .start-button, .practice .preview .field.has-addons .control:first-child .start-button, .field.has-addons .control:first-child .practice .help-button, .practice .field.has-addons .control:first-child .help-button,
 .field.has-addons .control:first-child .input,
 .field.has-addons .control:first-child .select select {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.field.has-addons .control:last-child .button, .field.has-addons .control:last-child .practice .test-button, .practice .field.has-addons .control:last-child .test-button, .field.has-addons .control:last-child .practice .preview .start-button, .practice .preview .field.has-addons .control:last-child .start-button,
+.field.has-addons .control:last-child .button, .field.has-addons .control:last-child .practice .test-button, .practice .field.has-addons .control:last-child .test-button, .field.has-addons .control:last-child .practice .preview .start-button, .practice .preview .field.has-addons .control:last-child .start-button, .field.has-addons .control:last-child .practice .help-button, .practice .field.has-addons .control:last-child .help-button,
 .field.has-addons .control:last-child .input,
 .field.has-addons .control:last-child .select select {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
-.field.has-addons .control .button:hover, .field.has-addons .control .practice .test-button:hover, .practice .field.has-addons .control .test-button:hover, .field.has-addons .control .practice .preview .start-button:hover, .practice .preview .field.has-addons .control .start-button:hover, .field.has-addons .control .button.is-hovered, .field.has-addons .control .practice .is-hovered.test-button, .practice .field.has-addons .control .is-hovered.test-button, .field.has-addons .control .practice .preview .is-hovered.start-button, .practice .preview .field.has-addons .control .is-hovered.start-button,
+.field.has-addons .control .button:hover, .field.has-addons .control .practice .test-button:hover, .practice .field.has-addons .control .test-button:hover, .field.has-addons .control .practice .preview .start-button:hover, .practice .preview .field.has-addons .control .start-button:hover, .field.has-addons .control .practice .help-button:hover, .practice .field.has-addons .control .help-button:hover, .field.has-addons .control .button.is-hovered, .field.has-addons .control .practice .is-hovered.test-button, .practice .field.has-addons .control .is-hovered.test-button, .field.has-addons .control .practice .preview .is-hovered.start-button, .practice .preview .field.has-addons .control .is-hovered.start-button, .field.has-addons .control .practice .is-hovered.help-button, .practice .field.has-addons .control .is-hovered.help-button,
 .field.has-addons .control .input:hover,
 .field.has-addons .control .input.is-hovered,
 .field.has-addons .control .select select:hover,
 .field.has-addons .control .select select.is-hovered {
   z-index: 2; }
 
-.field.has-addons .control .button:focus, .field.has-addons .control .practice .test-button:focus, .practice .field.has-addons .control .test-button:focus, .field.has-addons .control .practice .preview .start-button:focus, .practice .preview .field.has-addons .control .start-button:focus, .field.has-addons .control .button.is-focused, .field.has-addons .control .practice .is-focused.test-button, .practice .field.has-addons .control .is-focused.test-button, .field.has-addons .control .practice .preview .is-focused.start-button, .practice .preview .field.has-addons .control .is-focused.start-button, .field.has-addons .control .button:active, .field.has-addons .control .practice .test-button:active, .practice .field.has-addons .control .test-button:active, .field.has-addons .control .practice .preview .start-button:active, .practice .preview .field.has-addons .control .start-button:active, .field.has-addons .control .button.is-active, .field.has-addons .control .practice .is-active.test-button, .practice .field.has-addons .control .is-active.test-button, .field.has-addons .control .practice .preview .is-active.start-button, .practice .preview .field.has-addons .control .is-active.start-button,
+.field.has-addons .control .button:focus, .field.has-addons .control .practice .test-button:focus, .practice .field.has-addons .control .test-button:focus, .field.has-addons .control .practice .preview .start-button:focus, .practice .preview .field.has-addons .control .start-button:focus, .field.has-addons .control .practice .help-button:focus, .practice .field.has-addons .control .help-button:focus, .field.has-addons .control .button.is-focused, .field.has-addons .control .practice .is-focused.test-button, .practice .field.has-addons .control .is-focused.test-button, .field.has-addons .control .practice .preview .is-focused.start-button, .practice .preview .field.has-addons .control .is-focused.start-button, .field.has-addons .control .practice .is-focused.help-button, .practice .field.has-addons .control .is-focused.help-button, .field.has-addons .control .button:active, .field.has-addons .control .practice .test-button:active, .practice .field.has-addons .control .test-button:active, .field.has-addons .control .practice .preview .start-button:active, .practice .preview .field.has-addons .control .start-button:active, .field.has-addons .control .practice .help-button:active, .practice .field.has-addons .control .help-button:active, .field.has-addons .control .button.is-active, .field.has-addons .control .practice .is-active.test-button, .practice .field.has-addons .control .is-active.test-button, .field.has-addons .control .practice .preview .is-active.start-button, .practice .preview .field.has-addons .control .is-active.start-button, .field.has-addons .control .practice .is-active.help-button, .practice .field.has-addons .control .is-active.help-button,
 .field.has-addons .control .input:focus,
 .field.has-addons .control .input.is-focused,
 .field.has-addons .control .input:active,
@@ -3166,7 +3168,7 @@ a.box:active {
 .field.has-addons .control .select select.is-active {
   z-index: 3; }
 
-.field.has-addons .control .button:focus:hover, .field.has-addons .control .practice .test-button:focus:hover, .practice .field.has-addons .control .test-button:focus:hover, .field.has-addons .control .practice .preview .start-button:focus:hover, .practice .preview .field.has-addons .control .start-button:focus:hover, .field.has-addons .control .button.is-focused:hover, .field.has-addons .control .practice .is-focused.test-button:hover, .practice .field.has-addons .control .is-focused.test-button:hover, .field.has-addons .control .practice .preview .is-focused.start-button:hover, .practice .preview .field.has-addons .control .is-focused.start-button:hover, .field.has-addons .control .button:active:hover, .field.has-addons .control .practice .test-button:active:hover, .practice .field.has-addons .control .test-button:active:hover, .field.has-addons .control .practice .preview .start-button:active:hover, .practice .preview .field.has-addons .control .start-button:active:hover, .field.has-addons .control .button.is-active:hover, .field.has-addons .control .practice .is-active.test-button:hover, .practice .field.has-addons .control .is-active.test-button:hover, .field.has-addons .control .practice .preview .is-active.start-button:hover, .practice .preview .field.has-addons .control .is-active.start-button:hover,
+.field.has-addons .control .button:focus:hover, .field.has-addons .control .practice .test-button:focus:hover, .practice .field.has-addons .control .test-button:focus:hover, .field.has-addons .control .practice .preview .start-button:focus:hover, .practice .preview .field.has-addons .control .start-button:focus:hover, .field.has-addons .control .practice .help-button:focus:hover, .practice .field.has-addons .control .help-button:focus:hover, .field.has-addons .control .button.is-focused:hover, .field.has-addons .control .practice .is-focused.test-button:hover, .practice .field.has-addons .control .is-focused.test-button:hover, .field.has-addons .control .practice .preview .is-focused.start-button:hover, .practice .preview .field.has-addons .control .is-focused.start-button:hover, .field.has-addons .control .practice .is-focused.help-button:hover, .practice .field.has-addons .control .is-focused.help-button:hover, .field.has-addons .control .button:active:hover, .field.has-addons .control .practice .test-button:active:hover, .practice .field.has-addons .control .test-button:active:hover, .field.has-addons .control .practice .preview .start-button:active:hover, .practice .preview .field.has-addons .control .start-button:active:hover, .field.has-addons .control .practice .help-button:active:hover, .practice .field.has-addons .control .help-button:active:hover, .field.has-addons .control .button.is-active:hover, .field.has-addons .control .practice .is-active.test-button:hover, .practice .field.has-addons .control .is-active.test-button:hover, .field.has-addons .control .practice .preview .is-active.start-button:hover, .practice .preview .field.has-addons .control .is-active.start-button:hover, .field.has-addons .control .practice .is-active.help-button:hover, .practice .field.has-addons .control .is-active.help-button:hover,
 .field.has-addons .control .input:focus:hover,
 .field.has-addons .control .input.is-focused:hover,
 .field.has-addons .control .input:active:hover,
@@ -3249,7 +3251,7 @@ a.box:active {
   .field-label.is-medium {
     font-size: 1.25rem;
     padding-top: 0.375em; }
-  .field-label.is-large, .practice .preview .field-label.start-button {
+  .field-label.is-large, .practice .preview .field-label.start-button, .practice .field-label.help-button {
     font-size: 1.5rem;
     padding-top: 0.375em; } }
 
@@ -3294,7 +3296,7 @@ a.box:active {
 .control.has-icon .input.is-medium + .icon {
   font-size: 1.25rem; }
 
-.control.has-icon .input.is-large + .icon, .control.has-icon .practice .preview .input.start-button + .icon, .practice .preview .control.has-icon .input.start-button + .icon {
+.control.has-icon .input.is-large + .icon, .control.has-icon .practice .preview .input.start-button + .icon, .practice .preview .control.has-icon .input.start-button + .icon, .control.has-icon .practice .input.help-button + .icon, .practice .control.has-icon .input.help-button + .icon {
   font-size: 1.5rem; }
 
 .control.has-icon:not(.has-icon-right) .icon {
@@ -3324,13 +3326,17 @@ a.box:active {
 .control.has-icons-right .select.is-medium ~ .icon {
   font-size: 1.25rem; }
 
-.control.has-icons-left .input.is-large ~ .icon, .control.has-icons-left .practice .preview .input.start-button ~ .icon, .practice .preview .control.has-icons-left .input.start-button ~ .icon,
+.control.has-icons-left .input.is-large ~ .icon, .control.has-icons-left .practice .preview .input.start-button ~ .icon, .practice .preview .control.has-icons-left .input.start-button ~ .icon, .control.has-icons-left .practice .input.help-button ~ .icon, .practice .control.has-icons-left .input.help-button ~ .icon,
 .control.has-icons-left .select.is-large ~ .icon,
 .control.has-icons-left .practice .preview .select.start-button ~ .icon,
-.practice .preview .control.has-icons-left .select.start-button ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .practice .preview .input.start-button ~ .icon, .practice .preview .control.has-icons-right .input.start-button ~ .icon,
+.practice .preview .control.has-icons-left .select.start-button ~ .icon,
+.control.has-icons-left .practice .select.help-button ~ .icon,
+.practice .control.has-icons-left .select.help-button ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .practice .preview .input.start-button ~ .icon, .practice .preview .control.has-icons-right .input.start-button ~ .icon, .control.has-icons-right .practice .input.help-button ~ .icon, .practice .control.has-icons-right .input.help-button ~ .icon,
 .control.has-icons-right .select.is-large ~ .icon,
 .control.has-icons-right .practice .preview .select.start-button ~ .icon,
-.practice .preview .control.has-icons-right .select.start-button ~ .icon {
+.practice .preview .control.has-icons-right .select.start-button ~ .icon,
+.control.has-icons-right .practice .select.help-button ~ .icon,
+.practice .control.has-icons-right .select.help-button ~ .icon {
   font-size: 1.5rem; }
 
 .control.has-icons-left .icon, .control.has-icons-right .icon {
@@ -3368,7 +3374,7 @@ a.box:active {
 .control.is-loading.is-medium:after {
   font-size: 1.25rem; }
 
-.control.is-loading.is-large:after, .practice .preview .control.is-loading.start-button:after {
+.control.is-loading.is-large:after, .practice .preview .control.is-loading.start-button:after, .practice .control.is-loading.help-button:after {
   font-size: 1.5rem; }
 
 .icon {
@@ -3386,7 +3392,7 @@ a.box:active {
   height: 2rem;
   width: 2rem; }
 
-.icon.is-large, .practice .preview .icon.start-button {
+.icon.is-large, .practice .preview .icon.start-button, .practice .icon.help-button {
   height: 3rem;
   width: 3rem; }
 
@@ -3399,7 +3405,7 @@ a.box:active {
   height: auto;
   width: 100%; }
 
-.image img.is-rounded {
+.image img.is-rounded, .image .practice img.help-button, .practice .image img.help-button {
   border-radius: 290486px; }
 
 .image.is-square img, .image.is-1by1 img, .image.is-5by4 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-5by3 img, .image.is-16by9 img, .image.is-2by1 img, .image.is-3by1 img, .image.is-4by5 img, .image.is-3by4 img, .image.is-2by3 img, .image.is-3by5 img, .image.is-9by16 img, .image.is-1by2 img, .image.is-1by3 img {
@@ -3517,7 +3523,7 @@ a.box:active {
   background-color: #333;
   color: #f8f8f8; }
 
-.notification.is-light {
+.notification.is-light, .practice .notification.test-button {
   background-color: whitesmoke;
   color: #363636; }
 
@@ -3525,7 +3531,7 @@ a.box:active {
   background-color: #363636;
   color: whitesmoke; }
 
-.notification.is-primary, .practice .notification.test-button, .practice .preview .notification.start-button {
+.notification.is-primary, .practice .preview .notification.start-button {
   background-color: #00d1b2;
   color: #fff; }
 
@@ -3591,13 +3597,13 @@ a.box:active {
 .progress.is-black::-ms-fill {
   background-color: #333; }
 
-.progress.is-light::-webkit-progress-value {
+.progress.is-light::-webkit-progress-value, .practice .progress.test-button::-webkit-progress-value {
   background-color: whitesmoke; }
 
-.progress.is-light::-moz-progress-bar {
+.progress.is-light::-moz-progress-bar, .practice .progress.test-button::-moz-progress-bar {
   background-color: whitesmoke; }
 
-.progress.is-light::-ms-fill {
+.progress.is-light::-ms-fill, .practice .progress.test-button::-ms-fill {
   background-color: whitesmoke; }
 
 .progress.is-dark::-webkit-progress-value {
@@ -3609,13 +3615,13 @@ a.box:active {
 .progress.is-dark::-ms-fill {
   background-color: #363636; }
 
-.progress.is-primary::-webkit-progress-value, .practice .progress.test-button::-webkit-progress-value, .practice .preview .progress.start-button::-webkit-progress-value {
+.progress.is-primary::-webkit-progress-value, .practice .preview .progress.start-button::-webkit-progress-value {
   background-color: #00d1b2; }
 
-.progress.is-primary::-moz-progress-bar, .practice .progress.test-button::-moz-progress-bar, .practice .preview .progress.start-button::-moz-progress-bar {
+.progress.is-primary::-moz-progress-bar, .practice .preview .progress.start-button::-moz-progress-bar {
   background-color: #00d1b2; }
 
-.progress.is-primary::-ms-fill, .practice .progress.test-button::-ms-fill, .practice .preview .progress.start-button::-ms-fill {
+.progress.is-primary::-ms-fill, .practice .preview .progress.start-button::-ms-fill {
   background-color: #00d1b2; }
 
 .progress.is-link::-webkit-progress-value {
@@ -3669,7 +3675,7 @@ a.box:active {
 .progress.is-medium {
   height: 1.25rem; }
 
-.progress.is-large, .practice .preview .progress.start-button {
+.progress.is-large, .practice .preview .progress.start-button, .practice .progress.help-button {
   height: 1.5rem; }
 
 .table {
@@ -3695,8 +3701,10 @@ a.box:active {
   border-color: #333;
   color: #f8f8f8; }
 
-.table td.is-light,
-.table th.is-light {
+.table td.is-light, .table .practice td.test-button, .practice .table td.test-button,
+.table th.is-light,
+.table .practice th.test-button,
+.practice .table th.test-button {
   background-color: whitesmoke;
   border-color: whitesmoke;
   color: #363636; }
@@ -3707,10 +3715,8 @@ a.box:active {
   border-color: #363636;
   color: whitesmoke; }
 
-.table td.is-primary, .table .practice td.test-button, .practice .table td.test-button, .table .practice .preview td.start-button, .practice .preview .table td.start-button,
+.table td.is-primary, .table .practice .preview td.start-button, .practice .preview .table td.start-button,
 .table th.is-primary,
-.table .practice th.test-button,
-.practice .table th.test-button,
 .table .practice .preview th.start-button,
 .practice .preview .table th.start-button {
   background-color: #00d1b2;
@@ -3802,7 +3808,7 @@ a.box:active {
 .table.is-bordered tr:last-child th {
   border-bottom-width: 1px; }
 
-.table.is-fullwidth {
+.table.is-fullwidth, .practice .table.cards {
   width: 100%; }
 
 .table.is-hoverable tbody tr:not(.is-selected):hover {
@@ -3895,7 +3901,7 @@ a.box:active {
   background-color: #333;
   color: #f8f8f8; }
 
-.tag:not(body).is-light {
+.tag:not(body).is-light, .practice .tag.test-button:not(body) {
   background-color: whitesmoke;
   color: #363636; }
 
@@ -3903,7 +3909,7 @@ a.box:active {
   background-color: #363636;
   color: whitesmoke; }
 
-.tag:not(body).is-primary, .practice .tag.test-button:not(body), .practice .preview .tag.start-button:not(body) {
+.tag:not(body).is-primary, .practice .preview .tag.start-button:not(body) {
   background-color: #00d1b2;
   color: #fff; }
 
@@ -3930,7 +3936,7 @@ a.box:active {
 .tag:not(body).is-medium {
   font-size: 1rem; }
 
-.tag:not(body).is-large, .practice .preview .tag.start-button:not(body) {
+.tag:not(body).is-large, .practice .preview .tag.start-button:not(body), .practice .tag.help-button:not(body) {
   font-size: 1.25rem; }
 
 .tag:not(body) .icon:first-child:not(:last-child) {
@@ -3975,7 +3981,7 @@ a.box:active {
 .tag:not(body).is-delete:active {
   background-color: #dbdbdb; }
 
-.tag:not(body).is-rounded {
+.tag:not(body).is-rounded, .practice .tag.help-button:not(body) {
   border-radius: 290486px; }
 
 a.tag:hover {
@@ -4162,7 +4168,7 @@ a.tag:hover {
 .breadcrumb.is-medium {
   font-size: 1.25rem; }
 
-.breadcrumb.is-large, .practice .preview .breadcrumb.start-button {
+.breadcrumb.is-large, .practice .preview .breadcrumb.start-button, .practice .breadcrumb.help-button {
   font-size: 1.5rem; }
 
 .breadcrumb.has-arrow-separator li + li::before {
@@ -4413,7 +4419,7 @@ a.dropdown-item.is-active {
   margin-top: 1rem;
   padding-top: 1rem; }
 
-.media.is-large + .media, .practice .preview .media.start-button + .media {
+.media.is-large + .media, .practice .preview .media.start-button + .media, .practice .media.help-button + .media {
   margin-top: 1.5rem;
   padding-top: 1.5rem; }
 
@@ -4444,7 +4450,7 @@ a.dropdown-item.is-active {
 .menu.is-medium {
   font-size: 1.25rem; }
 
-.menu.is-large, .practice .preview .menu.start-button {
+.menu.is-large, .practice .preview .menu.start-button, .practice .menu.help-button {
   font-size: 1.5rem; }
 
 .menu-list {
@@ -4499,7 +4505,7 @@ a.dropdown-item.is-active {
 .message.is-medium {
   font-size: 1.25rem; }
 
-.message.is-large, .practice .preview .message.start-button {
+.message.is-large, .practice .preview .message.start-button, .practice .message.help-button {
   font-size: 1.5rem; }
 
 .message.is-white {
@@ -4524,14 +4530,14 @@ a.dropdown-item.is-active {
   border-color: #333;
   color: #292929; }
 
-.message.is-light {
+.message.is-light, .practice .message.test-button {
   background-color: #fafafa; }
 
-.message.is-light .message-header {
+.message.is-light .message-header, .practice .message.test-button .message-header {
   background-color: whitesmoke;
   color: #363636; }
 
-.message.is-light .message-body {
+.message.is-light .message-body, .practice .message.test-button .message-body {
   border-color: whitesmoke;
   color: #505050; }
 
@@ -4546,14 +4552,14 @@ a.dropdown-item.is-active {
   border-color: #363636;
   color: #2a2a2a; }
 
-.message.is-primary, .practice .message.test-button, .practice .preview .message.start-button {
+.message.is-primary, .practice .preview .message.start-button {
   background-color: #f5fffd; }
 
-.message.is-primary .message-header, .practice .message.test-button .message-header, .practice .preview .message.start-button .message-header {
+.message.is-primary .message-header, .practice .preview .message.start-button .message-header {
   background-color: #00d1b2;
   color: #fff; }
 
-.message.is-primary .message-body, .practice .message.test-button .message-body, .practice .preview .message.start-button .message-body {
+.message.is-primary .message-body, .practice .preview .message.start-button .message-body {
   border-color: #00d1b2;
   color: #021310; }
 
@@ -4719,7 +4725,7 @@ a.dropdown-item.is-active {
   border-bottom-right-radius: 6px;
   border-top: 1px solid #dbdbdb; }
 
-.modal-card-foot .button:not(:last-child), .modal-card-foot .practice .test-button:not(:last-child), .practice .modal-card-foot .test-button:not(:last-child), .modal-card-foot .practice .preview .start-button:not(:last-child), .practice .preview .modal-card-foot .start-button:not(:last-child) {
+.modal-card-foot .button:not(:last-child), .modal-card-foot .practice .test-button:not(:last-child), .practice .modal-card-foot .test-button:not(:last-child), .modal-card-foot .practice .preview .start-button:not(:last-child), .practice .preview .modal-card-foot .start-button:not(:last-child), .modal-card-foot .practice .help-button:not(:last-child), .practice .modal-card-foot .help-button:not(:last-child) {
   margin-right: 10px; }
 
 .modal-card-body {
@@ -4822,46 +4828,60 @@ a.dropdown-item.is-active {
     background-color: #333;
     color: #f8f8f8; } }
 
-.navbar.is-light {
+.navbar.is-light, .practice .navbar.test-button {
   background-color: whitesmoke;
   color: #363636; }
 
-.navbar.is-light .navbar-brand > .navbar-item,
-.navbar.is-light .navbar-brand .navbar-link {
+.navbar.is-light .navbar-brand > .navbar-item, .practice .navbar.test-button .navbar-brand > .navbar-item,
+.navbar.is-light .navbar-brand .navbar-link,
+.practice .navbar.test-button .navbar-brand .navbar-link {
   color: #363636; }
 
-.navbar.is-light .navbar-brand > a.navbar-item:hover, .navbar.is-light .navbar-brand > a.navbar-item.is-active,
+.navbar.is-light .navbar-brand > a.navbar-item:hover, .practice .navbar.test-button .navbar-brand > a.navbar-item:hover, .navbar.is-light .navbar-brand > a.navbar-item.is-active, .practice .navbar.test-button .navbar-brand > a.navbar-item.is-active,
 .navbar.is-light .navbar-brand .navbar-link:hover,
-.navbar.is-light .navbar-brand .navbar-link.is-active {
+.practice .navbar.test-button .navbar-brand .navbar-link:hover,
+.navbar.is-light .navbar-brand .navbar-link.is-active,
+.practice .navbar.test-button .navbar-brand .navbar-link.is-active {
   background-color: #e8e8e8;
   color: #363636; }
 
-.navbar.is-light .navbar-brand .navbar-link::after {
+.navbar.is-light .navbar-brand .navbar-link::after, .practice .navbar.test-button .navbar-brand .navbar-link::after {
   border-color: #363636; }
 
 @media screen and (min-width: 1088px) {
-  .navbar.is-light .navbar-start > .navbar-item,
+  .navbar.is-light .navbar-start > .navbar-item, .practice .navbar.test-button .navbar-start > .navbar-item,
   .navbar.is-light .navbar-start .navbar-link,
+  .practice .navbar.test-button .navbar-start .navbar-link,
   .navbar.is-light .navbar-end > .navbar-item,
-  .navbar.is-light .navbar-end .navbar-link {
+  .practice .navbar.test-button .navbar-end > .navbar-item,
+  .navbar.is-light .navbar-end .navbar-link,
+  .practice .navbar.test-button .navbar-end .navbar-link {
     color: #363636; }
-  .navbar.is-light .navbar-start > a.navbar-item:hover, .navbar.is-light .navbar-start > a.navbar-item.is-active,
+  .navbar.is-light .navbar-start > a.navbar-item:hover, .practice .navbar.test-button .navbar-start > a.navbar-item:hover, .navbar.is-light .navbar-start > a.navbar-item.is-active, .practice .navbar.test-button .navbar-start > a.navbar-item.is-active,
   .navbar.is-light .navbar-start .navbar-link:hover,
+  .practice .navbar.test-button .navbar-start .navbar-link:hover,
   .navbar.is-light .navbar-start .navbar-link.is-active,
+  .practice .navbar.test-button .navbar-start .navbar-link.is-active,
   .navbar.is-light .navbar-end > a.navbar-item:hover,
+  .practice .navbar.test-button .navbar-end > a.navbar-item:hover,
   .navbar.is-light .navbar-end > a.navbar-item.is-active,
+  .practice .navbar.test-button .navbar-end > a.navbar-item.is-active,
   .navbar.is-light .navbar-end .navbar-link:hover,
-  .navbar.is-light .navbar-end .navbar-link.is-active {
+  .practice .navbar.test-button .navbar-end .navbar-link:hover,
+  .navbar.is-light .navbar-end .navbar-link.is-active,
+  .practice .navbar.test-button .navbar-end .navbar-link.is-active {
     background-color: #e8e8e8;
     color: #363636; }
-  .navbar.is-light .navbar-start .navbar-link::after,
-  .navbar.is-light .navbar-end .navbar-link::after {
+  .navbar.is-light .navbar-start .navbar-link::after, .practice .navbar.test-button .navbar-start .navbar-link::after,
+  .navbar.is-light .navbar-end .navbar-link::after,
+  .practice .navbar.test-button .navbar-end .navbar-link::after {
     border-color: #363636; }
-  .navbar.is-light .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar.is-light .navbar-item.has-dropdown.is-active .navbar-link {
+  .navbar.is-light .navbar-item.has-dropdown:hover .navbar-link, .practice .navbar.test-button .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.is-light .navbar-item.has-dropdown.is-active .navbar-link,
+  .practice .navbar.test-button .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #e8e8e8;
     color: #363636; }
-  .navbar.is-light .navbar-dropdown a.navbar-item.is-active {
+  .navbar.is-light .navbar-dropdown a.navbar-item.is-active, .practice .navbar.test-button .navbar-dropdown a.navbar-item.is-active {
     background-color: whitesmoke;
     color: #363636; } }
 
@@ -4908,74 +4928,60 @@ a.dropdown-item.is-active {
     background-color: #363636;
     color: whitesmoke; } }
 
-.navbar.is-primary, .practice .navbar.test-button, .practice .preview .navbar.start-button {
+.navbar.is-primary, .practice .preview .navbar.start-button {
   background-color: #00d1b2;
   color: #fff; }
 
-.navbar.is-primary .navbar-brand > .navbar-item, .practice .navbar.test-button .navbar-brand > .navbar-item, .practice .preview .navbar.start-button .navbar-brand > .navbar-item,
+.navbar.is-primary .navbar-brand > .navbar-item, .practice .preview .navbar.start-button .navbar-brand > .navbar-item,
 .navbar.is-primary .navbar-brand .navbar-link,
-.practice .navbar.test-button .navbar-brand .navbar-link,
 .practice .preview .navbar.start-button .navbar-brand .navbar-link {
   color: #fff; }
 
-.navbar.is-primary .navbar-brand > a.navbar-item:hover, .practice .navbar.test-button .navbar-brand > a.navbar-item:hover, .practice .preview .navbar.start-button .navbar-brand > a.navbar-item:hover, .navbar.is-primary .navbar-brand > a.navbar-item.is-active, .practice .navbar.test-button .navbar-brand > a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary .navbar-brand > a.navbar-item:hover, .practice .preview .navbar.start-button .navbar-brand > a.navbar-item:hover, .navbar.is-primary .navbar-brand > a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-brand > a.navbar-item.is-active,
 .navbar.is-primary .navbar-brand .navbar-link:hover,
-.practice .navbar.test-button .navbar-brand .navbar-link:hover,
 .practice .preview .navbar.start-button .navbar-brand .navbar-link:hover,
 .navbar.is-primary .navbar-brand .navbar-link.is-active,
-.practice .navbar.test-button .navbar-brand .navbar-link.is-active,
 .practice .preview .navbar.start-button .navbar-brand .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff; }
 
-.navbar.is-primary .navbar-brand .navbar-link::after, .practice .navbar.test-button .navbar-brand .navbar-link::after, .practice .preview .navbar.start-button .navbar-brand .navbar-link::after {
+.navbar.is-primary .navbar-brand .navbar-link::after, .practice .preview .navbar.start-button .navbar-brand .navbar-link::after {
   border-color: #fff; }
 
 @media screen and (min-width: 1088px) {
-  .navbar.is-primary .navbar-start > .navbar-item, .practice .navbar.test-button .navbar-start > .navbar-item, .practice .preview .navbar.start-button .navbar-start > .navbar-item,
+  .navbar.is-primary .navbar-start > .navbar-item, .practice .preview .navbar.start-button .navbar-start > .navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
-  .practice .navbar.test-button .navbar-start .navbar-link,
   .practice .preview .navbar.start-button .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end > .navbar-item,
-  .practice .navbar.test-button .navbar-end > .navbar-item,
   .practice .preview .navbar.start-button .navbar-end > .navbar-item,
   .navbar.is-primary .navbar-end .navbar-link,
-  .practice .navbar.test-button .navbar-end .navbar-link,
   .practice .preview .navbar.start-button .navbar-end .navbar-link {
     color: #fff; }
-  .navbar.is-primary .navbar-start > a.navbar-item:hover, .practice .navbar.test-button .navbar-start > a.navbar-item:hover, .practice .preview .navbar.start-button .navbar-start > a.navbar-item:hover, .navbar.is-primary .navbar-start > a.navbar-item.is-active, .practice .navbar.test-button .navbar-start > a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-start > a.navbar-item.is-active,
+  .navbar.is-primary .navbar-start > a.navbar-item:hover, .practice .preview .navbar.start-button .navbar-start > a.navbar-item:hover, .navbar.is-primary .navbar-start > a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-start > a.navbar-item.is-active,
   .navbar.is-primary .navbar-start .navbar-link:hover,
-  .practice .navbar.test-button .navbar-start .navbar-link:hover,
   .practice .preview .navbar.start-button .navbar-start .navbar-link:hover,
   .navbar.is-primary .navbar-start .navbar-link.is-active,
-  .practice .navbar.test-button .navbar-start .navbar-link.is-active,
   .practice .preview .navbar.start-button .navbar-start .navbar-link.is-active,
   .navbar.is-primary .navbar-end > a.navbar-item:hover,
-  .practice .navbar.test-button .navbar-end > a.navbar-item:hover,
   .practice .preview .navbar.start-button .navbar-end > a.navbar-item:hover,
   .navbar.is-primary .navbar-end > a.navbar-item.is-active,
-  .practice .navbar.test-button .navbar-end > a.navbar-item.is-active,
   .practice .preview .navbar.start-button .navbar-end > a.navbar-item.is-active,
   .navbar.is-primary .navbar-end .navbar-link:hover,
-  .practice .navbar.test-button .navbar-end .navbar-link:hover,
   .practice .preview .navbar.start-button .navbar-end .navbar-link:hover,
   .navbar.is-primary .navbar-end .navbar-link.is-active,
-  .practice .navbar.test-button .navbar-end .navbar-link.is-active,
   .practice .preview .navbar.start-button .navbar-end .navbar-link.is-active {
     background-color: #00b89c;
     color: #fff; }
-  .navbar.is-primary .navbar-start .navbar-link::after, .practice .navbar.test-button .navbar-start .navbar-link::after, .practice .preview .navbar.start-button .navbar-start .navbar-link::after,
+  .navbar.is-primary .navbar-start .navbar-link::after, .practice .preview .navbar.start-button .navbar-start .navbar-link::after,
   .navbar.is-primary .navbar-end .navbar-link::after,
-  .practice .navbar.test-button .navbar-end .navbar-link::after,
   .practice .preview .navbar.start-button .navbar-end .navbar-link::after {
     border-color: #fff; }
-  .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link, .practice .navbar.test-button .navbar-item.has-dropdown:hover .navbar-link, .practice .preview .navbar.start-button .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link, .practice .preview .navbar.start-button .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link,
-  .practice .navbar.test-button .navbar-item.has-dropdown.is-active .navbar-link,
   .practice .preview .navbar.start-button .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #00b89c;
     color: #fff; }
-  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active, .practice .navbar.test-button .navbar-dropdown a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-dropdown a.navbar-item.is-active {
+  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active, .practice .preview .navbar.start-button .navbar-dropdown a.navbar-item.is-active {
     background-color: #00d1b2;
     color: #fff; } }
 
@@ -5194,7 +5200,7 @@ a.dropdown-item.is-active {
     background-color: #ff3860;
     color: #fff; } }
 
-.navbar > .container, .practice .navbar > .preview {
+.navbar > .container, .navbar > .practice, .practice .navbar > .preview {
   align-items: stretch;
   display: flex;
   min-height: 3.25rem;
@@ -5370,7 +5376,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
   margin: 0.5rem 0; }
 
 @media screen and (max-width: 1087px) {
-  .navbar > .container, .practice .navbar > .preview {
+  .navbar > .container, .navbar > .practice, .practice .navbar > .preview {
     display: block; }
   .navbar-brand .navbar-item,
   .navbar-tabs .navbar-item {
@@ -5509,12 +5515,14 @@ a.navbar-item:hover, a.navbar-item.is-active,
     right: 0; }
   .navbar-divider {
     display: block; }
-  .navbar > .container .navbar-brand, .practice .navbar > .preview .navbar-brand,
+  .navbar > .container .navbar-brand, .navbar > .practice .navbar-brand, .practice .navbar > .preview .navbar-brand,
   .container > .navbar .navbar-brand,
+  .practice > .navbar .navbar-brand,
   .practice .preview > .navbar .navbar-brand {
     margin-left: -1rem; }
-  .navbar > .container .navbar-menu, .practice .navbar > .preview .navbar-menu,
+  .navbar > .container .navbar-menu, .navbar > .practice .navbar-menu, .practice .navbar > .preview .navbar-menu,
   .container > .navbar .navbar-menu,
+  .practice > .navbar .navbar-menu,
   .practice .preview > .navbar .navbar-menu {
     margin-right: -1rem; }
   .navbar.is-fixed-bottom-desktop, .navbar.is-fixed-top-desktop {
@@ -5559,16 +5567,17 @@ a.navbar-item:hover, a.navbar-item.is-active,
 .pagination.is-medium {
   font-size: 1.25rem; }
 
-.pagination.is-large, .practice .preview .pagination.start-button {
+.pagination.is-large, .practice .preview .pagination.start-button, .practice .pagination.help-button {
   font-size: 1.5rem; }
 
-.pagination.is-rounded .pagination-previous,
-.pagination.is-rounded .pagination-next {
+.pagination.is-rounded .pagination-previous, .practice .pagination.help-button .pagination-previous,
+.pagination.is-rounded .pagination-next,
+.practice .pagination.help-button .pagination-next {
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 290486px; }
 
-.pagination.is-rounded .pagination-link {
+.pagination.is-rounded .pagination-link, .practice .pagination.help-button .pagination-link {
   border-radius: 290486px; }
 
 .pagination,
@@ -5854,7 +5863,7 @@ label.panel-block:hover {
   border-color: #dbdbdb;
   border-bottom-color: transparent !important; }
 
-.tabs.is-fullwidth li {
+.tabs.is-fullwidth li, .practice .tabs.cards li {
   flex-grow: 1;
   flex-shrink: 0; }
 
@@ -5904,7 +5913,7 @@ label.panel-block:hover {
 .tabs.is-medium {
   font-size: 1.25rem; }
 
-.tabs.is-large, .practice .preview .tabs.start-button {
+.tabs.is-large, .practice .preview .tabs.start-button, .practice .tabs.help-button {
   font-size: 1.5rem; }
 
 .column {
@@ -7025,64 +7034,69 @@ label.panel-block:hover {
   .hero.is-black.is-bold .navbar-menu {
     background-image: linear-gradient(141deg, #1c1718 0%, #333 71%, #433e3d 100%); } }
 
-.hero.is-light {
+.hero.is-light, .practice .hero.test-button {
   background-color: whitesmoke;
   color: #363636; }
 
-.hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
-.hero.is-light strong {
+.hero.is-light a:not(.button):not(.dropdown-item):not(.tag), .practice .hero.test-button a:not(.button):not(.dropdown-item):not(.tag),
+.hero.is-light strong,
+.practice .hero.test-button strong {
   color: inherit; }
 
-.hero.is-light .title {
+.hero.is-light .title, .practice .hero.test-button .title {
   color: #363636; }
 
-.hero.is-light .subtitle {
+.hero.is-light .subtitle, .practice .hero.test-button .subtitle {
   color: rgba(54, 54, 54, 0.9); }
 
-.hero.is-light .subtitle a:not(.button),
-.hero.is-light .subtitle strong {
+.hero.is-light .subtitle a:not(.button), .practice .hero.test-button .subtitle a:not(.button),
+.hero.is-light .subtitle strong,
+.practice .hero.test-button .subtitle strong {
   color: #363636; }
 
 @media screen and (max-width: 1087px) {
-  .hero.is-light .navbar-menu {
+  .hero.is-light .navbar-menu, .practice .hero.test-button .navbar-menu {
     background-color: whitesmoke; } }
 
-.hero.is-light .navbar-item,
-.hero.is-light .navbar-link {
+.hero.is-light .navbar-item, .practice .hero.test-button .navbar-item,
+.hero.is-light .navbar-link,
+.practice .hero.test-button .navbar-link {
   color: rgba(54, 54, 54, 0.7); }
 
-.hero.is-light a.navbar-item:hover, .hero.is-light a.navbar-item.is-active,
+.hero.is-light a.navbar-item:hover, .practice .hero.test-button a.navbar-item:hover, .hero.is-light a.navbar-item.is-active, .practice .hero.test-button a.navbar-item.is-active,
 .hero.is-light .navbar-link:hover,
-.hero.is-light .navbar-link.is-active {
+.practice .hero.test-button .navbar-link:hover,
+.hero.is-light .navbar-link.is-active,
+.practice .hero.test-button .navbar-link.is-active {
   background-color: #e8e8e8;
   color: #363636; }
 
-.hero.is-light .tabs a {
+.hero.is-light .tabs a, .practice .hero.test-button .tabs a {
   color: #363636;
   opacity: 0.9; }
 
-.hero.is-light .tabs a:hover {
+.hero.is-light .tabs a:hover, .practice .hero.test-button .tabs a:hover {
   opacity: 1; }
 
-.hero.is-light .tabs li.is-active a {
+.hero.is-light .tabs li.is-active a, .practice .hero.test-button .tabs li.is-active a {
   opacity: 1; }
 
-.hero.is-light .tabs.is-boxed a, .hero.is-light .tabs.is-toggle a {
+.hero.is-light .tabs.is-boxed a, .practice .hero.test-button .tabs.is-boxed a, .hero.is-light .tabs.is-toggle a, .practice .hero.test-button .tabs.is-toggle a {
   color: #363636; }
 
-.hero.is-light .tabs.is-boxed a:hover, .hero.is-light .tabs.is-toggle a:hover {
+.hero.is-light .tabs.is-boxed a:hover, .practice .hero.test-button .tabs.is-boxed a:hover, .hero.is-light .tabs.is-toggle a:hover, .practice .hero.test-button .tabs.is-toggle a:hover {
   background-color: rgba(51, 51, 51, 0.1); }
 
-.hero.is-light .tabs.is-boxed li.is-active a, .hero.is-light .tabs.is-boxed li.is-active a:hover, .hero.is-light .tabs.is-toggle li.is-active a, .hero.is-light .tabs.is-toggle li.is-active a:hover {
+.hero.is-light .tabs.is-boxed li.is-active a, .practice .hero.test-button .tabs.is-boxed li.is-active a, .hero.is-light .tabs.is-boxed li.is-active a:hover, .practice .hero.test-button .tabs.is-boxed li.is-active a:hover, .hero.is-light .tabs.is-toggle li.is-active a, .practice .hero.test-button .tabs.is-toggle li.is-active a, .hero.is-light .tabs.is-toggle li.is-active a:hover, .practice .hero.test-button .tabs.is-toggle li.is-active a:hover {
   background-color: #363636;
   border-color: #363636;
   color: whitesmoke; }
 
-.hero.is-light.is-bold {
+.hero.is-light.is-bold, .practice .hero.is-bold.test-button {
   background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%); }
 
 @media screen and (max-width: 768px) {
-  .hero.is-light.is-bold .navbar-menu {
+  .hero.is-light.is-bold .navbar-menu, .practice .hero.is-bold.test-button .navbar-menu {
     background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%); } }
 
 .hero.is-dark {
@@ -7145,74 +7159,69 @@ label.panel-block:hover {
   .hero.is-dark.is-bold .navbar-menu {
     background-image: linear-gradient(141deg, #1f191a 0%, #363636 71%, #46403f 100%); } }
 
-.hero.is-primary, .practice .hero.test-button, .practice .preview .hero.start-button {
+.hero.is-primary, .practice .preview .hero.start-button {
   background-color: #00d1b2;
   color: #fff; }
 
-.hero.is-primary a:not(.button):not(.dropdown-item):not(.tag), .practice .hero.test-button a:not(.button):not(.dropdown-item):not(.tag), .practice .preview .hero.start-button a:not(.button):not(.dropdown-item):not(.tag),
+.hero.is-primary a:not(.button):not(.dropdown-item):not(.tag), .practice .preview .hero.start-button a:not(.button):not(.dropdown-item):not(.tag),
 .hero.is-primary strong,
-.practice .hero.test-button strong,
 .practice .preview .hero.start-button strong {
   color: inherit; }
 
-.hero.is-primary .title, .practice .hero.test-button .title, .practice .preview .hero.start-button .title {
+.hero.is-primary .title, .practice .preview .hero.start-button .title {
   color: #fff; }
 
-.hero.is-primary .subtitle, .practice .hero.test-button .subtitle, .practice .preview .hero.start-button .subtitle {
+.hero.is-primary .subtitle, .practice .preview .hero.start-button .subtitle {
   color: rgba(255, 255, 255, 0.9); }
 
-.hero.is-primary .subtitle a:not(.button), .practice .hero.test-button .subtitle a:not(.button), .practice .preview .hero.start-button .subtitle a:not(.button),
+.hero.is-primary .subtitle a:not(.button), .practice .preview .hero.start-button .subtitle a:not(.button),
 .hero.is-primary .subtitle strong,
-.practice .hero.test-button .subtitle strong,
 .practice .preview .hero.start-button .subtitle strong {
   color: #fff; }
 
 @media screen and (max-width: 1087px) {
-  .hero.is-primary .navbar-menu, .practice .hero.test-button .navbar-menu, .practice .preview .hero.start-button .navbar-menu {
+  .hero.is-primary .navbar-menu, .practice .preview .hero.start-button .navbar-menu {
     background-color: #00d1b2; } }
 
-.hero.is-primary .navbar-item, .practice .hero.test-button .navbar-item, .practice .preview .hero.start-button .navbar-item,
+.hero.is-primary .navbar-item, .practice .preview .hero.start-button .navbar-item,
 .hero.is-primary .navbar-link,
-.practice .hero.test-button .navbar-link,
 .practice .preview .hero.start-button .navbar-link {
   color: rgba(255, 255, 255, 0.7); }
 
-.hero.is-primary a.navbar-item:hover, .practice .hero.test-button a.navbar-item:hover, .practice .preview .hero.start-button a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active, .practice .hero.test-button a.navbar-item.is-active, .practice .preview .hero.start-button a.navbar-item.is-active,
+.hero.is-primary a.navbar-item:hover, .practice .preview .hero.start-button a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active, .practice .preview .hero.start-button a.navbar-item.is-active,
 .hero.is-primary .navbar-link:hover,
-.practice .hero.test-button .navbar-link:hover,
 .practice .preview .hero.start-button .navbar-link:hover,
 .hero.is-primary .navbar-link.is-active,
-.practice .hero.test-button .navbar-link.is-active,
 .practice .preview .hero.start-button .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff; }
 
-.hero.is-primary .tabs a, .practice .hero.test-button .tabs a, .practice .preview .hero.start-button .tabs a {
+.hero.is-primary .tabs a, .practice .preview .hero.start-button .tabs a {
   color: #fff;
   opacity: 0.9; }
 
-.hero.is-primary .tabs a:hover, .practice .hero.test-button .tabs a:hover, .practice .preview .hero.start-button .tabs a:hover {
+.hero.is-primary .tabs a:hover, .practice .preview .hero.start-button .tabs a:hover {
   opacity: 1; }
 
-.hero.is-primary .tabs li.is-active a, .practice .hero.test-button .tabs li.is-active a, .practice .preview .hero.start-button .tabs li.is-active a {
+.hero.is-primary .tabs li.is-active a, .practice .preview .hero.start-button .tabs li.is-active a {
   opacity: 1; }
 
-.hero.is-primary .tabs.is-boxed a, .practice .hero.test-button .tabs.is-boxed a, .practice .preview .hero.start-button .tabs.is-boxed a, .hero.is-primary .tabs.is-toggle a, .practice .hero.test-button .tabs.is-toggle a, .practice .preview .hero.start-button .tabs.is-toggle a {
+.hero.is-primary .tabs.is-boxed a, .practice .preview .hero.start-button .tabs.is-boxed a, .hero.is-primary .tabs.is-toggle a, .practice .preview .hero.start-button .tabs.is-toggle a {
   color: #fff; }
 
-.hero.is-primary .tabs.is-boxed a:hover, .practice .hero.test-button .tabs.is-boxed a:hover, .practice .preview .hero.start-button .tabs.is-boxed a:hover, .hero.is-primary .tabs.is-toggle a:hover, .practice .hero.test-button .tabs.is-toggle a:hover, .practice .preview .hero.start-button .tabs.is-toggle a:hover {
+.hero.is-primary .tabs.is-boxed a:hover, .practice .preview .hero.start-button .tabs.is-boxed a:hover, .hero.is-primary .tabs.is-toggle a:hover, .practice .preview .hero.start-button .tabs.is-toggle a:hover {
   background-color: rgba(51, 51, 51, 0.1); }
 
-.hero.is-primary .tabs.is-boxed li.is-active a, .practice .hero.test-button .tabs.is-boxed li.is-active a, .practice .preview .hero.start-button .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .practice .hero.test-button .tabs.is-boxed li.is-active a:hover, .practice .preview .hero.start-button .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .practice .hero.test-button .tabs.is-toggle li.is-active a, .practice .preview .hero.start-button .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover, .practice .hero.test-button .tabs.is-toggle li.is-active a:hover, .practice .preview .hero.start-button .tabs.is-toggle li.is-active a:hover {
+.hero.is-primary .tabs.is-boxed li.is-active a, .practice .preview .hero.start-button .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .practice .preview .hero.start-button .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .practice .preview .hero.start-button .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover, .practice .preview .hero.start-button .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
   color: #00d1b2; }
 
-.hero.is-primary.is-bold, .practice .hero.is-bold.test-button, .practice .preview .hero.is-bold.start-button {
+.hero.is-primary.is-bold, .practice .preview .hero.is-bold.start-button {
   background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); }
 
 @media screen and (max-width: 768px) {
-  .hero.is-primary.is-bold .navbar-menu, .practice .hero.is-bold.test-button .navbar-menu, .practice .preview .hero.is-bold.start-button .navbar-menu {
+  .hero.is-primary.is-bold .navbar-menu, .practice .preview .hero.is-bold.start-button .navbar-menu {
     background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); } }
 
 .hero.is-link {
@@ -7525,7 +7534,7 @@ label.panel-block:hover {
     padding-top: 9rem; } }
 
 @media screen and (min-width: 769px), print {
-  .hero.is-large .hero-body, .practice .preview .hero.start-button .hero-body {
+  .hero.is-large .hero-body, .practice .preview .hero.start-button .hero-body, .practice .hero.help-button .hero-body {
     padding-bottom: 18rem;
     padding-top: 18rem; } }
 
@@ -7533,7 +7542,7 @@ label.panel-block:hover {
   align-items: center;
   display: flex; }
 
-.hero.is-halfheight .hero-body > .container, .hero.is-halfheight .practice .hero-body > .preview, .practice .hero.is-halfheight .hero-body > .preview, .hero.is-fullheight .hero-body > .container, .hero.is-fullheight .practice .hero-body > .preview, .practice .hero.is-fullheight .hero-body > .preview {
+.hero.is-halfheight .hero-body > .container, .hero.is-halfheight .hero-body > .practice, .hero.is-halfheight .practice .hero-body > .preview, .practice .hero.is-halfheight .hero-body > .preview, .hero.is-fullheight .hero-body > .container, .hero.is-fullheight .hero-body > .practice, .hero.is-fullheight .practice .hero-body > .preview, .practice .hero.is-fullheight .hero-body > .preview {
   flex-grow: 1;
   flex-shrink: 1; }
 
@@ -7565,16 +7574,16 @@ label.panel-block:hover {
   margin-top: 1.5rem; }
 
 @media screen and (max-width: 768px) {
-  .hero-buttons .button, .hero-buttons .practice .test-button, .practice .hero-buttons .test-button, .hero-buttons .practice .preview .start-button, .practice .preview .hero-buttons .start-button {
+  .hero-buttons .button, .hero-buttons .practice .test-button, .practice .hero-buttons .test-button, .hero-buttons .practice .preview .start-button, .practice .preview .hero-buttons .start-button, .hero-buttons .practice .help-button, .practice .hero-buttons .help-button {
     display: flex; }
-  .hero-buttons .button:not(:last-child), .hero-buttons .practice .test-button:not(:last-child), .practice .hero-buttons .test-button:not(:last-child), .hero-buttons .practice .preview .start-button:not(:last-child), .practice .preview .hero-buttons .start-button:not(:last-child) {
+  .hero-buttons .button:not(:last-child), .hero-buttons .practice .test-button:not(:last-child), .practice .hero-buttons .test-button:not(:last-child), .hero-buttons .practice .preview .start-button:not(:last-child), .practice .preview .hero-buttons .start-button:not(:last-child), .hero-buttons .practice .help-button:not(:last-child), .practice .hero-buttons .help-button:not(:last-child) {
     margin-bottom: 0.75rem; } }
 
 @media screen and (min-width: 769px), print {
   .hero-buttons {
     display: flex;
     justify-content: center; }
-  .hero-buttons .button:not(:last-child), .hero-buttons .practice .test-button:not(:last-child), .practice .hero-buttons .test-button:not(:last-child), .hero-buttons .practice .preview .start-button:not(:last-child), .practice .preview .hero-buttons .start-button:not(:last-child) {
+  .hero-buttons .button:not(:last-child), .hero-buttons .practice .test-button:not(:last-child), .practice .hero-buttons .test-button:not(:last-child), .hero-buttons .practice .preview .start-button:not(:last-child), .practice .preview .hero-buttons .start-button:not(:last-child), .hero-buttons .practice .help-button:not(:last-child), .practice .hero-buttons .help-button:not(:last-child) {
     margin-right: 1.5rem; } }
 
 .hero-head,
@@ -7587,13 +7596,13 @@ label.panel-block:hover {
   flex-shrink: 0;
   padding: 3rem 1.5rem; }
 
-.section, .practice .preview section {
+.section, .practice, .practice .preview section, .practice .cards {
   padding: 3rem 1.5rem; }
 
 @media screen and (min-width: 1088px) {
-  .section.is-medium, .practice .preview section.is-medium {
+  .section.is-medium, .is-medium.practice, .practice .preview section.is-medium, .practice .is-medium.cards {
     padding: 9rem 1.5rem; }
-  .section.is-large, .practice .preview section.is-large, .practice .preview section.start-button, .practice .preview .section.start-button {
+  .section.is-large, .is-large.practice, .practice .preview .practice.start-button, .practice .practice.help-button, .practice .preview section.is-large, .practice .preview section.start-button, .practice .preview section.help-button, .practice .preview .section.start-button, .practice .preview .start-button.cards, .practice .is-large.cards, .practice .cards.help-button, .practice .section.help-button {
     padding: 18rem 1.5rem; } }
 
 .footer {
@@ -7605,6 +7614,10 @@ label.panel-block:hover {
   right: 1em;
   top: 1em; }
 
+.practice .test-button .icon {
+  display: inline-block;
+  padding: 0 1em; }
+
 .practice .preview {
   text-align: center; }
 
@@ -7612,12 +7625,14 @@ label.panel-block:hover {
   width: 50%; }
 
 .practice .card {
-  width: 100%;
   position: absolute;
+  width: 100%;
+  left: 0;
   text-align: center;
   font-size: 4em;
   background-color: white;
-  transition: opacity .3s; }
+  transition: opacity .3s;
+  cursor: pointer; }
 
 .practice .card > div {
   transition: opacity .3s;
@@ -7628,3 +7643,16 @@ label.panel-block:hover {
 
 .practice .card-exit {
   opacity: 0; }
+
+.practice .help-button {
+  position: absolute;
+  right: .5em;
+  margin-top: .5em;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0;
+  font-weight: bold;
+  color: #e5e9f1;
+  border-color: #e5e9f1;
+  background-color: transparent;
+  z-index: 1; }

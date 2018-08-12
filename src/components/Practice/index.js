@@ -16,6 +16,6 @@ const mapStateToProps = ({ words, settings, view }) => ({
     subview: view.subview
 });
 
-const { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview } = operations;
+const { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview, startCustomTest } = operations;
 
-export default connect(mapStateToProps, { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview })(Practice);
+export default connect(mapStateToProps, { seedPractice, advancePractice, nudgePractice, closePractice, changeSubview, startCustomTest })(Practice);

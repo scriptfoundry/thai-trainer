@@ -6,14 +6,18 @@
     table {
         @extend .table;
         @extend .is-fullwidth;
-    }
 
-    td {
-        line-height: 2em;
-    }
-    th:nth-child(4), td:nth-child(4) {
-        @extend .is-narrow;
-        @extend .has-text-centered;
+        td {
+            line-height: 2em;
+            vertical-align: middle;
+        }
+        td:nth-child(2) {
+            font-size: 1.8rem;
+        }
+        th:nth-child(4), td:nth-child(4) {
+            @extend .is-narrow;
+            @extend .has-text-centered;
+        }
     }
 
     .progress-meter {

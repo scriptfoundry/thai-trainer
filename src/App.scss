@@ -25,15 +25,10 @@ button.back-button {
 }
 button {
     @extend .button;
-    // @extend .is-large;
-    // cursor: pointer;
-    &:disabled {
-        // @extend .is-disabled;
-    }
 }
 h1, h2, h3 {
-    // @extend .title;
     text-align: center;
+    font-weight: lighter;
 }
 h1 { @extend .title; }
 h2 { @extend .subtitle; }

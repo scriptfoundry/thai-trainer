@@ -1483,78 +1483,78 @@ a.box:active {
   box-shadow: none;
   color: whitesmoke; }
 
-.button.is-primary, .test-selector button.is-primary {
+.button.is-primary, .test-selector button {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:hover, .test-selector button.is-primary:hover, .button.is-primary.is-hovered, .test-selector button.is-primary.is-hovered {
+.button.is-primary:hover, .test-selector button:hover, .button.is-primary.is-hovered, .test-selector button.is-hovered {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:focus, .test-selector button.is-primary:focus, .button.is-primary.is-focused, .test-selector button.is-primary.is-focused {
+.button.is-primary:focus, .test-selector button:focus, .button.is-primary.is-focused, .test-selector button.is-focused {
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary:focus:not(:active), .test-selector button.is-primary:focus:not(:active), .button.is-primary.is-focused:not(:active), .test-selector button.is-primary.is-focused:not(:active) {
+.button.is-primary:focus:not(:active), .test-selector button:focus:not(:active), .button.is-primary.is-focused:not(:active), .test-selector button.is-focused:not(:active) {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
-.button.is-primary:active, .test-selector button.is-primary:active, .button.is-primary.is-active, .test-selector button.is-primary.is-active {
+.button.is-primary:active, .test-selector button:active, .button.is-primary.is-active, .test-selector button.is-active {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff; }
 
-.button.is-primary[disabled], .test-selector button.is-primary[disabled] {
+.button.is-primary[disabled], .test-selector button[disabled] {
   background-color: #00d1b2;
   border-color: transparent;
   box-shadow: none; }
 
-.button.is-primary.is-inverted, .test-selector button.is-primary.is-inverted {
+.button.is-primary.is-inverted, .test-selector button.is-inverted {
   background-color: #fff;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted:hover, .test-selector button.is-primary.is-inverted:hover {
+.button.is-primary.is-inverted:hover, .test-selector button.is-inverted:hover {
   background-color: #f2f2f2; }
 
-.button.is-primary.is-inverted[disabled], .test-selector button.is-primary.is-inverted[disabled] {
+.button.is-primary.is-inverted[disabled], .test-selector button.is-inverted[disabled] {
   background-color: #fff;
   border-color: transparent;
   box-shadow: none;
   color: #00d1b2; }
 
-.button.is-primary.is-loading::after, .test-selector button.is-primary.is-loading::after {
+.button.is-primary.is-loading::after, .test-selector button.is-loading::after {
   border-color: transparent transparent #fff #fff !important; }
 
-.button.is-primary.is-outlined, .test-selector button.is-primary.is-outlined {
+.button.is-primary.is-outlined, .test-selector button.is-outlined {
   background-color: transparent;
   border-color: #00d1b2;
   color: #00d1b2; }
 
-.button.is-primary.is-outlined:hover, .test-selector button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus, .test-selector button.is-primary.is-outlined:focus {
+.button.is-primary.is-outlined:hover, .test-selector button.is-outlined:hover, .button.is-primary.is-outlined:focus, .test-selector button.is-outlined:focus {
   background-color: #00d1b2;
   border-color: #00d1b2;
   color: #fff; }
 
-.button.is-primary.is-outlined.is-loading::after, .test-selector button.is-primary.is-outlined.is-loading::after {
+.button.is-primary.is-outlined.is-loading::after, .test-selector button.is-outlined.is-loading::after {
   border-color: transparent transparent #00d1b2 #00d1b2 !important; }
 
-.button.is-primary.is-outlined[disabled], .test-selector button.is-primary.is-outlined[disabled] {
+.button.is-primary.is-outlined[disabled], .test-selector button.is-outlined[disabled] {
   background-color: transparent;
   border-color: #00d1b2;
   box-shadow: none;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted.is-outlined, .test-selector button.is-primary.is-inverted.is-outlined {
+.button.is-primary.is-inverted.is-outlined, .test-selector button.is-inverted.is-outlined {
   background-color: transparent;
   border-color: #fff;
   color: #fff; }
 
-.button.is-primary.is-inverted.is-outlined:hover, .test-selector button.is-primary.is-inverted.is-outlined:hover, .button.is-primary.is-inverted.is-outlined:focus, .test-selector button.is-primary.is-inverted.is-outlined:focus {
+.button.is-primary.is-inverted.is-outlined:hover, .test-selector button.is-inverted.is-outlined:hover, .button.is-primary.is-inverted.is-outlined:focus, .test-selector button.is-inverted.is-outlined:focus {
   background-color: #fff;
   color: #00d1b2; }
 
-.button.is-primary.is-inverted.is-outlined[disabled], .test-selector button.is-primary.is-inverted.is-outlined[disabled] {
+.button.is-primary.is-inverted.is-outlined[disabled], .test-selector button.is-inverted.is-outlined[disabled] {
   background-color: transparent;
   border-color: #fff;
   box-shadow: none;
@@ -2323,15 +2323,20 @@ a.box:active {
 .textarea.is-dark.is-active {
   box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
 
-.input.is-primary,
-.textarea.is-primary {
+.input.is-primary, .test-selector button.input,
+.textarea.is-primary,
+.test-selector button.textarea {
   border-color: #00d1b2; }
 
-.input.is-primary:focus, .input.is-primary.is-focused, .input.is-primary:active, .input.is-primary.is-active,
+.input.is-primary:focus, .test-selector button.input:focus, .input.is-primary.is-focused, .test-selector button.input.is-focused, .input.is-primary:active, .test-selector button.input:active, .input.is-primary.is-active, .test-selector button.input.is-active,
 .textarea.is-primary:focus,
+.test-selector button.textarea:focus,
 .textarea.is-primary.is-focused,
+.test-selector button.textarea.is-focused,
 .textarea.is-primary:active,
-.textarea.is-primary.is-active {
+.test-selector button.textarea:active,
+.textarea.is-primary.is-active,
+.test-selector button.textarea.is-active {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
 .input.is-link,
@@ -2597,16 +2602,16 @@ a.box:active {
 .select.is-dark select:focus, .select.is-dark select.is-focused, .select.is-dark select:active, .select.is-dark select.is-active {
   box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
 
-.select.is-primary:not(:hover)::after {
+.select.is-primary:not(:hover)::after, .test-selector button.select:not(:hover)::after {
   border-color: #00d1b2; }
 
-.select.is-primary select {
+.select.is-primary select, .test-selector button.select select {
   border-color: #00d1b2; }
 
-.select.is-primary select:hover, .select.is-primary select.is-hovered {
+.select.is-primary select:hover, .test-selector button.select select:hover, .select.is-primary select.is-hovered, .test-selector button.select select.is-hovered {
   border-color: #00b89c; }
 
-.select.is-primary select:focus, .select.is-primary select.is-focused, .select.is-primary select:active, .select.is-primary select.is-active {
+.select.is-primary select:focus, .test-selector button.select select:focus, .select.is-primary select.is-focused, .test-selector button.select select.is-focused, .select.is-primary select:active, .test-selector button.select select:active, .select.is-primary select.is-active, .test-selector button.select select.is-active {
   box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
 
 .select.is-link:not(:hover)::after {
@@ -2790,22 +2795,22 @@ a.box:active {
   border-color: transparent;
   color: whitesmoke; }
 
-.file.is-primary .file-cta {
+.file.is-primary .file-cta, .test-selector button.file .file-cta {
   background-color: #00d1b2;
   border-color: transparent;
   color: #fff; }
 
-.file.is-primary:hover .file-cta, .file.is-primary.is-hovered .file-cta {
+.file.is-primary:hover .file-cta, .test-selector button.file:hover .file-cta, .file.is-primary.is-hovered .file-cta, .test-selector button.file.is-hovered .file-cta {
   background-color: #00c4a7;
   border-color: transparent;
   color: #fff; }
 
-.file.is-primary:focus .file-cta, .file.is-primary.is-focused .file-cta {
+.file.is-primary:focus .file-cta, .test-selector button.file:focus .file-cta, .file.is-primary.is-focused .file-cta, .test-selector button.file.is-focused .file-cta {
   border-color: transparent;
   box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.25);
   color: #fff; }
 
-.file.is-primary:active .file-cta, .file.is-primary.is-active .file-cta {
+.file.is-primary:active .file-cta, .test-selector button.file:active .file-cta, .file.is-primary.is-active .file-cta, .test-selector button.file.is-active .file-cta {
   background-color: #00b89c;
   border-color: transparent;
   color: #fff; }
@@ -3093,7 +3098,7 @@ a.box:active {
 .help.is-dark {
   color: #363636; }
 
-.help.is-primary {
+.help.is-primary, .test-selector button.help {
   color: #00d1b2; }
 
 .help.is-link {
@@ -3515,7 +3520,7 @@ a.box:active {
   background-color: #363636;
   color: whitesmoke; }
 
-.notification.is-primary {
+.notification.is-primary, .test-selector button.notification {
   background-color: #00d1b2;
   color: #fff; }
 
@@ -3599,13 +3604,13 @@ a.box:active {
 .progress.is-dark::-ms-fill {
   background-color: #363636; }
 
-.progress.is-primary::-webkit-progress-value {
+.progress.is-primary::-webkit-progress-value, .test-selector button.progress::-webkit-progress-value {
   background-color: #00d1b2; }
 
-.progress.is-primary::-moz-progress-bar {
+.progress.is-primary::-moz-progress-bar, .test-selector button.progress::-moz-progress-bar {
   background-color: #00d1b2; }
 
-.progress.is-primary::-ms-fill {
+.progress.is-primary::-ms-fill, .test-selector button.progress::-ms-fill {
   background-color: #00d1b2; }
 
 .progress.is-link::-webkit-progress-value {
@@ -3889,7 +3894,7 @@ a.box:active {
   background-color: #363636;
   color: whitesmoke; }
 
-.tag:not(body).is-primary {
+.tag:not(body).is-primary, .test-selector button.tag:not(body) {
   background-color: #00d1b2;
   color: #fff; }
 
@@ -4532,14 +4537,14 @@ a.dropdown-item.is-active {
   border-color: #363636;
   color: #2a2a2a; }
 
-.message.is-primary {
+.message.is-primary, .test-selector button.message {
   background-color: #f5fffd; }
 
-.message.is-primary .message-header {
+.message.is-primary .message-header, .test-selector button.message .message-header {
   background-color: #00d1b2;
   color: #fff; }
 
-.message.is-primary .message-body {
+.message.is-primary .message-body, .test-selector button.message .message-body {
   border-color: #00d1b2;
   color: #021310; }
 
@@ -4894,46 +4899,60 @@ a.dropdown-item.is-active {
     background-color: #363636;
     color: whitesmoke; } }
 
-.navbar.is-primary {
+.navbar.is-primary, .test-selector button.navbar {
   background-color: #00d1b2;
   color: #fff; }
 
-.navbar.is-primary .navbar-brand > .navbar-item,
-.navbar.is-primary .navbar-brand .navbar-link {
+.navbar.is-primary .navbar-brand > .navbar-item, .test-selector button.navbar .navbar-brand > .navbar-item,
+.navbar.is-primary .navbar-brand .navbar-link,
+.test-selector button.navbar .navbar-brand .navbar-link {
   color: #fff; }
 
-.navbar.is-primary .navbar-brand > a.navbar-item:hover, .navbar.is-primary .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary .navbar-brand > a.navbar-item:hover, .test-selector button.navbar .navbar-brand > a.navbar-item:hover, .navbar.is-primary .navbar-brand > a.navbar-item.is-active, .test-selector button.navbar .navbar-brand > a.navbar-item.is-active,
 .navbar.is-primary .navbar-brand .navbar-link:hover,
-.navbar.is-primary .navbar-brand .navbar-link.is-active {
+.test-selector button.navbar .navbar-brand .navbar-link:hover,
+.navbar.is-primary .navbar-brand .navbar-link.is-active,
+.test-selector button.navbar .navbar-brand .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff; }
 
-.navbar.is-primary .navbar-brand .navbar-link::after {
+.navbar.is-primary .navbar-brand .navbar-link::after, .test-selector button.navbar .navbar-brand .navbar-link::after {
   border-color: #fff; }
 
 @media screen and (min-width: 1088px) {
-  .navbar.is-primary .navbar-start > .navbar-item,
+  .navbar.is-primary .navbar-start > .navbar-item, .test-selector button.navbar .navbar-start > .navbar-item,
   .navbar.is-primary .navbar-start .navbar-link,
+  .test-selector button.navbar .navbar-start .navbar-link,
   .navbar.is-primary .navbar-end > .navbar-item,
-  .navbar.is-primary .navbar-end .navbar-link {
+  .test-selector button.navbar .navbar-end > .navbar-item,
+  .navbar.is-primary .navbar-end .navbar-link,
+  .test-selector button.navbar .navbar-end .navbar-link {
     color: #fff; }
-  .navbar.is-primary .navbar-start > a.navbar-item:hover, .navbar.is-primary .navbar-start > a.navbar-item.is-active,
+  .navbar.is-primary .navbar-start > a.navbar-item:hover, .test-selector button.navbar .navbar-start > a.navbar-item:hover, .navbar.is-primary .navbar-start > a.navbar-item.is-active, .test-selector button.navbar .navbar-start > a.navbar-item.is-active,
   .navbar.is-primary .navbar-start .navbar-link:hover,
+  .test-selector button.navbar .navbar-start .navbar-link:hover,
   .navbar.is-primary .navbar-start .navbar-link.is-active,
+  .test-selector button.navbar .navbar-start .navbar-link.is-active,
   .navbar.is-primary .navbar-end > a.navbar-item:hover,
+  .test-selector button.navbar .navbar-end > a.navbar-item:hover,
   .navbar.is-primary .navbar-end > a.navbar-item.is-active,
+  .test-selector button.navbar .navbar-end > a.navbar-item.is-active,
   .navbar.is-primary .navbar-end .navbar-link:hover,
-  .navbar.is-primary .navbar-end .navbar-link.is-active {
+  .test-selector button.navbar .navbar-end .navbar-link:hover,
+  .navbar.is-primary .navbar-end .navbar-link.is-active,
+  .test-selector button.navbar .navbar-end .navbar-link.is-active {
     background-color: #00b89c;
     color: #fff; }
-  .navbar.is-primary .navbar-start .navbar-link::after,
-  .navbar.is-primary .navbar-end .navbar-link::after {
+  .navbar.is-primary .navbar-start .navbar-link::after, .test-selector button.navbar .navbar-start .navbar-link::after,
+  .navbar.is-primary .navbar-end .navbar-link::after,
+  .test-selector button.navbar .navbar-end .navbar-link::after {
     border-color: #fff; }
-  .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link,
-  .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link {
+  .navbar.is-primary .navbar-item.has-dropdown:hover .navbar-link, .test-selector button.navbar .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.is-primary .navbar-item.has-dropdown.is-active .navbar-link,
+  .test-selector button.navbar .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: #00b89c;
     color: #fff; }
-  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active {
+  .navbar.is-primary .navbar-dropdown a.navbar-item.is-active, .test-selector button.navbar .navbar-dropdown a.navbar-item.is-active {
     background-color: #00d1b2;
     color: #fff; } }
 
@@ -7123,69 +7142,79 @@ label.panel-block:hover {
   .hero.is-dark.is-bold .navbar-menu, .is-dark.is-bold.test-selector .navbar-menu {
     background-image: linear-gradient(141deg, #1f191a 0%, #363636 71%, #46403f 100%); } }
 
-.hero.is-primary, .is-primary.test-selector {
+.hero.is-primary, .is-primary.test-selector, .test-selector button.test-selector, .test-selector button.hero {
   background-color: #00d1b2;
   color: #fff; }
 
-.hero.is-primary a:not(.button):not(.dropdown-item):not(.tag), .is-primary.test-selector a:not(.button):not(.dropdown-item):not(.tag),
+.hero.is-primary a:not(.button):not(.dropdown-item):not(.tag), .is-primary.test-selector a:not(.button):not(.dropdown-item):not(.tag), .test-selector button.test-selector a:not(.button):not(.dropdown-item):not(.tag), .test-selector button.hero a:not(.button):not(.dropdown-item):not(.tag),
 .hero.is-primary strong,
-.is-primary.test-selector strong {
+.is-primary.test-selector strong,
+.test-selector button.test-selector strong,
+.test-selector button.hero strong {
   color: inherit; }
 
-.hero.is-primary .title, .is-primary.test-selector .title {
+.hero.is-primary .title, .is-primary.test-selector .title, .test-selector button.test-selector .title, .test-selector button.hero .title {
   color: #fff; }
 
-.hero.is-primary .subtitle, .is-primary.test-selector .subtitle {
+.hero.is-primary .subtitle, .is-primary.test-selector .subtitle, .test-selector button.test-selector .subtitle, .test-selector button.hero .subtitle {
   color: rgba(255, 255, 255, 0.9); }
 
-.hero.is-primary .subtitle a:not(.button), .is-primary.test-selector .subtitle a:not(.button),
+.hero.is-primary .subtitle a:not(.button), .is-primary.test-selector .subtitle a:not(.button), .test-selector button.test-selector .subtitle a:not(.button), .test-selector button.hero .subtitle a:not(.button),
 .hero.is-primary .subtitle strong,
-.is-primary.test-selector .subtitle strong {
+.is-primary.test-selector .subtitle strong,
+.test-selector button.test-selector .subtitle strong,
+.test-selector button.hero .subtitle strong {
   color: #fff; }
 
 @media screen and (max-width: 1087px) {
-  .hero.is-primary .navbar-menu, .is-primary.test-selector .navbar-menu {
+  .hero.is-primary .navbar-menu, .is-primary.test-selector .navbar-menu, .test-selector button.test-selector .navbar-menu, .test-selector button.hero .navbar-menu {
     background-color: #00d1b2; } }
 
-.hero.is-primary .navbar-item, .is-primary.test-selector .navbar-item,
+.hero.is-primary .navbar-item, .is-primary.test-selector .navbar-item, .test-selector button.test-selector .navbar-item, .test-selector button.hero .navbar-item,
 .hero.is-primary .navbar-link,
-.is-primary.test-selector .navbar-link {
+.is-primary.test-selector .navbar-link,
+.test-selector button.test-selector .navbar-link,
+.test-selector button.hero .navbar-link {
   color: rgba(255, 255, 255, 0.7); }
 
-.hero.is-primary a.navbar-item:hover, .is-primary.test-selector a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active, .is-primary.test-selector a.navbar-item.is-active,
+.hero.is-primary a.navbar-item:hover, .is-primary.test-selector a.navbar-item:hover, .test-selector button.test-selector a.navbar-item:hover, .test-selector button.hero a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active, .is-primary.test-selector a.navbar-item.is-active, .test-selector button.test-selector a.navbar-item.is-active, .test-selector button.hero a.navbar-item.is-active,
 .hero.is-primary .navbar-link:hover,
 .is-primary.test-selector .navbar-link:hover,
+.test-selector button.test-selector .navbar-link:hover,
+.test-selector button.hero .navbar-link:hover,
 .hero.is-primary .navbar-link.is-active,
-.is-primary.test-selector .navbar-link.is-active {
+.is-primary.test-selector .navbar-link.is-active,
+.test-selector button.test-selector .navbar-link.is-active,
+.test-selector button.hero .navbar-link.is-active {
   background-color: #00b89c;
   color: #fff; }
 
-.hero.is-primary .tabs a, .is-primary.test-selector .tabs a {
+.hero.is-primary .tabs a, .is-primary.test-selector .tabs a, .test-selector button.test-selector .tabs a, .test-selector button.hero .tabs a {
   color: #fff;
   opacity: 0.9; }
 
-.hero.is-primary .tabs a:hover, .is-primary.test-selector .tabs a:hover {
+.hero.is-primary .tabs a:hover, .is-primary.test-selector .tabs a:hover, .test-selector button.test-selector .tabs a:hover, .test-selector button.hero .tabs a:hover {
   opacity: 1; }
 
-.hero.is-primary .tabs li.is-active a, .is-primary.test-selector .tabs li.is-active a {
+.hero.is-primary .tabs li.is-active a, .is-primary.test-selector .tabs li.is-active a, .test-selector button.test-selector .tabs li.is-active a, .test-selector button.hero .tabs li.is-active a {
   opacity: 1; }
 
-.hero.is-primary .tabs.is-boxed a, .is-primary.test-selector .tabs.is-boxed a, .hero.is-primary .tabs.is-toggle a, .is-primary.test-selector .tabs.is-toggle a {
+.hero.is-primary .tabs.is-boxed a, .is-primary.test-selector .tabs.is-boxed a, .test-selector button.test-selector .tabs.is-boxed a, .test-selector button.hero .tabs.is-boxed a, .hero.is-primary .tabs.is-toggle a, .is-primary.test-selector .tabs.is-toggle a, .test-selector button.test-selector .tabs.is-toggle a, .test-selector button.hero .tabs.is-toggle a {
   color: #fff; }
 
-.hero.is-primary .tabs.is-boxed a:hover, .is-primary.test-selector .tabs.is-boxed a:hover, .hero.is-primary .tabs.is-toggle a:hover, .is-primary.test-selector .tabs.is-toggle a:hover {
+.hero.is-primary .tabs.is-boxed a:hover, .is-primary.test-selector .tabs.is-boxed a:hover, .test-selector button.test-selector .tabs.is-boxed a:hover, .test-selector button.hero .tabs.is-boxed a:hover, .hero.is-primary .tabs.is-toggle a:hover, .is-primary.test-selector .tabs.is-toggle a:hover, .test-selector button.test-selector .tabs.is-toggle a:hover, .test-selector button.hero .tabs.is-toggle a:hover {
   background-color: rgba(51, 51, 51, 0.1); }
 
-.hero.is-primary .tabs.is-boxed li.is-active a, .is-primary.test-selector .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .is-primary.test-selector .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .is-primary.test-selector .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover, .is-primary.test-selector .tabs.is-toggle li.is-active a:hover {
+.hero.is-primary .tabs.is-boxed li.is-active a, .is-primary.test-selector .tabs.is-boxed li.is-active a, .test-selector button.test-selector .tabs.is-boxed li.is-active a, .test-selector button.hero .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .is-primary.test-selector .tabs.is-boxed li.is-active a:hover, .test-selector button.test-selector .tabs.is-boxed li.is-active a:hover, .test-selector button.hero .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .is-primary.test-selector .tabs.is-toggle li.is-active a, .test-selector button.test-selector .tabs.is-toggle li.is-active a, .test-selector button.hero .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover, .is-primary.test-selector .tabs.is-toggle li.is-active a:hover, .test-selector button.test-selector .tabs.is-toggle li.is-active a:hover, .test-selector button.hero .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
   color: #00d1b2; }
 
-.hero.is-primary.is-bold, .is-primary.is-bold.test-selector {
+.hero.is-primary.is-bold, .is-primary.is-bold.test-selector, .test-selector button.is-bold.test-selector, .test-selector button.hero.is-bold {
   background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); }
 
 @media screen and (max-width: 768px) {
-  .hero.is-primary.is-bold .navbar-menu, .is-primary.is-bold.test-selector .navbar-menu {
+  .hero.is-primary.is-bold .navbar-menu, .is-primary.is-bold.test-selector .navbar-menu, .test-selector button.is-bold.test-selector .navbar-menu, .test-selector button.hero.is-bold .navbar-menu {
     background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); } }
 
 .hero.is-link, .is-link.test-selector {
@@ -7600,3 +7629,7 @@ label.panel-block:hover {
 
 .test-selector {
   justify-content: space-evenly; }
+
+.test-selector button[disabled] {
+  color: #b9b8b8;
+  background-color: #e5e9f1; }

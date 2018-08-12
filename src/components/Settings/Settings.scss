@@ -1,4 +1,34 @@
+@import '../common/constants';
+@import "../../../node_modules/bulma/bulma";
+
 .settings {
+    @extend .container; 
+
+    section {
+        @extend .section;
+    }
+
+    .voice-selector button.selected {
+        @extend .button;
+        @extend .is-primary;
+        cursor: not-allowed;
+    }
+
+    .practice-order {
+        text-align: center;
+
+        .all-at-once {
+            margin: 1em 0;
+        }
+        .practice-order-selector {
+            text-align: center;
+
+            > div {
+                display: inline-block;
+            }
+        }
+    }
+
     .sample {
         display: flex;
         align-items: center;

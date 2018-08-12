@@ -8,6 +8,7 @@ export const TEST_SETTESTTYPE = 'test/settesttype';
 export const TEST_COMPLETETEST = 'test/completetest';
 const TEST_SETTESTWORDS = 'test/settesetwords';
 const TEST_ACCEPTANSWER = 'test/acceptanswer';
+const TEST_STARTCUSTOMTEST = 'test/startcustomtest';
 
 const getRandomQueue = buildRandomizedValuesQueue(3);
 
@@ -58,16 +59,26 @@ const submitAnswer = (correct) => (dispatch, getState) => {
     scores = [...scores.slice(0, index), { id: queue[index].id, score, stage }, ...scores.slice(index + 1)];
     index += 1;
     stage = Math.floor(index / testWords.length);
-    if (index < scores.length) {
-        dispatch({ type: TEST_ACCEPTANSWER, payload: { scores, index, stage }});
-    } else {
-        dispatch({ type: TEST_COMPLETETEST, payload: { scores }});
-    }
+
+    if (index < scores.length) dispatch({ type: TEST_ACCEPTANSWER, payload: { scores, index, stage }});
+    else dispatch({ type: TEST_COMPLETETEST, payload: { scores }});
+};
+const startCustomTest = words => dispatch => {
+    const stage = TEST_STAGE1;
+    const type = TEST_TYPECURRENT;
+    const index = 0;
+
+    const testWords = words.filter((word, index, self) => self.indexOf(word) === index);
+    const queue = getRandomQueue(testWords);
+    const scores = new Array(queue.length).fill(0);
+
+    dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
 };
 
 export const operations = {
     getCurrentWords,
     getOverdueWords,
     setTestType,
+    startCustomTest,
     submitAnswer,
 };

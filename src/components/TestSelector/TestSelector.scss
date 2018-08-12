@@ -12,6 +12,12 @@
     button {
         @extend .button;
         @extend .is-large;
-        // @extend .is-primary;
+        @extend .is-primary;
+
+        &[disabled] {
+            color: $color-muted;
+            background-color: $color-faint;
+            
+        }
     }
 }
