@@ -2,6 +2,14 @@
 @import "../../../node_modules/bulma/bulma";
 
 .practice {
+    .test-button {
+        @extend .button;
+        @extend .is-primary;
+
+        position: absolute;
+        right: 1em;
+        top: 1em;
+    }
     .preview {
         @extend .container;
         text-align: center;
