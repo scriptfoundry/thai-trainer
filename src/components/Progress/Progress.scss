@@ -9,7 +9,7 @@
     .filter {
         @extend .buttons;
         @extend .has-addons;
-        @extend .is-fullwidth;
+        @extend .is-centered;
 
         .toggle-header {
             @extend .button;

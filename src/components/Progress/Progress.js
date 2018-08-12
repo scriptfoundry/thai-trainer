@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getDayOfEpoch, memoize } from '../../services/Utils';
+import { filterByRoughStatus } from '../../services/Leitner';
 import { STATUS_OVERDUE, STATUS_MASTERED, STATUS_NONE, STATUS_WAITING, STATUS_PRACTICE } from '../../services/Leitner';
 import ToggleHeader from './ToggleHeader';
 import WordsTable from '../WordsTable';
 
-
+const getFilteredWordsList = memoize(filterByRoughStatus);
 
 const Progress = ({ togglePreviewFilterStatus, words, previewFilter }) => {
+    const visibleWords = getFilteredWordsList(words, getDayOfEpoch(new Date()), previewFilter);
 
     return <div className="progress-page">
         <div className="filter">
@@ -16,7 +19,7 @@ const Progress = ({ togglePreviewFilterStatus, words, previewFilter }) => {
             <ToggleHeader onClick={ () => togglePreviewFilterStatus(STATUS_MASTERED) } selected={ previewFilter.includes(STATUS_MASTERED) }>Mastered words</ToggleHeader>
             <ToggleHeader onClick={ () => togglePreviewFilterStatus(STATUS_NONE) } selected={ previewFilter.includes(STATUS_NONE) }>Future words</ToggleHeader>
         </div>
-        <WordsTable words={ words } />
+        <WordsTable visibleWords={ visibleWords } />
     </div>;
 };
 

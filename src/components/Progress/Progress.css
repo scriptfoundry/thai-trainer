@@ -1961,7 +1961,7 @@ a.box:active {
   box-shadow: none;
   opacity: 0.5; }
 
-.button.is-fullwidth, .progress-page .button.filter, .progress-page .filter .filter.toggle-header, .progress-page .filter .is-fullwidth.toggle-header {
+.button.is-fullwidth, .progress-page .filter .is-fullwidth.toggle-header {
   display: flex;
   width: 100%; }
 
@@ -2029,7 +2029,7 @@ a.box:active {
 .buttons.has-addons .button.is-expanded, .progress-page .filter .button.is-expanded, .progress-page .filter .is-expanded.toggle-header {
   flex-grow: 1; }
 
-.buttons.is-centered, .progress-page .is-centered.filter {
+.buttons.is-centered, .progress-page .filter {
   justify-content: center; }
 
 .buttons.is-right, .progress-page .is-right.filter {
@@ -2407,9 +2407,8 @@ a.box:active {
 .textarea.is-large {
   font-size: 1.5rem; }
 
-.input.is-fullwidth, .progress-page .input.filter,
-.textarea.is-fullwidth,
-.progress-page .textarea.filter {
+.input.is-fullwidth,
+.textarea.is-fullwidth {
   display: block;
   width: 100%; }
 
@@ -2687,10 +2686,10 @@ a.box:active {
 .select.is-disabled::after {
   border-color: #7a7a7a; }
 
-.select.is-fullwidth, .progress-page .select.filter {
+.select.is-fullwidth {
   width: 100%; }
 
-.select.is-fullwidth select, .progress-page .select.filter select {
+.select.is-fullwidth select {
   width: 100%; }
 
 .select.is-loading::after {
@@ -2978,13 +2977,13 @@ a.box:active {
   border-radius: 0 0 4px 4px;
   border-width: 0 1px 1px; }
 
-.file.is-centered {
+.file.is-centered, .progress-page .file.filter {
   justify-content: center; }
 
-.file.is-fullwidth .file-label, .progress-page .file.filter .file-label {
+.file.is-fullwidth .file-label {
   width: 100%; }
 
-.file.is-fullwidth .file-name, .progress-page .file.filter .file-name {
+.file.is-fullwidth .file-name {
   flex-grow: 1;
   max-width: none; }
 
@@ -3829,7 +3828,7 @@ a.box:active {
 .table.is-bordered tr:last-child th {
   border-bottom-width: 1px; }
 
-.table.is-fullwidth, .progress-page .table.filter {
+.table.is-fullwidth {
   width: 100%; }
 
 .table.is-hoverable tbody tr:not(.is-selected):hover {
@@ -3880,10 +3879,10 @@ a.box:active {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.tags.is-centered {
+.tags.is-centered, .progress-page .tags.filter {
   justify-content: center; }
 
-.tags.is-centered .tag {
+.tags.is-centered .tag, .progress-page .tags.filter .tag {
   margin-right: 0.25rem;
   margin-left: 0.25rem; }
 
@@ -4175,8 +4174,9 @@ a.tag:hover {
 .breadcrumb .icon:last-child {
   margin-left: 0.5em; }
 
-.breadcrumb.is-centered ol,
-.breadcrumb.is-centered ul {
+.breadcrumb.is-centered ol, .progress-page .breadcrumb.filter ol,
+.breadcrumb.is-centered ul,
+.progress-page .breadcrumb.filter ul {
   justify-content: center; }
 
 .breadcrumb.is-right ol,
@@ -4225,7 +4225,7 @@ a.tag:hover {
   font-weight: 700;
   padding: 0.75rem; }
 
-.card-header-title.is-centered {
+.card-header-title.is-centered, .progress-page .card-header-title.filter {
   justify-content: center; }
 
 .card-header-icon {
@@ -5675,12 +5675,12 @@ a.navbar-item:hover, a.navbar-item.is-active,
     order: 3; }
   .pagination {
     justify-content: space-between; }
-  .pagination.is-centered .pagination-previous {
+  .pagination.is-centered .pagination-previous, .progress-page .pagination.filter .pagination-previous {
     order: 1; }
-  .pagination.is-centered .pagination-list {
+  .pagination.is-centered .pagination-list, .progress-page .pagination.filter .pagination-list {
     justify-content: center;
     order: 2; }
-  .pagination.is-centered .pagination-next {
+  .pagination.is-centered .pagination-next, .progress-page .pagination.filter .pagination-next {
     order: 3; }
   .pagination.is-right .pagination-previous {
     order: 1; }
@@ -5848,7 +5848,7 @@ label.panel-block:hover {
 .tabs .icon:last-child {
   margin-left: 0.5em; }
 
-.tabs.is-centered ul {
+.tabs.is-centered ul, .progress-page .tabs.filter ul {
   justify-content: center; }
 
 .tabs.is-right ul {
@@ -5867,7 +5867,7 @@ label.panel-block:hover {
   border-color: #dbdbdb;
   border-bottom-color: transparent !important; }
 
-.tabs.is-fullwidth li, .progress-page .tabs.filter li {
+.tabs.is-fullwidth li {
   flex-grow: 1;
   flex-shrink: 0; }
 
@@ -6764,7 +6764,7 @@ label.panel-block:hover {
 .columns:not(:last-child) {
   margin-bottom: calc(1.5rem - 0.75rem); }
 
-.columns.is-centered {
+.columns.is-centered, .progress-page .columns.filter {
   justify-content: center; }
 
 .columns.is-gapless {
