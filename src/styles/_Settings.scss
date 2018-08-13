@@ -1,0 +1,79 @@
+// @import '../common/constants';
+// @import "../../../node_modules/bulma/bulma";
+
+.settings {
+    @extend .container;
+    @extend .section;
+
+    > section {
+        border: 1px solid $color-faint;
+    }
+    section {
+        @extend .section;
+        border-radius: 1em;
+        margin-bottom: 1em;
+        background-color: #fff;
+    }
+
+    .voice-selector button.selected {
+        @extend .button;
+        @extend .is-primary;
+        cursor: default;
+    }
+    .voices {
+        @extend .has-text-centered;
+    }
+
+    .practice-order {
+        text-align: center;
+
+        .all-at-once {
+            margin: 1em 0;
+        }
+        .practice-order-selector {
+            text-align: center;
+
+            > div {
+                display: inline-block;
+            }
+        }
+    }
+
+    .samples {
+       @extend .container;
+
+        .sample {
+            @extend .columns;
+            > div {
+                @extend .column;
+                text-align: center
+            }
+            .disabled-button {
+                @extend .button;
+                border: none;
+                font-weight: bold;
+                cursor: default;
+                background-color: transparent;
+            }
+            :first-child {
+                @extend .is-3;
+                @extend .is-offset-2;
+            }
+            :nth-child(2) {
+                @extend .is-1;
+            }
+            :nth-child(3) {
+                @extend .is-3;
+            }
+
+        }
+
+
+        &.ipa {
+            @include highlight-column(1);
+        }
+        &.paiboon {
+            @include highlight-column(3);
+        }
+    }
+}

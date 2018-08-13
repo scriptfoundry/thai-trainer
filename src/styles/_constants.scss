@@ -1,0 +1,30 @@
+$color-primary-0: #2E4272;	// Main Primary color */
+$color-primary-1: #858B9A;
+$color-primary-2: #556386;
+$color-primary-3: #11275E;
+$color-primary-4: #04184A;
+
+$white: #f8f8f8;
+$black: #333;
+$color-primary: rgb(61, 147, 233);
+$color-danger: rgb(196, 4, 4);
+$color-success: rgb(1, 182, 1);
+$color-muted: rgb(185, 184, 184);
+$color-faint: rgb(229, 233, 241);
+
+@mixin highlight-column($column) {
+    .sample > :nth-child( #{$column} ) {
+        border-color: $color-muted;
+        background-color: $color-faint;
+        border-style: solid;
+        border-width: 0 1px 0 1px;
+    }
+    .sample:first-child > :nth-child( #{$column} ) {
+        border-radius: .4em .4em 0 0;
+        border-top-width: 1px;
+    }
+    .sample:last-child > :nth-child( #{$column} ) {
+        border-radius: 0 0 .4em .4em;
+        border-bottom-width: 1px;
+    }
+}

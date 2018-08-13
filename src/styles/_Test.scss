@@ -1,12 +1,12 @@
-@import '../common/constants';
-@import "../../../node_modules/bulma/bulma";
+// @import '../common/constants';
+// @import "../../../node_modules/bulma/bulma";
 
 .test {
     .content {
         @extend .container;
         @extend .section;
         @extend .hero;
-            @extend .is-fullheight;
+        @extend .is-fullheight;
     }
 
     .challenge {
@@ -45,6 +45,7 @@
         width: 100%;
         top: 0;
         left: 0;
+        padding: 1em 0 2em 0;
     }
 
     .answer {
@@ -103,13 +104,8 @@
         flex-basis: 1em;
     }
     .advancement {
-        // display: flex;
         font-size: 2em;
         text-align: center;
-        // flex-basis: 2em;
-        // flex-direction: row;
-        
-        // padding: 1rem;
         
         button {
             @extend .button;

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { TEST_TYPECURRENT, TEST_TYPEOVERDUE, getCurrentPracticeWords, getOutstandingWords, getMasteredWords } from '../../services/Leitner';
 import { getDayOfEpoch } from '../../services/Utils';
 
-import './TestSelector.css';
-
 const getCount = words => words.length || 0;
 
 const TestSelector = ({ changeView, words, setTestType, testingWordLimit }) => {

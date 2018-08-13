@@ -1,0 +1,20 @@
+// @import "../../../node_modules/bulma/bulma";
+
+.navigation {
+    @extend .container;
+    @extend .section;
+
+    button {
+        @extend .button;
+        @extend .is-large;
+        @extend .is-fullwidth;
+        @extend .is-primary;
+    }
+    section {
+        @extend .section;
+        @extend .is-centered;
+        @extend .column;
+        @extend .is-6;
+        @extend .is-offset-3;
+    }
+}

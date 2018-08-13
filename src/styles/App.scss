@@ -1,0 +1,48 @@
+@import './constants';
+
+$title-size: 2.2rem;
+$subtitle-size: 1.75rem;
+$primary: #00bccf;
+
+@import "../../node_modules/bulma/bulma";
+
+button.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+}
+button {
+    @extend .button;
+}
+h1, h2, h3 {
+    text-align: center;
+    font-weight: lighter;
+}
+h1 { @extend .title; }
+h2 { @extend .subtitle; }
+p { margin-bottom: 1em; }
+aside {
+    @extend .has-text-weight-light;
+    color: $color-muted; 
+    text-align: center;
+}
+body {
+    @extend .container;
+    @extend .is-fullheight;
+}
+#root {
+    // @extend .container;
+    // @extend .is-fullheight;
+    // height: 100%;
+}
+
+@import 'Navigation';
+@import 'Practice';
+@import 'Progress';
+@import 'Settings';
+@import 'Test';
+@import 'TestResults';
+@import 'TestSelector';
+@import 'WordsTable';
+@import '_constants';

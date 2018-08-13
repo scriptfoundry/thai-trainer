@@ -11,7 +11,8 @@ import TestSelector from './components/TestSelector';
 import TestResults from './components/TestResults';
 import Test from './components/Test';
 
-import './App.css';
+import './styles/App.css';
+import 'rc-slider/assets/index.css';
 
 class App extends Component {
   async componentDidMount() {

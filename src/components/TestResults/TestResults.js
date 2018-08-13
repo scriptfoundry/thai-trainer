@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 
-import './TestResults.css';
-
-
-
 const TestResult = ({changeView, testWords, scores, pronunciationType}) => {
     const items = testWords.map(testWord => {
         const aspectScores = scores.reduce((aspectScores, { id, score, stage }) => {

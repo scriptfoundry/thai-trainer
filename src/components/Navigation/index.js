@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import Navigation from './Navigation';
 
+import './Navigation.css';
+
 const mapStateToProps = state => ({
     words: state.words.words
 });

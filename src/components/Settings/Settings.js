@@ -6,9 +6,6 @@ import PronunciationSelector from './PronunciationSelector';
 import PracticeOrderSelector from './PracticeOrderSelector';
 import RangedNumberSelector from './RangedNumberSelector';
 
-import './Settings.css';
-import 'rc-slider/assets/index.css';
-
 const Settings = (props) => {
     const {
         englishVoice,
