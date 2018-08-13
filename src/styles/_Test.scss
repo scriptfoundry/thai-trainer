@@ -1,6 +1,3 @@
-// @import '../common/constants';
-// @import "../../../node_modules/bulma/bulma";
-
 .test {
     .content {
         @extend .container;
@@ -110,32 +107,6 @@
         button {
             @extend .button;
             @extend .is-large;
-            // flex: 1;
-            // line-height: 3rem;
-            // border-radius: .25em;
-            // margin: .25rem;
-            // font-size: inherit;
-            // background-color: $color-faint;
-            // color: $color-primary-4;
-            // transition: all 500ms 500ms;
-
-            // &.small-text {
-            //     // font-size: 1em; 
-            //     // line-height: 1em;
-            //     overflow: hidden;
-            //     text-overflow: ellipsis;
-            // }
-            // &.default {
-            //     box-shadow: rgba(0, 0, 0, 0.2) 3px 3px 3px;
-            // }
-            // &.success {
-            //     background-color: #00c900;
-            //     color: white;
-            // }
-            // &.fail {
-            //     background-color: #f00;
-            //     color: white;
-            // }
         }
     }
 }
