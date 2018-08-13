@@ -1,0 +1,2939 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.is-unselectable, .button, .settings .voice-selector button.selected, .settings .samples .sample .disabled-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.button.is-loading::after, .settings .voice-selector button.is-loading.selected::after, .settings .samples .sample .is-loading.disabled-button::after {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid #dbdbdb;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em; }
+
+.is-overlay, .hero-video {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.button, .settings .voice-selector button.selected, .settings .samples .sample .disabled-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.25em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+  position: relative;
+  vertical-align: top; }
+  .button:focus, .settings .voice-selector button.selected:focus, .settings .samples .sample .disabled-button:focus, .is-focused.button, .settings .voice-selector button.is-focused.selected, .settings .samples .sample .is-focused.disabled-button, .button:active, .settings .voice-selector button.selected:active, .settings .samples .sample .disabled-button:active, .is-active.button, .settings .voice-selector button.is-active.selected, .settings .samples .sample .is-active.disabled-button {
+    outline: none; }
+  .button[disabled], .settings .voice-selector button.selected[disabled], .settings .samples .sample .disabled-button[disabled] {
+    cursor: not-allowed; }
+
+.section, .settings, .settings section {
+  padding: 3rem 1.5rem; }
+  @media screen and (min-width: 1088px) {
+    .section.is-medium, .is-medium.settings, .settings section.is-medium {
+      padding: 9rem 1.5rem; }
+    .section.is-large, .is-large.settings, .settings section.is-large {
+      padding: 18rem 1.5rem; } }
+
+.is-clearfix::after {
+  clear: both;
+  content: " ";
+  display: table; }
+
+.is-pulled-left {
+  float: left !important; }
+
+.is-pulled-right {
+  float: right !important; }
+
+.is-clipped {
+  overflow: hidden !important; }
+
+.is-size-1 {
+  font-size: 3rem !important; }
+
+.is-size-2 {
+  font-size: 2.5rem !important; }
+
+.is-size-3 {
+  font-size: 2rem !important; }
+
+.is-size-4 {
+  font-size: 1.5rem !important; }
+
+.is-size-5 {
+  font-size: 1.25rem !important; }
+
+.is-size-6 {
+  font-size: 1rem !important; }
+
+.is-size-7 {
+  font-size: 0.75rem !important; }
+
+@media screen and (max-width: 768px) {
+  .is-size-1-mobile {
+    font-size: 3rem !important; }
+  .is-size-2-mobile {
+    font-size: 2.5rem !important; }
+  .is-size-3-mobile {
+    font-size: 2rem !important; }
+  .is-size-4-mobile {
+    font-size: 1.5rem !important; }
+  .is-size-5-mobile {
+    font-size: 1.25rem !important; }
+  .is-size-6-mobile {
+    font-size: 1rem !important; }
+  .is-size-7-mobile {
+    font-size: 0.75rem !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-size-1-tablet {
+    font-size: 3rem !important; }
+  .is-size-2-tablet {
+    font-size: 2.5rem !important; }
+  .is-size-3-tablet {
+    font-size: 2rem !important; }
+  .is-size-4-tablet {
+    font-size: 1.5rem !important; }
+  .is-size-5-tablet {
+    font-size: 1.25rem !important; }
+  .is-size-6-tablet {
+    font-size: 1rem !important; }
+  .is-size-7-tablet {
+    font-size: 0.75rem !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-size-1-touch {
+    font-size: 3rem !important; }
+  .is-size-2-touch {
+    font-size: 2.5rem !important; }
+  .is-size-3-touch {
+    font-size: 2rem !important; }
+  .is-size-4-touch {
+    font-size: 1.5rem !important; }
+  .is-size-5-touch {
+    font-size: 1.25rem !important; }
+  .is-size-6-touch {
+    font-size: 1rem !important; }
+  .is-size-7-touch {
+    font-size: 0.75rem !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-size-1-desktop {
+    font-size: 3rem !important; }
+  .is-size-2-desktop {
+    font-size: 2.5rem !important; }
+  .is-size-3-desktop {
+    font-size: 2rem !important; }
+  .is-size-4-desktop {
+    font-size: 1.5rem !important; }
+  .is-size-5-desktop {
+    font-size: 1.25rem !important; }
+  .is-size-6-desktop {
+    font-size: 1rem !important; }
+  .is-size-7-desktop {
+    font-size: 0.75rem !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-size-1-widescreen {
+    font-size: 3rem !important; }
+  .is-size-2-widescreen {
+    font-size: 2.5rem !important; }
+  .is-size-3-widescreen {
+    font-size: 2rem !important; }
+  .is-size-4-widescreen {
+    font-size: 1.5rem !important; }
+  .is-size-5-widescreen {
+    font-size: 1.25rem !important; }
+  .is-size-6-widescreen {
+    font-size: 1rem !important; }
+  .is-size-7-widescreen {
+    font-size: 0.75rem !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-size-1-fullhd {
+    font-size: 3rem !important; }
+  .is-size-2-fullhd {
+    font-size: 2.5rem !important; }
+  .is-size-3-fullhd {
+    font-size: 2rem !important; }
+  .is-size-4-fullhd {
+    font-size: 1.5rem !important; }
+  .is-size-5-fullhd {
+    font-size: 1.25rem !important; }
+  .is-size-6-fullhd {
+    font-size: 1rem !important; }
+  .is-size-7-fullhd {
+    font-size: 0.75rem !important; } }
+
+.has-text-centered, .settings .voices {
+  text-align: center !important; }
+
+.has-text-justified {
+  text-align: justify !important; }
+
+.has-text-left {
+  text-align: left !important; }
+
+.has-text-right {
+  text-align: right !important; }
+
+@media screen and (max-width: 768px) {
+  .has-text-centered-mobile {
+    text-align: center !important; } }
+
+@media screen and (min-width: 769px), print {
+  .has-text-centered-tablet {
+    text-align: center !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .has-text-centered-tablet-only {
+    text-align: center !important; } }
+
+@media screen and (max-width: 1087px) {
+  .has-text-centered-touch {
+    text-align: center !important; } }
+
+@media screen and (min-width: 1088px) {
+  .has-text-centered-desktop {
+    text-align: center !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .has-text-centered-desktop-only {
+    text-align: center !important; } }
+
+@media screen and (min-width: 1280px) {
+  .has-text-centered-widescreen {
+    text-align: center !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .has-text-centered-widescreen-only {
+    text-align: center !important; } }
+
+@media screen and (min-width: 1472px) {
+  .has-text-centered-fullhd {
+    text-align: center !important; } }
+
+@media screen and (max-width: 768px) {
+  .has-text-justified-mobile {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 769px), print {
+  .has-text-justified-tablet {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .has-text-justified-tablet-only {
+    text-align: justify !important; } }
+
+@media screen and (max-width: 1087px) {
+  .has-text-justified-touch {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 1088px) {
+  .has-text-justified-desktop {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .has-text-justified-desktop-only {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 1280px) {
+  .has-text-justified-widescreen {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .has-text-justified-widescreen-only {
+    text-align: justify !important; } }
+
+@media screen and (min-width: 1472px) {
+  .has-text-justified-fullhd {
+    text-align: justify !important; } }
+
+@media screen and (max-width: 768px) {
+  .has-text-left-mobile {
+    text-align: left !important; } }
+
+@media screen and (min-width: 769px), print {
+  .has-text-left-tablet {
+    text-align: left !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .has-text-left-tablet-only {
+    text-align: left !important; } }
+
+@media screen and (max-width: 1087px) {
+  .has-text-left-touch {
+    text-align: left !important; } }
+
+@media screen and (min-width: 1088px) {
+  .has-text-left-desktop {
+    text-align: left !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .has-text-left-desktop-only {
+    text-align: left !important; } }
+
+@media screen and (min-width: 1280px) {
+  .has-text-left-widescreen {
+    text-align: left !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .has-text-left-widescreen-only {
+    text-align: left !important; } }
+
+@media screen and (min-width: 1472px) {
+  .has-text-left-fullhd {
+    text-align: left !important; } }
+
+@media screen and (max-width: 768px) {
+  .has-text-right-mobile {
+    text-align: right !important; } }
+
+@media screen and (min-width: 769px), print {
+  .has-text-right-tablet {
+    text-align: right !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .has-text-right-tablet-only {
+    text-align: right !important; } }
+
+@media screen and (max-width: 1087px) {
+  .has-text-right-touch {
+    text-align: right !important; } }
+
+@media screen and (min-width: 1088px) {
+  .has-text-right-desktop {
+    text-align: right !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .has-text-right-desktop-only {
+    text-align: right !important; } }
+
+@media screen and (min-width: 1280px) {
+  .has-text-right-widescreen {
+    text-align: right !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .has-text-right-widescreen-only {
+    text-align: right !important; } }
+
+@media screen and (min-width: 1472px) {
+  .has-text-right-fullhd {
+    text-align: right !important; } }
+
+.is-capitalized {
+  text-transform: capitalize !important; }
+
+.is-lowercase {
+  text-transform: lowercase !important; }
+
+.is-uppercase {
+  text-transform: uppercase !important; }
+
+.is-italic {
+  font-style: italic !important; }
+
+.has-text-white {
+  color: white !important; }
+
+a.has-text-white:hover, a.has-text-white:focus {
+  color: #e6e6e6 !important; }
+
+.has-background-white {
+  background-color: white !important; }
+
+.has-text-black {
+  color: #0a0a0a !important; }
+
+a.has-text-black:hover, a.has-text-black:focus {
+  color: black !important; }
+
+.has-background-black {
+  background-color: #0a0a0a !important; }
+
+.has-text-light {
+  color: whitesmoke !important; }
+
+a.has-text-light:hover, a.has-text-light:focus {
+  color: #dbdbdb !important; }
+
+.has-background-light {
+  background-color: whitesmoke !important; }
+
+.has-text-dark {
+  color: #363636 !important; }
+
+a.has-text-dark:hover, a.has-text-dark:focus {
+  color: #1c1c1c !important; }
+
+.has-background-dark {
+  background-color: #363636 !important; }
+
+.has-text-primary {
+  color: #00d1b2 !important; }
+
+a.has-text-primary:hover, a.has-text-primary:focus {
+  color: #009e86 !important; }
+
+.has-background-primary {
+  background-color: #00d1b2 !important; }
+
+.has-text-link {
+  color: #3273dc !important; }
+
+a.has-text-link:hover, a.has-text-link:focus {
+  color: #205bbc !important; }
+
+.has-background-link {
+  background-color: #3273dc !important; }
+
+.has-text-info {
+  color: #209cee !important; }
+
+a.has-text-info:hover, a.has-text-info:focus {
+  color: #0f81cc !important; }
+
+.has-background-info {
+  background-color: #209cee !important; }
+
+.has-text-success {
+  color: #23d160 !important; }
+
+a.has-text-success:hover, a.has-text-success:focus {
+  color: #1ca64c !important; }
+
+.has-background-success {
+  background-color: #23d160 !important; }
+
+.has-text-warning {
+  color: #ffdd57 !important; }
+
+a.has-text-warning:hover, a.has-text-warning:focus {
+  color: #ffd324 !important; }
+
+.has-background-warning {
+  background-color: #ffdd57 !important; }
+
+.has-text-danger {
+  color: #ff3860 !important; }
+
+a.has-text-danger:hover, a.has-text-danger:focus {
+  color: #ff0537 !important; }
+
+.has-background-danger {
+  background-color: #ff3860 !important; }
+
+.has-text-black-bis {
+  color: #121212 !important; }
+
+.has-background-black-bis {
+  background-color: #121212 !important; }
+
+.has-text-black-ter {
+  color: #242424 !important; }
+
+.has-background-black-ter {
+  background-color: #242424 !important; }
+
+.has-text-grey-darker {
+  color: #363636 !important; }
+
+.has-background-grey-darker {
+  background-color: #363636 !important; }
+
+.has-text-grey-dark {
+  color: #4a4a4a !important; }
+
+.has-background-grey-dark {
+  background-color: #4a4a4a !important; }
+
+.has-text-grey {
+  color: #7a7a7a !important; }
+
+.has-background-grey {
+  background-color: #7a7a7a !important; }
+
+.has-text-grey-light {
+  color: #b5b5b5 !important; }
+
+.has-background-grey-light {
+  background-color: #b5b5b5 !important; }
+
+.has-text-grey-lighter {
+  color: #dbdbdb !important; }
+
+.has-background-grey-lighter {
+  background-color: #dbdbdb !important; }
+
+.has-text-white-ter {
+  color: whitesmoke !important; }
+
+.has-background-white-ter {
+  background-color: whitesmoke !important; }
+
+.has-text-white-bis {
+  color: #fafafa !important; }
+
+.has-background-white-bis {
+  background-color: #fafafa !important; }
+
+.has-text-weight-light {
+  font-weight: 300 !important; }
+
+.has-text-weight-normal {
+  font-weight: 400 !important; }
+
+.has-text-weight-semibold {
+  font-weight: 600 !important; }
+
+.has-text-weight-bold {
+  font-weight: 700 !important; }
+
+.is-block {
+  display: block !important; }
+
+@media screen and (max-width: 768px) {
+  .is-block-mobile {
+    display: block !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-block-tablet {
+    display: block !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-block-tablet-only {
+    display: block !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-block-touch {
+    display: block !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-block-desktop {
+    display: block !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-block-desktop-only {
+    display: block !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-block-widescreen {
+    display: block !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-block-widescreen-only {
+    display: block !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-block-fullhd {
+    display: block !important; } }
+
+.is-flex {
+  display: flex !important; }
+
+@media screen and (max-width: 768px) {
+  .is-flex-mobile {
+    display: flex !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-flex-tablet {
+    display: flex !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-flex-tablet-only {
+    display: flex !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-flex-touch {
+    display: flex !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-flex-desktop {
+    display: flex !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-flex-desktop-only {
+    display: flex !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-flex-widescreen {
+    display: flex !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-flex-widescreen-only {
+    display: flex !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-flex-fullhd {
+    display: flex !important; } }
+
+.is-inline {
+  display: inline !important; }
+
+@media screen and (max-width: 768px) {
+  .is-inline-mobile {
+    display: inline !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-inline-tablet {
+    display: inline !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-inline-tablet-only {
+    display: inline !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-inline-touch {
+    display: inline !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-inline-desktop {
+    display: inline !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-inline-desktop-only {
+    display: inline !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-inline-widescreen {
+    display: inline !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-inline-widescreen-only {
+    display: inline !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-inline-fullhd {
+    display: inline !important; } }
+
+.is-inline-block {
+  display: inline-block !important; }
+
+@media screen and (max-width: 768px) {
+  .is-inline-block-mobile {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-inline-block-tablet {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-inline-block-tablet-only {
+    display: inline-block !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-inline-block-touch {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-inline-block-desktop {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-inline-block-desktop-only {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-inline-block-widescreen {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-inline-block-widescreen-only {
+    display: inline-block !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-inline-block-fullhd {
+    display: inline-block !important; } }
+
+.is-inline-flex {
+  display: inline-flex !important; }
+
+@media screen and (max-width: 768px) {
+  .is-inline-flex-mobile {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-inline-flex-tablet {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-inline-flex-tablet-only {
+    display: inline-flex !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-inline-flex-touch {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-inline-flex-desktop {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-inline-flex-desktop-only {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-inline-flex-widescreen {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-inline-flex-widescreen-only {
+    display: inline-flex !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-inline-flex-fullhd {
+    display: inline-flex !important; } }
+
+.is-hidden {
+  display: none !important; }
+
+@media screen and (max-width: 768px) {
+  .is-hidden-mobile {
+    display: none !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-hidden-tablet {
+    display: none !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-hidden-tablet-only {
+    display: none !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-hidden-touch {
+    display: none !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-hidden-desktop {
+    display: none !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-hidden-desktop-only {
+    display: none !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-hidden-widescreen {
+    display: none !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-hidden-widescreen-only {
+    display: none !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-hidden-fullhd {
+    display: none !important; } }
+
+.is-invisible {
+  visibility: hidden !important; }
+
+@media screen and (max-width: 768px) {
+  .is-invisible-mobile {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 769px), print {
+  .is-invisible-tablet {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 769px) and (max-width: 1087px) {
+  .is-invisible-tablet-only {
+    visibility: hidden !important; } }
+
+@media screen and (max-width: 1087px) {
+  .is-invisible-touch {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 1088px) {
+  .is-invisible-desktop {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 1088px) and (max-width: 1279px) {
+  .is-invisible-desktop-only {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 1280px) {
+  .is-invisible-widescreen {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 1280px) and (max-width: 1471px) {
+  .is-invisible-widescreen-only {
+    visibility: hidden !important; } }
+
+@media screen and (min-width: 1472px) {
+  .is-invisible-fullhd {
+    visibility: hidden !important; } }
+
+.is-marginless {
+  margin: 0 !important; }
+
+.is-paddingless {
+  padding: 0 !important; }
+
+.is-radiusless {
+  border-radius: 0 !important; }
+
+.is-shadowless {
+  box-shadow: none !important; }
+
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .hero .navbar {
+    background: none; }
+  .hero .tabs ul {
+    border-bottom: none; }
+  .hero.is-white {
+    background-color: white;
+    color: #0a0a0a; }
+    .hero.is-white a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-white strong {
+      color: inherit; }
+    .hero.is-white .title {
+      color: #0a0a0a; }
+    .hero.is-white .subtitle {
+      color: rgba(10, 10, 10, 0.9); }
+      .hero.is-white .subtitle a:not(.button),
+      .hero.is-white .subtitle strong {
+        color: #0a0a0a; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-white .navbar-menu {
+        background-color: white; } }
+    .hero.is-white .navbar-item,
+    .hero.is-white .navbar-link {
+      color: rgba(10, 10, 10, 0.7); }
+    .hero.is-white a.navbar-item:hover, .hero.is-white a.navbar-item.is-active,
+    .hero.is-white .navbar-link:hover,
+    .hero.is-white .navbar-link.is-active {
+      background-color: #f2f2f2;
+      color: #0a0a0a; }
+    .hero.is-white .tabs a {
+      color: #0a0a0a;
+      opacity: 0.9; }
+      .hero.is-white .tabs a:hover {
+        opacity: 1; }
+    .hero.is-white .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-white .tabs.is-boxed a, .hero.is-white .tabs.is-toggle a {
+      color: #0a0a0a; }
+      .hero.is-white .tabs.is-boxed a:hover, .hero.is-white .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-white .tabs.is-boxed li.is-active a, .hero.is-white .tabs.is-boxed li.is-active a:hover, .hero.is-white .tabs.is-toggle li.is-active a, .hero.is-white .tabs.is-toggle li.is-active a:hover {
+      background-color: #0a0a0a;
+      border-color: #0a0a0a;
+      color: white; }
+    .hero.is-white.is-bold {
+      background-image: linear-gradient(141deg, #e6e6e6 0%, white 71%, white 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-white.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #e6e6e6 0%, white 71%, white 100%); } }
+  .hero.is-black {
+    background-color: #0a0a0a;
+    color: white; }
+    .hero.is-black a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-black strong {
+      color: inherit; }
+    .hero.is-black .title {
+      color: white; }
+    .hero.is-black .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-black .subtitle a:not(.button),
+      .hero.is-black .subtitle strong {
+        color: white; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-black .navbar-menu {
+        background-color: #0a0a0a; } }
+    .hero.is-black .navbar-item,
+    .hero.is-black .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-black a.navbar-item:hover, .hero.is-black a.navbar-item.is-active,
+    .hero.is-black .navbar-link:hover,
+    .hero.is-black .navbar-link.is-active {
+      background-color: black;
+      color: white; }
+    .hero.is-black .tabs a {
+      color: white;
+      opacity: 0.9; }
+      .hero.is-black .tabs a:hover {
+        opacity: 1; }
+    .hero.is-black .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-black .tabs.is-boxed a, .hero.is-black .tabs.is-toggle a {
+      color: white; }
+      .hero.is-black .tabs.is-boxed a:hover, .hero.is-black .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-black .tabs.is-boxed li.is-active a, .hero.is-black .tabs.is-boxed li.is-active a:hover, .hero.is-black .tabs.is-toggle li.is-active a, .hero.is-black .tabs.is-toggle li.is-active a:hover {
+      background-color: white;
+      border-color: white;
+      color: #0a0a0a; }
+    .hero.is-black.is-bold {
+      background-image: linear-gradient(141deg, black 0%, #0a0a0a 71%, #181616 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-black.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, black 0%, #0a0a0a 71%, #181616 100%); } }
+  .hero.is-light {
+    background-color: whitesmoke;
+    color: #363636; }
+    .hero.is-light a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-light strong {
+      color: inherit; }
+    .hero.is-light .title {
+      color: #363636; }
+    .hero.is-light .subtitle {
+      color: rgba(54, 54, 54, 0.9); }
+      .hero.is-light .subtitle a:not(.button),
+      .hero.is-light .subtitle strong {
+        color: #363636; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-light .navbar-menu {
+        background-color: whitesmoke; } }
+    .hero.is-light .navbar-item,
+    .hero.is-light .navbar-link {
+      color: rgba(54, 54, 54, 0.7); }
+    .hero.is-light a.navbar-item:hover, .hero.is-light a.navbar-item.is-active,
+    .hero.is-light .navbar-link:hover,
+    .hero.is-light .navbar-link.is-active {
+      background-color: #e8e8e8;
+      color: #363636; }
+    .hero.is-light .tabs a {
+      color: #363636;
+      opacity: 0.9; }
+      .hero.is-light .tabs a:hover {
+        opacity: 1; }
+    .hero.is-light .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-light .tabs.is-boxed a, .hero.is-light .tabs.is-toggle a {
+      color: #363636; }
+      .hero.is-light .tabs.is-boxed a:hover, .hero.is-light .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-light .tabs.is-boxed li.is-active a, .hero.is-light .tabs.is-boxed li.is-active a:hover, .hero.is-light .tabs.is-toggle li.is-active a, .hero.is-light .tabs.is-toggle li.is-active a:hover {
+      background-color: #363636;
+      border-color: #363636;
+      color: whitesmoke; }
+    .hero.is-light.is-bold {
+      background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-light.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%); } }
+  .hero.is-dark {
+    background-color: #363636;
+    color: whitesmoke; }
+    .hero.is-dark a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-dark strong {
+      color: inherit; }
+    .hero.is-dark .title {
+      color: whitesmoke; }
+    .hero.is-dark .subtitle {
+      color: rgba(245, 245, 245, 0.9); }
+      .hero.is-dark .subtitle a:not(.button),
+      .hero.is-dark .subtitle strong {
+        color: whitesmoke; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-dark .navbar-menu {
+        background-color: #363636; } }
+    .hero.is-dark .navbar-item,
+    .hero.is-dark .navbar-link {
+      color: rgba(245, 245, 245, 0.7); }
+    .hero.is-dark a.navbar-item:hover, .hero.is-dark a.navbar-item.is-active,
+    .hero.is-dark .navbar-link:hover,
+    .hero.is-dark .navbar-link.is-active {
+      background-color: #292929;
+      color: whitesmoke; }
+    .hero.is-dark .tabs a {
+      color: whitesmoke;
+      opacity: 0.9; }
+      .hero.is-dark .tabs a:hover {
+        opacity: 1; }
+    .hero.is-dark .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-dark .tabs.is-boxed a, .hero.is-dark .tabs.is-toggle a {
+      color: whitesmoke; }
+      .hero.is-dark .tabs.is-boxed a:hover, .hero.is-dark .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-dark .tabs.is-boxed li.is-active a, .hero.is-dark .tabs.is-boxed li.is-active a:hover, .hero.is-dark .tabs.is-toggle li.is-active a, .hero.is-dark .tabs.is-toggle li.is-active a:hover {
+      background-color: whitesmoke;
+      border-color: whitesmoke;
+      color: #363636; }
+    .hero.is-dark.is-bold {
+      background-image: linear-gradient(141deg, #1f191a 0%, #363636 71%, #46403f 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-dark.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #1f191a 0%, #363636 71%, #46403f 100%); } }
+  .hero.is-primary, .settings .voice-selector button.hero.selected {
+    background-color: #00d1b2;
+    color: #fff; }
+    .hero.is-primary a:not(.button):not(.dropdown-item):not(.tag), .settings .voice-selector button.hero.selected a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-primary strong,
+    .settings .voice-selector button.hero.selected strong {
+      color: inherit; }
+    .hero.is-primary .title, .settings .voice-selector button.hero.selected .title {
+      color: #fff; }
+    .hero.is-primary .subtitle, .settings .voice-selector button.hero.selected .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-primary .subtitle a:not(.button), .settings .voice-selector button.hero.selected .subtitle a:not(.button),
+      .hero.is-primary .subtitle strong,
+      .settings .voice-selector button.hero.selected .subtitle strong {
+        color: #fff; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-primary .navbar-menu, .settings .voice-selector button.hero.selected .navbar-menu {
+        background-color: #00d1b2; } }
+    .hero.is-primary .navbar-item, .settings .voice-selector button.hero.selected .navbar-item,
+    .hero.is-primary .navbar-link,
+    .settings .voice-selector button.hero.selected .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-primary a.navbar-item:hover, .settings .voice-selector button.hero.selected a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active, .settings .voice-selector button.hero.selected a.navbar-item.is-active,
+    .hero.is-primary .navbar-link:hover,
+    .settings .voice-selector button.hero.selected .navbar-link:hover,
+    .hero.is-primary .navbar-link.is-active,
+    .settings .voice-selector button.hero.selected .navbar-link.is-active {
+      background-color: #00b89c;
+      color: #fff; }
+    .hero.is-primary .tabs a, .settings .voice-selector button.hero.selected .tabs a {
+      color: #fff;
+      opacity: 0.9; }
+      .hero.is-primary .tabs a:hover, .settings .voice-selector button.hero.selected .tabs a:hover {
+        opacity: 1; }
+    .hero.is-primary .tabs li.is-active a, .settings .voice-selector button.hero.selected .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-primary .tabs.is-boxed a, .settings .voice-selector button.hero.selected .tabs.is-boxed a, .hero.is-primary .tabs.is-toggle a, .settings .voice-selector button.hero.selected .tabs.is-toggle a {
+      color: #fff; }
+      .hero.is-primary .tabs.is-boxed a:hover, .settings .voice-selector button.hero.selected .tabs.is-boxed a:hover, .hero.is-primary .tabs.is-toggle a:hover, .settings .voice-selector button.hero.selected .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-primary .tabs.is-boxed li.is-active a, .settings .voice-selector button.hero.selected .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .settings .voice-selector button.hero.selected .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .settings .voice-selector button.hero.selected .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover, .settings .voice-selector button.hero.selected .tabs.is-toggle li.is-active a:hover {
+      background-color: #fff;
+      border-color: #fff;
+      color: #00d1b2; }
+    .hero.is-primary.is-bold, .settings .voice-selector button.hero.is-bold.selected {
+      background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-primary.is-bold .navbar-menu, .settings .voice-selector button.hero.is-bold.selected .navbar-menu {
+          background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%); } }
+  .hero.is-link {
+    background-color: #3273dc;
+    color: #fff; }
+    .hero.is-link a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-link strong {
+      color: inherit; }
+    .hero.is-link .title {
+      color: #fff; }
+    .hero.is-link .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-link .subtitle a:not(.button),
+      .hero.is-link .subtitle strong {
+        color: #fff; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-link .navbar-menu {
+        background-color: #3273dc; } }
+    .hero.is-link .navbar-item,
+    .hero.is-link .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-link a.navbar-item:hover, .hero.is-link a.navbar-item.is-active,
+    .hero.is-link .navbar-link:hover,
+    .hero.is-link .navbar-link.is-active {
+      background-color: #2366d1;
+      color: #fff; }
+    .hero.is-link .tabs a {
+      color: #fff;
+      opacity: 0.9; }
+      .hero.is-link .tabs a:hover {
+        opacity: 1; }
+    .hero.is-link .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-link .tabs.is-boxed a, .hero.is-link .tabs.is-toggle a {
+      color: #fff; }
+      .hero.is-link .tabs.is-boxed a:hover, .hero.is-link .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-link .tabs.is-boxed li.is-active a, .hero.is-link .tabs.is-boxed li.is-active a:hover, .hero.is-link .tabs.is-toggle li.is-active a, .hero.is-link .tabs.is-toggle li.is-active a:hover {
+      background-color: #fff;
+      border-color: #fff;
+      color: #3273dc; }
+    .hero.is-link.is-bold {
+      background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-link.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #1577c6 0%, #3273dc 71%, #4366e5 100%); } }
+  .hero.is-info {
+    background-color: #209cee;
+    color: #fff; }
+    .hero.is-info a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-info strong {
+      color: inherit; }
+    .hero.is-info .title {
+      color: #fff; }
+    .hero.is-info .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-info .subtitle a:not(.button),
+      .hero.is-info .subtitle strong {
+        color: #fff; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-info .navbar-menu {
+        background-color: #209cee; } }
+    .hero.is-info .navbar-item,
+    .hero.is-info .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-info a.navbar-item:hover, .hero.is-info a.navbar-item.is-active,
+    .hero.is-info .navbar-link:hover,
+    .hero.is-info .navbar-link.is-active {
+      background-color: #118fe4;
+      color: #fff; }
+    .hero.is-info .tabs a {
+      color: #fff;
+      opacity: 0.9; }
+      .hero.is-info .tabs a:hover {
+        opacity: 1; }
+    .hero.is-info .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-info .tabs.is-boxed a, .hero.is-info .tabs.is-toggle a {
+      color: #fff; }
+      .hero.is-info .tabs.is-boxed a:hover, .hero.is-info .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-info .tabs.is-boxed li.is-active a, .hero.is-info .tabs.is-boxed li.is-active a:hover, .hero.is-info .tabs.is-toggle li.is-active a, .hero.is-info .tabs.is-toggle li.is-active a:hover {
+      background-color: #fff;
+      border-color: #fff;
+      color: #209cee; }
+    .hero.is-info.is-bold {
+      background-image: linear-gradient(141deg, #04a6d7 0%, #209cee 71%, #3287f5 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-info.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #04a6d7 0%, #209cee 71%, #3287f5 100%); } }
+  .hero.is-success {
+    background-color: #23d160;
+    color: #fff; }
+    .hero.is-success a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-success strong {
+      color: inherit; }
+    .hero.is-success .title {
+      color: #fff; }
+    .hero.is-success .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-success .subtitle a:not(.button),
+      .hero.is-success .subtitle strong {
+        color: #fff; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-success .navbar-menu {
+        background-color: #23d160; } }
+    .hero.is-success .navbar-item,
+    .hero.is-success .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-success a.navbar-item:hover, .hero.is-success a.navbar-item.is-active,
+    .hero.is-success .navbar-link:hover,
+    .hero.is-success .navbar-link.is-active {
+      background-color: #20bc56;
+      color: #fff; }
+    .hero.is-success .tabs a {
+      color: #fff;
+      opacity: 0.9; }
+      .hero.is-success .tabs a:hover {
+        opacity: 1; }
+    .hero.is-success .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-success .tabs.is-boxed a, .hero.is-success .tabs.is-toggle a {
+      color: #fff; }
+      .hero.is-success .tabs.is-boxed a:hover, .hero.is-success .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-success .tabs.is-boxed li.is-active a, .hero.is-success .tabs.is-boxed li.is-active a:hover, .hero.is-success .tabs.is-toggle li.is-active a, .hero.is-success .tabs.is-toggle li.is-active a:hover {
+      background-color: #fff;
+      border-color: #fff;
+      color: #23d160; }
+    .hero.is-success.is-bold {
+      background-image: linear-gradient(141deg, #12af2f 0%, #23d160 71%, #2ce28a 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-success.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #12af2f 0%, #23d160 71%, #2ce28a 100%); } }
+  .hero.is-warning {
+    background-color: #ffdd57;
+    color: rgba(0, 0, 0, 0.7); }
+    .hero.is-warning a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-warning strong {
+      color: inherit; }
+    .hero.is-warning .title {
+      color: rgba(0, 0, 0, 0.7); }
+    .hero.is-warning .subtitle {
+      color: rgba(0, 0, 0, 0.9); }
+      .hero.is-warning .subtitle a:not(.button),
+      .hero.is-warning .subtitle strong {
+        color: rgba(0, 0, 0, 0.7); }
+    @media screen and (max-width: 1087px) {
+      .hero.is-warning .navbar-menu {
+        background-color: #ffdd57; } }
+    .hero.is-warning .navbar-item,
+    .hero.is-warning .navbar-link {
+      color: rgba(0, 0, 0, 0.7); }
+    .hero.is-warning a.navbar-item:hover, .hero.is-warning a.navbar-item.is-active,
+    .hero.is-warning .navbar-link:hover,
+    .hero.is-warning .navbar-link.is-active {
+      background-color: #ffd83d;
+      color: rgba(0, 0, 0, 0.7); }
+    .hero.is-warning .tabs a {
+      color: rgba(0, 0, 0, 0.7);
+      opacity: 0.9; }
+      .hero.is-warning .tabs a:hover {
+        opacity: 1; }
+    .hero.is-warning .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-warning .tabs.is-boxed a, .hero.is-warning .tabs.is-toggle a {
+      color: rgba(0, 0, 0, 0.7); }
+      .hero.is-warning .tabs.is-boxed a:hover, .hero.is-warning .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-warning .tabs.is-boxed li.is-active a, .hero.is-warning .tabs.is-boxed li.is-active a:hover, .hero.is-warning .tabs.is-toggle li.is-active a, .hero.is-warning .tabs.is-toggle li.is-active a:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-color: rgba(0, 0, 0, 0.7);
+      color: #ffdd57; }
+    .hero.is-warning.is-bold {
+      background-image: linear-gradient(141deg, #ffaf24 0%, #ffdd57 71%, #fffa70 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-warning.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #ffaf24 0%, #ffdd57 71%, #fffa70 100%); } }
+  .hero.is-danger {
+    background-color: #ff3860;
+    color: #fff; }
+    .hero.is-danger a:not(.button):not(.dropdown-item):not(.tag),
+    .hero.is-danger strong {
+      color: inherit; }
+    .hero.is-danger .title {
+      color: #fff; }
+    .hero.is-danger .subtitle {
+      color: rgba(255, 255, 255, 0.9); }
+      .hero.is-danger .subtitle a:not(.button),
+      .hero.is-danger .subtitle strong {
+        color: #fff; }
+    @media screen and (max-width: 1087px) {
+      .hero.is-danger .navbar-menu {
+        background-color: #ff3860; } }
+    .hero.is-danger .navbar-item,
+    .hero.is-danger .navbar-link {
+      color: rgba(255, 255, 255, 0.7); }
+    .hero.is-danger a.navbar-item:hover, .hero.is-danger a.navbar-item.is-active,
+    .hero.is-danger .navbar-link:hover,
+    .hero.is-danger .navbar-link.is-active {
+      background-color: #ff1f4b;
+      color: #fff; }
+    .hero.is-danger .tabs a {
+      color: #fff;
+      opacity: 0.9; }
+      .hero.is-danger .tabs a:hover {
+        opacity: 1; }
+    .hero.is-danger .tabs li.is-active a {
+      opacity: 1; }
+    .hero.is-danger .tabs.is-boxed a, .hero.is-danger .tabs.is-toggle a {
+      color: #fff; }
+      .hero.is-danger .tabs.is-boxed a:hover, .hero.is-danger .tabs.is-toggle a:hover {
+        background-color: rgba(51, 51, 51, 0.1); }
+    .hero.is-danger .tabs.is-boxed li.is-active a, .hero.is-danger .tabs.is-boxed li.is-active a:hover, .hero.is-danger .tabs.is-toggle li.is-active a, .hero.is-danger .tabs.is-toggle li.is-active a:hover {
+      background-color: #fff;
+      border-color: #fff;
+      color: #ff3860; }
+    .hero.is-danger.is-bold {
+      background-image: linear-gradient(141deg, #ff0561 0%, #ff3860 71%, #ff5257 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-danger.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, #ff0561 0%, #ff3860 71%, #ff5257 100%); } }
+  .hero.is-small .hero-body {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem; }
+  @media screen and (min-width: 769px), print {
+    .hero.is-medium .hero-body {
+      padding-bottom: 9rem;
+      padding-top: 9rem; } }
+  @media screen and (min-width: 769px), print {
+    .hero.is-large .hero-body {
+      padding-bottom: 18rem;
+      padding-top: 18rem; } }
+  .hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body {
+    align-items: center;
+    display: flex; }
+    .hero.is-halfheight .hero-body > .container, .hero.is-halfheight .hero-body > .settings, .hero.is-halfheight .settings .hero-body > .samples, .settings .hero.is-halfheight .hero-body > .samples, .hero.is-fullheight .hero-body > .container, .hero.is-fullheight .hero-body > .settings, .hero.is-fullheight .settings .hero-body > .samples, .settings .hero.is-fullheight .hero-body > .samples {
+      flex-grow: 1;
+      flex-shrink: 1; }
+  .hero.is-halfheight {
+    min-height: 50vh; }
+  .hero.is-fullheight {
+    min-height: 100vh; }
+
+.hero-video {
+  overflow: hidden; }
+  .hero-video video {
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0); }
+  .hero-video.is-transparent {
+    opacity: 0.3; }
+  @media screen and (max-width: 768px) {
+    .hero-video {
+      display: none; } }
+
+.hero-buttons {
+  margin-top: 1.5rem; }
+  @media screen and (max-width: 768px) {
+    .hero-buttons .button, .hero-buttons .settings .voice-selector button.selected, .settings .voice-selector .hero-buttons button.selected, .hero-buttons .settings .samples .sample .disabled-button, .settings .samples .sample .hero-buttons .disabled-button {
+      display: flex; }
+      .hero-buttons .button:not(:last-child), .hero-buttons .settings .voice-selector button.selected:not(:last-child), .settings .voice-selector .hero-buttons button.selected:not(:last-child), .hero-buttons .settings .samples .sample .disabled-button:not(:last-child), .settings .samples .sample .hero-buttons .disabled-button:not(:last-child) {
+        margin-bottom: 0.75rem; } }
+  @media screen and (min-width: 769px), print {
+    .hero-buttons {
+      display: flex;
+      justify-content: center; }
+      .hero-buttons .button:not(:last-child), .hero-buttons .settings .voice-selector button.selected:not(:last-child), .settings .voice-selector .hero-buttons button.selected:not(:last-child), .hero-buttons .settings .samples .sample .disabled-button:not(:last-child), .settings .samples .sample .hero-buttons .disabled-button:not(:last-child) {
+        margin-right: 1.5rem; } }
+
+.hero-head,
+.hero-foot {
+  flex-grow: 0;
+  flex-shrink: 0; }
+
+.hero-body {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 3rem 1.5rem; }
+
+.column, .settings .samples .sample > div {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem; }
+  .columns.is-mobile > .column.is-narrow, .settings .samples .is-mobile.sample > .column.is-narrow, .settings .samples .sample.is-mobile > div.is-narrow {
+    flex: none; }
+  .columns.is-mobile > .column.is-full, .settings .samples .is-mobile.sample > .column.is-full, .settings .samples .sample.is-mobile > div.is-full {
+    flex: none;
+    width: 100%; }
+  .columns.is-mobile > .column.is-three-quarters, .settings .samples .is-mobile.sample > .column.is-three-quarters, .settings .samples .sample.is-mobile > div.is-three-quarters {
+    flex: none;
+    width: 75%; }
+  .columns.is-mobile > .column.is-two-thirds, .settings .samples .is-mobile.sample > .column.is-two-thirds, .settings .samples .sample.is-mobile > div.is-two-thirds {
+    flex: none;
+    width: 66.6666%; }
+  .columns.is-mobile > .column.is-half, .settings .samples .is-mobile.sample > .column.is-half, .settings .samples .sample.is-mobile > div.is-half {
+    flex: none;
+    width: 50%; }
+  .columns.is-mobile > .column.is-one-third, .settings .samples .is-mobile.sample > .column.is-one-third, .settings .samples .sample.is-mobile > div.is-one-third {
+    flex: none;
+    width: 33.3333%; }
+  .columns.is-mobile > .column.is-one-quarter, .settings .samples .is-mobile.sample > .column.is-one-quarter, .settings .samples .sample.is-mobile > div.is-one-quarter {
+    flex: none;
+    width: 25%; }
+  .columns.is-mobile > .column.is-one-fifth, .settings .samples .is-mobile.sample > .column.is-one-fifth, .settings .samples .sample.is-mobile > div.is-one-fifth {
+    flex: none;
+    width: 20%; }
+  .columns.is-mobile > .column.is-two-fifths, .settings .samples .is-mobile.sample > .column.is-two-fifths, .settings .samples .sample.is-mobile > div.is-two-fifths {
+    flex: none;
+    width: 40%; }
+  .columns.is-mobile > .column.is-three-fifths, .settings .samples .is-mobile.sample > .column.is-three-fifths, .settings .samples .sample.is-mobile > div.is-three-fifths {
+    flex: none;
+    width: 60%; }
+  .columns.is-mobile > .column.is-four-fifths, .settings .samples .is-mobile.sample > .column.is-four-fifths, .settings .samples .sample.is-mobile > div.is-four-fifths {
+    flex: none;
+    width: 80%; }
+  .columns.is-mobile > .column.is-offset-three-quarters, .settings .samples .is-mobile.sample > .column.is-offset-three-quarters, .settings .samples .sample.is-mobile > div.is-offset-three-quarters {
+    margin-left: 75%; }
+  .columns.is-mobile > .column.is-offset-two-thirds, .settings .samples .is-mobile.sample > .column.is-offset-two-thirds, .settings .samples .sample.is-mobile > div.is-offset-two-thirds {
+    margin-left: 66.6666%; }
+  .columns.is-mobile > .column.is-offset-half, .settings .samples .is-mobile.sample > .column.is-offset-half, .settings .samples .sample.is-mobile > div.is-offset-half {
+    margin-left: 50%; }
+  .columns.is-mobile > .column.is-offset-one-third, .settings .samples .is-mobile.sample > .column.is-offset-one-third, .settings .samples .sample.is-mobile > div.is-offset-one-third {
+    margin-left: 33.3333%; }
+  .columns.is-mobile > .column.is-offset-one-quarter, .settings .samples .is-mobile.sample > .column.is-offset-one-quarter, .settings .samples .sample.is-mobile > div.is-offset-one-quarter {
+    margin-left: 25%; }
+  .columns.is-mobile > .column.is-offset-one-fifth, .settings .samples .is-mobile.sample > .column.is-offset-one-fifth, .settings .samples .sample.is-mobile > div.is-offset-one-fifth {
+    margin-left: 20%; }
+  .columns.is-mobile > .column.is-offset-two-fifths, .settings .samples .is-mobile.sample > .column.is-offset-two-fifths, .settings .samples .sample.is-mobile > div.is-offset-two-fifths {
+    margin-left: 40%; }
+  .columns.is-mobile > .column.is-offset-three-fifths, .settings .samples .is-mobile.sample > .column.is-offset-three-fifths, .settings .samples .sample.is-mobile > div.is-offset-three-fifths {
+    margin-left: 60%; }
+  .columns.is-mobile > .column.is-offset-four-fifths, .settings .samples .is-mobile.sample > .column.is-offset-four-fifths, .settings .samples .sample.is-mobile > div.is-offset-four-fifths {
+    margin-left: 80%; }
+  .columns.is-mobile > .column.is-1, .settings .samples .is-mobile.sample > .column.is-1, .settings .samples .sample.is-mobile > div.is-1, .settings .samples .sample.is-mobile > div:nth-child(2), .settings .samples .sample .columns.is-mobile > .column:nth-child(2), .settings .samples .is-mobile.sample > .column:nth-child(2) {
+    flex: none;
+    width: 8.33333%; }
+  .columns.is-mobile > .column.is-offset-1, .settings .samples .is-mobile.sample > .column.is-offset-1, .settings .samples .sample.is-mobile > div.is-offset-1 {
+    margin-left: 8.33333%; }
+  .columns.is-mobile > .column.is-2, .settings .samples .is-mobile.sample > .column.is-2, .settings .samples .sample.is-mobile > div.is-2 {
+    flex: none;
+    width: 16.66667%; }
+  .columns.is-mobile > .column.is-offset-2, .settings .samples .is-mobile.sample > .column.is-offset-2, .settings .samples .sample.is-mobile > div.is-offset-2, .settings .samples .sample.is-mobile > div:first-child, .settings .samples .sample .columns.is-mobile > .column:first-child, .settings .samples .is-mobile.sample > .column:first-child {
+    margin-left: 16.66667%; }
+  .columns.is-mobile > .column.is-3, .settings .samples .is-mobile.sample > .column.is-3, .settings .samples .sample.is-mobile > div.is-3, .settings .samples .sample.is-mobile > div:first-child, .settings .samples .sample.is-mobile > div:nth-child(3), .settings .samples .sample .columns.is-mobile > .column:first-child, .settings .samples .is-mobile.sample > .column:first-child, .settings .samples .sample .columns.is-mobile > .column:nth-child(3), .settings .samples .is-mobile.sample > .column:nth-child(3) {
+    flex: none;
+    width: 25%; }
+  .columns.is-mobile > .column.is-offset-3, .settings .samples .is-mobile.sample > .column.is-offset-3, .settings .samples .sample.is-mobile > div.is-offset-3 {
+    margin-left: 25%; }
+  .columns.is-mobile > .column.is-4, .settings .samples .is-mobile.sample > .column.is-4, .settings .samples .sample.is-mobile > div.is-4 {
+    flex: none;
+    width: 33.33333%; }
+  .columns.is-mobile > .column.is-offset-4, .settings .samples .is-mobile.sample > .column.is-offset-4, .settings .samples .sample.is-mobile > div.is-offset-4 {
+    margin-left: 33.33333%; }
+  .columns.is-mobile > .column.is-5, .settings .samples .is-mobile.sample > .column.is-5, .settings .samples .sample.is-mobile > div.is-5 {
+    flex: none;
+    width: 41.66667%; }
+  .columns.is-mobile > .column.is-offset-5, .settings .samples .is-mobile.sample > .column.is-offset-5, .settings .samples .sample.is-mobile > div.is-offset-5 {
+    margin-left: 41.66667%; }
+  .columns.is-mobile > .column.is-6, .settings .samples .is-mobile.sample > .column.is-6, .settings .samples .sample.is-mobile > div.is-6 {
+    flex: none;
+    width: 50%; }
+  .columns.is-mobile > .column.is-offset-6, .settings .samples .is-mobile.sample > .column.is-offset-6, .settings .samples .sample.is-mobile > div.is-offset-6 {
+    margin-left: 50%; }
+  .columns.is-mobile > .column.is-7, .settings .samples .is-mobile.sample > .column.is-7, .settings .samples .sample.is-mobile > div.is-7 {
+    flex: none;
+    width: 58.33333%; }
+  .columns.is-mobile > .column.is-offset-7, .settings .samples .is-mobile.sample > .column.is-offset-7, .settings .samples .sample.is-mobile > div.is-offset-7 {
+    margin-left: 58.33333%; }
+  .columns.is-mobile > .column.is-8, .settings .samples .is-mobile.sample > .column.is-8, .settings .samples .sample.is-mobile > div.is-8 {
+    flex: none;
+    width: 66.66667%; }
+  .columns.is-mobile > .column.is-offset-8, .settings .samples .is-mobile.sample > .column.is-offset-8, .settings .samples .sample.is-mobile > div.is-offset-8 {
+    margin-left: 66.66667%; }
+  .columns.is-mobile > .column.is-9, .settings .samples .is-mobile.sample > .column.is-9, .settings .samples .sample.is-mobile > div.is-9 {
+    flex: none;
+    width: 75%; }
+  .columns.is-mobile > .column.is-offset-9, .settings .samples .is-mobile.sample > .column.is-offset-9, .settings .samples .sample.is-mobile > div.is-offset-9 {
+    margin-left: 75%; }
+  .columns.is-mobile > .column.is-10, .settings .samples .is-mobile.sample > .column.is-10, .settings .samples .sample.is-mobile > div.is-10 {
+    flex: none;
+    width: 83.33333%; }
+  .columns.is-mobile > .column.is-offset-10, .settings .samples .is-mobile.sample > .column.is-offset-10, .settings .samples .sample.is-mobile > div.is-offset-10 {
+    margin-left: 83.33333%; }
+  .columns.is-mobile > .column.is-11, .settings .samples .is-mobile.sample > .column.is-11, .settings .samples .sample.is-mobile > div.is-11 {
+    flex: none;
+    width: 91.66667%; }
+  .columns.is-mobile > .column.is-offset-11, .settings .samples .is-mobile.sample > .column.is-offset-11, .settings .samples .sample.is-mobile > div.is-offset-11 {
+    margin-left: 91.66667%; }
+  .columns.is-mobile > .column.is-12, .settings .samples .is-mobile.sample > .column.is-12, .settings .samples .sample.is-mobile > div.is-12 {
+    flex: none;
+    width: 100%; }
+  .columns.is-mobile > .column.is-offset-12, .settings .samples .is-mobile.sample > .column.is-offset-12, .settings .samples .sample.is-mobile > div.is-offset-12 {
+    margin-left: 100%; }
+  @media screen and (max-width: 768px) {
+    .column.is-narrow-mobile, .settings .samples .sample > div.is-narrow-mobile {
+      flex: none; }
+    .column.is-full-mobile, .settings .samples .sample > div.is-full-mobile {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters-mobile, .settings .samples .sample > div.is-three-quarters-mobile {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds-mobile, .settings .samples .sample > div.is-two-thirds-mobile {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half-mobile, .settings .samples .sample > div.is-half-mobile {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third-mobile, .settings .samples .sample > div.is-one-third-mobile {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter-mobile, .settings .samples .sample > div.is-one-quarter-mobile {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth-mobile, .settings .samples .sample > div.is-one-fifth-mobile {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths-mobile, .settings .samples .sample > div.is-two-fifths-mobile {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths-mobile, .settings .samples .sample > div.is-three-fifths-mobile {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths-mobile, .settings .samples .sample > div.is-four-fifths-mobile {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters-mobile, .settings .samples .sample > div.is-offset-three-quarters-mobile {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds-mobile, .settings .samples .sample > div.is-offset-two-thirds-mobile {
+      margin-left: 66.6666%; }
+    .column.is-offset-half-mobile, .settings .samples .sample > div.is-offset-half-mobile {
+      margin-left: 50%; }
+    .column.is-offset-one-third-mobile, .settings .samples .sample > div.is-offset-one-third-mobile {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter-mobile, .settings .samples .sample > div.is-offset-one-quarter-mobile {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth-mobile, .settings .samples .sample > div.is-offset-one-fifth-mobile {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths-mobile, .settings .samples .sample > div.is-offset-two-fifths-mobile {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths-mobile, .settings .samples .sample > div.is-offset-three-fifths-mobile {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths-mobile, .settings .samples .sample > div.is-offset-four-fifths-mobile {
+      margin-left: 80%; }
+    .column.is-1-mobile, .settings .samples .sample > div.is-1-mobile {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1-mobile, .settings .samples .sample > div.is-offset-1-mobile {
+      margin-left: 8.33333%; }
+    .column.is-2-mobile, .settings .samples .sample > div.is-2-mobile {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2-mobile, .settings .samples .sample > div.is-offset-2-mobile {
+      margin-left: 16.66667%; }
+    .column.is-3-mobile, .settings .samples .sample > div.is-3-mobile {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3-mobile, .settings .samples .sample > div.is-offset-3-mobile {
+      margin-left: 25%; }
+    .column.is-4-mobile, .settings .samples .sample > div.is-4-mobile {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4-mobile, .settings .samples .sample > div.is-offset-4-mobile {
+      margin-left: 33.33333%; }
+    .column.is-5-mobile, .settings .samples .sample > div.is-5-mobile {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5-mobile, .settings .samples .sample > div.is-offset-5-mobile {
+      margin-left: 41.66667%; }
+    .column.is-6-mobile, .settings .samples .sample > div.is-6-mobile {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6-mobile, .settings .samples .sample > div.is-offset-6-mobile {
+      margin-left: 50%; }
+    .column.is-7-mobile, .settings .samples .sample > div.is-7-mobile {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7-mobile, .settings .samples .sample > div.is-offset-7-mobile {
+      margin-left: 58.33333%; }
+    .column.is-8-mobile, .settings .samples .sample > div.is-8-mobile {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8-mobile, .settings .samples .sample > div.is-offset-8-mobile {
+      margin-left: 66.66667%; }
+    .column.is-9-mobile, .settings .samples .sample > div.is-9-mobile {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9-mobile, .settings .samples .sample > div.is-offset-9-mobile {
+      margin-left: 75%; }
+    .column.is-10-mobile, .settings .samples .sample > div.is-10-mobile {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10-mobile, .settings .samples .sample > div.is-offset-10-mobile {
+      margin-left: 83.33333%; }
+    .column.is-11-mobile, .settings .samples .sample > div.is-11-mobile {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11-mobile, .settings .samples .sample > div.is-offset-11-mobile {
+      margin-left: 91.66667%; }
+    .column.is-12-mobile, .settings .samples .sample > div.is-12-mobile {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12-mobile, .settings .samples .sample > div.is-offset-12-mobile {
+      margin-left: 100%; } }
+  @media screen and (min-width: 769px), print {
+    .column.is-narrow, .settings .samples .sample > div.is-narrow, .column.is-narrow-tablet, .settings .samples .sample > div.is-narrow-tablet {
+      flex: none; }
+    .column.is-full, .settings .samples .sample > div.is-full, .column.is-full-tablet, .settings .samples .sample > div.is-full-tablet {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters, .settings .samples .sample > div.is-three-quarters, .column.is-three-quarters-tablet, .settings .samples .sample > div.is-three-quarters-tablet {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds, .settings .samples .sample > div.is-two-thirds, .column.is-two-thirds-tablet, .settings .samples .sample > div.is-two-thirds-tablet {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half, .settings .samples .sample > div.is-half, .column.is-half-tablet, .settings .samples .sample > div.is-half-tablet {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third, .settings .samples .sample > div.is-one-third, .column.is-one-third-tablet, .settings .samples .sample > div.is-one-third-tablet {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter, .settings .samples .sample > div.is-one-quarter, .column.is-one-quarter-tablet, .settings .samples .sample > div.is-one-quarter-tablet {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth, .settings .samples .sample > div.is-one-fifth, .column.is-one-fifth-tablet, .settings .samples .sample > div.is-one-fifth-tablet {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths, .settings .samples .sample > div.is-two-fifths, .column.is-two-fifths-tablet, .settings .samples .sample > div.is-two-fifths-tablet {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths, .settings .samples .sample > div.is-three-fifths, .column.is-three-fifths-tablet, .settings .samples .sample > div.is-three-fifths-tablet {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths, .settings .samples .sample > div.is-four-fifths, .column.is-four-fifths-tablet, .settings .samples .sample > div.is-four-fifths-tablet {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters, .settings .samples .sample > div.is-offset-three-quarters, .column.is-offset-three-quarters-tablet, .settings .samples .sample > div.is-offset-three-quarters-tablet {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds, .settings .samples .sample > div.is-offset-two-thirds, .column.is-offset-two-thirds-tablet, .settings .samples .sample > div.is-offset-two-thirds-tablet {
+      margin-left: 66.6666%; }
+    .column.is-offset-half, .settings .samples .sample > div.is-offset-half, .column.is-offset-half-tablet, .settings .samples .sample > div.is-offset-half-tablet {
+      margin-left: 50%; }
+    .column.is-offset-one-third, .settings .samples .sample > div.is-offset-one-third, .column.is-offset-one-third-tablet, .settings .samples .sample > div.is-offset-one-third-tablet {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter, .settings .samples .sample > div.is-offset-one-quarter, .column.is-offset-one-quarter-tablet, .settings .samples .sample > div.is-offset-one-quarter-tablet {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth, .settings .samples .sample > div.is-offset-one-fifth, .column.is-offset-one-fifth-tablet, .settings .samples .sample > div.is-offset-one-fifth-tablet {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths, .settings .samples .sample > div.is-offset-two-fifths, .column.is-offset-two-fifths-tablet, .settings .samples .sample > div.is-offset-two-fifths-tablet {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths, .settings .samples .sample > div.is-offset-three-fifths, .column.is-offset-three-fifths-tablet, .settings .samples .sample > div.is-offset-three-fifths-tablet {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths, .settings .samples .sample > div.is-offset-four-fifths, .column.is-offset-four-fifths-tablet, .settings .samples .sample > div.is-offset-four-fifths-tablet {
+      margin-left: 80%; }
+    .column.is-1, .settings .samples .sample > div.is-1, .settings .samples .sample > div:nth-child(2), .settings .samples .sample .column:nth-child(2), .column.is-1-tablet, .settings .samples .sample > div.is-1-tablet {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1, .settings .samples .sample > div.is-offset-1, .column.is-offset-1-tablet, .settings .samples .sample > div.is-offset-1-tablet {
+      margin-left: 8.33333%; }
+    .column.is-2, .settings .samples .sample > div.is-2, .column.is-2-tablet, .settings .samples .sample > div.is-2-tablet {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2, .settings .samples .sample > div.is-offset-2, .settings .samples .sample > div:first-child, .settings .samples .sample .column:first-child, .column.is-offset-2-tablet, .settings .samples .sample > div.is-offset-2-tablet {
+      margin-left: 16.66667%; }
+    .column.is-3, .settings .samples .sample > div.is-3, .settings .samples .sample > div:first-child, .settings .samples .sample > div:nth-child(3), .settings .samples .sample .column:first-child, .settings .samples .sample .column:nth-child(3), .column.is-3-tablet, .settings .samples .sample > div.is-3-tablet {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3, .settings .samples .sample > div.is-offset-3, .column.is-offset-3-tablet, .settings .samples .sample > div.is-offset-3-tablet {
+      margin-left: 25%; }
+    .column.is-4, .settings .samples .sample > div.is-4, .column.is-4-tablet, .settings .samples .sample > div.is-4-tablet {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4, .settings .samples .sample > div.is-offset-4, .column.is-offset-4-tablet, .settings .samples .sample > div.is-offset-4-tablet {
+      margin-left: 33.33333%; }
+    .column.is-5, .settings .samples .sample > div.is-5, .column.is-5-tablet, .settings .samples .sample > div.is-5-tablet {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5, .settings .samples .sample > div.is-offset-5, .column.is-offset-5-tablet, .settings .samples .sample > div.is-offset-5-tablet {
+      margin-left: 41.66667%; }
+    .column.is-6, .settings .samples .sample > div.is-6, .column.is-6-tablet, .settings .samples .sample > div.is-6-tablet {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6, .settings .samples .sample > div.is-offset-6, .column.is-offset-6-tablet, .settings .samples .sample > div.is-offset-6-tablet {
+      margin-left: 50%; }
+    .column.is-7, .settings .samples .sample > div.is-7, .column.is-7-tablet, .settings .samples .sample > div.is-7-tablet {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7, .settings .samples .sample > div.is-offset-7, .column.is-offset-7-tablet, .settings .samples .sample > div.is-offset-7-tablet {
+      margin-left: 58.33333%; }
+    .column.is-8, .settings .samples .sample > div.is-8, .column.is-8-tablet, .settings .samples .sample > div.is-8-tablet {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8, .settings .samples .sample > div.is-offset-8, .column.is-offset-8-tablet, .settings .samples .sample > div.is-offset-8-tablet {
+      margin-left: 66.66667%; }
+    .column.is-9, .settings .samples .sample > div.is-9, .column.is-9-tablet, .settings .samples .sample > div.is-9-tablet {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9, .settings .samples .sample > div.is-offset-9, .column.is-offset-9-tablet, .settings .samples .sample > div.is-offset-9-tablet {
+      margin-left: 75%; }
+    .column.is-10, .settings .samples .sample > div.is-10, .column.is-10-tablet, .settings .samples .sample > div.is-10-tablet {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10, .settings .samples .sample > div.is-offset-10, .column.is-offset-10-tablet, .settings .samples .sample > div.is-offset-10-tablet {
+      margin-left: 83.33333%; }
+    .column.is-11, .settings .samples .sample > div.is-11, .column.is-11-tablet, .settings .samples .sample > div.is-11-tablet {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11, .settings .samples .sample > div.is-offset-11, .column.is-offset-11-tablet, .settings .samples .sample > div.is-offset-11-tablet {
+      margin-left: 91.66667%; }
+    .column.is-12, .settings .samples .sample > div.is-12, .column.is-12-tablet, .settings .samples .sample > div.is-12-tablet {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12, .settings .samples .sample > div.is-offset-12, .column.is-offset-12-tablet, .settings .samples .sample > div.is-offset-12-tablet {
+      margin-left: 100%; } }
+  @media screen and (max-width: 1087px) {
+    .column.is-narrow-touch, .settings .samples .sample > div.is-narrow-touch {
+      flex: none; }
+    .column.is-full-touch, .settings .samples .sample > div.is-full-touch {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters-touch, .settings .samples .sample > div.is-three-quarters-touch {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds-touch, .settings .samples .sample > div.is-two-thirds-touch {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half-touch, .settings .samples .sample > div.is-half-touch {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third-touch, .settings .samples .sample > div.is-one-third-touch {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter-touch, .settings .samples .sample > div.is-one-quarter-touch {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth-touch, .settings .samples .sample > div.is-one-fifth-touch {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths-touch, .settings .samples .sample > div.is-two-fifths-touch {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths-touch, .settings .samples .sample > div.is-three-fifths-touch {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths-touch, .settings .samples .sample > div.is-four-fifths-touch {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters-touch, .settings .samples .sample > div.is-offset-three-quarters-touch {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds-touch, .settings .samples .sample > div.is-offset-two-thirds-touch {
+      margin-left: 66.6666%; }
+    .column.is-offset-half-touch, .settings .samples .sample > div.is-offset-half-touch {
+      margin-left: 50%; }
+    .column.is-offset-one-third-touch, .settings .samples .sample > div.is-offset-one-third-touch {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter-touch, .settings .samples .sample > div.is-offset-one-quarter-touch {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth-touch, .settings .samples .sample > div.is-offset-one-fifth-touch {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths-touch, .settings .samples .sample > div.is-offset-two-fifths-touch {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths-touch, .settings .samples .sample > div.is-offset-three-fifths-touch {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths-touch, .settings .samples .sample > div.is-offset-four-fifths-touch {
+      margin-left: 80%; }
+    .column.is-1-touch, .settings .samples .sample > div.is-1-touch {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1-touch, .settings .samples .sample > div.is-offset-1-touch {
+      margin-left: 8.33333%; }
+    .column.is-2-touch, .settings .samples .sample > div.is-2-touch {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2-touch, .settings .samples .sample > div.is-offset-2-touch {
+      margin-left: 16.66667%; }
+    .column.is-3-touch, .settings .samples .sample > div.is-3-touch {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3-touch, .settings .samples .sample > div.is-offset-3-touch {
+      margin-left: 25%; }
+    .column.is-4-touch, .settings .samples .sample > div.is-4-touch {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4-touch, .settings .samples .sample > div.is-offset-4-touch {
+      margin-left: 33.33333%; }
+    .column.is-5-touch, .settings .samples .sample > div.is-5-touch {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5-touch, .settings .samples .sample > div.is-offset-5-touch {
+      margin-left: 41.66667%; }
+    .column.is-6-touch, .settings .samples .sample > div.is-6-touch {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6-touch, .settings .samples .sample > div.is-offset-6-touch {
+      margin-left: 50%; }
+    .column.is-7-touch, .settings .samples .sample > div.is-7-touch {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7-touch, .settings .samples .sample > div.is-offset-7-touch {
+      margin-left: 58.33333%; }
+    .column.is-8-touch, .settings .samples .sample > div.is-8-touch {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8-touch, .settings .samples .sample > div.is-offset-8-touch {
+      margin-left: 66.66667%; }
+    .column.is-9-touch, .settings .samples .sample > div.is-9-touch {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9-touch, .settings .samples .sample > div.is-offset-9-touch {
+      margin-left: 75%; }
+    .column.is-10-touch, .settings .samples .sample > div.is-10-touch {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10-touch, .settings .samples .sample > div.is-offset-10-touch {
+      margin-left: 83.33333%; }
+    .column.is-11-touch, .settings .samples .sample > div.is-11-touch {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11-touch, .settings .samples .sample > div.is-offset-11-touch {
+      margin-left: 91.66667%; }
+    .column.is-12-touch, .settings .samples .sample > div.is-12-touch {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12-touch, .settings .samples .sample > div.is-offset-12-touch {
+      margin-left: 100%; } }
+  @media screen and (min-width: 1088px) {
+    .column.is-narrow-desktop, .settings .samples .sample > div.is-narrow-desktop {
+      flex: none; }
+    .column.is-full-desktop, .settings .samples .sample > div.is-full-desktop {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters-desktop, .settings .samples .sample > div.is-three-quarters-desktop {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds-desktop, .settings .samples .sample > div.is-two-thirds-desktop {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half-desktop, .settings .samples .sample > div.is-half-desktop {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third-desktop, .settings .samples .sample > div.is-one-third-desktop {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter-desktop, .settings .samples .sample > div.is-one-quarter-desktop {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth-desktop, .settings .samples .sample > div.is-one-fifth-desktop {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths-desktop, .settings .samples .sample > div.is-two-fifths-desktop {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths-desktop, .settings .samples .sample > div.is-three-fifths-desktop {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths-desktop, .settings .samples .sample > div.is-four-fifths-desktop {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters-desktop, .settings .samples .sample > div.is-offset-three-quarters-desktop {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds-desktop, .settings .samples .sample > div.is-offset-two-thirds-desktop {
+      margin-left: 66.6666%; }
+    .column.is-offset-half-desktop, .settings .samples .sample > div.is-offset-half-desktop {
+      margin-left: 50%; }
+    .column.is-offset-one-third-desktop, .settings .samples .sample > div.is-offset-one-third-desktop {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter-desktop, .settings .samples .sample > div.is-offset-one-quarter-desktop {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth-desktop, .settings .samples .sample > div.is-offset-one-fifth-desktop {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths-desktop, .settings .samples .sample > div.is-offset-two-fifths-desktop {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths-desktop, .settings .samples .sample > div.is-offset-three-fifths-desktop {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths-desktop, .settings .samples .sample > div.is-offset-four-fifths-desktop {
+      margin-left: 80%; }
+    .column.is-1-desktop, .settings .samples .sample > div.is-1-desktop {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1-desktop, .settings .samples .sample > div.is-offset-1-desktop {
+      margin-left: 8.33333%; }
+    .column.is-2-desktop, .settings .samples .sample > div.is-2-desktop {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2-desktop, .settings .samples .sample > div.is-offset-2-desktop {
+      margin-left: 16.66667%; }
+    .column.is-3-desktop, .settings .samples .sample > div.is-3-desktop {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3-desktop, .settings .samples .sample > div.is-offset-3-desktop {
+      margin-left: 25%; }
+    .column.is-4-desktop, .settings .samples .sample > div.is-4-desktop {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4-desktop, .settings .samples .sample > div.is-offset-4-desktop {
+      margin-left: 33.33333%; }
+    .column.is-5-desktop, .settings .samples .sample > div.is-5-desktop {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5-desktop, .settings .samples .sample > div.is-offset-5-desktop {
+      margin-left: 41.66667%; }
+    .column.is-6-desktop, .settings .samples .sample > div.is-6-desktop {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6-desktop, .settings .samples .sample > div.is-offset-6-desktop {
+      margin-left: 50%; }
+    .column.is-7-desktop, .settings .samples .sample > div.is-7-desktop {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7-desktop, .settings .samples .sample > div.is-offset-7-desktop {
+      margin-left: 58.33333%; }
+    .column.is-8-desktop, .settings .samples .sample > div.is-8-desktop {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8-desktop, .settings .samples .sample > div.is-offset-8-desktop {
+      margin-left: 66.66667%; }
+    .column.is-9-desktop, .settings .samples .sample > div.is-9-desktop {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9-desktop, .settings .samples .sample > div.is-offset-9-desktop {
+      margin-left: 75%; }
+    .column.is-10-desktop, .settings .samples .sample > div.is-10-desktop {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10-desktop, .settings .samples .sample > div.is-offset-10-desktop {
+      margin-left: 83.33333%; }
+    .column.is-11-desktop, .settings .samples .sample > div.is-11-desktop {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11-desktop, .settings .samples .sample > div.is-offset-11-desktop {
+      margin-left: 91.66667%; }
+    .column.is-12-desktop, .settings .samples .sample > div.is-12-desktop {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12-desktop, .settings .samples .sample > div.is-offset-12-desktop {
+      margin-left: 100%; } }
+  @media screen and (min-width: 1280px) {
+    .column.is-narrow-widescreen, .settings .samples .sample > div.is-narrow-widescreen {
+      flex: none; }
+    .column.is-full-widescreen, .settings .samples .sample > div.is-full-widescreen {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters-widescreen, .settings .samples .sample > div.is-three-quarters-widescreen {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds-widescreen, .settings .samples .sample > div.is-two-thirds-widescreen {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half-widescreen, .settings .samples .sample > div.is-half-widescreen {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third-widescreen, .settings .samples .sample > div.is-one-third-widescreen {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter-widescreen, .settings .samples .sample > div.is-one-quarter-widescreen {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth-widescreen, .settings .samples .sample > div.is-one-fifth-widescreen {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths-widescreen, .settings .samples .sample > div.is-two-fifths-widescreen {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths-widescreen, .settings .samples .sample > div.is-three-fifths-widescreen {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths-widescreen, .settings .samples .sample > div.is-four-fifths-widescreen {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters-widescreen, .settings .samples .sample > div.is-offset-three-quarters-widescreen {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds-widescreen, .settings .samples .sample > div.is-offset-two-thirds-widescreen {
+      margin-left: 66.6666%; }
+    .column.is-offset-half-widescreen, .settings .samples .sample > div.is-offset-half-widescreen {
+      margin-left: 50%; }
+    .column.is-offset-one-third-widescreen, .settings .samples .sample > div.is-offset-one-third-widescreen {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter-widescreen, .settings .samples .sample > div.is-offset-one-quarter-widescreen {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth-widescreen, .settings .samples .sample > div.is-offset-one-fifth-widescreen {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths-widescreen, .settings .samples .sample > div.is-offset-two-fifths-widescreen {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths-widescreen, .settings .samples .sample > div.is-offset-three-fifths-widescreen {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths-widescreen, .settings .samples .sample > div.is-offset-four-fifths-widescreen {
+      margin-left: 80%; }
+    .column.is-1-widescreen, .settings .samples .sample > div.is-1-widescreen {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1-widescreen, .settings .samples .sample > div.is-offset-1-widescreen {
+      margin-left: 8.33333%; }
+    .column.is-2-widescreen, .settings .samples .sample > div.is-2-widescreen {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2-widescreen, .settings .samples .sample > div.is-offset-2-widescreen {
+      margin-left: 16.66667%; }
+    .column.is-3-widescreen, .settings .samples .sample > div.is-3-widescreen {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3-widescreen, .settings .samples .sample > div.is-offset-3-widescreen {
+      margin-left: 25%; }
+    .column.is-4-widescreen, .settings .samples .sample > div.is-4-widescreen {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4-widescreen, .settings .samples .sample > div.is-offset-4-widescreen {
+      margin-left: 33.33333%; }
+    .column.is-5-widescreen, .settings .samples .sample > div.is-5-widescreen {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5-widescreen, .settings .samples .sample > div.is-offset-5-widescreen {
+      margin-left: 41.66667%; }
+    .column.is-6-widescreen, .settings .samples .sample > div.is-6-widescreen {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6-widescreen, .settings .samples .sample > div.is-offset-6-widescreen {
+      margin-left: 50%; }
+    .column.is-7-widescreen, .settings .samples .sample > div.is-7-widescreen {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7-widescreen, .settings .samples .sample > div.is-offset-7-widescreen {
+      margin-left: 58.33333%; }
+    .column.is-8-widescreen, .settings .samples .sample > div.is-8-widescreen {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8-widescreen, .settings .samples .sample > div.is-offset-8-widescreen {
+      margin-left: 66.66667%; }
+    .column.is-9-widescreen, .settings .samples .sample > div.is-9-widescreen {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9-widescreen, .settings .samples .sample > div.is-offset-9-widescreen {
+      margin-left: 75%; }
+    .column.is-10-widescreen, .settings .samples .sample > div.is-10-widescreen {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10-widescreen, .settings .samples .sample > div.is-offset-10-widescreen {
+      margin-left: 83.33333%; }
+    .column.is-11-widescreen, .settings .samples .sample > div.is-11-widescreen {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11-widescreen, .settings .samples .sample > div.is-offset-11-widescreen {
+      margin-left: 91.66667%; }
+    .column.is-12-widescreen, .settings .samples .sample > div.is-12-widescreen {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12-widescreen, .settings .samples .sample > div.is-offset-12-widescreen {
+      margin-left: 100%; } }
+  @media screen and (min-width: 1472px) {
+    .column.is-narrow-fullhd, .settings .samples .sample > div.is-narrow-fullhd {
+      flex: none; }
+    .column.is-full-fullhd, .settings .samples .sample > div.is-full-fullhd {
+      flex: none;
+      width: 100%; }
+    .column.is-three-quarters-fullhd, .settings .samples .sample > div.is-three-quarters-fullhd {
+      flex: none;
+      width: 75%; }
+    .column.is-two-thirds-fullhd, .settings .samples .sample > div.is-two-thirds-fullhd {
+      flex: none;
+      width: 66.6666%; }
+    .column.is-half-fullhd, .settings .samples .sample > div.is-half-fullhd {
+      flex: none;
+      width: 50%; }
+    .column.is-one-third-fullhd, .settings .samples .sample > div.is-one-third-fullhd {
+      flex: none;
+      width: 33.3333%; }
+    .column.is-one-quarter-fullhd, .settings .samples .sample > div.is-one-quarter-fullhd {
+      flex: none;
+      width: 25%; }
+    .column.is-one-fifth-fullhd, .settings .samples .sample > div.is-one-fifth-fullhd {
+      flex: none;
+      width: 20%; }
+    .column.is-two-fifths-fullhd, .settings .samples .sample > div.is-two-fifths-fullhd {
+      flex: none;
+      width: 40%; }
+    .column.is-three-fifths-fullhd, .settings .samples .sample > div.is-three-fifths-fullhd {
+      flex: none;
+      width: 60%; }
+    .column.is-four-fifths-fullhd, .settings .samples .sample > div.is-four-fifths-fullhd {
+      flex: none;
+      width: 80%; }
+    .column.is-offset-three-quarters-fullhd, .settings .samples .sample > div.is-offset-three-quarters-fullhd {
+      margin-left: 75%; }
+    .column.is-offset-two-thirds-fullhd, .settings .samples .sample > div.is-offset-two-thirds-fullhd {
+      margin-left: 66.6666%; }
+    .column.is-offset-half-fullhd, .settings .samples .sample > div.is-offset-half-fullhd {
+      margin-left: 50%; }
+    .column.is-offset-one-third-fullhd, .settings .samples .sample > div.is-offset-one-third-fullhd {
+      margin-left: 33.3333%; }
+    .column.is-offset-one-quarter-fullhd, .settings .samples .sample > div.is-offset-one-quarter-fullhd {
+      margin-left: 25%; }
+    .column.is-offset-one-fifth-fullhd, .settings .samples .sample > div.is-offset-one-fifth-fullhd {
+      margin-left: 20%; }
+    .column.is-offset-two-fifths-fullhd, .settings .samples .sample > div.is-offset-two-fifths-fullhd {
+      margin-left: 40%; }
+    .column.is-offset-three-fifths-fullhd, .settings .samples .sample > div.is-offset-three-fifths-fullhd {
+      margin-left: 60%; }
+    .column.is-offset-four-fifths-fullhd, .settings .samples .sample > div.is-offset-four-fifths-fullhd {
+      margin-left: 80%; }
+    .column.is-1-fullhd, .settings .samples .sample > div.is-1-fullhd {
+      flex: none;
+      width: 8.33333%; }
+    .column.is-offset-1-fullhd, .settings .samples .sample > div.is-offset-1-fullhd {
+      margin-left: 8.33333%; }
+    .column.is-2-fullhd, .settings .samples .sample > div.is-2-fullhd {
+      flex: none;
+      width: 16.66667%; }
+    .column.is-offset-2-fullhd, .settings .samples .sample > div.is-offset-2-fullhd {
+      margin-left: 16.66667%; }
+    .column.is-3-fullhd, .settings .samples .sample > div.is-3-fullhd {
+      flex: none;
+      width: 25%; }
+    .column.is-offset-3-fullhd, .settings .samples .sample > div.is-offset-3-fullhd {
+      margin-left: 25%; }
+    .column.is-4-fullhd, .settings .samples .sample > div.is-4-fullhd {
+      flex: none;
+      width: 33.33333%; }
+    .column.is-offset-4-fullhd, .settings .samples .sample > div.is-offset-4-fullhd {
+      margin-left: 33.33333%; }
+    .column.is-5-fullhd, .settings .samples .sample > div.is-5-fullhd {
+      flex: none;
+      width: 41.66667%; }
+    .column.is-offset-5-fullhd, .settings .samples .sample > div.is-offset-5-fullhd {
+      margin-left: 41.66667%; }
+    .column.is-6-fullhd, .settings .samples .sample > div.is-6-fullhd {
+      flex: none;
+      width: 50%; }
+    .column.is-offset-6-fullhd, .settings .samples .sample > div.is-offset-6-fullhd {
+      margin-left: 50%; }
+    .column.is-7-fullhd, .settings .samples .sample > div.is-7-fullhd {
+      flex: none;
+      width: 58.33333%; }
+    .column.is-offset-7-fullhd, .settings .samples .sample > div.is-offset-7-fullhd {
+      margin-left: 58.33333%; }
+    .column.is-8-fullhd, .settings .samples .sample > div.is-8-fullhd {
+      flex: none;
+      width: 66.66667%; }
+    .column.is-offset-8-fullhd, .settings .samples .sample > div.is-offset-8-fullhd {
+      margin-left: 66.66667%; }
+    .column.is-9-fullhd, .settings .samples .sample > div.is-9-fullhd {
+      flex: none;
+      width: 75%; }
+    .column.is-offset-9-fullhd, .settings .samples .sample > div.is-offset-9-fullhd {
+      margin-left: 75%; }
+    .column.is-10-fullhd, .settings .samples .sample > div.is-10-fullhd {
+      flex: none;
+      width: 83.33333%; }
+    .column.is-offset-10-fullhd, .settings .samples .sample > div.is-offset-10-fullhd {
+      margin-left: 83.33333%; }
+    .column.is-11-fullhd, .settings .samples .sample > div.is-11-fullhd {
+      flex: none;
+      width: 91.66667%; }
+    .column.is-offset-11-fullhd, .settings .samples .sample > div.is-offset-11-fullhd {
+      margin-left: 91.66667%; }
+    .column.is-12-fullhd, .settings .samples .sample > div.is-12-fullhd {
+      flex: none;
+      width: 100%; }
+    .column.is-offset-12-fullhd, .settings .samples .sample > div.is-offset-12-fullhd {
+      margin-left: 100%; } }
+
+.columns, .settings .samples .sample {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem; }
+  .columns:last-child, .settings .samples .sample:last-child {
+    margin-bottom: -0.75rem; }
+  .columns:not(:last-child), .settings .samples .sample:not(:last-child) {
+    margin-bottom: calc(1.5rem - 0.75rem); }
+  .columns.is-centered, .settings .samples .is-centered.sample {
+    justify-content: center; }
+  .columns.is-gapless, .settings .samples .is-gapless.sample {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0; }
+    .columns.is-gapless > .column, .settings .samples .is-gapless.sample > .column, .settings .samples .sample.is-gapless > div {
+      margin: 0;
+      padding: 0 !important; }
+    .columns.is-gapless:not(:last-child), .settings .samples .is-gapless.sample:not(:last-child) {
+      margin-bottom: 1.5rem; }
+    .columns.is-gapless:last-child, .settings .samples .is-gapless.sample:last-child {
+      margin-bottom: 0; }
+  .columns.is-mobile, .settings .samples .is-mobile.sample {
+    display: flex; }
+  .columns.is-multiline, .settings .samples .is-multiline.sample {
+    flex-wrap: wrap; }
+  .columns.is-vcentered, .settings .samples .is-vcentered.sample {
+    align-items: center; }
+  @media screen and (min-width: 769px), print {
+    .columns:not(.is-desktop), .settings .samples .sample:not(.is-desktop) {
+      display: flex; } }
+  @media screen and (min-width: 1088px) {
+    .columns.is-desktop, .settings .samples .is-desktop.sample {
+      display: flex; } }
+
+.columns.is-variable, .settings .samples .is-variable.sample {
+  --columnGap: 0.75rem;
+  margin-left: calc(-1 * var(--columnGap));
+  margin-right: calc(-1 * var(--columnGap)); }
+  .columns.is-variable .column, .settings .samples .is-variable.sample .column, .columns.is-variable .settings .samples .sample > div, .settings .samples .columns.is-variable .sample > div, .settings .samples .is-variable.sample .sample > div {
+    padding-left: var(--columnGap);
+    padding-right: var(--columnGap); }
+  .columns.is-variable.is-0, .settings .samples .is-variable.is-0.sample {
+    --columnGap: 0rem; }
+  .columns.is-variable.is-1, .settings .samples .is-variable.is-1.sample, .settings .samples .sample .is-variable.sample:nth-child(2), .settings .samples .sample .columns.is-variable:nth-child(2) {
+    --columnGap: 0.25rem; }
+  .columns.is-variable.is-2, .settings .samples .is-variable.is-2.sample {
+    --columnGap: 0.5rem; }
+  .columns.is-variable.is-3, .settings .samples .is-variable.is-3.sample, .settings .samples .sample .is-variable.sample:first-child, .settings .samples .sample .is-variable.sample:nth-child(3), .settings .samples .sample .columns.is-variable:first-child, .settings .samples .sample .columns.is-variable:nth-child(3) {
+    --columnGap: 0.75rem; }
+  .columns.is-variable.is-4, .settings .samples .is-variable.is-4.sample {
+    --columnGap: 1rem; }
+  .columns.is-variable.is-5, .settings .samples .is-variable.is-5.sample {
+    --columnGap: 1.25rem; }
+  .columns.is-variable.is-6, .settings .samples .is-variable.is-6.sample {
+    --columnGap: 1.5rem; }
+  .columns.is-variable.is-7, .settings .samples .is-variable.is-7.sample {
+    --columnGap: 1.75rem; }
+  .columns.is-variable.is-8, .settings .samples .is-variable.is-8.sample {
+    --columnGap: 2rem; }
+
+.button, .settings .voice-selector button.selected, .settings .samples .sample .disabled-button {
+  background-color: #f8f8f8;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  padding-top: calc(0.375em - 1px);
+  text-align: center;
+  white-space: nowrap; }
+  .button strong, .settings .voice-selector button.selected strong, .settings .samples .sample .disabled-button strong {
+    color: inherit; }
+  .button .icon, .settings .voice-selector button.selected .icon, .settings .samples .sample .disabled-button .icon, .button .icon.is-small, .settings .voice-selector button.selected .icon.is-small, .settings .samples .sample .disabled-button .icon.is-small, .button .icon.is-medium, .settings .voice-selector button.selected .icon.is-medium, .settings .samples .sample .disabled-button .icon.is-medium, .button .icon.is-large, .settings .voice-selector button.selected .icon.is-large, .settings .samples .sample .disabled-button .icon.is-large {
+    height: 1.5em;
+    width: 1.5em; }
+  .button .icon:first-child:not(:last-child), .settings .voice-selector button.selected .icon:first-child:not(:last-child), .settings .samples .sample .disabled-button .icon:first-child:not(:last-child) {
+    margin-left: calc(-0.375em - 1px);
+    margin-right: 0.1875em; }
+  .button .icon:last-child:not(:first-child), .settings .voice-selector button.selected .icon:last-child:not(:first-child), .settings .samples .sample .disabled-button .icon:last-child:not(:first-child) {
+    margin-left: 0.1875em;
+    margin-right: calc(-0.375em - 1px); }
+  .button .icon:first-child:last-child, .settings .voice-selector button.selected .icon:first-child:last-child, .settings .samples .sample .disabled-button .icon:first-child:last-child {
+    margin-left: calc(-0.375em - 1px);
+    margin-right: calc(-0.375em - 1px); }
+  .button:hover, .settings .voice-selector button.selected:hover, .settings .samples .sample .disabled-button:hover, .button.is-hovered, .settings .voice-selector button.is-hovered.selected, .settings .samples .sample .is-hovered.disabled-button {
+    border-color: #b5b5b5;
+    color: #363636; }
+  .button:focus, .settings .voice-selector button.selected:focus, .settings .samples .sample .disabled-button:focus, .button.is-focused, .settings .voice-selector button.is-focused.selected, .settings .samples .sample .is-focused.disabled-button {
+    border-color: #3273dc;
+    color: #363636; }
+    .button:focus:not(:active), .settings .voice-selector button.selected:focus:not(:active), .settings .samples .sample .disabled-button:focus:not(:active), .button.is-focused:not(:active), .settings .voice-selector button.is-focused.selected:not(:active), .settings .samples .sample .is-focused.disabled-button:not(:active) {
+      box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
+  .button:active, .settings .voice-selector button.selected:active, .settings .samples .sample .disabled-button:active, .button.is-active, .settings .voice-selector button.is-active.selected, .settings .samples .sample .is-active.disabled-button {
+    border-color: #4a4a4a;
+    color: #363636; }
+  .button.is-text, .settings .voice-selector button.is-text.selected, .settings .samples .sample .is-text.disabled-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #4a4a4a;
+    text-decoration: underline; }
+    .button.is-text:hover, .settings .voice-selector button.is-text.selected:hover, .settings .samples .sample .is-text.disabled-button:hover, .button.is-text.is-hovered, .settings .voice-selector button.is-text.is-hovered.selected, .settings .samples .sample .is-text.is-hovered.disabled-button, .button.is-text:focus, .settings .voice-selector button.is-text.selected:focus, .settings .samples .sample .is-text.disabled-button:focus, .button.is-text.is-focused, .settings .voice-selector button.is-text.is-focused.selected, .settings .samples .sample .is-text.is-focused.disabled-button {
+      background-color: whitesmoke;
+      color: #363636; }
+    .button.is-text:active, .settings .voice-selector button.is-text.selected:active, .settings .samples .sample .is-text.disabled-button:active, .button.is-text.is-active, .settings .voice-selector button.is-text.is-active.selected, .settings .samples .sample .is-text.is-active.disabled-button {
+      background-color: #e8e8e8;
+      color: #363636; }
+    .button.is-text[disabled], .settings .voice-selector button.is-text.selected[disabled], .settings .samples .sample .is-text.disabled-button[disabled] {
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none; }
+  .button.is-white, .settings .voice-selector button.is-white.selected, .settings .samples .sample .is-white.disabled-button {
+    background-color: white;
+    border-color: transparent;
+    color: #0a0a0a; }
+    .button.is-white:hover, .settings .voice-selector button.is-white.selected:hover, .settings .samples .sample .is-white.disabled-button:hover, .button.is-white.is-hovered, .settings .voice-selector button.is-white.is-hovered.selected, .settings .samples .sample .is-white.is-hovered.disabled-button {
+      background-color: #f9f9f9;
+      border-color: transparent;
+      color: #0a0a0a; }
+    .button.is-white:focus, .settings .voice-selector button.is-white.selected:focus, .settings .samples .sample .is-white.disabled-button:focus, .button.is-white.is-focused, .settings .voice-selector button.is-white.is-focused.selected, .settings .samples .sample .is-white.is-focused.disabled-button {
+      border-color: transparent;
+      color: #0a0a0a; }
+      .button.is-white:focus:not(:active), .settings .voice-selector button.is-white.selected:focus:not(:active), .settings .samples .sample .is-white.disabled-button:focus:not(:active), .button.is-white.is-focused:not(:active), .settings .voice-selector button.is-white.is-focused.selected:not(:active), .settings .samples .sample .is-white.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(255, 255, 255, 0.25); }
+    .button.is-white:active, .settings .voice-selector button.is-white.selected:active, .settings .samples .sample .is-white.disabled-button:active, .button.is-white.is-active, .settings .voice-selector button.is-white.is-active.selected, .settings .samples .sample .is-white.is-active.disabled-button {
+      background-color: #f2f2f2;
+      border-color: transparent;
+      color: #0a0a0a; }
+    .button.is-white[disabled], .settings .voice-selector button.is-white.selected[disabled], .settings .samples .sample .is-white.disabled-button[disabled] {
+      background-color: white;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-white.is-inverted, .settings .voice-selector button.is-white.is-inverted.selected, .settings .samples .sample .is-white.is-inverted.disabled-button {
+      background-color: #0a0a0a;
+      color: white; }
+      .button.is-white.is-inverted:hover, .settings .voice-selector button.is-white.is-inverted.selected:hover, .settings .samples .sample .is-white.is-inverted.disabled-button:hover {
+        background-color: black; }
+      .button.is-white.is-inverted[disabled], .settings .voice-selector button.is-white.is-inverted.selected[disabled], .settings .samples .sample .is-white.is-inverted.disabled-button[disabled] {
+        background-color: #0a0a0a;
+        border-color: transparent;
+        box-shadow: none;
+        color: white; }
+    .button.is-white.is-loading::after, .settings .voice-selector button.is-white.is-loading.selected::after, .settings .samples .sample .is-white.is-loading.disabled-button::after {
+      border-color: transparent transparent #0a0a0a #0a0a0a !important; }
+    .button.is-white.is-outlined, .settings .voice-selector button.is-white.is-outlined.selected, .settings .samples .sample .is-white.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: white;
+      color: white; }
+      .button.is-white.is-outlined:hover, .settings .voice-selector button.is-white.is-outlined.selected:hover, .settings .samples .sample .is-white.is-outlined.disabled-button:hover, .button.is-white.is-outlined:focus, .settings .voice-selector button.is-white.is-outlined.selected:focus, .settings .samples .sample .is-white.is-outlined.disabled-button:focus {
+        background-color: white;
+        border-color: white;
+        color: #0a0a0a; }
+      .button.is-white.is-outlined.is-loading::after, .settings .voice-selector button.is-white.is-outlined.is-loading.selected::after, .settings .samples .sample .is-white.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent white white !important; }
+      .button.is-white.is-outlined[disabled], .settings .voice-selector button.is-white.is-outlined.selected[disabled], .settings .samples .sample .is-white.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: white;
+        box-shadow: none;
+        color: white; }
+    .button.is-white.is-inverted.is-outlined, .settings .voice-selector button.is-white.is-inverted.is-outlined.selected, .settings .samples .sample .is-white.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #0a0a0a;
+      color: #0a0a0a; }
+      .button.is-white.is-inverted.is-outlined:hover, .settings .voice-selector button.is-white.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-white.is-inverted.is-outlined.disabled-button:hover, .button.is-white.is-inverted.is-outlined:focus, .settings .voice-selector button.is-white.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-white.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #0a0a0a;
+        color: white; }
+      .button.is-white.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-white.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-white.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #0a0a0a;
+        box-shadow: none;
+        color: #0a0a0a; }
+  .button.is-black, .settings .voice-selector button.is-black.selected, .settings .samples .sample .is-black.disabled-button {
+    background-color: #0a0a0a;
+    border-color: transparent;
+    color: white; }
+    .button.is-black:hover, .settings .voice-selector button.is-black.selected:hover, .settings .samples .sample .is-black.disabled-button:hover, .button.is-black.is-hovered, .settings .voice-selector button.is-black.is-hovered.selected, .settings .samples .sample .is-black.is-hovered.disabled-button {
+      background-color: #040404;
+      border-color: transparent;
+      color: white; }
+    .button.is-black:focus, .settings .voice-selector button.is-black.selected:focus, .settings .samples .sample .is-black.disabled-button:focus, .button.is-black.is-focused, .settings .voice-selector button.is-black.is-focused.selected, .settings .samples .sample .is-black.is-focused.disabled-button {
+      border-color: transparent;
+      color: white; }
+      .button.is-black:focus:not(:active), .settings .voice-selector button.is-black.selected:focus:not(:active), .settings .samples .sample .is-black.disabled-button:focus:not(:active), .button.is-black.is-focused:not(:active), .settings .voice-selector button.is-black.is-focused.selected:not(:active), .settings .samples .sample .is-black.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(10, 10, 10, 0.25); }
+    .button.is-black:active, .settings .voice-selector button.is-black.selected:active, .settings .samples .sample .is-black.disabled-button:active, .button.is-black.is-active, .settings .voice-selector button.is-black.is-active.selected, .settings .samples .sample .is-black.is-active.disabled-button {
+      background-color: black;
+      border-color: transparent;
+      color: white; }
+    .button.is-black[disabled], .settings .voice-selector button.is-black.selected[disabled], .settings .samples .sample .is-black.disabled-button[disabled] {
+      background-color: #0a0a0a;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-black.is-inverted, .settings .voice-selector button.is-black.is-inverted.selected, .settings .samples .sample .is-black.is-inverted.disabled-button {
+      background-color: white;
+      color: #0a0a0a; }
+      .button.is-black.is-inverted:hover, .settings .voice-selector button.is-black.is-inverted.selected:hover, .settings .samples .sample .is-black.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-black.is-inverted[disabled], .settings .voice-selector button.is-black.is-inverted.selected[disabled], .settings .samples .sample .is-black.is-inverted.disabled-button[disabled] {
+        background-color: white;
+        border-color: transparent;
+        box-shadow: none;
+        color: #0a0a0a; }
+    .button.is-black.is-loading::after, .settings .voice-selector button.is-black.is-loading.selected::after, .settings .samples .sample .is-black.is-loading.disabled-button::after {
+      border-color: transparent transparent white white !important; }
+    .button.is-black.is-outlined, .settings .voice-selector button.is-black.is-outlined.selected, .settings .samples .sample .is-black.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #0a0a0a;
+      color: #0a0a0a; }
+      .button.is-black.is-outlined:hover, .settings .voice-selector button.is-black.is-outlined.selected:hover, .settings .samples .sample .is-black.is-outlined.disabled-button:hover, .button.is-black.is-outlined:focus, .settings .voice-selector button.is-black.is-outlined.selected:focus, .settings .samples .sample .is-black.is-outlined.disabled-button:focus {
+        background-color: #0a0a0a;
+        border-color: #0a0a0a;
+        color: white; }
+      .button.is-black.is-outlined.is-loading::after, .settings .voice-selector button.is-black.is-outlined.is-loading.selected::after, .settings .samples .sample .is-black.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #0a0a0a #0a0a0a !important; }
+      .button.is-black.is-outlined[disabled], .settings .voice-selector button.is-black.is-outlined.selected[disabled], .settings .samples .sample .is-black.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #0a0a0a;
+        box-shadow: none;
+        color: #0a0a0a; }
+    .button.is-black.is-inverted.is-outlined, .settings .voice-selector button.is-black.is-inverted.is-outlined.selected, .settings .samples .sample .is-black.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: white;
+      color: white; }
+      .button.is-black.is-inverted.is-outlined:hover, .settings .voice-selector button.is-black.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-black.is-inverted.is-outlined.disabled-button:hover, .button.is-black.is-inverted.is-outlined:focus, .settings .voice-selector button.is-black.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-black.is-inverted.is-outlined.disabled-button:focus {
+        background-color: white;
+        color: #0a0a0a; }
+      .button.is-black.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-black.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-black.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: white;
+        box-shadow: none;
+        color: white; }
+  .button.is-light, .settings .voice-selector button.is-light.selected, .settings .samples .sample .is-light.disabled-button {
+    background-color: whitesmoke;
+    border-color: transparent;
+    color: #363636; }
+    .button.is-light:hover, .settings .voice-selector button.is-light.selected:hover, .settings .samples .sample .is-light.disabled-button:hover, .button.is-light.is-hovered, .settings .voice-selector button.is-light.is-hovered.selected, .settings .samples .sample .is-light.is-hovered.disabled-button {
+      background-color: #eeeeee;
+      border-color: transparent;
+      color: #363636; }
+    .button.is-light:focus, .settings .voice-selector button.is-light.selected:focus, .settings .samples .sample .is-light.disabled-button:focus, .button.is-light.is-focused, .settings .voice-selector button.is-light.is-focused.selected, .settings .samples .sample .is-light.is-focused.disabled-button {
+      border-color: transparent;
+      color: #363636; }
+      .button.is-light:focus:not(:active), .settings .voice-selector button.is-light.selected:focus:not(:active), .settings .samples .sample .is-light.disabled-button:focus:not(:active), .button.is-light.is-focused:not(:active), .settings .voice-selector button.is-light.is-focused.selected:not(:active), .settings .samples .sample .is-light.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25); }
+    .button.is-light:active, .settings .voice-selector button.is-light.selected:active, .settings .samples .sample .is-light.disabled-button:active, .button.is-light.is-active, .settings .voice-selector button.is-light.is-active.selected, .settings .samples .sample .is-light.is-active.disabled-button {
+      background-color: #e8e8e8;
+      border-color: transparent;
+      color: #363636; }
+    .button.is-light[disabled], .settings .voice-selector button.is-light.selected[disabled], .settings .samples .sample .is-light.disabled-button[disabled] {
+      background-color: whitesmoke;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-light.is-inverted, .settings .voice-selector button.is-light.is-inverted.selected, .settings .samples .sample .is-light.is-inverted.disabled-button {
+      background-color: #363636;
+      color: whitesmoke; }
+      .button.is-light.is-inverted:hover, .settings .voice-selector button.is-light.is-inverted.selected:hover, .settings .samples .sample .is-light.is-inverted.disabled-button:hover {
+        background-color: #292929; }
+      .button.is-light.is-inverted[disabled], .settings .voice-selector button.is-light.is-inverted.selected[disabled], .settings .samples .sample .is-light.is-inverted.disabled-button[disabled] {
+        background-color: #363636;
+        border-color: transparent;
+        box-shadow: none;
+        color: whitesmoke; }
+    .button.is-light.is-loading::after, .settings .voice-selector button.is-light.is-loading.selected::after, .settings .samples .sample .is-light.is-loading.disabled-button::after {
+      border-color: transparent transparent #363636 #363636 !important; }
+    .button.is-light.is-outlined, .settings .voice-selector button.is-light.is-outlined.selected, .settings .samples .sample .is-light.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: whitesmoke;
+      color: whitesmoke; }
+      .button.is-light.is-outlined:hover, .settings .voice-selector button.is-light.is-outlined.selected:hover, .settings .samples .sample .is-light.is-outlined.disabled-button:hover, .button.is-light.is-outlined:focus, .settings .voice-selector button.is-light.is-outlined.selected:focus, .settings .samples .sample .is-light.is-outlined.disabled-button:focus {
+        background-color: whitesmoke;
+        border-color: whitesmoke;
+        color: #363636; }
+      .button.is-light.is-outlined.is-loading::after, .settings .voice-selector button.is-light.is-outlined.is-loading.selected::after, .settings .samples .sample .is-light.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent whitesmoke whitesmoke !important; }
+      .button.is-light.is-outlined[disabled], .settings .voice-selector button.is-light.is-outlined.selected[disabled], .settings .samples .sample .is-light.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: whitesmoke;
+        box-shadow: none;
+        color: whitesmoke; }
+    .button.is-light.is-inverted.is-outlined, .settings .voice-selector button.is-light.is-inverted.is-outlined.selected, .settings .samples .sample .is-light.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #363636;
+      color: #363636; }
+      .button.is-light.is-inverted.is-outlined:hover, .settings .voice-selector button.is-light.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-light.is-inverted.is-outlined.disabled-button:hover, .button.is-light.is-inverted.is-outlined:focus, .settings .voice-selector button.is-light.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-light.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #363636;
+        color: whitesmoke; }
+      .button.is-light.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-light.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-light.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #363636;
+        box-shadow: none;
+        color: #363636; }
+  .button.is-dark, .settings .voice-selector button.is-dark.selected, .settings .samples .sample .is-dark.disabled-button {
+    background-color: #363636;
+    border-color: transparent;
+    color: whitesmoke; }
+    .button.is-dark:hover, .settings .voice-selector button.is-dark.selected:hover, .settings .samples .sample .is-dark.disabled-button:hover, .button.is-dark.is-hovered, .settings .voice-selector button.is-dark.is-hovered.selected, .settings .samples .sample .is-dark.is-hovered.disabled-button {
+      background-color: #2f2f2f;
+      border-color: transparent;
+      color: whitesmoke; }
+    .button.is-dark:focus, .settings .voice-selector button.is-dark.selected:focus, .settings .samples .sample .is-dark.disabled-button:focus, .button.is-dark.is-focused, .settings .voice-selector button.is-dark.is-focused.selected, .settings .samples .sample .is-dark.is-focused.disabled-button {
+      border-color: transparent;
+      color: whitesmoke; }
+      .button.is-dark:focus:not(:active), .settings .voice-selector button.is-dark.selected:focus:not(:active), .settings .samples .sample .is-dark.disabled-button:focus:not(:active), .button.is-dark.is-focused:not(:active), .settings .voice-selector button.is-dark.is-focused.selected:not(:active), .settings .samples .sample .is-dark.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(54, 54, 54, 0.25); }
+    .button.is-dark:active, .settings .voice-selector button.is-dark.selected:active, .settings .samples .sample .is-dark.disabled-button:active, .button.is-dark.is-active, .settings .voice-selector button.is-dark.is-active.selected, .settings .samples .sample .is-dark.is-active.disabled-button {
+      background-color: #292929;
+      border-color: transparent;
+      color: whitesmoke; }
+    .button.is-dark[disabled], .settings .voice-selector button.is-dark.selected[disabled], .settings .samples .sample .is-dark.disabled-button[disabled] {
+      background-color: #363636;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-dark.is-inverted, .settings .voice-selector button.is-dark.is-inverted.selected, .settings .samples .sample .is-dark.is-inverted.disabled-button {
+      background-color: whitesmoke;
+      color: #363636; }
+      .button.is-dark.is-inverted:hover, .settings .voice-selector button.is-dark.is-inverted.selected:hover, .settings .samples .sample .is-dark.is-inverted.disabled-button:hover {
+        background-color: #e8e8e8; }
+      .button.is-dark.is-inverted[disabled], .settings .voice-selector button.is-dark.is-inverted.selected[disabled], .settings .samples .sample .is-dark.is-inverted.disabled-button[disabled] {
+        background-color: whitesmoke;
+        border-color: transparent;
+        box-shadow: none;
+        color: #363636; }
+    .button.is-dark.is-loading::after, .settings .voice-selector button.is-dark.is-loading.selected::after, .settings .samples .sample .is-dark.is-loading.disabled-button::after {
+      border-color: transparent transparent whitesmoke whitesmoke !important; }
+    .button.is-dark.is-outlined, .settings .voice-selector button.is-dark.is-outlined.selected, .settings .samples .sample .is-dark.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #363636;
+      color: #363636; }
+      .button.is-dark.is-outlined:hover, .settings .voice-selector button.is-dark.is-outlined.selected:hover, .settings .samples .sample .is-dark.is-outlined.disabled-button:hover, .button.is-dark.is-outlined:focus, .settings .voice-selector button.is-dark.is-outlined.selected:focus, .settings .samples .sample .is-dark.is-outlined.disabled-button:focus {
+        background-color: #363636;
+        border-color: #363636;
+        color: whitesmoke; }
+      .button.is-dark.is-outlined.is-loading::after, .settings .voice-selector button.is-dark.is-outlined.is-loading.selected::after, .settings .samples .sample .is-dark.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #363636 #363636 !important; }
+      .button.is-dark.is-outlined[disabled], .settings .voice-selector button.is-dark.is-outlined.selected[disabled], .settings .samples .sample .is-dark.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #363636;
+        box-shadow: none;
+        color: #363636; }
+    .button.is-dark.is-inverted.is-outlined, .settings .voice-selector button.is-dark.is-inverted.is-outlined.selected, .settings .samples .sample .is-dark.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: whitesmoke;
+      color: whitesmoke; }
+      .button.is-dark.is-inverted.is-outlined:hover, .settings .voice-selector button.is-dark.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-dark.is-inverted.is-outlined.disabled-button:hover, .button.is-dark.is-inverted.is-outlined:focus, .settings .voice-selector button.is-dark.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-dark.is-inverted.is-outlined.disabled-button:focus {
+        background-color: whitesmoke;
+        color: #363636; }
+      .button.is-dark.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-dark.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-dark.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: whitesmoke;
+        box-shadow: none;
+        color: whitesmoke; }
+  .button.is-primary, .settings .voice-selector button.selected, .settings .samples .sample .is-primary.disabled-button, .settings .samples .sample .voice-selector button.disabled-button.selected, .settings .voice-selector .samples .sample button.disabled-button.selected {
+    background-color: #00d1b2;
+    border-color: transparent;
+    color: #fff; }
+    .button.is-primary:hover, .settings .voice-selector button.selected:hover, .settings .samples .sample .is-primary.disabled-button:hover, .button.is-primary.is-hovered, .settings .voice-selector button.is-hovered.selected, .settings .samples .sample .is-primary.is-hovered.disabled-button {
+      background-color: #00c4a7;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-primary:focus, .settings .voice-selector button.selected:focus, .settings .samples .sample .is-primary.disabled-button:focus, .button.is-primary.is-focused, .settings .voice-selector button.is-focused.selected, .settings .samples .sample .is-primary.is-focused.disabled-button {
+      border-color: transparent;
+      color: #fff; }
+      .button.is-primary:focus:not(:active), .settings .voice-selector button.selected:focus:not(:active), .settings .samples .sample .is-primary.disabled-button:focus:not(:active), .button.is-primary.is-focused:not(:active), .settings .voice-selector button.is-focused.selected:not(:active), .settings .samples .sample .is-primary.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25); }
+    .button.is-primary:active, .settings .voice-selector button.selected:active, .settings .samples .sample .is-primary.disabled-button:active, .button.is-primary.is-active, .settings .voice-selector button.is-active.selected, .settings .samples .sample .is-primary.is-active.disabled-button {
+      background-color: #00b89c;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-primary[disabled], .settings .voice-selector button.selected[disabled], .settings .samples .sample .is-primary.disabled-button[disabled] {
+      background-color: #00d1b2;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-primary.is-inverted, .settings .voice-selector button.is-inverted.selected, .settings .samples .sample .is-primary.is-inverted.disabled-button {
+      background-color: #fff;
+      color: #00d1b2; }
+      .button.is-primary.is-inverted:hover, .settings .voice-selector button.is-inverted.selected:hover, .settings .samples .sample .is-primary.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-primary.is-inverted[disabled], .settings .voice-selector button.is-inverted.selected[disabled], .settings .samples .sample .is-primary.is-inverted.disabled-button[disabled] {
+        background-color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        color: #00d1b2; }
+    .button.is-primary.is-loading::after, .settings .voice-selector button.is-loading.selected::after, .settings .samples .sample .is-primary.is-loading.disabled-button::after {
+      border-color: transparent transparent #fff #fff !important; }
+    .button.is-primary.is-outlined, .settings .voice-selector button.is-outlined.selected, .settings .samples .sample .is-primary.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #00d1b2;
+      color: #00d1b2; }
+      .button.is-primary.is-outlined:hover, .settings .voice-selector button.is-outlined.selected:hover, .settings .samples .sample .is-primary.is-outlined.disabled-button:hover, .button.is-primary.is-outlined:focus, .settings .voice-selector button.is-outlined.selected:focus, .settings .samples .sample .is-primary.is-outlined.disabled-button:focus {
+        background-color: #00d1b2;
+        border-color: #00d1b2;
+        color: #fff; }
+      .button.is-primary.is-outlined.is-loading::after, .settings .voice-selector button.is-outlined.is-loading.selected::after, .settings .samples .sample .is-primary.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #00d1b2 #00d1b2 !important; }
+      .button.is-primary.is-outlined[disabled], .settings .voice-selector button.is-outlined.selected[disabled], .settings .samples .sample .is-primary.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #00d1b2;
+        box-shadow: none;
+        color: #00d1b2; }
+    .button.is-primary.is-inverted.is-outlined, .settings .voice-selector button.is-inverted.is-outlined.selected, .settings .samples .sample .is-primary.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .button.is-primary.is-inverted.is-outlined:hover, .settings .voice-selector button.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-primary.is-inverted.is-outlined.disabled-button:hover, .button.is-primary.is-inverted.is-outlined:focus, .settings .voice-selector button.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-primary.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #fff;
+        color: #00d1b2; }
+      .button.is-primary.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-primary.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #fff;
+        box-shadow: none;
+        color: #fff; }
+  .button.is-link, .settings .voice-selector button.is-link.selected, .settings .samples .sample .is-link.disabled-button {
+    background-color: #3273dc;
+    border-color: transparent;
+    color: #fff; }
+    .button.is-link:hover, .settings .voice-selector button.is-link.selected:hover, .settings .samples .sample .is-link.disabled-button:hover, .button.is-link.is-hovered, .settings .voice-selector button.is-link.is-hovered.selected, .settings .samples .sample .is-link.is-hovered.disabled-button {
+      background-color: #276cda;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-link:focus, .settings .voice-selector button.is-link.selected:focus, .settings .samples .sample .is-link.disabled-button:focus, .button.is-link.is-focused, .settings .voice-selector button.is-link.is-focused.selected, .settings .samples .sample .is-link.is-focused.disabled-button {
+      border-color: transparent;
+      color: #fff; }
+      .button.is-link:focus:not(:active), .settings .voice-selector button.is-link.selected:focus:not(:active), .settings .samples .sample .is-link.disabled-button:focus:not(:active), .button.is-link.is-focused:not(:active), .settings .voice-selector button.is-link.is-focused.selected:not(:active), .settings .samples .sample .is-link.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); }
+    .button.is-link:active, .settings .voice-selector button.is-link.selected:active, .settings .samples .sample .is-link.disabled-button:active, .button.is-link.is-active, .settings .voice-selector button.is-link.is-active.selected, .settings .samples .sample .is-link.is-active.disabled-button {
+      background-color: #2366d1;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-link[disabled], .settings .voice-selector button.is-link.selected[disabled], .settings .samples .sample .is-link.disabled-button[disabled] {
+      background-color: #3273dc;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-link.is-inverted, .settings .voice-selector button.is-link.is-inverted.selected, .settings .samples .sample .is-link.is-inverted.disabled-button {
+      background-color: #fff;
+      color: #3273dc; }
+      .button.is-link.is-inverted:hover, .settings .voice-selector button.is-link.is-inverted.selected:hover, .settings .samples .sample .is-link.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-link.is-inverted[disabled], .settings .voice-selector button.is-link.is-inverted.selected[disabled], .settings .samples .sample .is-link.is-inverted.disabled-button[disabled] {
+        background-color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        color: #3273dc; }
+    .button.is-link.is-loading::after, .settings .voice-selector button.is-link.is-loading.selected::after, .settings .samples .sample .is-link.is-loading.disabled-button::after {
+      border-color: transparent transparent #fff #fff !important; }
+    .button.is-link.is-outlined, .settings .voice-selector button.is-link.is-outlined.selected, .settings .samples .sample .is-link.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #3273dc;
+      color: #3273dc; }
+      .button.is-link.is-outlined:hover, .settings .voice-selector button.is-link.is-outlined.selected:hover, .settings .samples .sample .is-link.is-outlined.disabled-button:hover, .button.is-link.is-outlined:focus, .settings .voice-selector button.is-link.is-outlined.selected:focus, .settings .samples .sample .is-link.is-outlined.disabled-button:focus {
+        background-color: #3273dc;
+        border-color: #3273dc;
+        color: #fff; }
+      .button.is-link.is-outlined.is-loading::after, .settings .voice-selector button.is-link.is-outlined.is-loading.selected::after, .settings .samples .sample .is-link.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #3273dc #3273dc !important; }
+      .button.is-link.is-outlined[disabled], .settings .voice-selector button.is-link.is-outlined.selected[disabled], .settings .samples .sample .is-link.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #3273dc;
+        box-shadow: none;
+        color: #3273dc; }
+    .button.is-link.is-inverted.is-outlined, .settings .voice-selector button.is-link.is-inverted.is-outlined.selected, .settings .samples .sample .is-link.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .button.is-link.is-inverted.is-outlined:hover, .settings .voice-selector button.is-link.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-link.is-inverted.is-outlined.disabled-button:hover, .button.is-link.is-inverted.is-outlined:focus, .settings .voice-selector button.is-link.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-link.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #fff;
+        color: #3273dc; }
+      .button.is-link.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-link.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-link.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #fff;
+        box-shadow: none;
+        color: #fff; }
+  .button.is-info, .settings .voice-selector button.is-info.selected, .settings .samples .sample .is-info.disabled-button {
+    background-color: #209cee;
+    border-color: transparent;
+    color: #fff; }
+    .button.is-info:hover, .settings .voice-selector button.is-info.selected:hover, .settings .samples .sample .is-info.disabled-button:hover, .button.is-info.is-hovered, .settings .voice-selector button.is-info.is-hovered.selected, .settings .samples .sample .is-info.is-hovered.disabled-button {
+      background-color: #1496ed;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-info:focus, .settings .voice-selector button.is-info.selected:focus, .settings .samples .sample .is-info.disabled-button:focus, .button.is-info.is-focused, .settings .voice-selector button.is-info.is-focused.selected, .settings .samples .sample .is-info.is-focused.disabled-button {
+      border-color: transparent;
+      color: #fff; }
+      .button.is-info:focus:not(:active), .settings .voice-selector button.is-info.selected:focus:not(:active), .settings .samples .sample .is-info.disabled-button:focus:not(:active), .button.is-info.is-focused:not(:active), .settings .voice-selector button.is-info.is-focused.selected:not(:active), .settings .samples .sample .is-info.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25); }
+    .button.is-info:active, .settings .voice-selector button.is-info.selected:active, .settings .samples .sample .is-info.disabled-button:active, .button.is-info.is-active, .settings .voice-selector button.is-info.is-active.selected, .settings .samples .sample .is-info.is-active.disabled-button {
+      background-color: #118fe4;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-info[disabled], .settings .voice-selector button.is-info.selected[disabled], .settings .samples .sample .is-info.disabled-button[disabled] {
+      background-color: #209cee;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-info.is-inverted, .settings .voice-selector button.is-info.is-inverted.selected, .settings .samples .sample .is-info.is-inverted.disabled-button {
+      background-color: #fff;
+      color: #209cee; }
+      .button.is-info.is-inverted:hover, .settings .voice-selector button.is-info.is-inverted.selected:hover, .settings .samples .sample .is-info.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-info.is-inverted[disabled], .settings .voice-selector button.is-info.is-inverted.selected[disabled], .settings .samples .sample .is-info.is-inverted.disabled-button[disabled] {
+        background-color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        color: #209cee; }
+    .button.is-info.is-loading::after, .settings .voice-selector button.is-info.is-loading.selected::after, .settings .samples .sample .is-info.is-loading.disabled-button::after {
+      border-color: transparent transparent #fff #fff !important; }
+    .button.is-info.is-outlined, .settings .voice-selector button.is-info.is-outlined.selected, .settings .samples .sample .is-info.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #209cee;
+      color: #209cee; }
+      .button.is-info.is-outlined:hover, .settings .voice-selector button.is-info.is-outlined.selected:hover, .settings .samples .sample .is-info.is-outlined.disabled-button:hover, .button.is-info.is-outlined:focus, .settings .voice-selector button.is-info.is-outlined.selected:focus, .settings .samples .sample .is-info.is-outlined.disabled-button:focus {
+        background-color: #209cee;
+        border-color: #209cee;
+        color: #fff; }
+      .button.is-info.is-outlined.is-loading::after, .settings .voice-selector button.is-info.is-outlined.is-loading.selected::after, .settings .samples .sample .is-info.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #209cee #209cee !important; }
+      .button.is-info.is-outlined[disabled], .settings .voice-selector button.is-info.is-outlined.selected[disabled], .settings .samples .sample .is-info.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #209cee;
+        box-shadow: none;
+        color: #209cee; }
+    .button.is-info.is-inverted.is-outlined, .settings .voice-selector button.is-info.is-inverted.is-outlined.selected, .settings .samples .sample .is-info.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .button.is-info.is-inverted.is-outlined:hover, .settings .voice-selector button.is-info.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-info.is-inverted.is-outlined.disabled-button:hover, .button.is-info.is-inverted.is-outlined:focus, .settings .voice-selector button.is-info.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-info.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #fff;
+        color: #209cee; }
+      .button.is-info.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-info.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-info.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #fff;
+        box-shadow: none;
+        color: #fff; }
+  .button.is-success, .settings .voice-selector button.is-success.selected, .settings .samples .sample .is-success.disabled-button {
+    background-color: #23d160;
+    border-color: transparent;
+    color: #fff; }
+    .button.is-success:hover, .settings .voice-selector button.is-success.selected:hover, .settings .samples .sample .is-success.disabled-button:hover, .button.is-success.is-hovered, .settings .voice-selector button.is-success.is-hovered.selected, .settings .samples .sample .is-success.is-hovered.disabled-button {
+      background-color: #22c65b;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-success:focus, .settings .voice-selector button.is-success.selected:focus, .settings .samples .sample .is-success.disabled-button:focus, .button.is-success.is-focused, .settings .voice-selector button.is-success.is-focused.selected, .settings .samples .sample .is-success.is-focused.disabled-button {
+      border-color: transparent;
+      color: #fff; }
+      .button.is-success:focus:not(:active), .settings .voice-selector button.is-success.selected:focus:not(:active), .settings .samples .sample .is-success.disabled-button:focus:not(:active), .button.is-success.is-focused:not(:active), .settings .voice-selector button.is-success.is-focused.selected:not(:active), .settings .samples .sample .is-success.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(35, 209, 96, 0.25); }
+    .button.is-success:active, .settings .voice-selector button.is-success.selected:active, .settings .samples .sample .is-success.disabled-button:active, .button.is-success.is-active, .settings .voice-selector button.is-success.is-active.selected, .settings .samples .sample .is-success.is-active.disabled-button {
+      background-color: #20bc56;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-success[disabled], .settings .voice-selector button.is-success.selected[disabled], .settings .samples .sample .is-success.disabled-button[disabled] {
+      background-color: #23d160;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-success.is-inverted, .settings .voice-selector button.is-success.is-inverted.selected, .settings .samples .sample .is-success.is-inverted.disabled-button {
+      background-color: #fff;
+      color: #23d160; }
+      .button.is-success.is-inverted:hover, .settings .voice-selector button.is-success.is-inverted.selected:hover, .settings .samples .sample .is-success.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-success.is-inverted[disabled], .settings .voice-selector button.is-success.is-inverted.selected[disabled], .settings .samples .sample .is-success.is-inverted.disabled-button[disabled] {
+        background-color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        color: #23d160; }
+    .button.is-success.is-loading::after, .settings .voice-selector button.is-success.is-loading.selected::after, .settings .samples .sample .is-success.is-loading.disabled-button::after {
+      border-color: transparent transparent #fff #fff !important; }
+    .button.is-success.is-outlined, .settings .voice-selector button.is-success.is-outlined.selected, .settings .samples .sample .is-success.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #23d160;
+      color: #23d160; }
+      .button.is-success.is-outlined:hover, .settings .voice-selector button.is-success.is-outlined.selected:hover, .settings .samples .sample .is-success.is-outlined.disabled-button:hover, .button.is-success.is-outlined:focus, .settings .voice-selector button.is-success.is-outlined.selected:focus, .settings .samples .sample .is-success.is-outlined.disabled-button:focus {
+        background-color: #23d160;
+        border-color: #23d160;
+        color: #fff; }
+      .button.is-success.is-outlined.is-loading::after, .settings .voice-selector button.is-success.is-outlined.is-loading.selected::after, .settings .samples .sample .is-success.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #23d160 #23d160 !important; }
+      .button.is-success.is-outlined[disabled], .settings .voice-selector button.is-success.is-outlined.selected[disabled], .settings .samples .sample .is-success.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #23d160;
+        box-shadow: none;
+        color: #23d160; }
+    .button.is-success.is-inverted.is-outlined, .settings .voice-selector button.is-success.is-inverted.is-outlined.selected, .settings .samples .sample .is-success.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .button.is-success.is-inverted.is-outlined:hover, .settings .voice-selector button.is-success.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-success.is-inverted.is-outlined.disabled-button:hover, .button.is-success.is-inverted.is-outlined:focus, .settings .voice-selector button.is-success.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-success.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #fff;
+        color: #23d160; }
+      .button.is-success.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-success.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-success.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #fff;
+        box-shadow: none;
+        color: #fff; }
+  .button.is-warning, .settings .voice-selector button.is-warning.selected, .settings .samples .sample .is-warning.disabled-button {
+    background-color: #ffdd57;
+    border-color: transparent;
+    color: rgba(0, 0, 0, 0.7); }
+    .button.is-warning:hover, .settings .voice-selector button.is-warning.selected:hover, .settings .samples .sample .is-warning.disabled-button:hover, .button.is-warning.is-hovered, .settings .voice-selector button.is-warning.is-hovered.selected, .settings .samples .sample .is-warning.is-hovered.disabled-button {
+      background-color: #ffdb4a;
+      border-color: transparent;
+      color: rgba(0, 0, 0, 0.7); }
+    .button.is-warning:focus, .settings .voice-selector button.is-warning.selected:focus, .settings .samples .sample .is-warning.disabled-button:focus, .button.is-warning.is-focused, .settings .voice-selector button.is-warning.is-focused.selected, .settings .samples .sample .is-warning.is-focused.disabled-button {
+      border-color: transparent;
+      color: rgba(0, 0, 0, 0.7); }
+      .button.is-warning:focus:not(:active), .settings .voice-selector button.is-warning.selected:focus:not(:active), .settings .samples .sample .is-warning.disabled-button:focus:not(:active), .button.is-warning.is-focused:not(:active), .settings .voice-selector button.is-warning.is-focused.selected:not(:active), .settings .samples .sample .is-warning.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25); }
+    .button.is-warning:active, .settings .voice-selector button.is-warning.selected:active, .settings .samples .sample .is-warning.disabled-button:active, .button.is-warning.is-active, .settings .voice-selector button.is-warning.is-active.selected, .settings .samples .sample .is-warning.is-active.disabled-button {
+      background-color: #ffd83d;
+      border-color: transparent;
+      color: rgba(0, 0, 0, 0.7); }
+    .button.is-warning[disabled], .settings .voice-selector button.is-warning.selected[disabled], .settings .samples .sample .is-warning.disabled-button[disabled] {
+      background-color: #ffdd57;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-warning.is-inverted, .settings .voice-selector button.is-warning.is-inverted.selected, .settings .samples .sample .is-warning.is-inverted.disabled-button {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffdd57; }
+      .button.is-warning.is-inverted:hover, .settings .voice-selector button.is-warning.is-inverted.selected:hover, .settings .samples .sample .is-warning.is-inverted.disabled-button:hover {
+        background-color: rgba(0, 0, 0, 0.7); }
+      .button.is-warning.is-inverted[disabled], .settings .voice-selector button.is-warning.is-inverted.selected[disabled], .settings .samples .sample .is-warning.is-inverted.disabled-button[disabled] {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-color: transparent;
+        box-shadow: none;
+        color: #ffdd57; }
+    .button.is-warning.is-loading::after, .settings .voice-selector button.is-warning.is-loading.selected::after, .settings .samples .sample .is-warning.is-loading.disabled-button::after {
+      border-color: transparent transparent rgba(0, 0, 0, 0.7) rgba(0, 0, 0, 0.7) !important; }
+    .button.is-warning.is-outlined, .settings .voice-selector button.is-warning.is-outlined.selected, .settings .samples .sample .is-warning.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #ffdd57;
+      color: #ffdd57; }
+      .button.is-warning.is-outlined:hover, .settings .voice-selector button.is-warning.is-outlined.selected:hover, .settings .samples .sample .is-warning.is-outlined.disabled-button:hover, .button.is-warning.is-outlined:focus, .settings .voice-selector button.is-warning.is-outlined.selected:focus, .settings .samples .sample .is-warning.is-outlined.disabled-button:focus {
+        background-color: #ffdd57;
+        border-color: #ffdd57;
+        color: rgba(0, 0, 0, 0.7); }
+      .button.is-warning.is-outlined.is-loading::after, .settings .voice-selector button.is-warning.is-outlined.is-loading.selected::after, .settings .samples .sample .is-warning.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #ffdd57 #ffdd57 !important; }
+      .button.is-warning.is-outlined[disabled], .settings .voice-selector button.is-warning.is-outlined.selected[disabled], .settings .samples .sample .is-warning.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #ffdd57;
+        box-shadow: none;
+        color: #ffdd57; }
+    .button.is-warning.is-inverted.is-outlined, .settings .voice-selector button.is-warning.is-inverted.is-outlined.selected, .settings .samples .sample .is-warning.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: rgba(0, 0, 0, 0.7);
+      color: rgba(0, 0, 0, 0.7); }
+      .button.is-warning.is-inverted.is-outlined:hover, .settings .voice-selector button.is-warning.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-warning.is-inverted.is-outlined.disabled-button:hover, .button.is-warning.is-inverted.is-outlined:focus, .settings .voice-selector button.is-warning.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-warning.is-inverted.is-outlined.disabled-button:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffdd57; }
+      .button.is-warning.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-warning.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-warning.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: rgba(0, 0, 0, 0.7);
+        box-shadow: none;
+        color: rgba(0, 0, 0, 0.7); }
+  .button.is-danger, .settings .voice-selector button.is-danger.selected, .settings .samples .sample .is-danger.disabled-button {
+    background-color: #ff3860;
+    border-color: transparent;
+    color: #fff; }
+    .button.is-danger:hover, .settings .voice-selector button.is-danger.selected:hover, .settings .samples .sample .is-danger.disabled-button:hover, .button.is-danger.is-hovered, .settings .voice-selector button.is-danger.is-hovered.selected, .settings .samples .sample .is-danger.is-hovered.disabled-button {
+      background-color: #ff2b56;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-danger:focus, .settings .voice-selector button.is-danger.selected:focus, .settings .samples .sample .is-danger.disabled-button:focus, .button.is-danger.is-focused, .settings .voice-selector button.is-danger.is-focused.selected, .settings .samples .sample .is-danger.is-focused.disabled-button {
+      border-color: transparent;
+      color: #fff; }
+      .button.is-danger:focus:not(:active), .settings .voice-selector button.is-danger.selected:focus:not(:active), .settings .samples .sample .is-danger.disabled-button:focus:not(:active), .button.is-danger.is-focused:not(:active), .settings .voice-selector button.is-danger.is-focused.selected:not(:active), .settings .samples .sample .is-danger.is-focused.disabled-button:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(255, 56, 96, 0.25); }
+    .button.is-danger:active, .settings .voice-selector button.is-danger.selected:active, .settings .samples .sample .is-danger.disabled-button:active, .button.is-danger.is-active, .settings .voice-selector button.is-danger.is-active.selected, .settings .samples .sample .is-danger.is-active.disabled-button {
+      background-color: #ff1f4b;
+      border-color: transparent;
+      color: #fff; }
+    .button.is-danger[disabled], .settings .voice-selector button.is-danger.selected[disabled], .settings .samples .sample .is-danger.disabled-button[disabled] {
+      background-color: #ff3860;
+      border-color: transparent;
+      box-shadow: none; }
+    .button.is-danger.is-inverted, .settings .voice-selector button.is-danger.is-inverted.selected, .settings .samples .sample .is-danger.is-inverted.disabled-button {
+      background-color: #fff;
+      color: #ff3860; }
+      .button.is-danger.is-inverted:hover, .settings .voice-selector button.is-danger.is-inverted.selected:hover, .settings .samples .sample .is-danger.is-inverted.disabled-button:hover {
+        background-color: #f2f2f2; }
+      .button.is-danger.is-inverted[disabled], .settings .voice-selector button.is-danger.is-inverted.selected[disabled], .settings .samples .sample .is-danger.is-inverted.disabled-button[disabled] {
+        background-color: #fff;
+        border-color: transparent;
+        box-shadow: none;
+        color: #ff3860; }
+    .button.is-danger.is-loading::after, .settings .voice-selector button.is-danger.is-loading.selected::after, .settings .samples .sample .is-danger.is-loading.disabled-button::after {
+      border-color: transparent transparent #fff #fff !important; }
+    .button.is-danger.is-outlined, .settings .voice-selector button.is-danger.is-outlined.selected, .settings .samples .sample .is-danger.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #ff3860;
+      color: #ff3860; }
+      .button.is-danger.is-outlined:hover, .settings .voice-selector button.is-danger.is-outlined.selected:hover, .settings .samples .sample .is-danger.is-outlined.disabled-button:hover, .button.is-danger.is-outlined:focus, .settings .voice-selector button.is-danger.is-outlined.selected:focus, .settings .samples .sample .is-danger.is-outlined.disabled-button:focus {
+        background-color: #ff3860;
+        border-color: #ff3860;
+        color: #fff; }
+      .button.is-danger.is-outlined.is-loading::after, .settings .voice-selector button.is-danger.is-outlined.is-loading.selected::after, .settings .samples .sample .is-danger.is-outlined.is-loading.disabled-button::after {
+        border-color: transparent transparent #ff3860 #ff3860 !important; }
+      .button.is-danger.is-outlined[disabled], .settings .voice-selector button.is-danger.is-outlined.selected[disabled], .settings .samples .sample .is-danger.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #ff3860;
+        box-shadow: none;
+        color: #ff3860; }
+    .button.is-danger.is-inverted.is-outlined, .settings .voice-selector button.is-danger.is-inverted.is-outlined.selected, .settings .samples .sample .is-danger.is-inverted.is-outlined.disabled-button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff; }
+      .button.is-danger.is-inverted.is-outlined:hover, .settings .voice-selector button.is-danger.is-inverted.is-outlined.selected:hover, .settings .samples .sample .is-danger.is-inverted.is-outlined.disabled-button:hover, .button.is-danger.is-inverted.is-outlined:focus, .settings .voice-selector button.is-danger.is-inverted.is-outlined.selected:focus, .settings .samples .sample .is-danger.is-inverted.is-outlined.disabled-button:focus {
+        background-color: #fff;
+        color: #ff3860; }
+      .button.is-danger.is-inverted.is-outlined[disabled], .settings .voice-selector button.is-danger.is-inverted.is-outlined.selected[disabled], .settings .samples .sample .is-danger.is-inverted.is-outlined.disabled-button[disabled] {
+        background-color: transparent;
+        border-color: #fff;
+        box-shadow: none;
+        color: #fff; }
+  .button.is-small, .settings .voice-selector button.is-small.selected, .settings .samples .sample .is-small.disabled-button {
+    border-radius: 2px;
+    font-size: 0.75rem; }
+  .button.is-medium, .settings .voice-selector button.is-medium.selected, .settings .samples .sample .is-medium.disabled-button {
+    font-size: 1.25rem; }
+  .button.is-large, .settings .voice-selector button.is-large.selected, .settings .samples .sample .is-large.disabled-button {
+    font-size: 1.5rem; }
+  .button[disabled], .settings .voice-selector button.selected[disabled], .settings .samples .sample .disabled-button[disabled] {
+    background-color: #f8f8f8;
+    border-color: #dbdbdb;
+    box-shadow: none;
+    opacity: 0.5; }
+  .button.is-fullwidth, .settings .voice-selector button.is-fullwidth.selected, .settings .samples .sample .is-fullwidth.disabled-button {
+    display: flex;
+    width: 100%; }
+  .button.is-loading, .settings .voice-selector button.is-loading.selected, .settings .samples .sample .is-loading.disabled-button {
+    color: transparent !important;
+    pointer-events: none; }
+    .button.is-loading::after, .settings .voice-selector button.is-loading.selected::after, .settings .samples .sample .is-loading.disabled-button::after {
+      position: absolute;
+      left: calc(50% - (1em / 2));
+      top: calc(50% - (1em / 2));
+      position: absolute !important; }
+  .button.is-static, .settings .voice-selector button.is-static.selected, .settings .samples .sample .is-static.disabled-button {
+    background-color: whitesmoke;
+    border-color: #dbdbdb;
+    color: #7a7a7a;
+    box-shadow: none;
+    pointer-events: none; }
+  .button.is-rounded, .settings .voice-selector button.is-rounded.selected, .settings .samples .sample .is-rounded.disabled-button {
+    border-radius: 290486px;
+    padding-left: 1em;
+    padding-right: 1em; }
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+  .buttons .button, .buttons .settings .voice-selector button.selected, .settings .voice-selector .buttons button.selected, .buttons .settings .samples .sample .disabled-button, .settings .samples .sample .buttons .disabled-button {
+    margin-bottom: 0.5rem; }
+    .buttons .button:not(:last-child), .buttons .settings .voice-selector button.selected:not(:last-child), .settings .voice-selector .buttons button.selected:not(:last-child), .buttons .settings .samples .sample .disabled-button:not(:last-child), .settings .samples .sample .buttons .disabled-button:not(:last-child) {
+      margin-right: 0.5rem; }
+  .buttons:last-child {
+    margin-bottom: -0.5rem; }
+  .buttons:not(:last-child) {
+    margin-bottom: 1rem; }
+  .buttons.has-addons .button:not(:first-child), .buttons.has-addons .settings .voice-selector button.selected:not(:first-child), .settings .voice-selector .buttons.has-addons button.selected:not(:first-child), .buttons.has-addons .settings .samples .sample .disabled-button:not(:first-child), .settings .samples .sample .buttons.has-addons .disabled-button:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0; }
+  .buttons.has-addons .button:not(:last-child), .buttons.has-addons .settings .voice-selector button.selected:not(:last-child), .settings .voice-selector .buttons.has-addons button.selected:not(:last-child), .buttons.has-addons .settings .samples .sample .disabled-button:not(:last-child), .settings .samples .sample .buttons.has-addons .disabled-button:not(:last-child) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: -1px; }
+  .buttons.has-addons .button:last-child, .buttons.has-addons .settings .voice-selector button.selected:last-child, .settings .voice-selector .buttons.has-addons button.selected:last-child, .buttons.has-addons .settings .samples .sample .disabled-button:last-child, .settings .samples .sample .buttons.has-addons .disabled-button:last-child {
+    margin-right: 0; }
+  .buttons.has-addons .button:hover, .buttons.has-addons .settings .voice-selector button.selected:hover, .settings .voice-selector .buttons.has-addons button.selected:hover, .buttons.has-addons .settings .samples .sample .disabled-button:hover, .settings .samples .sample .buttons.has-addons .disabled-button:hover, .buttons.has-addons .button.is-hovered, .buttons.has-addons .settings .voice-selector button.is-hovered.selected, .settings .voice-selector .buttons.has-addons button.is-hovered.selected, .buttons.has-addons .settings .samples .sample .is-hovered.disabled-button, .settings .samples .sample .buttons.has-addons .is-hovered.disabled-button {
+    z-index: 2; }
+  .buttons.has-addons .button:focus, .buttons.has-addons .settings .voice-selector button.selected:focus, .settings .voice-selector .buttons.has-addons button.selected:focus, .buttons.has-addons .settings .samples .sample .disabled-button:focus, .settings .samples .sample .buttons.has-addons .disabled-button:focus, .buttons.has-addons .button.is-focused, .buttons.has-addons .settings .voice-selector button.is-focused.selected, .settings .voice-selector .buttons.has-addons button.is-focused.selected, .buttons.has-addons .settings .samples .sample .is-focused.disabled-button, .settings .samples .sample .buttons.has-addons .is-focused.disabled-button, .buttons.has-addons .button:active, .buttons.has-addons .settings .voice-selector button.selected:active, .settings .voice-selector .buttons.has-addons button.selected:active, .buttons.has-addons .settings .samples .sample .disabled-button:active, .settings .samples .sample .buttons.has-addons .disabled-button:active, .buttons.has-addons .button.is-active, .buttons.has-addons .settings .voice-selector button.is-active.selected, .settings .voice-selector .buttons.has-addons button.is-active.selected, .buttons.has-addons .settings .samples .sample .is-active.disabled-button, .settings .samples .sample .buttons.has-addons .is-active.disabled-button, .buttons.has-addons .button.is-selected, .buttons.has-addons .settings .voice-selector button.is-selected.selected, .settings .voice-selector .buttons.has-addons button.is-selected.selected, .buttons.has-addons .settings .samples .sample .is-selected.disabled-button, .settings .samples .sample .buttons.has-addons .is-selected.disabled-button {
+    z-index: 3; }
+    .buttons.has-addons .button:focus:hover, .buttons.has-addons .settings .voice-selector button.selected:focus:hover, .settings .voice-selector .buttons.has-addons button.selected:focus:hover, .buttons.has-addons .settings .samples .sample .disabled-button:focus:hover, .settings .samples .sample .buttons.has-addons .disabled-button:focus:hover, .buttons.has-addons .button.is-focused:hover, .buttons.has-addons .settings .voice-selector button.is-focused.selected:hover, .settings .voice-selector .buttons.has-addons button.is-focused.selected:hover, .buttons.has-addons .settings .samples .sample .is-focused.disabled-button:hover, .settings .samples .sample .buttons.has-addons .is-focused.disabled-button:hover, .buttons.has-addons .button:active:hover, .buttons.has-addons .settings .voice-selector button.selected:active:hover, .settings .voice-selector .buttons.has-addons button.selected:active:hover, .buttons.has-addons .settings .samples .sample .disabled-button:active:hover, .settings .samples .sample .buttons.has-addons .disabled-button:active:hover, .buttons.has-addons .button.is-active:hover, .buttons.has-addons .settings .voice-selector button.is-active.selected:hover, .settings .voice-selector .buttons.has-addons button.is-active.selected:hover, .buttons.has-addons .settings .samples .sample .is-active.disabled-button:hover, .settings .samples .sample .buttons.has-addons .is-active.disabled-button:hover, .buttons.has-addons .button.is-selected:hover, .buttons.has-addons .settings .voice-selector button.is-selected.selected:hover, .settings .voice-selector .buttons.has-addons button.is-selected.selected:hover, .buttons.has-addons .settings .samples .sample .is-selected.disabled-button:hover, .settings .samples .sample .buttons.has-addons .is-selected.disabled-button:hover {
+      z-index: 4; }
+  .buttons.has-addons .button.is-expanded, .buttons.has-addons .settings .voice-selector button.is-expanded.selected, .settings .voice-selector .buttons.has-addons button.is-expanded.selected, .buttons.has-addons .settings .samples .sample .is-expanded.disabled-button, .settings .samples .sample .buttons.has-addons .is-expanded.disabled-button {
+    flex-grow: 1; }
+  .buttons.is-centered {
+    justify-content: center; }
+  .buttons.is-right {
+    justify-content: flex-end; }
+
+.settings > section {
+  border: 1px solid #e5e9f1; }
+
+.settings section {
+  border-radius: 1em;
+  margin-bottom: 1em;
+  background-color: #fff; }
+
+.settings .voice-selector button.selected {
+  cursor: default; }
+
+.settings .practice-order {
+  text-align: center; }
+  .settings .practice-order .all-at-once {
+    margin: 1em 0; }
+  .settings .practice-order .practice-order-selector {
+    text-align: center; }
+    .settings .practice-order .practice-order-selector > div {
+      display: inline-block; }
+
+.settings .samples .sample > div {
+  text-align: center; }
+
+.settings .samples .sample .disabled-button {
+  border: none;
+  font-weight: bold;
+  cursor: default;
+  background-color: transparent; }
+
+.settings .samples.ipa .sample > :nth-child(1) {
+  border-color: #b9b8b8;
+  background-color: #e5e9f1;
+  border-style: solid;
+  border-width: 0 1px 0 1px; }
+
+.settings .samples.ipa .sample:first-child > :nth-child(1) {
+  border-radius: .4em .4em 0 0;
+  border-top-width: 1px; }
+
+.settings .samples.ipa .sample:last-child > :nth-child(1) {
+  border-radius: 0 0 .4em .4em;
+  border-bottom-width: 1px; }
+
+.settings .samples.paiboon .sample > :nth-child(3) {
+  border-color: #b9b8b8;
+  background-color: #e5e9f1;
+  border-style: solid;
+  border-width: 0 1px 0 1px; }
+
+.settings .samples.paiboon .sample:first-child > :nth-child(3) {
+  border-radius: .4em .4em 0 0;
+  border-top-width: 1px; }
+
+.settings .samples.paiboon .sample:last-child > :nth-child(3) {
+  border-radius: 0 0 .4em .4em;
+  border-bottom-width: 1px; }

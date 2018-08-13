@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import Settings from './Settings';
 
+import '../../styles/css/Settings.css';
+
 const mapStateToProps = ({
     voice: {thaiVoice, thaiVoices, englishVoice, englishVoices, rate},
     words: { words },

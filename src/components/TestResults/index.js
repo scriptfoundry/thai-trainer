@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import TestResults from './TestResults';
 
+import '../../styles/css/TestResults.css';
+
 const mapStateToProps = state => ({
     testWords: state.test.testWords,
     scores: state.test.scores,

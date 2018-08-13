@@ -1,10 +1,16 @@
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
+@import "../../../node_modules/bulma/sass/base/helpers.sass";
+@import "../../../node_modules/bulma/sass/layout/section.sass";
+@import "../../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../../node_modules/bulma/sass/elements/button.sass";
+@import "../../../node_modules/bulma/sass/elements/title.sass";
 
 $title-size: 2.2rem;
 $subtitle-size: 1.75rem;
 $primary: #00bccf;
 
-@import "../../node_modules/bulma/bulma";
+// @import "../../../node_modules/bulma/bulma";
 
 button.back-button {
     position: absolute;
@@ -29,20 +35,6 @@ aside {
 }
 body {
     @extend .container;
+    @extend .section;
     @extend .is-fullheight;
 }
-#root {
-    // @extend .container;
-    // @extend .is-fullheight;
-    // height: 100%;
-}
-
-@import 'Navigation';
-@import 'Practice';
-@import 'Progress';
-@import 'Settings';
-@import 'Test';
-@import 'TestResults';
-@import 'TestSelector';
-@import 'WordsTable';
-@import '_constants';

@@ -11,7 +11,7 @@ import TestSelector from './components/TestSelector';
 import TestResults from './components/TestResults';
 import Test from './components/Test';
 
-import './styles/App.css';
+import './styles/css/App.css';
 import 'rc-slider/assets/index.css';
 
 class App extends Component {

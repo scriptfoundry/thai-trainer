@@ -1,3 +1,9 @@
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+@import './constants';
+@import "../../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../../node_modules/bulma/sass/layout/section.sass";
+@import "../../../node_modules/bulma/sass/elements/button.sass";
+
 .progress-page {
     @extend .container;
     @extend .section;

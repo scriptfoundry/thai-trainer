@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import Practice from './Practice';
 
+import '../../styles/css/Practice.css';
+
 const mapStateToProps = ({ words, settings, view }) => ({
     currentIndex: words.currentIndex,
     currentStage: words.currentStage,

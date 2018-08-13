@@ -1,0 +1,40 @@
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+@import './constants';
+
+.test-results {
+    .result {
+        display: flex;
+        flex-direction: row;
+        padding: .5em 0;
+        border-top: 1px solid $color-faint;
+        line-height: 2em;
+
+        > * {
+            flex: 1;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid $color-faint;
+        }
+
+    }
+    .incorrect {
+        background-color: red;
+    }
+    .correct {
+        background-color: green;
+    }
+    span {
+        display: inline-block;
+        background-color: $color-faint;
+        width: 1em;
+        text-align: center;
+        vertical-align: middle;
+        height: 1.5em;
+        width: 1.5em;
+        line-height: 1.5em;
+        color: white;
+        margin: 0 .2em;
+        border-radius: 0.2em;
+    }
+}

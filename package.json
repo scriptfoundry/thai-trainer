@@ -26,7 +26,8 @@
     "test": "react-scripts test --env=jsdom",
     "test:notify": "react-scripts test --env=jsdom --notify",
     "eject": "react-scripts eject",
-    "css": "node-sass src/styles/App.scss -o src/styles --output-style compressed",
-    "css:watch": "node-sass src/styles/App.scss -o src/styles --watch"
+    "css": "node-sass src/styles/sass/ -o src/styles/css",
+    "css:build": "node-sass src/styles/sass/ -o src/styles/css --output-style compressed",
+    "css:watch": "node-sass src/styles/sass/ -o src/styles/css --watch"
   }
 }

@@ -1,0 +1,35 @@
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.test-results .result {
+  display: flex;
+  flex-direction: row;
+  padding: .5em 0;
+  border-top: 1px solid #e5e9f1;
+  line-height: 2em; }
+  .test-results .result > * {
+    flex: 1; }
+  .test-results .result:last-child {
+    border-bottom: 1px solid #e5e9f1; }
+
+.test-results .incorrect {
+  background-color: red; }
+
+.test-results .correct {
+  background-color: green; }
+
+.test-results span {
+  display: inline-block;
+  background-color: #e5e9f1;
+  width: 1em;
+  text-align: center;
+  vertical-align: middle;
+  height: 1.5em;
+  width: 1.5em;
+  line-height: 1.5em;
+  color: white;
+  margin: 0 .2em;
+  border-radius: 0.2em; }
