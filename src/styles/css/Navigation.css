@@ -1647,3 +1647,7 @@
     --columnGap: 1.75rem; }
   .columns.is-variable.is-8 {
     --columnGap: 2rem; }
+
+.navigation button[disabled] {
+  color: #b9b8b8;
+  background-color: #e5e9f1; }

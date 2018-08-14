@@ -14,6 +14,11 @@
         @extend .is-large;
         @extend .is-fullwidth;
         @extend .is-primary;
+
+        &[disabled] {
+            color: $color-muted;
+            background-color: $color-faint;
+        }
     }
     section {
         @extend .section;

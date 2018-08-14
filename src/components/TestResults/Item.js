@@ -5,9 +5,9 @@ import Score from './Score';
 
 const Item = ({ word, aspectScores, pronunciationType }) => {
     return <div className="result">
-        <div>{word.term} <Score index={1} scores={ aspectScores } /></div>
-        <div>{ pronunciationType === PRONUNCIATIONTYPE_IPA ? word.ipa : word.paiboon } <Score index={1} scores={ aspectScores } /></div>
-        <div>{word.thai} <Score index={2} scores={ aspectScores } /></div>
+        <div><Score index={0} scores={ aspectScores } />{word.term}</div>
+        <div><Score index={1} scores={ aspectScores } /> { pronunciationType === PRONUNCIATIONTYPE_IPA ? word.ipa : word.paiboon }</div>
+        <div><Score index={2} scores={ aspectScores } /> {word.thai}</div>
     </div>;
 };
 

@@ -22,7 +22,7 @@ export const reducer = (state=defaultState, action) => {
     if (action.type === VOICE_SETENGLISHVOICE) {
         setEnglishVoice(action.payload);
         const { englishVoice } = getAll();
-        say(LANGUAGE_ENGLISH, 'I am the English voice');
+        say(LANGUAGE_ENGLISH, 'I\'ll be your English voice');
         return { ...state, englishVoice };
     }
     if (action.type === VOICE_SETTHAIVOICE) {

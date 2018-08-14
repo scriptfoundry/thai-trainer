@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { memoize, getDayOfEpoch } from '../../services/Utils';
 
-const filterWordsByDate = memoize((words, cutoffDate) => words.filter(({ dueDate, aspectScores }) => dueDate <= cutoffDate && Math.min(...aspectScores) > 0));
-
-const Navigation = ({ changeView, words }) => {
-        const overdueWords = filterWordsByDate(words, getDayOfEpoch());
-
-        return <div className="navigator">
-            <section>
-                <h2>You have { overdueWords.length } words to test</h2>
-                <button onClick={ () => changeView('testselector') }>Start test</button>
-            </section>
+const Navigation = ({ changeView }) => {
+        return <div className="navigation">
+            <h1>Thai reading tutor</h1>
             <section>
                 <button onClick={ () => changeView('practice') }>Practice</button>
+            </section>
+            <section>
+                <button onClick={ () => changeView('testselector') }>Start test</button>
             </section>
             <section>
                 <button onClick={ () => changeView('progress') }>View progress</button>

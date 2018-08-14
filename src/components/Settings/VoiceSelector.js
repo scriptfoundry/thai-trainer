@@ -7,7 +7,7 @@ const VoiceSelector = ({voices, selectedVoice, onSelectVoice, heading}) => {
 
     return <div className="voice-selector">
         <h2>{ heading } ({voices.length} available)</h2>
-        <div>{buttons}</div>
+        <div className="voices">{buttons}</div>
     </div>;
 };
 

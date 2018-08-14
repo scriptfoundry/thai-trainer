@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import TestSelector from './TestSelector';
 import { operations } from '../../store';
 
-import '../../styles/css/TestSelector.css';
+import '../../styles/css/Navigation.css';
 
 const mapStateToProps = state => ({
     testingWordLimit: state.settings.testingWordLimit,

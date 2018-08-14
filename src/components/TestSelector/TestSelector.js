@@ -17,7 +17,7 @@ const TestSelector = ({ changeView, words, setTestType, testingWordLimit }) => {
     const backButton = <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>;
 
     if (!outstandingCount && !currentCount && !masteredCount) {
-        return <div className="test-selector">
+        return <div className="navigation">
             <h1>What would you like to test?</h1>
             { backButton }
             <h2>Nothing to test</h2>
@@ -26,7 +26,7 @@ const TestSelector = ({ changeView, words, setTestType, testingWordLimit }) => {
     }
 
     if (!outstandingCount && !currentCount) {
-        return <div className="test-selector">
+        return <div className="navigation">
             <h1>What would you like to test?</h1>
             { backButton }
             <h1>Nothing to practice.</h1>
@@ -34,13 +34,16 @@ const TestSelector = ({ changeView, words, setTestType, testingWordLimit }) => {
         </div>;
     }
 
-    return <div className="test-selector">
+    return <div className="navigation">
+        <h1>Test</h1>
+        <h2>Select what you would like to test</h2>
+
         <section>
-            <h1>Test</h1>
-            <h2>Select what you would like to test</h2>
+            <button disabled={ outstandingWords.length === 0 } onClick={ () => setTestType(TEST_TYPEOVERDUE) }>Overdue words ({ outstandingCount || 'none'} available)</button>
         </section>
-        <button disabled={ outstandingWords.length === 0 } onClick={ () => setTestType(TEST_TYPEOVERDUE) }>Overdue words ({ outstandingCount || 'none'} available)</button>
-        <button disabled={ currentWords.length === 0 } onClick={ () => setTestType(TEST_TYPECURRENT) }>Current practice words ({ currentCount || 'none' } available)</button>
+        <section>
+            <button disabled={ currentWords.length === 0 } onClick={ () => setTestType(TEST_TYPECURRENT) }>Current practice words ({ currentCount || 'none' } available)</button>
+        </section>
         <section>
             <aside>You have selected to test only { testingWordLimit } words at a time. You can change this in <span onClick={ () => changeView('settings') }>settings</span>.</aside>
         </section>

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { operations } from '../../store';
 import Test from './Test';
 
+import '../../styles/css/Test.css';
+
 const mapStateToProps = state => ({
     pronunciationType: state.settings.pronunciationType,
     testWords: state.test.testWords,

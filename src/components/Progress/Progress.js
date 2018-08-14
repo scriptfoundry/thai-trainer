@@ -12,6 +12,7 @@ const Progress = ({ togglePreviewFilterStatus, words, previewFilter }) => {
     const visibleWords = getFilteredWordsList(words, getDayOfEpoch(new Date()), previewFilter);
 
     return <div className="progress-page">
+        <h1>Progress</h1>
         <div className="filter">
             <ToggleHeader onClick={ () => togglePreviewFilterStatus(STATUS_PRACTICE) } selected={ previewFilter.includes(STATUS_PRACTICE) }>Practice words</ToggleHeader>
             <ToggleHeader onClick={ () => togglePreviewFilterStatus(STATUS_OVERDUE) } selected={ previewFilter.includes(STATUS_OVERDUE) }>Currently due for testing</ToggleHeader>
