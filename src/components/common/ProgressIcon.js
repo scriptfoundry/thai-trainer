@@ -9,7 +9,7 @@ const ProgressIcon = ({ progress }) => <div className="progress-meter">
         strokeWidth={ 30 }
         styles={{
             background: { fill: '#3e98c7' },
-            path: { stroke: progress < 1 ? '#3e98c7' : 'gold' },
+            path: { stroke: progress < 1 ? '#8bc34a' : 'gold' },
             trail: { stroke: '#eee' },
         }}
     />

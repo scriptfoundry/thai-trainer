@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Item from './Item';
 
-const TestResult = ({changeView, testWords, scores, pronunciationType}) => {
+const TestResult = ({saveTest, changeView, testWords, scores, pronunciationType}) => {
     const items = testWords.map(testWord => {
-        const aspectScores = scores.reduce((aspectScores, { id, score, stage }) => {
-            if (id === testWord.id) aspectScores[stage] = score;
+        const aspectScores = scores.reduce((aspectScores, { id, score, aspect }) => {
+            if (id === testWord.id) aspectScores[aspect] = score;
 
             return aspectScores;
         }, [0, 0, 0]);
@@ -17,6 +17,10 @@ const TestResult = ({changeView, testWords, scores, pronunciationType}) => {
         <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>
 
         <h1>Results</h1>
+        <section>
+            <button className="save-button" onClick={ () => saveTest(scores) }>Save results</button>
+        </section>
+
         { items }
     </div>;
 };
@@ -24,10 +28,10 @@ const TestResult = ({changeView, testWords, scores, pronunciationType}) => {
 TestResult.propTypes = {
     pronunciationType: PropTypes.string.isRequired,
     queue: PropTypes.array.isRequired,
-    scores: PropTypes.arrayOf(PropTypes.number).isRequired,
+    scores: PropTypes.arrayOf(PropTypes.object).isRequired,
     testWords: PropTypes.array.isRequired,
-    words: PropTypes.array.isRequired,
     changeView: PropTypes.func.isRequired,
+    saveTest: PropTypes.func.isRequired,
 };
 
 export default TestResult;

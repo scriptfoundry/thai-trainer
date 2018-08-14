@@ -1,14 +1,14 @@
 import { getDayOfEpoch, buildRandomizedValuesQueue } from '../services/Utils';
-import { getOutstandingWords, getCurrentPracticeWords } from '../services/Leitner';
+import { getOutstandingWords, getCurrentPracticeWords, applyScoresToWords, saveProgress } from '../services/Leitner';
 
 import { TEST_TYPECURRENT, TEST_STAGE1 } from '../services/Leitner';
 import { VIEW_CHANGEVIEW } from './view';
 
 export const TEST_SETTESTTYPE = 'test/settesttype';
 export const TEST_COMPLETETEST = 'test/completetest';
+export const TEST_COMMITTESTANDCLOSE = 'test/committestandclose';
 const TEST_SETTESTWORDS = 'test/settesetwords';
 const TEST_ACCEPTANSWER = 'test/acceptanswer';
-const TEST_STARTCUSTOMTEST = 'test/startcustomtest';
 
 const getRandomQueue = buildRandomizedValuesQueue(3);
 
@@ -54,9 +54,9 @@ const setTestType = (type) => (dispatch, getState) => {
     dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
 };
 const submitAnswer = (correct) => (dispatch, getState) => {
-    let { test: { index, queue, scores, stage, testWords }, words: { words } } = getState();
+    let { test: { index, queue, scores, stage, testWords } } = getState();
     const score = correct === null ? 0 : correct ? 1 : -1;
-    scores = [...scores.slice(0, index), { id: queue[index].id, score, stage }, ...scores.slice(index + 1)];
+    scores = [...scores.slice(0, index), { id: queue[index].id, score, aspect: stage }, ...scores.slice(index + 1)];
     index += 1;
     stage = Math.floor(index / testWords.length);
 
@@ -74,6 +74,15 @@ const startCustomTest = words => dispatch => {
 
     dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
 };
+const saveTest = (scores) => async (dispatch, getState) => {
+    let { words: { words } } = getState();
+
+    words = (applyScoresToWords(scores, words));
+
+    await saveProgress(words);
+
+    dispatch({ type: TEST_COMMITTESTANDCLOSE, payload: words });
+};
 
 export const operations = {
     getCurrentWords,
@@ -81,4 +90,5 @@ export const operations = {
     setTestType,
     startCustomTest,
     submitAnswer,
+    saveTest,
 };

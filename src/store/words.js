@@ -1,8 +1,9 @@
 import { buildRandomizedValuesQueue, getDayOfEpoch } from '../services/Utils';
 import { loadWords, refreshPracticeWords, updateProgress, saveProgress } from '../services/Leitner';
+import { TEST_COMMITTESTANDCLOSE } from './tests';
 const createQueue = buildRandomizedValuesQueue(5);
 
-const WORDS_SETWORDS = 'words/setwords';
+export const WORDS_SETWORDS = 'words/setwords';
 const WORDS_ADVANCE = 'words/advance';
 const WORDS_NUDGE = 'words/nudge';
 const WORDS_RESEED = 'words/reseed';
@@ -40,6 +41,7 @@ export const reducer = (state = defaultState, { type, payload }) => {
     }
     if (type === WORDS_CLOSE) return { ...state, queue: [], currentIndex: 0 };
     if (type === WORDS_SETWORDS) return {...state, words: payload, wordsLoaded: true };
+    if (type === TEST_COMMITTESTANDCLOSE) return {...state, words: payload};
 
     return state;
 };

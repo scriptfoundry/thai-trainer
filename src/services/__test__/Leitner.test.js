@@ -150,6 +150,7 @@ describe('Leitner', () => {
             { id: 4, aspectScores: [ 2, 4, 3 ] },
             { id: 5, aspectScores: [ 4, 4, 5 ] },
             { id: 6, aspectScores: [ 0, 0, 0 ] },
+            { id: 7, aspectScores: [ 0, 0, 0 ] },
         ];
         let testScores = [
             { id: 3, aspect: 0, score: 1 },
@@ -171,7 +172,7 @@ describe('Leitner', () => {
             { id: 4, aspectScores: [ 1, 3, 2 ] },
             { id: 5, aspectScores: [ 5, 5, 5 ] },
             { id: 6, aspectScores: [ 0, 0, 0 ] },
-
+            { id: 7, aspectScores: [ 0, 0, 0 ] },
         ]);
     });
     it('gets the due date of a word based on its aspect scores', () => {
