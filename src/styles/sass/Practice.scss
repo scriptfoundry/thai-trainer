@@ -1,19 +1,9 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/base/helpers.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
-
 .practice {
-    @extend .container;
-    @extend .section;
-    @extend .is-fullheight;
-
+    @include section();
 
     .test-button {
-        @extend .button;
-        @extend .is-light;
+        @include button();
 
         position: absolute;
         right: 1em;
@@ -25,35 +15,31 @@
         }
     }
     .preview {
-        @extend .container;
-        text-align: center;
+        @include contents-centered();
 
         section {
-            @extend .section;
+            @include section();
         }
 
         .start-button {
-            @extend .button;
-            @extend .is-large;
-            @extend .is-primary;
+            @include large-button($primary-theme);
             width: 50%;
         }
     }
     .cards {
-        @extend .section;
-        @extend .is-fullwidth;
-        @extend .hero;
+        @include columns();
+        .card {
+            @include column(8, 2);
+        }
     }
     .card {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 4em;
         background-color: white;
-        transition: opacity .3s;
         border-radius: .25em;
         cursor: pointer;
+        font-size: 4em;
+        position: absolute;
+        text-align: center;
+        transition: opacity .3s;
 
         > div {
             transition: opacity .3s;
@@ -68,21 +54,10 @@
         opacity: 0;
     }
     .help-button {
-        @extend .button;
-        @extend .is-outlined;
-        @extend .is-rounded;
-        @extend .is-large;
-        @extend .is-pulled-right;
-        position: absolute;
-        // right: .5em;
-        // margin-top: .5em;
-        width: 1.5em;
-        height: 1.5em;
-        padding: 0;
-        font-weight: bold;
-        color: $color-faint;
-        border-color: $color-faint;
-        background-color: transparent;
+        @include icon-button();
         z-index: 1;
+    }
+    table button {
+        margin-right: 1em;
     }
 }

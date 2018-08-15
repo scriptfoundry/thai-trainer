@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { operations } from './store';
@@ -41,10 +41,10 @@ class App extends Component {
     else if (view === 'test') content = <Test />;
 
     const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>;
-    return <div>
+    return <Fragment>
       { backbutton }
       { content }
-    </div>;
+    </Fragment>;
   }
 }
 

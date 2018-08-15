@@ -1,40 +1,31 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/base/helpers.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
-@import "../../../node_modules/bulma/sass/elements/title.sass";
-
-$title-size: 2.2rem;
-$subtitle-size: 1.75rem;
-$primary: #00bccf;
-
-// @import "../../../node_modules/bulma/bulma";
 
 button.back-button {
     position: absolute;
     top: 1rem;
     left: 1rem;
     z-index: 1;
+
+    @include button();
 }
 button {
-    @extend .button;
+    @include button();
 }
 h1, h2, h3 {
     text-align: center;
     font-weight: lighter;
+    
 }
-h1 { @extend .title; }
-h2 { @extend .subtitle; }
-p { margin-bottom: 1em; }
+h1 {
+    @include h1();
+}
+h2 {
+    @include h2();
+}
+p {
+    margin-bottom: 1em;
+}
 aside {
-    @extend .has-text-weight-light;
     color: $color-muted; 
     text-align: center;
-}
-body {
-    @extend .container;
-    @extend .section;
-    @extend .is-fullheight;
 }

@@ -1,25 +1,11 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
+
 
 .progress-page {
-    @extend .container;
-    @extend .section;
-
+    @include section();
+    @include contents-centered();
 
     .filter {
-        @extend .buttons;
-        @extend .has-addons;
-        @extend .is-centered;
-
-        .toggle-header {
-            @extend .button;
-        }
-        .selected {
-            @extend .is-selected;
-            @extend .is-primary;
-        }
+        @include button-group();
     }
 }

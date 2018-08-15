@@ -1,16 +1,7 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
 
 .test {
-    .content {
-        @extend .container;
-        @extend .section;
-        @extend .hero;
-        @extend .is-fullheight;
-    }
-
+    /* TRANSITIONS */
     .challenge {
         transition: all 300ms;
 
@@ -28,90 +19,100 @@
         }
     }
 
-    .answers {
-        display: flex;
-        flex: 1;
-    }
-    .left, .right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
+    /* GRIDS */
     .challenge {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .question {
+            flex: none;
+            height: 1em;
+
+        }
+        .answers {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+        }
+        .left, .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .answer {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            > * { flex: none; }
+        }
+        .advancement {
+            flex: none;
+            height: 2em;
+        }
+    }
+
+
+    .challenge {
         height: 100%;
-        position: absolute;
-        width: 100%;
-        top: 0;
         left: 0;
-        padding: 1em 0 2em 0;
+        padding: 1em 1em 2em 1em;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 
     .answer {
-        font-size: 1.5rem;
-        flex: 1;
-        display: flex;
-        text-align: center;
-        line-height: 3rem;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid transparent;
         border-radius: .25em;
-        transition: all 500ms 200ms;
-        color: $color-primary-0;
-        background-color: $white;
-        margin: .25rem;
+        border: 1px solid transparent;
         cursor: pointer;
+        font-size: 1.5rem;
+        transition: all 500ms 200ms;
 
+        > span {
+            transition: all 300ms;
+            font-size: 1em;
+        }
         > button {
-            @extend .is-small;
-            @extend .button;
-            transition: opacity 300ms;
+            @include button($default-theme);
             margin: 0 1em;
-            opacity: 0.25;
-
-            &:hover {
-                opacity: 1;
-            }
         }
 
         &.selected {
             border-color: rgb(41, 39, 39);
             color: rgb(0, 0, 0);
         }
-        &.rejected {
+        &.rejected span {
             color: $color-muted;
         }
-        &.correct {
-            font-size: 2rem;
+        &.correct span {
             color: $color-success;
+            font-size: 2rem;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         }
-        &.incorrect {
-            color: rgb(219, 0, 0);
+        &.incorrect span {
+            color: $color-danger;
+            font-size: 0.7em;
             text-decoration: line-through;
         }
         &.hidden {
-            background-color: $white;
-            color: $color-faint;
+            opacity: 0.25;
         }
     }
     .question {
         color: $color-primary-0;
         font-size: 3.5rem;
         text-align: center;
-        flex-basis: 1em;
     }
     .advancement {
         font-size: 2em;
         text-align: center;
         
         button {
-            @extend .button;
-            @extend .is-large;
+            @include small-button();
         }
     }
 }

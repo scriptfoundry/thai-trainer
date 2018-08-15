@@ -1,30 +1,22 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/elements/container.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
-@import "../../../node_modules/bulma/sass/grid/columns.sass";
 
 .navigation {
-    @extend .container;
-    @extend .section;
+    @include full-height();
+    @include section();
+    @include flex-column();
 
+    h1 {
+        @include h1();
+        @include flex-row(3em);
+    }
+    h2 {
+        @include h2();
+    }
     button {
-        @extend .button;
-        @extend .is-large;
-        @extend .is-fullwidth;
-        @extend .is-primary;
+        @include large-button($primary-theme);
 
-        &[disabled] {
-            color: $color-muted;
-            background-color: $color-faint;
-        }
     }
     section {
-        @extend .section;
-        @extend .is-centered;
-        @extend .column;
-        @extend .is-6;
-        @extend .is-offset-3;
+        @include flex-row();
     }
 }

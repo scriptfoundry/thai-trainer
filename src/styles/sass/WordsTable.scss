@@ -1,22 +1,17 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../../node_modules/bulma/sass/elements/table.sass";
-@import "../../../node_modules/bulma/sass/base/helpers.sass";
+@import './constants';
+
 
 .words-table {
     table {
-        @extend .table;
-        @extend .is-fullwidth;
+        @include table();
+        @include full-width();
 
-        td {
-            line-height: 2em;
-            vertical-align: middle;
-        }
         td:nth-child(2) {
-            font-size: 1.8rem;
+            @include resize-text(180%)
         }
         th:nth-child(4), td:nth-child(4) {
-            @extend .is-narrow;
-            @extend .has-text-centered;
+            @include is-narrow;
+            @include contents-centered();
         }
     }
 
