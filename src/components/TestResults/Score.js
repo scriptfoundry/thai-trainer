@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const NONBREAKINGSPACE = ' '; // Warning: Unicode character. This is not a normal space.
 const getStyle = score => score === 1 ? 'correct' : score === -1 ? 'incorrect' : null;
-const getText = score => score === 1 ? '✓' : score === -1 ? '✕' : null;
+const getText = score => score === 1 ? '✓' : score === -1 ? '✕' : NONBREAKINGSPACE;
 
 const Score = ({ scores, index }) => {
     const score = scores[index];

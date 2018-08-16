@@ -46,44 +46,23 @@ $color-primary: #00d1b2;
 @mixin section() {
     padding: 3rem 1.5rem;
 }
-@mixin icon-button($bg: $white, $fg: $color-muted) {
-    background-color: $bg;
-    border-radius: 1em;
-    border: 1px solid $fg;
-    color: $fg;
-    cursor: pointer;
-    font-size: 1.2rem;
-    height: 1.5em;
-    line-height: 1.5em;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 1.5em;
 
-    &:hover {
-        color: $black;
-        background-color: $white;
-        border-color: $black; 
-    }
-}
-
-// $primary: ( bg: $primary, fg: );
 $default-theme: (
     backgroundColor: #edeff8,
-    foregroundColor: #556386,
-    borderColor: #3d4a6b,
+    foregroundColor: #515664,
+    borderColor: #cbcdd3,
     altBackgroundColor: #e1e1e3,
     altForegroundColor: #4f5a74,
     altBorderColor: #3d4a6b,
     disabledForegroundColor: #a6a3a3,
     disabledBackgroundColor: #dddddd,
     disabledBorderColor: #bfbfbf,
-
+    borderRadius: 1em,
 );
 $primary-theme: (
     backgroundColor: #00d1b2,
     foregroundColor: #ffffff,
-    borderColor: #47b797,
+    borderColor: #49c2a0,
     altBackgroundColor: #00b89c,
     altForegroundColor: #ffffff,
     altBorderColor: #47b797,
@@ -91,7 +70,7 @@ $primary-theme: (
 @mixin button($theme:()) {
     $settings: map-merge($default-theme, $theme);
     background-color: map-get($settings, backgroundColor);
-    border: 1px solid map-get($settings, foregroundColor);
+    border: 1px solid map-get($settings, borderColor);
     border-radius: .3em;
     color: map-get($settings, foregroundColor );
     cursor: pointer;
@@ -138,6 +117,63 @@ $primary-theme: (
     @include button($theme);
     font-size: .8em;
 }
+@mixin customize-button($theme:()) {
+    content: inspect($theme);
+    $theme: map-merge($default-theme, $theme);
+
+    background-color: map-get($theme, backgroundColor);
+    border-color: map-get($theme, borderColor);
+    color: map-get($theme, foregroundColor);
+
+    &:hover {
+        background-color: map-get($theme, altBackgroundColor);
+        border-color: map-get($theme, altBorderColor);
+        color: map-get( $theme, altForegroundColor);
+    }
+    &:active,
+    &:focus {
+        background-color: darken(map-get($theme, altBackgroundColor ), 5%);
+        border-color: map-get($theme, altBorderColor );
+        color: map-get($theme, altForegroundColor);
+    }
+
+    &[disabled] {
+        color: map-get($theme, disabledForegroundColor);
+        background-color: map-get($theme, disabledBackgroundColor);
+        border-color: map-get($theme, disabledBorderColor);
+        cursor: default;
+    }
+
+}
+@mixin icon-button($theme:()) {
+    $theme: map-merge($theme, $default-theme);
+    @include button();
+
+    background-color: map-get($theme, backgroundColor);
+    border-radius: map-get($theme, borderRadius);
+    border: 1px solid map-get($theme, borderColor);
+    color: map-get($theme, foregroundColor);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 1.5em;
+}
+@mixin text-button() {
+    @include button();
+    background-color: transparent;
+    border-color: transparent;
+    user-select: none;
+    &:hover, &:active, &:focus  {
+        border-color: transparent;
+        background-color: transparent
+    }
+}
+
 @mixin button-group() {
     margin-bottom: 1rem;
     display: flex;
@@ -161,10 +197,10 @@ $primary-theme: (
         margin-bottom: 0.5rem;
         font-size: 1rem;
         line-height: 1.5em;
-        height: 2.25em;
         border: 1px solid darken($white, 2.5%);
         background-color: darken($white, .5%);
         color: $black;
+        border-radius: 0;
 
         &:first-child { border-radius: .25rem 0 0 .25rem; }
         &:last-child { border-radius: 0 .25rem .25rem 0; }

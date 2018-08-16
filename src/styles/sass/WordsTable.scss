@@ -5,6 +5,7 @@
     table {
         @include table();
         @include full-width();
+        background-color: transparent;
 
         td:nth-child(2) {
             @include resize-text(180%)

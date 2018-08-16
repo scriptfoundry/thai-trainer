@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bulma": "^0.7.1",
     "fast-levenshtein": "^2.0.6",
     "history": "^4.7.2",
     "localforage": "^1.7.2",
-    "node-sass": "^4.9.2",
-    "prop-types": "^15.6.2",
     "rc-slider": "^8.6.1",
     "react": "^16.4.1",
     "react-beautiful-dnd": "^8.0.7",
@@ -19,6 +16,10 @@
     "react-transition-group": "^2.4.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.2",
+    "prop-types": "^15.6.2"
   },
   "scripts": {
     "start": "react-scripts start",

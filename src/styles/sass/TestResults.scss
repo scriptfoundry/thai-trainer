@@ -1,4 +1,3 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
 
 .test-results {
@@ -8,6 +7,7 @@
         padding: .5em 0;
         border-top: 1px solid $color-faint;
         line-height: 2em;
+        text-align: left;
 
         > * {
             flex: 1;
@@ -18,23 +18,28 @@
         }
 
     }
+    section {
+        @include section();
+        @include contents-centered();
+    }
+    .save-button {
+        @include large-button($primary-theme);
+        width: 50%;
+    }
     .incorrect {
-        background-color: red;
+        background-color: #f44040;
+        border-color: darken(#f44040, 10%);
     }
     .correct {
-        background-color: green;
+        background-color: #12ac12;
+        border-color: darken(#12ac12, 10%);
     }
     span {
-        display: inline-block;
-        background-color: $color-faint;
-        width: 1em;
-        text-align: center;
-        vertical-align: middle;
+        @include icon-button();
+        margin-right: 1em;
+        border-radius: .2em;
+        color: $white;
         height: 1.5em;
         width: 1.5em;
-        line-height: 1.5em;
-        color: white;
-        margin: 0 .2em;
-        border-radius: 0.2em;
     }
 }

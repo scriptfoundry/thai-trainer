@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProgressItem from './ProgressItem';
-import './WordsTable.css';
 
 const WordsTable = ({pronunciationType, showProgress, visibleWords}) => {
     const items = visibleWords.map(word => <ProgressItem word={ word } key={ word.id } pronunciationType={ pronunciationType } showProgress={ showProgress } />);

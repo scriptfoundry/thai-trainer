@@ -3,7 +3,13 @@
 .navigation {
     @include full-height();
     @include section();
-    @include flex-column();
+    @include columns();
+    @media screen and (min-width: 1088px) {
+        
+        >* {
+            @include column(6, 3);
+        }
+    }
 
     h1 {
         @include h1();
@@ -14,7 +20,6 @@
     }
     button {
         @include large-button($primary-theme);
-
     }
     section {
         @include flex-row();

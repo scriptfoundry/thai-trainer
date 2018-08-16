@@ -1,32 +1,31 @@
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import './constants';
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-@import "../../../node_modules/bulma/sass/base/helpers.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/grid/columns.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
 
 .settings {
-    @extend .container;
-    @extend .section;
+    @include container();
+    @include section();
 
     > section {
         border: 1px solid $color-faint;
     }
     section {
-        @extend .section;
+        @include section();
+        background-color: #fff;
         border-radius: 1em;
         margin-bottom: 1em;
-        background-color: #fff;
     }
 
-    .voice-selector button.selected {
-        @extend .button;
-        @extend .is-primary;
-        cursor: default;
+    .voice-selector button {
+        @include button();
+        border-radius: .2em;
+        margin: .2em;
+
+        &.selected {
+            @include customize-button($primary-theme);
+            cursor: default;
+        }
     }
     .voices {
-        @extend .has-text-centered;
+        @include contents-centered();
     }
 
     .practice-order {
@@ -45,40 +44,32 @@
     }
 
     .samples {
-       @extend .container;
+       @include container();
 
         .sample {
-            @extend .columns;
+            display: flex;
+
             > div {
-                @extend .column;
-                text-align: center
+                flex: none;
+                text-align: center;
+                width: 25%;
             }
             .disabled-button {
-                @extend .button;
-                border: none;
-                font-weight: bold;
-                cursor: default;
+                @include text-button();
                 background-color: transparent;
+                cursor: default;
+                font-weight: bold;
             }
-            :first-child {
-                @extend .is-3;
-                @extend .is-offset-2;
+            > :first-child {
+                margin-left: 1.5 * 12.5%
             }
-            :nth-child(2) {
-                @extend .is-1;
+            > :nth-child(2) {
+                width: 12.5%;
             }
-            :nth-child(3) {
-                @extend .is-3;
-            }
-
         }
 
 
-        &.ipa {
-            @include highlight-column(1);
-        }
-        &.paiboon {
-            @include highlight-column(3);
-        }
+        &.ipa { @include highlight-column(1); }
+        &.paiboon { @include highlight-column(3); }
     }
 }

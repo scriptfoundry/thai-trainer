@@ -11,7 +11,7 @@ const goodWords = [
     'ครัว',
     'ร้านอาหาร',
 ];
-const makeClickableHeader = (label, onClick, isDisabled) => isDisabled ? <div className="disabled-button">{label}</div> : <button onClick={ onClick }>{label}</button>;
+const makeClickableHeader = (label, onClick, isDisabled) => isDisabled ? <button className="disabled-button">{label}</button> : <button onClick={ onClick }>{label}</button>;
 const PronunciationSelector = ({ changePronunciationType, pronunciationType, words, saySample }) => {
     const sampleWords = words
         .filter(({ thai }) => goodWords.find(goodWord => thai === goodWord))

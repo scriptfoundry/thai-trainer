@@ -20,8 +20,9 @@ const TestResult = ({saveTest, changeView, testWords, scores, pronunciationType}
         <section>
             <button className="save-button" onClick={ () => saveTest(scores) }>Save results</button>
         </section>
-
-        { items }
+        <section className="items">
+            { items }
+        </section>
     </div>;
 };
 
