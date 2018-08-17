@@ -4,7 +4,8 @@ import ProgressItem from './ProgressItem';
 
 const WordsTable = ({pronunciationType, showProgress, visibleWords}) => {
     const items = visibleWords.map(word => <ProgressItem word={ word } key={ word.id } pronunciationType={ pronunciationType } showProgress={ showProgress } />);
-    return <div className="words-table">
+    const className = showProgress ? 'words-table' : 'words-table no-progress';
+    return <div className={ className }>
         <table>
             <thead>
                 <tr>
@@ -19,7 +20,6 @@ const WordsTable = ({pronunciationType, showProgress, visibleWords}) => {
             </tbody>
         </table>
     </div>;
-
 };
 
 WordsTable.propTypes = {

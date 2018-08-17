@@ -36,9 +36,6 @@ const Settings = (props) => {
             <VoiceSelector heading="Thai voices" voices={ thaiVoices } selectedVoice={ thaiVoice } onSelectVoice={ setThaiVoice } />
         </section>
         <section>
-            <VoiceSelector heading="English voices" voices={ englishVoices } selectedVoice={ englishVoice } onSelectVoice={ setEnglishVoice } />
-        </section>
-        <section>
             <RateSelector value={ rate } onChange={setRate} />
         </section>
         <section className="practice-order">

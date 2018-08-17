@@ -5,8 +5,10 @@ button.back-button {
     top: 1rem;
     left: 1rem;
     z-index: 1;
-
-    @include button();
+    span {
+        margin-left: -.5em;
+        padding-right: .5em;
+    }
 }
 button {
     @include button();

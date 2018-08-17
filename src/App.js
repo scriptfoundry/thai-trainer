@@ -40,7 +40,7 @@ class App extends Component {
     else if (view === 'testselector') content = <TestSelector />;
     else if (view === 'test') content = <Test />;
 
-    const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }>Back</button>;
+    const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }><span>〈</span> Back</button>;
     return <Fragment>
       { backbutton }
       { content }

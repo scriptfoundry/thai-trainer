@@ -10,6 +10,7 @@ class PlayButton extends Component {
     }
     async play(evt) {
         evt.stopPropagation();
+        evt.target.blur();
         let { word: {thai}, saySample } = this.props;
         await  saySample(thai);
     }
