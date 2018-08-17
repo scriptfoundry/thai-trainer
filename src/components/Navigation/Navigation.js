@@ -14,6 +14,9 @@ const Navigation = ({ changeView }) => {
                 <button onClick={ () => changeView('progress') }>View progress</button>
             </section>
             <section>
+                <button onClick={ () => changeView('vowels') }>Vowels</button>
+            </section>
+            <section>
                 <button onClick={ () => changeView('settings') }>Settings</button>
             </section>
 

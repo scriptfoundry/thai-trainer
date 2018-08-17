@@ -4,7 +4,6 @@ export const VIEW_CHANGEVIEW = 'view/changeview';
 const VIEW_CHANGESUBVIEW = 'view/changesubview';
 const VIEW_CHANGEPREVIEWFILTER = 'view_changepreviewfilter';
 
-
 const defaultState = {
     currentView: null,
     subview: null,

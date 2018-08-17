@@ -55,14 +55,25 @@ export const setRate = (newRate) => {
     rate = newRate;
     saveSettings();
 };
-export const say = (language, text, cancelCurrent = true) => {
+export const say = (language, text, cancelCurrent = true) => new Promise(resolve => {
     if (cancelCurrent) speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = language === LANGUAGE_ENGLISH ? englishVoice : thaiVoice;
     utterance.rate = language === LANGUAGE_ENGLISH ? 1 : rate;
 
+    utterance.onend = resolve;
+
     speechSynthesis.speak(utterance);
+});
+
+export const sayWords = (language, texts) => {
+    const next = async (texts) => {
+        let [ current, ...rest ] = texts;
+        await say(language, current);
+        if (rest.length) next(rest);
+    };
+    if (texts) next(texts);
 };
 
 export const voicePropType = PropTypes.shape({

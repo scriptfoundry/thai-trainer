@@ -10,6 +10,7 @@ import Practice from './components/Practice';
 import TestSelector from './components/TestSelector';
 import TestResults from './components/TestResults';
 import Test from './components/Test';
+import Vowels from './components/Vowels';
 
 import './styles/css/App.css';
 import 'rc-slider/assets/index.css';
@@ -39,6 +40,7 @@ class App extends Component {
     else if (view === 'testresults') content = <TestResults />;
     else if (view === 'testselector') content = <TestSelector />;
     else if (view === 'test') content = <Test />;
+    else if (view === 'vowels') content = <Vowels />;
 
     const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }><span>〈</span> Back</button>;
     return <Fragment>

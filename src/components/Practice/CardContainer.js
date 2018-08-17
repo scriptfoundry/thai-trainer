@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Card from './Card';
 import HelpButton from './HelpButton';
-import { say, LANGUAGE_THAI, LANGUAGE_ENGLISH } from '../../services/Voices';
+import { say, LANGUAGE_THAI } from '../../services/Voices';
 
 export default class CardContainer extends Component {
     constructor(...args) {
@@ -60,5 +60,4 @@ CardContainer.propTypes = {
     advancePractice: PropTypes.func.isRequired,
     nudgePractice: PropTypes.func.isRequired,
     closePractice: PropTypes.func.isRequired,
-    // seedPractice: PropTypes.func.isRequired,
 };

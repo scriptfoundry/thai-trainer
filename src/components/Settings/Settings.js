@@ -8,8 +8,6 @@ import RangedNumberSelector from './RangedNumberSelector';
 
 const Settings = (props) => {
     const {
-        englishVoice,
-        englishVoices,
         pronunciationType,
         rate,
         thaiVoice,
@@ -25,7 +23,6 @@ const Settings = (props) => {
         changePracticeWordLimit,
         changeTestingWordLimit,
         saySample,
-        setEnglishVoice,
         setRate,
         setThaiVoice,
     } = props;

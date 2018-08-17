@@ -14,6 +14,11 @@ export const loadWords = async () => {
     return words;
 };
 
+export const loadVowels = async () => {
+    let response = await fetch('/data/vowels.json');
+    let vowels = await response.json();
+    return vowels;
+};
 export const loadProgressData = async () => {
     const progress = await localforage.getItem('progress');
     return progress || [];
