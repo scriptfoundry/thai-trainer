@@ -59,6 +59,14 @@ $default-theme: (
     disabledBorderColor: #bfbfbf,
     borderRadius: 1em,
 );
+$pencil-theme: (
+    backgroundColor: transparent,
+    foregroundColor: #5c6172,
+    borderColor: #6f7faa,
+    altForegroundColor: $white,
+    altBackgroundColor: #2c3244,
+    altBorderColor: #3d4a6b,
+);
 $primary-theme: (
     backgroundColor: #00d1b2,
     foregroundColor: #ffffff,
@@ -89,6 +97,7 @@ $primary-theme: (
         border-color: map-get($settings, altBorderColor);
         color: map-get( $settings, altForegroundColor);
     }
+    &.selected,
     &:active,
     &:focus {
         background-color: darken(map-get($settings, altBackgroundColor ), 5%);

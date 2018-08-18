@@ -5,7 +5,10 @@ const Navigation = ({ changeView }) => {
         return <div className="navigation">
             <h1>Thai reading tutor</h1>
             <section>
-                <button onClick={ () => changeView('practice') }>Practice</button>
+                <button onClick={ () => changeView('vowels') }>Learn vowels</button>
+            </section>
+            <section>
+                <button onClick={ () => changeView('practice') }>Practice words</button>
             </section>
             <section>
                 <button onClick={ () => changeView('testselector') }>Start test</button>
@@ -14,13 +17,8 @@ const Navigation = ({ changeView }) => {
                 <button onClick={ () => changeView('progress') }>View progress</button>
             </section>
             <section>
-                <button onClick={ () => changeView('vowels') }>Vowels</button>
-            </section>
-            <section>
                 <button onClick={ () => changeView('settings') }>Settings</button>
             </section>
-
-
         </div>;
 };
 
