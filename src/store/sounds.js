@@ -32,7 +32,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
     }
     if (type === SOUNDS_LOADCONSONANTS && state.consonantsLoaded === false) {
         let { confusions, consonants, consonantKeys } = payload;
-        return { ...state, consonants,  confusions, consonantKeys, consonantsLoaded: true };
+        return { ...state, consonants,  confusions, consonantKeys, consonantsLoaded: true, visibleConsonantKey: 'Ch-like' };
     }
 
     if (type === SOUNDS_SHOWVOWEL) return { ...state, visibleVowel: payload };

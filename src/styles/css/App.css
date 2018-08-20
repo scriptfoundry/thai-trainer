@@ -70,6 +70,7 @@ button {
   padding-right: 0.75em;
   padding-top: calc(0.375em - 1px);
   text-align: center;
+  vertical-align: middle;
   white-space: nowrap; }
   button:hover {
     background-color: #e1e1e3;

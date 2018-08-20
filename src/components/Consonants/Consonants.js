@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import CategoryPicker from './CategoryPicker';
+import ConsonantList from './ConsonantList';
 
 class Consonants extends Component {
     componentDidMount() {
@@ -11,10 +11,11 @@ class Consonants extends Component {
         this.props.clearSounds();
     }
     render() {
-        const { consonantKeys, showConsonantsByKey, visibleConsonantKey } = this.props;
+        const { consonants, consonantKeys, showConsonantsByKey, pronunciationType, visibleConsonantKey } = this.props;
         return <div className="consonants">
             <h1>Consonants</h1>
             <CategoryPicker consonantKeys={ consonantKeys } showConsonantsByKey={ showConsonantsByKey } visibleConsonantKey={ visibleConsonantKey } />
+            { visibleConsonantKey ? <ConsonantList consonants={ consonants } consonantKeys={ consonantKeys } pronunciationType={pronunciationType} visibleConsonantKey={ visibleConsonantKey } /> : null }
         </div>;
     }
 }
@@ -26,6 +27,7 @@ Consonants.propTypes = {
     confusions: PropTypes.arrayOf(PropTypes.array).isRequired,
     consonantKeys: PropTypes.object.isRequired,
     consonantsLoaded: PropTypes.bool.isRequired,
+    pronunciationType: PropTypes.string.isRequired,
     showConsonantsByKey: PropTypes.func.isRequired,
     visibleConsonantKey: PropTypes.string,
 };

@@ -101,6 +101,7 @@ body,
     padding-right: 0.75em;
     padding-top: calc(0.375em - 1px);
     text-align: center;
+    vertical-align: middle;
     white-space: nowrap;
     border-radius: .2em;
     font-size: 1.5em;

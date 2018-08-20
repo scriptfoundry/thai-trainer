@@ -5,6 +5,9 @@ const Navigation = ({ changeView }) => {
         return <Fragment>
             <h1>Thai reading tutor</h1>
             <section>
+                <button onClick={ () => changeView('basics') }>Thai basics</button>
+            </section>
+            <section>
                 <button onClick={ () => changeView('practice') }>Practice words</button>
             </section>
             <section>
@@ -12,9 +15,6 @@ const Navigation = ({ changeView }) => {
             </section>
             <section>
                 <button onClick={ () => changeView('progress') }>View progress</button>
-            </section>
-            <section>
-                <button onClick={ () => changeView('basics') }>Thai basics</button>
             </section>
             <section>
                 <button onClick={ () => changeView('settings') }>Settings</button>

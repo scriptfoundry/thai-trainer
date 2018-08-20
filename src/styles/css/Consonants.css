@@ -47,20 +47,75 @@ body,
 #root {
   height: 100%; }
 
-.consonants nav ol {
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid #e5e9f1; }
-  .consonants nav ol li {
-    transition: all 300ms;
-    padding: 0 1em .5em;
-    border: 0px solid transparent;
-    border-bottom-width: 1px;
-    margin-bottom: -1px;
-    color: #b9b8b8; }
-    .consonants nav ol li:hover {
-      border-bottom-color: #556386;
-      color: #556386; }
-  .consonants nav ol .selected {
-    border-bottom-color: #333;
-    color: #333; }
+.consonants {
+  margin: 0 auto;
+  position: relative;
+  padding: 3rem 1.5rem; }
+  @media screen and (min-width: 1088px) {
+    .consonants {
+      max-width: 960px;
+      width: 960px; } }
+  @media screen and (max-width: 1279px) {
+    .consonants {
+      max-width: 1152px;
+      width: auto; } }
+  @media screen and (min-width: 1280px) {
+    .consonants {
+      max-width: 1152px;
+      width: 1152px; } }
+  @media screen and (min-width: 1472px) {
+    .consonants {
+      max-width: 1344px;
+      width: 1344px; } }
+  .consonants nav ol {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    border-bottom: 1px solid #e5e9f1; }
+    .consonants nav ol li {
+      transition: all 300ms;
+      padding: 0 1em .5em;
+      border: 0px solid transparent;
+      border-bottom-width: 1px;
+      margin-bottom: -1px;
+      color: #b9b8b8; }
+      .consonants nav ol li:hover {
+        border-bottom-color: #556386;
+        color: #556386; }
+    .consonants nav ol .selected {
+      border-bottom-color: #333;
+      color: #333; }
+  .consonants section {
+    padding: 3rem 1.5rem;
+    margin: 1em 0;
+    padding: .5rem;
+    border: 1px solid #e5e9f1;
+    border-radius: 1rem; }
+    .consonants section h2 {
+      font-size: 3rem;
+      font-weight: normal; }
+    .consonants section .characters {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; }
+      .consonants section .characters div {
+        width: 15rem;
+        padding: 1rem;
+        margin: 1rem;
+        text-align: center;
+        border: 1px solid #e5e9f1;
+        border-radius: 1rem; }
+      .consonants section .characters div {
+        background-color: #fffff8; }
+      .consonants section .characters div.aspirated {
+        background-color: #dbf3ff; }
+      .consonants section .characters div.unaspirated {
+        background-color: #ffdddb; }
+      .consonants section .characters h3 {
+        font-size: 3rem;
+        font-weight: normal;
+        margin-bottom: 1em; }
+      .consonants section .characters p {
+        font-size: 2rem;
+        font-weight: lighter; }

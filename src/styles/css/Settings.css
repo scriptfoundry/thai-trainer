@@ -88,6 +88,7 @@ body,
     padding-right: 0.75em;
     padding-top: calc(0.375em - 1px);
     text-align: center;
+    vertical-align: middle;
     white-space: nowrap;
     border-radius: .2em;
     margin: .2em; }
@@ -172,6 +173,7 @@ body,
         padding-right: 0.75em;
         padding-top: calc(0.375em - 1px);
         text-align: center;
+        vertical-align: middle;
         white-space: nowrap;
         background-color: transparent;
         border-color: transparent;

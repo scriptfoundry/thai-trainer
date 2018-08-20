@@ -4,12 +4,12 @@ import { operations } from '../../store';
 
 import '../../styles/css/Consonants.css';
 
-const mapStateToProps = ({ sounds: { consonants, confusions, consonantKeys, consonantsLoaded, visibleConsonantKey }, settings }) => ({
-    pronunciationType: settings.pronunciationType,
+const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, confusions, consonantKeys, consonantsLoaded, visibleConsonantKey } }) => ({
     consonants,
     confusions,
     consonantKeys,
     consonantsLoaded,
+    pronunciationType,
     visibleConsonantKey,
 });
 export default connect(mapStateToProps, operations)(Consonants);

@@ -1,9 +1,13 @@
 @import './constants';
 
 .consonants {
+    @include container();
+    @include section();
+
     nav ol {
         display: flex;
         justify-content: center; 
+        margin-top: 3em;
         border-bottom: 1px solid $color-faint;
 
         li {
@@ -22,6 +26,47 @@
         .selected {
             border-bottom-color: $black;
             color: $black;
+        }
+    }
+    section {
+        @include section();
+        margin: 1em 0;
+        padding: .5rem;
+        border: 1px solid $color-faint;
+        border-radius: 1rem;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
+        .characters {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            div {
+                width: 15rem;
+                padding: 1rem;
+                margin: 1rem;
+                text-align: center;
+                border: 1px solid $color-faint;
+                border-radius: 1rem;
+            }
+            
+            div { background-color: #fffff8; }
+            div.aspirated { background-color: #dbf3ff; }
+            div.unaspirated { background-color: #ffdddb; }
+
+            h3 {
+                font-size: 3rem;
+                font-weight: normal;
+                margin-bottom: 1em;
+            }
+            p {
+                font-size: 2rem;
+                font-weight: lighter;
+            }
         }
     }
 }
