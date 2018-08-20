@@ -6,7 +6,7 @@ import { reducer as voice, operations as voiceOperations } from './voice';
 import { reducer as settings, operations as settingsOperations } from './settings';
 import { reducer as words, operations as wordOperations } from './words';
 import { reducer as test, operations as testOperations } from './tests';
-import { reducer as vowels, operations as vowelOperations } from './vowels';
+import { reducer as sounds, operations as soundsOperations } from './sounds';
 
 const rootReducer = combineReducers({
     view,
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
     settings,
     words,
     test,
-    vowels,
+    sounds,
 });
 
 let enhancers = [];
@@ -36,7 +36,7 @@ export const operations = {
     ...settingsOperations,
     ...wordOperations,
     ...testOperations,
-    ...vowelOperations,
+    ...soundsOperations,
 };
 
 export default store;

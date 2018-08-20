@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import '../../styles/css/Navigation.css';
 
 const mapStateToProps = state => ({
-    words: state.words.words
+    currentView: state.view.currentView,
 });
 
 const { changeView } = operations;

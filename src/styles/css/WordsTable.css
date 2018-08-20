@@ -86,7 +86,7 @@ body,
       text-align: left; }
     .words-table table th,
     .words-table table td {
-      width: 100% / 3; }
+      width: 33%; }
     .words-table table.no-progress td:last-child, .words-table table.no-progress th:last-child {
       width: 1%; }
     .words-table table th {

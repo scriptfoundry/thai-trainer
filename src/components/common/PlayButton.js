@@ -15,7 +15,7 @@ class PlayButton extends Component {
         await  saySample(thai);
     }
     render() {
-        return <button onClick={ this.play }>▶</button>;
+        return <button onClick={ this.play }>▷</button>;
     }
 }
 

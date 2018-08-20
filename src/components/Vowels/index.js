@@ -4,10 +4,10 @@ import Vowels from './Vowels';
 
 import '../../styles/css/Vowels.css';
 
-const mapStateToProps = ({ vowels, settings }) => ({
+const mapStateToProps = ({ sounds, settings }) => ({
     pronunciationType: settings.pronunciationType,
-    visibleVowel: vowels.visibleVowel,
-    vowels: vowels.vowels
+    visibleVowel: sounds.visibleVowel,
+    vowels: sounds.vowels
 });
 
 export default connect(mapStateToProps, operations)(Vowels);

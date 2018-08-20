@@ -15,6 +15,7 @@ class Vowels extends Component {
         document.addEventListener('keydown', this.onKey);
     }
     componentWillUnmount(){
+        this.props.clearSounds();
         document.removeEventListener('keydown', this.onKey);
     }
     onKey({ code }) {
@@ -45,6 +46,7 @@ class Vowels extends Component {
 }
 
 Vowels.propTypes = {
+    clearSounds: PropTypes.func.isRequired,
     initializeVowels: PropTypes.func.isRequired,
     pronunciationType: PropTypes.string.isRequired,
     showVowel: PropTypes.func.isRequired,
