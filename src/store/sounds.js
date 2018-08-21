@@ -8,7 +8,6 @@ const SOUNDS_LOADCONSONANTS = 'sounds/loadconsonants';
 const SOUNDS_SHOWCONSONANTSBYKEY = 'sounds/showconsonantsbykey';
 const SOUNDS_SHOWCONFUSIONBYINDEX = 'sounds/showconfusionbyindex';
 const SOUNDS_LOADCONFUSION = 'sounds/loadconfusion';
-const SOUNDS_DRILLCONFUSION = 'sounds/drillconfusion';
 
 const defaultState = {
     vowelsLoaded: false,
@@ -37,7 +36,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
     }
     if (type === SOUNDS_LOADCONSONANTS && state.consonantsLoaded === false) {
         let { confusions, consonants, consonantKeys } = payload;
-        return { ...state, consonants,  confusions, consonantKeys, consonantsLoaded: true, visibleConsonantKey: 'Ch-like' };
+        return { ...state, consonants,  confusions, consonantKeys, consonantsLoaded: true, visibleConsonantKey: null };
     }
     if (type === SOUNDS_LOADCONFUSION && state.confusionLoaded === false) {
         let { confusions, consonants, consonantKeys } = payload;
@@ -99,6 +98,5 @@ const initializeConfusion = () => async dispatch => {
 };
 const showConsonantsByKey = (key) => (dispatch) => dispatch({ type: SOUNDS_SHOWCONSONANTSBYKEY, payload: key });
 const showConfusionByIndex = index => dispatch => dispatch({ type: SOUNDS_SHOWCONFUSIONBYINDEX, payload: index });
-const drillConfusion = () => dispatch => {};
 
-export const operations = { initializeVowels, clearSounds, showVowel, showNextVowel, showPrevVowel, initializeConsonants, showConsonantsByKey, showConfusionByIndex, initializeConfusion, drillConfusion };
+export const operations = { initializeVowels, clearSounds, showVowel, showNextVowel, showPrevVowel, initializeConsonants, showConsonantsByKey, showConfusionByIndex, initializeConfusion, };

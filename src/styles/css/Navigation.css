@@ -49,14 +49,7 @@ body,
 
 .navigation {
   height: 100%;
-  padding: 3rem 1.5rem;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: -0.75rem; }
-  .navigation :last-child {
-    margin-bottom: -0.75rem; }
-  .navigation :not(:last-child) {
-    margin-bottom: calc(1.5rem - 0.75rem); }
+  padding: 3rem 1.5rem; }
   .navigation .is-centered {
     justify-content: center; }
   .navigation > * {

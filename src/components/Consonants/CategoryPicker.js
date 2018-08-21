@@ -12,7 +12,10 @@ const getSortedKeys = memoize((consontantKeys) => Object.keys(consontantKeys).so
 const CategoryPicker = ({ consonantKeys, showConsonantsByKey, visibleConsonantKey }) => {
     let headings = getSortedKeys(consonantKeys).map(key => <li key={key} className={ key === visibleConsonantKey ? 'selected' : null } onClick={ () => showConsonantsByKey(key) }>{key}</li>);
     return <nav className="category-picker">
-        <ol>{ headings }</ol>
+        <ol>
+            <li className={ visibleConsonantKey || 'selected' } onClick={ () => showConsonantsByKey(null) }>All</li>
+            { headings }
+        </ol>
     </nav>;
 };
 

@@ -4,48 +4,34 @@
     @include container();
     @include section();
 
+    .list div {
+        @include columns(true);
+        display: flex;
+        font-size: 2em;
+
+        span:nth-child(1) {
+            @include column(1, 2);
+        }
+        span:nth-child(2) {
+            @include column(2);
+        }
+        span:nth-child(3) {
+            @include column(3);
+        }
+        span:nth-child(4) {
+            @include column(1);
+        }
+        button {
+            // position: absolute;
+            margin: 0;
+        }
+    }
+
     nav {
         @include tab-header();
     }
-    section {
-        @include section();
-        margin: 1em 0;
-        padding: .5rem;
-        border: 1px solid $color-faint;
-        border-radius: 1rem;
 
-        h2 {
-            font-size: 3rem;
-            font-weight: normal;
-        }
-        .characters {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            div {
-                width: 15rem;
-                padding: 1rem;
-                margin: 1rem;
-                text-align: center;
-                border: 1px solid $color-faint;
-                border-radius: 1rem;
-            }
-            
-            div { background-color: #fffff8; }
-            div.aspirated { background-color: #dbf3ff; }
-            div.unaspirated { background-color: #ffdddb; }
-
-            h3 {
-                font-size: 3rem;
-                font-weight: normal;
-                margin-bottom: 1em;
-            }
-            p {
-                font-size: 2rem;
-                font-weight: lighter;
-            }
-        }
+    .list div span:last-child {
+        text-align: right;
     }
 }

@@ -11,7 +11,7 @@ const Navigation = ({ changeView }) => {
                 <button onClick={ () => changeView('consonants') }>Review consonants</button>
             </section>
             <section>
-                <button onClick={ () => changeView('confusion') }>Disentangle consonants</button>
+                <button onClick={ () => changeView('consonantconfusion') }>Easily confused consonants</button>
             </section>
         </Fragment>;
 };

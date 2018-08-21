@@ -1,0 +1,51 @@
+@import './constants';
+
+.consonant-sounds {
+    @include container();
+    @include section();
+
+    nav {
+        @include tab-header();
+    }
+    section {
+        @include section();
+        margin: 1em 0;
+        padding: .5rem;
+        border: 1px solid $color-faint;
+        border-radius: 1rem;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: normal;
+        }
+        .characters {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            div {
+                width: 15rem;
+                padding: 1rem;
+                margin: 1rem;
+                text-align: center;
+                border: 1px solid $color-muted;
+                border-radius: 1rem;
+            }
+            
+            div { background-color: $color-faint; }
+            div.aspirated { border-color: $black; }
+            div.unaspirated { border-color: $black; border-style: dashed; }
+
+            h3 {
+                font-size: 3rem;
+                font-weight: normal;
+                margin-bottom: 1em;
+            }
+            p {
+                font-size: 2rem;
+                font-weight: lighter;
+            }
+        }
+    }
+}

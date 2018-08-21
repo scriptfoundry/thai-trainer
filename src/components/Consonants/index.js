@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
-import Consonants from './Consonants';
 import { operations } from '../../store';
+import Consonants from './Consonants';
 
 import '../../styles/css/Consonants.css';
 
-const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, consonantKeys, consonantsLoaded, visibleConsonantKey } }) => ({
-    consonants,
+const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonantKeys, consonants, visibleConsonantKey }}) => ({
     consonantKeys,
-    consonantsLoaded,
+    consonants,
     pronunciationType,
     visibleConsonantKey,
 });
+
 export default connect(mapStateToProps, operations)(Consonants);

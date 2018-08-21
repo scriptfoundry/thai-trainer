@@ -75,15 +75,8 @@ body,
   .confusion .characters {
     margin: 3rem 0; }
     .confusion .characters div {
-      margin-left: -0.75rem;
-      margin-right: -0.75rem;
-      margin-top: -0.75rem;
       display: flex;
       width: 100%; }
-      .confusion .characters div :last-child {
-        margin-bottom: -0.75rem; }
-      .confusion .characters div :not(:last-child) {
-        margin-bottom: calc(1.5rem - 0.75rem); }
       .confusion .characters div .is-centered {
         justify-content: center; }
       .confusion .characters div > * {
@@ -98,7 +91,7 @@ body,
       .confusion .characters span:nth-child(1) {
         flex: none;
         width: 8.33333%;
-        margin-left: 25%; }
+        margin-left: 20.83333%; }
       .confusion .characters span:nth-child(2) {
         flex: none;
         width: 16.66667%;
@@ -110,41 +103,9 @@ body,
       .confusion .characters span:nth-child(4) {
         flex: none;
         width: 8.33333%;
-        margin-left: 0%; }
+        margin-left: 0%;
+        text-align: center; }
     .confusion .characters button {
       position: absolute;
       margin: 0;
       vertical-align: middle; }
-  .confusion .drill-button {
-    background-color: #00d1b2;
-    border: 1px solid #49c2a0;
-    border-radius: .3em;
-    color: #ffffff;
-    cursor: pointer;
-    flex: 1;
-    font-size: 1rem;
-    justify-content: center;
-    padding-bottom: calc(0.375em - 1px);
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    padding-top: calc(0.375em - 1px);
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    border-radius: .2em;
-    font-size: 1.5em;
-    width: 100%;
-    width: 60%; }
-    .confusion .drill-button:hover {
-      background-color: #00b89c;
-      border-color: #47b797;
-      color: #ffffff; }
-    .confusion .drill-button.selected, .confusion .drill-button:active, .confusion .drill-button:focus {
-      background-color: #009f86;
-      border-color: #47b797;
-      color: #ffffff; }
-    .confusion .drill-button[disabled] {
-      color: #a6a3a3;
-      background-color: #dddddd;
-      border-color: #bfbfbf;
-      cursor: default; }

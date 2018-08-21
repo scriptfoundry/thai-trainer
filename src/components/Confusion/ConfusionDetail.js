@@ -26,8 +26,6 @@ const ConfusionDetail = ({confusions, visibleConfusion, consonants, pronunciatio
 
     return <div className="detail">
         <div className="characters">{ confusedConsonants }</div>
-
-        <button className="drill-button" onClick={ drillConfusion }>Drill</button>
     </div>;
 };
 

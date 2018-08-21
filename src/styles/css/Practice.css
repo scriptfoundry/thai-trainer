@@ -122,26 +122,18 @@ body,
         background-color: #dddddd;
         border-color: #bfbfbf;
         cursor: default; }
-  .practice .cards {
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
-    margin-top: -0.75rem; }
-    .practice .cards :last-child {
-      margin-bottom: -0.75rem; }
-    .practice .cards :not(:last-child) {
-      margin-bottom: calc(1.5rem - 0.75rem); }
-    .practice .cards .is-centered {
-      justify-content: center; }
-    .practice .cards > * {
-      display: block;
-      flex-basis: 0;
-      flex-grow: 1;
-      flex-shrink: 1;
-      padding: 0.75rem; }
-    .practice .cards .card {
-      flex: none;
-      width: 66.66667%;
-      margin-left: 16.66667%; }
+  .practice .cards .is-centered {
+    justify-content: center; }
+  .practice .cards > * {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem; }
+  .practice .cards .card {
+    flex: none;
+    width: 66.66667%;
+    margin-left: 16.66667%; }
   .practice .card {
     background-color: white;
     border-radius: .25em;

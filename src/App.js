@@ -44,7 +44,7 @@ class App extends Component {
     else if (view === 'test') content = <Test />;
     else if (view === 'vowels') content = <Vowels />;
     else if (view === 'consonants') content = <Consonants />;
-    else if (view === 'confusion') content = <Confusion />;
+    else if (view === 'consonantconfusion') content = <Confusion />;
 
     const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }><span>〈</span> Back</button>;
     return <Fragment>
