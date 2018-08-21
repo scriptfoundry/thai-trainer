@@ -24,7 +24,6 @@ Consonants.propTypes = {
     clearSounds: PropTypes.func.isRequired,
     initializeConsonants: PropTypes.func.isRequired,
     consonants: PropTypes.object.isRequired,
-    confusions: PropTypes.arrayOf(PropTypes.array).isRequired,
     consonantKeys: PropTypes.object.isRequired,
     consonantsLoaded: PropTypes.bool.isRequired,
     pronunciationType: PropTypes.string.isRequired,

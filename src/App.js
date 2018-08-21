@@ -12,6 +12,7 @@ import TestResults from './components/TestResults';
 import Test from './components/Test';
 import Vowels from './components/Vowels';
 import Consonants from './components/Consonants';
+import Confusion from './components/Confusion';
 
 import './styles/css/App.css';
 import 'rc-slider/assets/index.css';
@@ -43,6 +44,7 @@ class App extends Component {
     else if (view === 'test') content = <Test />;
     else if (view === 'vowels') content = <Vowels />;
     else if (view === 'consonants') content = <Consonants />;
+    else if (view === 'confusion') content = <Confusion />;
 
     const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }><span>〈</span> Back</button>;
     return <Fragment>

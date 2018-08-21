@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { memoize } from '../../services/Utils';
 
-let headings = null;
 const sortKeys = (a, b) => {
     if (a === 'Other') return 1;
     if (b === 'Other') return -1;
@@ -11,7 +10,7 @@ const sortKeys = (a, b) => {
 const getSortedKeys = memoize((consontantKeys) => Object.keys(consontantKeys).sort(sortKeys) );
 
 const CategoryPicker = ({ consonantKeys, showConsonantsByKey, visibleConsonantKey }) => {
-    headings = getSortedKeys(consonantKeys).map(key => <li key={key} className={ key === visibleConsonantKey ? 'selected' : null } onClick={ () => showConsonantsByKey(key) }>{key}</li>);
+    let headings = getSortedKeys(consonantKeys).map(key => <li key={key} className={ key === visibleConsonantKey ? 'selected' : null } onClick={ () => showConsonantsByKey(key) }>{key}</li>);
     return <nav className="category-picker">
         <ol>{ headings }</ol>
     </nav>;

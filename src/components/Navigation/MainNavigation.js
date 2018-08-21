@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Navigation = ({ changeView }) => {
         return <Fragment>
-            <h1>Thai reading tutor</h1>
+            <h1>Build up your Thai</h1>
             <section>
                 <button onClick={ () => changeView('basics') }>Thai basics</button>
             </section>

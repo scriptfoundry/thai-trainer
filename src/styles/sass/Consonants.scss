@@ -4,29 +4,8 @@
     @include container();
     @include section();
 
-    nav ol {
-        display: flex;
-        justify-content: center; 
-        margin-top: 3em;
-        border-bottom: 1px solid $color-faint;
-
-        li {
-            transition: all 300ms;
-            padding: 0 1em .5em;
-            border: 0px solid transparent;
-            border-bottom-width: 1px;
-            margin-bottom: -1px;
-            color: $color-muted;
-            &:hover { 
-                border-bottom-color: $color-primary-2;
-                color: $color-primary-2;
-            }
-        }
-
-        .selected {
-            border-bottom-color: $black;
-            color: $black;
-        }
+    nav {
+        @include tab-header();
     }
     section {
         @include section();

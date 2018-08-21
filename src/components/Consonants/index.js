@@ -4,9 +4,8 @@ import { operations } from '../../store';
 
 import '../../styles/css/Consonants.css';
 
-const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, confusions, consonantKeys, consonantsLoaded, visibleConsonantKey } }) => ({
+const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, consonantKeys, consonantsLoaded, visibleConsonantKey } }) => ({
     consonants,
-    confusions,
     consonantKeys,
     consonantsLoaded,
     pronunciationType,

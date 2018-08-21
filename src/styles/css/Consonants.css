@@ -78,13 +78,15 @@ body,
       border: 0px solid transparent;
       border-bottom-width: 1px;
       margin-bottom: -1px;
-      color: #b9b8b8; }
+      color: #b9b8b8;
+      cursor: pointer; }
       .consonants nav ol li:hover {
         border-bottom-color: #556386;
         color: #556386; }
     .consonants nav ol .selected {
       border-bottom-color: #333;
-      color: #333; }
+      color: #333;
+      cursor: default; }
   .consonants section {
     padding: 3rem 1.5rem;
     margin: 1em 0;

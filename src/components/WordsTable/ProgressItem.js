@@ -26,7 +26,7 @@ ProgressItem.propTypes = {
         thai: PropTypes.string.isRequired,
         ipa: PropTypes.string.isRequired,
         paiboon: PropTypes.string.isRequired,
-        aspectScores: PropTypes.arrayOf(PropTypes.number).isRequired,
+        aspectScores: PropTypes.arrayOf(PropTypes.number),
     }),
     pronunciationType: PropTypes.oneOf([ PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON]),
     showProgress: PropTypes.bool.isRequired,
