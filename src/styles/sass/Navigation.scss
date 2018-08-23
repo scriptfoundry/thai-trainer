@@ -1,7 +1,6 @@
 @import './constants';
 
 .navigation {
-    @include full-height();
     @include section();
     @include columns();
     @media screen and (min-width: 1088px) {
@@ -18,8 +17,9 @@
     h2 {
         @include h2();
     }
-    button {
+    .button {
         @include large-button($primary-theme);
+        display: block;
     }
     section {
         @include flex-row();

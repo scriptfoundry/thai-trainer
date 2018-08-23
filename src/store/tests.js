@@ -2,13 +2,13 @@ import { getDayOfEpoch, buildRandomizedValuesQueue } from '../services/Utils';
 import { getOutstandingWords, getCurrentPracticeWords, applyScoresToWords, saveProgress } from '../services/Leitner';
 
 import { TEST_TYPECURRENT, TEST_STAGE1 } from '../services/Leitner';
-import { VIEW_CHANGEVIEW } from './view';
 
 export const TEST_SETTESTTYPE = 'test/settesttype';
 export const TEST_COMPLETETEST = 'test/completetest';
 export const TEST_COMMITTESTANDCLOSE = 'test/committestandclose';
 const TEST_SETTESTWORDS = 'test/settesetwords';
 const TEST_ACCEPTANSWER = 'test/acceptanswer';
+const TEST_CLEARALL = 'test/clearall';
 
 const getRandomQueue = buildRandomizedValuesQueue(3);
 
@@ -26,21 +26,28 @@ const defaultState = {
 
 export const reducer = (state = defaultState, { type, payload }) => {
     if (type === TEST_ACCEPTANSWER) return { ...state, ...payload };
-    if (type === TEST_SETTESTWORDS) return { ...state, testWords: payload };
+    if (type === TEST_SETTESTWORDS) return { ...state, ...payload, stage: 0, index: 0 };
     if (type === TEST_SETTESTTYPE) return { ...state, ...payload };
     if (type === TEST_COMPLETETEST) return { ...state, ...payload, isComplete: true };
-    if (type === VIEW_CHANGEVIEW && payload !== 'test') return { ...state, ...defaultState };
+    if (type === TEST_CLEARALL) return { ...state, ...defaultState };
 
     return state;
 };
 
+const clearTest = () => dispatch => {
+    dispatch({ type: TEST_CLEARALL });
+};
 const getCurrentWords = (words) => dispatch => {
-    const currentWords = getCurrentPracticeWords(words);
-    dispatch({ type: TEST_SETTESTWORDS, payload: currentWords });
+    const testWords = getCurrentPracticeWords(words);
+    const queue = getRandomQueue(testWords);
+    dispatch({ type: TEST_SETTESTWORDS, payload: {testWords, queue} });
+    return testWords.length > 0;
 };
 const getOverdueWords = (words) => dispatch => {
-    const overdueWords = getOutstandingWords(words, getDayOfEpoch(new Date()));
-    dispatch({ type: TEST_SETTESTWORDS, payload: overdueWords });
+    const testWords = getOutstandingWords(words, getDayOfEpoch(new Date()));
+    const queue = getRandomQueue(testWords);
+    dispatch({ type: TEST_SETTESTWORDS, payload: {testWords, queue} });
+    return testWords.length > 0;
 };
 const setTestType = (type) => (dispatch, getState) => {
     const stage = TEST_STAGE1;
@@ -85,6 +92,7 @@ const saveTest = (scores) => async (dispatch, getState) => {
 };
 
 export const operations = {
+    clearTest,
     getCurrentWords,
     getOverdueWords,
     setTestType,

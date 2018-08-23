@@ -1,70 +1,70 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { operations } from './store';
+import ScrollReset from './components/common/ScrollReset';
 import Loading from './components/Loading';
-import Navigation from './components/Navigation';
+import Breadcrumb from './components/Navigation/Breadcrumbs';
+import MainNavigation from './components/Navigation/MainNavigation';
+import NavigationBasics from './components/Navigation/BasicsNavigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
 import Practice from './components/Practice';
-import TestSelector from './components/TestSelector';
-import TestResults from './components/TestResults';
 import Test from './components/Test';
+import TestSelector from './components/TestSelector';
 import Vowels from './components/Vowels';
 import Consonants from './components/Consonants';
 import Confusion from './components/Confusion';
+import NotFound from './components/NotFound';
 
 import './styles/css/App.css';
 import 'rc-slider/assets/index.css';
 
 class App extends Component {
   async componentDidMount() {
-    const { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings } = this.props;
+    const { initializeWordsManager, initializeVoiceManager, initializeSettings } = this.props;
 
     await Promise.all([
       initializeVoiceManager(),
       initializeWordsManager(),
       initializeSettings(),
     ]);
-
-    changeView('navigation');
   }
-
   render() {
-    let { changeView, loaded, view } = this.props;
-    let content = null;
+    let { loaded } = this.props;
 
-    if (!loaded) content = <Loading/>;
-    else if (view === 'settings') content = <Settings />;
-    else if (view === 'navigation' || view === 'basics') content = <Navigation />;
-    else if (view === 'progress') content = <Progress />;
-    else if (view === 'practice') content = <Practice />;
-    else if (view === 'testresults') content = <TestResults />;
-    else if (view === 'testselector') content = <TestSelector />;
-    else if (view === 'test') content = <Test />;
-    else if (view === 'vowels') content = <Vowels />;
-    else if (view === 'consonants') content = <Consonants />;
-    else if (view === 'consonantconfusion') content = <Confusion />;
+    if (!loaded) return <Loading />;
 
-    const backbutton = view === 'navigation' ? null : <button className="back-button" onClick={ () => changeView('navigation') }><span>〈</span> Back</button>;
-    return <Fragment>
-      { backbutton }
-      { content }
-    </Fragment>;
+    return <Router>
+      <ScrollReset>
+        <Breadcrumb />
+        <Switch>
+          <Route path="/" exact component={MainNavigation} />
+          <Route path="/basics" exact component={NavigationBasics} />
+          <Route path='/basics/vowels' component={Vowels} />
+          <Route path='/basics/consonantconfusion' component= {Confusion} />
+          <Route path="/basics/consonants" component={Consonants} />
+          <Route path='/progress' component={Progress} />
+          <Route path='/practice' component={Practice} />
+          <Route path='/test' exact component={TestSelector} />
+          <Route path='/test/:type(overdue|current)' component={Test} />
+          <Route path="/settings" component={Settings} />
+          <Route component={NotFound} />
+        </Switch>
+      </ScrollReset>
+    </Router>;
   }
 }
 
 App.propTypes = {
-  changeView: PropTypes.func.isRequired,
-  loaded: PropTypes.bool.isRequired,
-  view: PropTypes.string
+  loaded: PropTypes.bool.isRequired
 };
 
-const { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings } = operations;
+const { initializeWordsManager, initializeVoiceManager, initializeSettings } = operations;
 
 const mapStateToProps = (state) => ({
   loaded: state.words.wordsLoaded,
-  view: state.view.currentView,
 });
 
-export default connect(mapStateToProps, { changeView, initializeWordsManager, initializeVoiceManager, initializeSettings })(App);
+export default connect(mapStateToProps, { initializeWordsManager, initializeVoiceManager, initializeSettings })(App);

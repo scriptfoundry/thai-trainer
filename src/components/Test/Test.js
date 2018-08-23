@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Challenge from './Challenge';
+import { withRouter } from 'react-router-dom';
+import TestSelector from '../TestSelector';
+import Quiz from '../Quiz';
+import TestResults from '../TestResults';
 
-const Test = (props) => {
-    return <div className="test">
-        <TransitionGroup className="content">
-            <CSSTransition timeout={400} key={ props.index } classNames="challenge-container">
-                <Challenge key={ props.index } {...props} />
-            </CSSTransition>
-        </TransitionGroup>
-    </div>;
+class Test extends Component {
+    componentDidMount() {
+        const { history, match: { params }, getCurrentWords, getOverdueWords, words } = this.props;
 
-};
+        if (params.type === 'current') getCurrentWords(words) || history.replace('/test');
+        else if (params.type === 'overdue') getOverdueWords(words) || history.replace('/test');
+        else history.replace('/test');
+
+    }
+    componentWillUnmount() {
+        this.props.clearTest();
+    }
+    render() {
+        const { isComplete, queue } = this.props;
+
+        if (isComplete) return <TestResults />;
+        if (queue.length === 0) return <TestSelector />;
+        return <Quiz />;
+    }
+}
 
 Test.propTypes = {
-    index: PropTypes.number.isRequired,
+    isComplete: PropTypes.bool,
+    queue: PropTypes.array,
+    words: PropTypes.array,
+    history: PropTypes.shape({
+        replace: PropTypes.func.isRequired
+    }),
+    match: PropTypes.shape({
+        params: PropTypes.object
+    }),
+    getCurrentWords: PropTypes.func.isRequired,
+    getOverdueWords: PropTypes.func.isRequired,
+    clearTest: PropTypes.func.isRequired,
 };
-export default Test;
+
+export default withRouter(Test);

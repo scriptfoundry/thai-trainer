@@ -102,6 +102,7 @@ body,
       border-radius: .3em;
       color: #5c6172;
       cursor: pointer;
+      display: inline-block;
       flex: 1;
       font-size: 1rem;
       justify-content: center;
@@ -110,6 +111,7 @@ body,
       padding-right: 0.75em;
       padding-top: calc(0.375em - 1px);
       text-align: center;
+      text-decoration: none;
       vertical-align: middle;
       white-space: nowrap;
       font-size: 1em;

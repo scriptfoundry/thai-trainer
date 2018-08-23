@@ -1,23 +1,19 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Navigation = ({ changeView }) => {
-        return <Fragment>
+const Navigation = () => {
+        return <div className="navigation">
             <h1>Thai Basics</h1>
             <section>
-                <button onClick={ () => changeView('vowels') }>Review vowels</button>
+                <Link className="button" to="/basics/vowels">Review vowels</Link>
             </section>
             <section>
-                <button onClick={ () => changeView('consonants') }>Review consonants</button>
+                <Link className="button" to="/basics/consonants">Review consonants</Link>
             </section>
             <section>
-                <button onClick={ () => changeView('consonantconfusion') }>Easily confused consonants</button>
+                <Link className="button" to="/basics/consonantconfusion">Easily confused consonants</Link>
             </section>
-        </Fragment>;
-};
-
-Navigation.propTypes = {
-    changeView: PropTypes.func.isRequired,
+        </div>;
 };
 
 export default Navigation;

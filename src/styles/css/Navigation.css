@@ -48,7 +48,6 @@ body,
   height: 100%; }
 
 .navigation {
-  height: 100%;
   padding: 3rem 1.5rem; }
   .navigation .is-centered {
     justify-content: center; }
@@ -80,12 +79,13 @@ body,
     line-height: 1.125;
     margin-bottom: 1.25rem;
     font-size: 1.6rem; }
-  .navigation button {
+  .navigation .button {
     background-color: #00d1b2;
     border: 1px solid #49c2a0;
     border-radius: .3em;
     color: #ffffff;
     cursor: pointer;
+    display: inline-block;
     flex: 1;
     font-size: 1rem;
     justify-content: center;
@@ -94,20 +94,24 @@ body,
     padding-right: 0.75em;
     padding-top: calc(0.375em - 1px);
     text-align: center;
+    text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
     border-radius: .2em;
     font-size: 1.5em;
-    width: 100%; }
-    .navigation button:hover {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    display: block; }
+    .navigation .button:hover {
       background-color: #00b89c;
       border-color: #47b797;
       color: #ffffff; }
-    .navigation button.selected, .navigation button:active, .navigation button:focus {
+    .navigation .button.selected, .navigation .button:active, .navigation .button:focus {
       background-color: #009f86;
       border-color: #47b797;
       color: #ffffff; }
-    .navigation button[disabled] {
+    .navigation .button[disabled] {
       color: #a6a3a3;
       background-color: #dddddd;
       border-color: #bfbfbf;

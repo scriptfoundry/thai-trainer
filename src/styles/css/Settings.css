@@ -80,6 +80,7 @@ body,
     border-radius: .3em;
     color: #515664;
     cursor: pointer;
+    display: inline-block;
     flex: 1;
     font-size: 1rem;
     justify-content: center;
@@ -88,6 +89,7 @@ body,
     padding-right: 0.75em;
     padding-top: calc(0.375em - 1px);
     text-align: center;
+    text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
     border-radius: .2em;
@@ -165,6 +167,7 @@ body,
         border-radius: .3em;
         color: #515664;
         cursor: pointer;
+        display: inline-block;
         flex: 1;
         font-size: 1rem;
         justify-content: center;
@@ -173,6 +176,7 @@ body,
         padding-right: 0.75em;
         padding-top: calc(0.375em - 1px);
         text-align: center;
+        text-decoration: none;
         vertical-align: middle;
         white-space: nowrap;
         background-color: transparent;
@@ -223,3 +227,41 @@ body,
     .settings .samples.paiboon .sample:last-child > :nth-child(3) {
       border-radius: 0 0 .4em .4em;
       border-bottom-width: 1px; }
+  .settings .button {
+    background-color: #00d1b2;
+    border: 1px solid #49c2a0;
+    border-radius: .3em;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    flex: 1;
+    font-size: 1rem;
+    justify-content: center;
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-top: calc(0.375em - 1px);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: .2em;
+    font-size: 1.5em;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+    margin-left: 25%; }
+    .settings .button:hover {
+      background-color: #00b89c;
+      border-color: #47b797;
+      color: #ffffff; }
+    .settings .button.selected, .settings .button:active, .settings .button:focus {
+      background-color: #009f86;
+      border-color: #47b797;
+      color: #ffffff; }
+    .settings .button[disabled] {
+      color: #a6a3a3;
+      background-color: #dddddd;
+      border-color: #bfbfbf;
+      cursor: default; }

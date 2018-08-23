@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import VoiceSelector from './VoiceSelector';
 import RateSelector from './RateSelector';
 import PronunciationSelector from './PronunciationSelector';
@@ -47,6 +48,7 @@ const Settings = (props) => {
         <section>
             <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } saySample={ saySample } />
         </section>
+        <Link className="button" to="/">Done</Link>
     </div>;
 };
 
@@ -55,15 +57,13 @@ const voicePropType = PropTypes.shape({
 });
 
 Settings.propTypes = {
-    englishVoice: voicePropType.isRequired,
-    englishVoices: PropTypes.arrayOf(voicePropType).isRequired,
     practiceAllAtOnce: PropTypes.bool.isRequired,
     practiceOrder: PropTypes.array.isRequired,
     practiceWordLimit: PropTypes.number.isRequired,
     testingWordLimit: PropTypes.number.isRequired,
     pronunciationType: PropTypes.string.isRequired,
     rate: PropTypes.number.isRequired,
-    thaiVoice: voicePropType.isRequired,
+    thaiVoice: voicePropType,
     thaiVoices: PropTypes.arrayOf(voicePropType).isRequired,
     words: PropTypes.arrayOf(PropTypes.shape({
         thai: PropTypes.string.isRequired,
@@ -75,7 +75,6 @@ Settings.propTypes = {
     changePronunciationType: PropTypes.func.isRequired,
     changePracticeWordLimit: PropTypes.func.isRequired,
     saySample: PropTypes.func.isRequired,
-    setEnglishVoice: PropTypes.func.isRequired,
     setRate: PropTypes.func.isRequired,
     setThaiVoice: PropTypes.func.isRequired,
     changeTestingWordLimit: PropTypes.func.isRequired,

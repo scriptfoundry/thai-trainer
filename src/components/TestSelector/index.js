@@ -9,5 +9,5 @@ const mapStateToProps = state => ({
     words: state.words.words
 });
 
-const { changeView, setTestType } = operations;
-export default connect(mapStateToProps, { changeView, setTestType })(TestSelector);
+const { setTestType } = operations;
+export default connect(mapStateToProps, { setTestType })(TestSelector);

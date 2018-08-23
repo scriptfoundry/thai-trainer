@@ -1,5 +1,4 @@
 import { loadVowels, loadConsonants } from '../services/Persistence';
-import { VIEW_CHANGEVIEW } from './view';
 
 const SOUNDS_LOADVOWELS = 'sounds/loadvowels';
 const SOUNDS_CLEARSOUNDS = 'sounds/clearsounds';
@@ -46,7 +45,6 @@ export const reducer = (state=defaultState, { type, payload }) => {
     if (type === SOUNDS_SHOWVOWEL) return { ...state, visibleVowel: payload };
     if (type === SOUNDS_SHOWCONSONANTSBYKEY) return { ...state, visibleConsonantKey: payload };
     if (type === SOUNDS_SHOWCONFUSIONBYINDEX) return { ...state, visibleConfusion: payload };
-    if (type === VIEW_CHANGEVIEW && payload !== 'vowels') return { ...state, vowels: [], vowelsLoaded: false, visibleVowel: null };
 
     return state;
 };

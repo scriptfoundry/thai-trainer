@@ -72,4 +72,9 @@
         &.ipa { @include highlight-column(1); }
         &.paiboon { @include highlight-column(3); }
     }
+    .button {
+        @include large-button($primary-theme);
+        width: 50%;
+        margin-left: 25%;
+    }
 }

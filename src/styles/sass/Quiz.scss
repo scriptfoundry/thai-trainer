@@ -27,6 +27,7 @@
 
         .question {
             flex: none;
+            padding: .5em;
             height: 1em;
 
         }
@@ -46,6 +47,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 .5em;
             
             > * { flex: none; }
         }
@@ -59,7 +61,6 @@
     .challenge {
         height: 100%;
         left: 0;
-        padding: 1em 1em 2em 1em;
         position: absolute;
         top: 0;
         width: 100%;
@@ -88,6 +89,11 @@
         &.rejected span {
             color: $color-muted;
         }
+
+        &.correct,
+        &.incorrect,
+        &.hidden { cursor: default; }
+    
         &.correct span {
             color: $color-success;
             font-size: 2rem;
@@ -105,6 +111,7 @@
     .question {
         color: $color-primary-0;
         font-size: 3.5rem;
+        font-weight: lighter;
         text-align: center;
     }
     .advancement {

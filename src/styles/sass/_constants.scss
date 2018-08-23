@@ -82,6 +82,7 @@ $primary-theme: (
     border-radius: .3em;
     color: map-get($settings, foregroundColor );
     cursor: pointer;
+    display: inline-block;
     flex: 1;
     font-size: 1rem;
 	justify-content: center;
@@ -89,7 +90,8 @@ $primary-theme: (
 	padding-left: 0.75em;
 	padding-right: 0.75em;
 	padding-top: calc(0.375em - 1px);
-	text-align: center;
+    text-align: center;
+    text-decoration: none;
     vertical-align: middle;
     white-space: nowrap;
 
@@ -118,6 +120,8 @@ $primary-theme: (
     border-radius: .2em;
     font-size: 1.5em;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
 @mixin medium-button($theme:()) {
     @include button($theme);

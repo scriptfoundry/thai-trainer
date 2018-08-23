@@ -1,15 +1,5 @@
 @import './constants';
 
-button.back-button {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1;
-    span {
-        margin-left: -.5em;
-        padding-right: .5em;
-    }
-}
 button {
     @include button();
 }
@@ -30,4 +20,19 @@ p {
 aside {
     color: $color-muted; 
     text-align: center;
+}
+.breadcrumbs {
+    position: absolute;
+    padding: .5em;
+    z-index: 1;
+    li { display: inline-block; }
+
+    a {
+        display: inline-block;
+        padding-right: .5em;
+        text-decoration: none;
+        color: $color-primary-2;
+
+        &:hover { color: $color-primary-1; }
+    }
 }
