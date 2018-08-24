@@ -32,9 +32,9 @@ class App extends Component {
     ]);
   }
   render() {
-    let { loaded } = this.props;
+    let {settingsLoaded,  wordsLoaded } = this.props;
 
-    if (!loaded) return <Loading />;
+    if (!settingsLoaded || !wordsLoaded) return <Loading />;
 
     return <Router>
       <ScrollReset>
@@ -58,13 +58,15 @@ class App extends Component {
 }
 
 App.propTypes = {
-  loaded: PropTypes.bool.isRequired
+  wordsLoaded: PropTypes.bool.isRequired,
+  settingsLoaded: PropTypes.bool.isRequired,
 };
 
 const { initializeWordsManager, initializeVoiceManager, initializeSettings } = operations;
 
 const mapStateToProps = (state) => ({
-  loaded: state.words.wordsLoaded,
+  wordsLoaded: state.words.wordsLoaded,
+  settingsLoaded: state.settings.settingsLoaded,
 });
 
 export default connect(mapStateToProps, { initializeWordsManager, initializeVoiceManager, initializeSettings })(App);

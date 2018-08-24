@@ -7,7 +7,7 @@ import Advancement from './Advancement';
 import { sortBySimilarity, shuffle } from '../../services/Utils';
 
 const stageTestTargets = [
-    { question: 'term', answer: ['pronunciation', 'thai'] },
+    { question: 'term', answer: ['thai', 'pronunciation'] },
     { question: 'pronunciation', answer: ['term', 'thai'] },
     { question: 'thai', answer: ['term', 'pronunciation'] },
 ];

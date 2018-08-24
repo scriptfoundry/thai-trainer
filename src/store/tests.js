@@ -59,6 +59,7 @@ const setTestType = (type) => (dispatch, getState) => {
     const scores = new Array(queue.length).fill(0);
 
     dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
+    return queue.length > 0;
 };
 const submitAnswer = (correct) => (dispatch, getState) => {
     let { test: { index, queue, scores, stage, testWords } } = getState();

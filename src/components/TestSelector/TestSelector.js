@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { TEST_TYPECURRENT, TEST_TYPEOVERDUE, getCurrentPracticeWords, getOutstandingWords, getMasteredWords } from '../../services/Leitner';
+import { getCurrentPracticeWords, getOutstandingWords, getMasteredWords } from '../../services/Leitner';
 import { getDayOfEpoch } from '../../services/Utils';
 
 const getCount = words => words.length || 0;
 
-const TestSelector = ({ setTestType, testingWordLimit, words }) => {
+const TestSelector = ({ testingWordLimit, words }) => {
     const currentWords = getCurrentPracticeWords(words);
     const outstandingWords = getOutstandingWords(words, getDayOfEpoch());
     const masteredWords = getMasteredWords(words);
@@ -35,12 +35,12 @@ const TestSelector = ({ setTestType, testingWordLimit, words }) => {
 
         { outstandingWords.length === 0
             ? null
-            : <section><Link className="button" to="/test/overdue" onClick={ () => setTestType(TEST_TYPEOVERDUE) }>Overdue words ({ outstandingCount || 'none'} available)</Link></section>
+            : <section><Link className="button" to="/test/overdue">Overdue words ({ outstandingCount || 'none'} available)</Link></section>
         }
 
         { currentWords.length === 0
             ? null
-            : <section><Link className="button" to="/test/current" onClick={ () => setTestType(TEST_TYPECURRENT) }>Current practice words ({ currentCount || 'none' } available)</Link></section>
+            : <section><Link className="button" to="/test/current">Current practice words ({ currentCount || 'none' } available)</Link></section>
         }
 
         <section>
