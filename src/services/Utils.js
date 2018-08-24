@@ -60,9 +60,9 @@ export const compose = (f, ...fns) => (...args) => f(...fns.map((fn, i) => fn(ar
 export const identity = v => v;
 
 export const createApplyDeltaWithLimits = (min, max) => {
-	const clamp = makeClamp(min, max);
+    const clamp = makeClamp(min, max);
 
-	return (arr, index, delta) => {
+    return (arr, index, delta) => {
 		if (index < arr.length) {
 			let val = arr[index];
 			val = clamp(val + delta);
@@ -166,3 +166,18 @@ export function moveArrayItem(arr, sourceIndex, destinationIndex) {
     const result = [...arr.slice(0, sourceIndex), ...arr.slice(sourceIndex + 1)];
     return [...result.slice(0, destinationIndex), el, ...result.slice(destinationIndex)];
 }
+
+/**
+ * Makes a function that merges two arrays of objects, replacing items from the first array if necessary, using the provided property name
+ * @param {string} prop The name by which the two arrays are to be merged
+ * @returns {function} A function that merges two arrays by the expected property name
+ */
+export const createMergeObjectArrayByProperty = prop => (a, b) => {
+    return a.concat(b).reduce((carry, item, index, arr) => {
+        let val = item[prop];
+        let firstMatch = arr.findIndex(o => o[prop] === val);
+
+        if (firstMatch !== index) return [ ...carry.slice(0, firstMatch), item, ...carry.slice(firstMatch + 1) ];
+        else return [ ...carry, item ];
+    }, []);
+};

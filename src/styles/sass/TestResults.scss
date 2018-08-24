@@ -1,6 +1,8 @@
 @import './constants';
 
 .test-results {
+    @include section();
+
     .result {
         display: flex;
         flex-direction: row;

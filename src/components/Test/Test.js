@@ -12,7 +12,9 @@ class Test extends Component {
         if (params.type === 'current') setTestType(TEST_TYPECURRENT) || history.replace('/test');
         else if (params.type === 'overdue') setTestType(TEST_TYPEOVERDUE) || history.replace('/test');
         else history.replace('/test');
-
+    }
+    componentDidUpdate() {
+        if (this.props.isSaved) this.props.history.push('/progress');
     }
     componentWillUnmount() {
         this.props.clearTest();
@@ -28,8 +30,10 @@ class Test extends Component {
 
 Test.propTypes = {
     isComplete: PropTypes.bool,
+    isSaved: PropTypes.bool,
     queue: PropTypes.array,
     history: PropTypes.shape({
+        push: PropTypes.func.isRequired,
         replace: PropTypes.func.isRequired
     }),
     match: PropTypes.shape({

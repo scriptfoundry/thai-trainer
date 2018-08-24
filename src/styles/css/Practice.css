@@ -48,7 +48,25 @@ body,
   height: 100%; }
 
 .practice {
+  margin: 0 auto;
+  position: relative;
   padding: 3rem 1.5rem; }
+  @media screen and (min-width: 1088px) {
+    .practice {
+      max-width: 960px;
+      width: 960px; } }
+  @media screen and (max-width: 1279px) {
+    .practice {
+      max-width: 1152px;
+      width: auto; } }
+  @media screen and (min-width: 1280px) {
+    .practice {
+      max-width: 1152px;
+      width: 1152px; } }
+  @media screen and (min-width: 1472px) {
+    .practice {
+      max-width: 1344px;
+      width: 1344px; } }
   .practice .test-button {
     background-color: #edeff8;
     border: 1px solid #cbcdd3;
@@ -69,7 +87,8 @@ body,
     white-space: nowrap;
     position: absolute;
     right: 1em;
-    top: 1em; }
+    top: 1em;
+    z-index: 1; }
     .practice .test-button:hover {
       background-color: #e1e1e3;
       border-color: #3d4a6b;
@@ -128,18 +147,16 @@ body,
         background-color: #dddddd;
         border-color: #bfbfbf;
         cursor: default; }
-  .practice .cards .is-centered {
-    justify-content: center; }
-  .practice .cards > * {
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: 0.75rem; }
-  .practice .cards .card {
-    flex: none;
-    width: 66.66667%;
-    margin-left: 16.66667%; }
+  .practice .cards {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    .practice .cards .card {
+      width: 50%;
+      margin-left: 25%;
+      margin-top: 15%; }
   .practice .card {
     background-color: white;
     border-radius: .25em;
@@ -150,7 +167,8 @@ body,
     transition: opacity .3s; }
     .practice .card > div {
       transition: opacity .3s;
-      opacity: 0; }
+      opacity: 0;
+      padding-bottom: .5em; }
       .practice .card > div.visible {
         opacity: 1; }
     .practice .card button {

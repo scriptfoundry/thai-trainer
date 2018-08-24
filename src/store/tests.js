@@ -1,11 +1,13 @@
-import { getDayOfEpoch, buildRandomizedValuesQueue } from '../services/Utils';
+import { getDayOfEpoch, buildRandomizedValuesQueue, createMergeObjectArrayByProperty } from '../services/Utils';
 import { getOutstandingWords, getCurrentPracticeWords, applyScoresToWords, saveProgress } from '../services/Leitner';
 
 import { TEST_TYPECURRENT, TEST_STAGE1 } from '../services/Leitner';
 
+const mergeById = createMergeObjectArrayByProperty('id');
+
 export const TEST_SETTESTTYPE = 'test/settesttype';
 export const TEST_COMPLETETEST = 'test/completetest';
-export const TEST_COMMITTESTANDCLOSE = 'test/committestandclose';
+export const TEST_SAVED = 'test/saved';
 const TEST_SETTESTWORDS = 'test/settesetwords';
 const TEST_ACCEPTANSWER = 'test/acceptanswer';
 const TEST_CLEARALL = 'test/clearall';
@@ -19,6 +21,7 @@ const defaultState = {
     type:  null,
     stage: null,
     isComplete: false,
+    isSaved: false,
     index: null,
     selectedAnswer: null,
     possibleAnswers: null,
@@ -29,6 +32,7 @@ export const reducer = (state = defaultState, { type, payload }) => {
     if (type === TEST_SETTESTWORDS) return { ...state, ...payload, stage: 0, index: 0 };
     if (type === TEST_SETTESTTYPE) return { ...state, ...payload };
     if (type === TEST_COMPLETETEST) return { ...state, ...payload, isComplete: true };
+    if (type === TEST_SAVED) return { ...state, isSaved: true };
     if (type === TEST_CLEARALL) return { ...state, ...defaultState };
 
     return state;
@@ -83,13 +87,14 @@ const startCustomTest = words => dispatch => {
     dispatch({ type: TEST_SETTESTTYPE, payload: { type, testWords, queue, stage, index, scores } });
 };
 const saveTest = (scores) => async (dispatch, getState) => {
-    let { words: { words } } = getState();
+    let { words: { words }, test: { testWords } } = getState();
 
-    words = (applyScoresToWords(scores, words));
+    const updatedWords = applyScoresToWords(scores, testWords);
 
+    words = mergeById(words, updatedWords);
     await saveProgress(words);
 
-    dispatch({ type: TEST_COMMITTESTANDCLOSE, payload: words });
+    dispatch({ type: TEST_SAVED, payload: words });
 };
 
 export const operations = {

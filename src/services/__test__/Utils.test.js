@@ -243,4 +243,52 @@ describe('UtilsService', () => {
         expect(exclude(arr1, [{id: 6}, {id: 1}])).toEqual([{id: 1}, ...arr1.slice(2)]);
         expect(exclude(arr1, [...arr1])).toEqual([{ id: 1}]);
     });
+    it('merges object arrays by a property', () => {
+        const { createMergeObjectArrayByProperty } = require('../Utils');
+        let arr1 = [
+            { a: 1, b: 11, c: 1 },
+            { a: 2, b: 22, c: 2 },
+            { a: 3, b: 33, c: 3 },
+            { a: 4, b: 44, c: 4 },
+        ];
+        let arr2 = [
+            { a: 2, b: 11, c: 5 },
+            { a: 3, b: 44, c: 6 },
+            { a: 4, b: 55, c: 7 },
+        ];
+
+        let merge = createMergeObjectArrayByProperty('a');
+        expect(merge(arr1, [])).toEqual(arr1);
+        expect(merge([], arr2)).toEqual(arr2);
+        expect(merge(arr1, arr2)).toEqual([
+            { a: 1, b: 11, c: 1 },
+            { a: 2, b: 11, c: 5 },
+            { a: 3, b: 44, c: 6 },
+            { a: 4, b: 55, c: 7 },
+        ]);
+
+        merge = createMergeObjectArrayByProperty('b');
+        expect(merge(arr1, [])).toEqual(arr1);
+        expect(merge([], arr2)).toEqual(arr2);
+        expect(merge(arr1, arr2)).toEqual([
+            { a: 2, b: 11, c: 5 },
+            { a: 2, b: 22, c: 2 },
+            { a: 3, b: 33, c: 3 },
+            { a: 3, b: 44, c: 6 },
+            { a: 4, b: 55, c: 7 },
+        ]);
+
+        merge = createMergeObjectArrayByProperty('c');
+        expect(merge(arr1, [])).toEqual(arr1);
+        expect(merge([], arr2)).toEqual(arr2);
+        expect(merge(arr1, arr2)).toEqual([
+            { a: 1, b: 11, c: 1 },
+            { a: 2, b: 22, c: 2 },
+            { a: 3, b: 33, c: 3 },
+            { a: 4, b: 44, c: 4 },
+            { a: 2, b: 11, c: 5 },
+            { a: 3, b: 44, c: 6 },
+            { a: 4, b: 55, c: 7 },
+        ]);
+    });
 });

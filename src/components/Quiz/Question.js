@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { isPronunciation, say, LANGUAGE_THAI } from '../../services/Voices';
+import PlayButton from '../common/PlayButton';
 
 
 class Question extends Component {
@@ -17,7 +18,7 @@ class Question extends Component {
     }
     render() {
         const { word, property } = this.props;
-        if (isPronunciation(property)) return <div className="question" onClick={ () => this.speak() }>Listen <span role="img" aria-label="Listen">🔊</span></div>;
+        if (isPronunciation(property)) return <div className="question">Listen <PlayButton word={word} /></div>;
         return <div className="question">{ word[property] }</div>;
     }
 }

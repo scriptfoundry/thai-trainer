@@ -44,7 +44,10 @@ const TestSelector = ({ testingWordLimit, words }) => {
         }
 
         <section>
-            <aside>You have selected to test only { testingWordLimit } words at a time. You can change this in <Link to='/settings'>settings</Link>.</aside>
+            {  Math.min(outstandingCount, currentCount, testingWordLimit) > testingWordLimit
+                ? <aside>You have selected to test only { testingWordLimit } words at a time. You can change this in <Link to='/settings'>settings</Link>.</aside>
+                : <aside>Is { testingWordLimit } cards at a time is too much? You can change this in <Link to='/settings'>settings</Link>.</aside>
+            }
         </section>
     </div>;
 };

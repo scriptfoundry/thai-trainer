@@ -1,6 +1,6 @@
 import { getWords } from './WordManager';
 import { loadProgressData, saveProgressData } from './Persistence';
-import { createApplyDeltaWithLimits, makeClamp } from './Utils';
+import { createApplyDeltaWithLimits, makeClamp, getDayOfEpoch } from './Utils';
 
 export const STAGES = [
     { sleep: 0 },
@@ -27,7 +27,9 @@ export const TEST_STAGE1 = 0;
 const clamp5 = makeClamp(0, 5);
 const applyDelta = createApplyDeltaWithLimits(0, 5);
 
-export const createDueDateGeneratorForAspects = (stages) => ({ date, aspectScores}) => date + stages[clamp5(Math.min(...aspectScores))].sleep;
+export const createDueDateGeneratorForAspects = (stages) => (date, aspectScores) => date + stages[clamp5(Math.min(...aspectScores))].sleep;
+
+const generateDueDateByAspects = createDueDateGeneratorForAspects(STAGES);
 
 const deserializeProgress = ([id, date, dueDate, aspectScores]) => ({ id, date, dueDate, aspectScores });
 const hasProgress = ({ date, dueDate, aspectScores }) => (date !== undefined && dueDate !== undefined && aspectScores !== undefined);
@@ -63,15 +65,13 @@ export async function saveProgress(words) {
 
 /**
  * Given a word, the aspect tested and the result, returns a new word object having updated aspect properties
- * @param {Object} word Object having an aspectScore property that is an array of three positive integers
+ * @param {Array} aspectScores The scores derived from each type of question
  * @param {Number} aspect The index of the number in the array that will be modified
  * @param {Boolean} advance If true, the number at aspect index will be advanced. If negative, it will be rewound
  * @returns {Object} Returns a new word having its aspect array replaced
  */
-export function updateWordAspect(word, aspect, advance) {
-    let { aspectScores = [0, 0, 0] } = word;
-    aspectScores = applyDelta(aspectScores, aspect, advance ? 1 : -1);
-    return {...word, aspectScores};
+export function updateWordAspect(aspectScores=[0, 0, 0], aspect, advance) {
+    return applyDelta(aspectScores, aspect, advance ? 1 : -1);
 }
 
 /**
@@ -84,16 +84,17 @@ export function updateWordAspect(word, aspect, advance) {
  * @param {Object[]} words An array of word data to have progress applied to
  * @returns A new list of words with the latest applied progress information
  */
-export function applyScoresToWords(scores, words) {
+export function applyScoresToWords(scores, words, date) {
+    date = getDayOfEpoch(date || new Date());
     return words.map(word => {
-        let { id } = word;
+        let { id, aspectScores } = word;
         let items = scores.filter(item => item.id === id);
 
-        items.forEach(({ aspect, score }) => {
-            word = updateWordAspect(word, aspect, score > 0);
-        });
+        items.forEach(({ aspect, score }) =>  aspectScores = updateWordAspect(aspectScores, aspect, score > 0));
 
-        return word;
+        const dueDate = generateDueDateByAspects(date, aspectScores);
+
+        return { ...word, aspectScores, date, dueDate };
     });
 }
 
@@ -135,7 +136,7 @@ export function getOutstandingWords(words, date) {
  * @returns {Object[]} The words that are currently being practiced
  */
 export function getCurrentPracticeWords(words) {
-    const filter = ({ aspectScores }) => Math.max(...aspectScores) === 0;
+    const filter = ({ aspectScores }) => Math.min(...aspectScores) === 0;
     return words.filter(hasProgress).filter(filter);
 }
 

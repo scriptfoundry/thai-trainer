@@ -126,21 +126,22 @@ describe('Leitner', () => {
         expect(setItem).toHaveBeenCalledWith('progress', expected);
     });
     it('updates a words aspects scores', () => {
-        let word = { id: 123 };
-        expect(updateWordAspect(word, 0, true)).toEqual({ id: 123, aspectScores: [1, 0, 0]});
-        expect(word).toEqual({ id: 123 });
+        let aspectScores;
 
-        expect(updateWordAspect(word, 0, false)).toEqual({ id: 123, aspectScores: [0, 0, 0]});
-        expect(updateWordAspect(word, 1, false)).toEqual({ id: 123, aspectScores: [0, 0, 0]});
-        expect(updateWordAspect(word, 2, false)).toEqual({ id: 123, aspectScores: [0, 0, 0]});
+        expect(updateWordAspect(aspectScores, 0, true)).toEqual([1, 0, 0]);
+        expect(aspectScores).toEqual();
 
-        word = { id: 123, aspectScores: [3, 4, 5]};
-        expect(updateWordAspect(word, 0, true)).toEqual({ id: 123, aspectScores: [4, 4, 5]});
-        expect(updateWordAspect(word, 1, true)).toEqual({ id: 123, aspectScores: [3, 5, 5]});
-        expect(updateWordAspect(word, 2, true)).toEqual({ id: 123, aspectScores: [3, 4, 5]});
-        expect(updateWordAspect(word, 0, false)).toEqual({ id: 123, aspectScores: [2, 4, 5]});
-        expect(updateWordAspect(word, 1, false)).toEqual({ id: 123, aspectScores: [3, 3, 5]});
-        expect(updateWordAspect(word, 2, false)).toEqual({ id: 123, aspectScores: [3, 4, 4]});
+        expect(updateWordAspect(aspectScores, 0, false)).toEqual([0, 0, 0]);
+        expect(updateWordAspect(aspectScores, 1, false)).toEqual([0, 0, 0]);
+        expect(updateWordAspect(aspectScores, 2, false)).toEqual([0, 0, 0]);
+
+        aspectScores = [3, 4, 5];
+        expect(updateWordAspect(aspectScores, 0, true)).toEqual([4, 4, 5]);
+        expect(updateWordAspect(aspectScores, 1, true)).toEqual([3, 5, 5]);
+        expect(updateWordAspect(aspectScores, 2, true)).toEqual([3, 4, 5]);
+        expect(updateWordAspect(aspectScores, 0, false)).toEqual([2, 4, 5]);
+        expect(updateWordAspect(aspectScores, 1, false)).toEqual([3, 3, 5]);
+        expect(updateWordAspect(aspectScores, 2, false)).toEqual([3, 4, 4]);
     });
     it('applies item scores to their respective words', () => {
         let words = [
@@ -165,14 +166,14 @@ describe('Leitner', () => {
             { id: 5, aspect: 1, score: 1 },
             { id: 5, aspect: 2, score: 1 },
         ];
-        expect(applyScoresToWords(testScores, words)).toEqual([
-            { id: 1, aspectScores: [ 3, 4, 4 ] },
-            { id: 2, aspectScores: [ 2, 2, 1 ] },
-            { id: 3, aspectScores: [ 4, 2, 5 ] },
-            { id: 4, aspectScores: [ 1, 3, 2 ] },
-            { id: 5, aspectScores: [ 5, 5, 5 ] },
-            { id: 6, aspectScores: [ 0, 0, 0 ] },
-            { id: 7, aspectScores: [ 0, 0, 0 ] },
+        expect(applyScoresToWords(testScores, words, new Date(1500000000000))).toEqual([
+            { id: 1, aspectScores: [ 3, 4, 4 ], date: 17361, dueDate: 17368 },
+            { id: 2, aspectScores: [ 2, 2, 1 ], date: 17361, dueDate: 17362 },
+            { id: 3, aspectScores: [ 4, 2, 5 ], date: 17361, dueDate: 17364 },
+            { id: 4, aspectScores: [ 1, 3, 2 ], date: 17361, dueDate: 17362 },
+            { id: 5, aspectScores: [ 5, 5, 5 ], date: 17361, dueDate: 9007199254758352 },
+            { id: 6, aspectScores: [ 0, 0, 0 ], date: 17361, dueDate: 17361 },
+            { id: 7, aspectScores: [ 0, 0, 0 ], date: 17361, dueDate: 17361 },
         ]);
     });
     it('gets the due date of a word based on its aspect scores', () => {
@@ -186,24 +187,24 @@ describe('Leitner', () => {
         ];
         const getDueDateForAspects = createDueDateGeneratorForAspects(stages);
 
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [0, 0, 0] })).toEqual(1000);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [1, 1, 1] })).toEqual(1001);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [2, 2, 2] })).toEqual(1002);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [3, 3, 3] })).toEqual(1005);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [4, 4, 4] })).toEqual(1011);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [5, 5, 5] })).toEqual(1023);
+        expect(getDueDateForAspects( 1000, [0, 0, 0] )).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [1, 1, 1] )).toEqual(1001);
+        expect(getDueDateForAspects( 1000, [2, 2, 2] )).toEqual(1002);
+        expect(getDueDateForAspects( 1000, [3, 3, 3] )).toEqual(1005);
+        expect(getDueDateForAspects( 1000, [4, 4, 4] )).toEqual(1011);
+        expect(getDueDateForAspects( 1000, [5, 5, 5] )).toEqual(1023);
 
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [1, 0, 0] })).toEqual(1000);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [0, 1, 0] })).toEqual(1000);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [0, 0, 1] })).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [1, 0, 0] )).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [0, 1, 0] )).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [0, 0, 1] )).toEqual(1000);
 
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [2, 0, 0] })).toEqual(1000);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [0, 2, 0] })).toEqual(1000);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [0, 0, 2] })).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [2, 0, 0] )).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [0, 2, 0] )).toEqual(1000);
+        expect(getDueDateForAspects( 1000, [0, 0, 2] )).toEqual(1000);
 
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [4, 5, 1] })).toEqual(1001);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [5, 1, 4] })).toEqual(1001);
-        expect(getDueDateForAspects({ date: 1000, aspectScores: [1, 4, 5] })).toEqual(1001);
+        expect(getDueDateForAspects( 1000, [4, 5, 1] )).toEqual(1001);
+        expect(getDueDateForAspects( 1000, [5, 1, 4] )).toEqual(1001);
+        expect(getDueDateForAspects( 1000, [1, 4, 5] )).toEqual(1001);
     });
     it('gets a list of outstanding words to test ordered by their lateness', () => {
         let words = [
