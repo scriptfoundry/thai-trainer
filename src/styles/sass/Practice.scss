@@ -27,6 +27,7 @@
         .start-button {
             @include large-button($primary-theme);
             width: 50%;
+            margin: 0 1em 1em 1em;
         }
     }
     .cards {

@@ -4,17 +4,17 @@ import { TEST_SAVED } from './tests';
 const createQueue = buildRandomizedValuesQueue(5);
 
 export const WORDS_SETWORDS = 'words/setwords';
+export const WORDS_CLOSEPRACTICE = 'words/closepractice';
 const WORDS_ADVANCE = 'words/advance';
 const WORDS_NUDGE = 'words/nudge';
+const WORDS_ADVANCESOUND = 'words/advancesound';
 const WORDS_RESEED = 'words/reseed';
-const WORDS_CLOSE = 'words/close';
 
 const defaultState = {
     currentIndex: 0,
     currentStage: 0,
     queue: [],
     words: [],
-    wordsLoaded: false,
 };
 
 export const reducer = (state = defaultState, { type, payload }) => {
@@ -30,6 +30,15 @@ export const reducer = (state = defaultState, { type, payload }) => {
         let currentIndex = (state.currentIndex + length + 1) % length;
         return { ...state, currentIndex, currentStage: 0 };
     }
+    if (type === WORDS_ADVANCESOUND) {
+        const length = state.queue.length;
+
+        if (payload === -1) return { ...state, currentIndex: (state.currentIndex + length - 1) % length, currentStage: 0 };
+
+        if (state.currentStage < 1) return { ...state, currentStage: state.currentStage + 1 };
+
+        return { ...state, currentIndex: (state.currentIndex + length + 1) % length, currentStage: 0 };
+    }
     if (type === WORDS_RESEED) {
         let { words, limit } = payload;
         let practiceWords = refreshPracticeWords(words, limit, getDayOfEpoch());
@@ -39,8 +48,9 @@ export const reducer = (state = defaultState, { type, payload }) => {
         let queue = createQueue(practiceWords);
         return { ...state, words, queue, currentIndex: 0 };
     }
-    if (type === WORDS_CLOSE) return { ...state, queue: [], currentIndex: 0 };
-    if (type === WORDS_SETWORDS) return {...state, words: payload, wordsLoaded: true };
+
+    if (type === WORDS_CLOSEPRACTICE) return { ...state, queue: [], currentIndex: 0 };
+    if (type === WORDS_SETWORDS) return {...state, words: payload };
     if (type === TEST_SAVED) return { ...state, words: payload };
 
     return state;
@@ -54,6 +64,7 @@ const initializeWordsManager = () => async dispatch => {
 const seedPractice = (words, limit) => dispatch => dispatch({ type: WORDS_RESEED, payload: {words, limit} });
 const advancePractice = direction => dispatch => dispatch({ type: WORDS_ADVANCE, payload: direction });
 const nudgePractice = (shouldJustAdvance) => dispatch => dispatch({ type: shouldJustAdvance ? WORDS_ADVANCE : WORDS_NUDGE });
-const closePractice = () => dispatch => dispatch({ type: WORDS_CLOSE });
+const closePractice = () => dispatch => dispatch({ type: WORDS_CLOSEPRACTICE });
+const advanceSound = direction => dispatch => dispatch({ type: WORDS_ADVANCESOUND, payload: direction });
 
-export const operations = { initializeWordsManager, seedPractice, advancePractice, nudgePractice, closePractice };
+export const operations = { initializeWordsManager, seedPractice, advancePractice, advanceSound, nudgePractice, closePractice };

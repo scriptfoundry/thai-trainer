@@ -158,7 +158,8 @@ body,
     text-align: center; }
   .test .advancement {
     font-size: 2em;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: .5em; }
     .test .advancement button {
       background-color: #edeff8;
       border: 1px solid #cbcdd3;
@@ -191,3 +192,16 @@ body,
         background-color: #dddddd;
         border-color: #bfbfbf;
         cursor: default; }
+  .test .progress {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 1em;
+    width: 100%;
+    background-color: #e5e9f1; }
+    .test .progress .bar {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      background-color: green;
+      transition: width 300ms; }

@@ -61,7 +61,7 @@ body,
   @media screen and (min-width: 1280px) {
     .words-table {
       max-width: 1152px;
-      width: 1152px; } }
+      width: auto; } }
   @media screen and (min-width: 1472px) {
     .words-table {
       max-width: 1344px;

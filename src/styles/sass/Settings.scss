@@ -14,14 +14,19 @@
         margin-bottom: 1em;
     }
 
-    .voice-selector button {
-        @include button();
-        border-radius: .2em;
-        margin: .2em;
+    .voice-selector {
+        margin-bottom: 3em;
+        &:last-child { margin-bottom: 0; }
 
-        &.selected {
-            @include customize-button($primary-theme);
-            cursor: default;
+        button {
+            @include button();
+            border-radius: .2em;
+            margin: .2em;
+    
+            &.selected {
+                @include customize-button($primary-theme);
+                cursor: default;
+            }
         }
     }
     .voices {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Challenge from './Challenge';
+import Progress from './Progress';
 
 const Quiz = (props) => {
     return <div className="test">
@@ -10,6 +11,7 @@ const Quiz = (props) => {
                 <Challenge key={ props.index } {...props} />
             </CSSTransition>
         </TransitionGroup>
+        <Progress {...props} />
     </div>;
 
 };

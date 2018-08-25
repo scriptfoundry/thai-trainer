@@ -62,7 +62,7 @@ body,
   @media screen and (min-width: 1280px) {
     .practice {
       max-width: 1152px;
-      width: 1152px; } }
+      width: auto; } }
   @media screen and (min-width: 1472px) {
     .practice {
       max-width: 1344px;
@@ -133,7 +133,8 @@ body,
       width: 100%;
       padding-left: 0;
       padding-right: 0;
-      width: 50%; }
+      width: 50%;
+      margin: 0 1em 1em 1em; }
       .practice .preview .start-button:hover {
         background-color: #00b89c;
         border-color: #47b797;

@@ -13,6 +13,8 @@ const Settings = (props) => {
         rate,
         thaiVoice,
         thaiVoices,
+        englishVoice,
+        englishVoices,
         words,
         practiceWordLimit,
         testingWordLimit,
@@ -26,13 +28,17 @@ const Settings = (props) => {
         saySample,
         setRate,
         setThaiVoice,
+        setEnglishVoice,
     } = props;
 
     return <div className="settings">
         <h1>Settings</h1>
         <section>
             <VoiceSelector heading="Thai voices" voices={ thaiVoices } selectedVoice={ thaiVoice } onSelectVoice={ setThaiVoice } />
+            <VoiceSelector heading="English voices" voices={ englishVoices } selectedVoice={ englishVoice } onSelectVoice={ setEnglishVoice } />
         </section>
+        <section>
+         </section>
         <section>
             <RateSelector value={ rate } onChange={setRate} />
         </section>
@@ -64,7 +70,9 @@ Settings.propTypes = {
     pronunciationType: PropTypes.string.isRequired,
     rate: PropTypes.number.isRequired,
     thaiVoice: voicePropType,
+    englishVoice: voicePropType,
     thaiVoices: PropTypes.arrayOf(voicePropType).isRequired,
+    englishVoices: PropTypes.arrayOf(voicePropType).isRequired,
     words: PropTypes.arrayOf(PropTypes.shape({
         thai: PropTypes.string.isRequired,
         ipa: PropTypes.string.isRequired,

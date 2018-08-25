@@ -23,18 +23,17 @@ import 'rc-slider/assets/index.css';
 
 class App extends Component {
   async componentDidMount() {
-    const { initializeWordsManager, initializeVoiceManager, initializeSettings } = this.props;
+    const { initializeWordsManager, initializeVoiceManager, initializeSettings, setApplicationReady } = this.props;
 
     await Promise.all([
       initializeVoiceManager(),
       initializeWordsManager(),
       initializeSettings(),
-    ]);
+    ])
+    .then(() => setApplicationReady());
   }
   render() {
-    let {settingsLoaded,  wordsLoaded } = this.props;
-
-    if (!settingsLoaded || !wordsLoaded) return <Loading />;
+    if (!this.props.applicationReady) return <Loading />;
 
     return <Router>
       <ScrollReset>
@@ -46,7 +45,7 @@ class App extends Component {
           <Route path='/basics/consonantconfusion' component= {Confusion} />
           <Route path="/basics/consonants" component={Consonants} />
           <Route path='/progress' component={Progress} />
-          <Route path='/practice' component={Practice} />
+          <Route path='/practice/:type?' component={Practice} />
           <Route path='/test' exact component={TestSelector} />
           <Route path='/test/:type(overdue|current)' component={Test} />
           <Route path="/settings" component={Settings} />
@@ -58,15 +57,14 @@ class App extends Component {
 }
 
 App.propTypes = {
-  wordsLoaded: PropTypes.bool.isRequired,
-  settingsLoaded: PropTypes.bool.isRequired,
+  applicationReady: PropTypes.bool.isRequired,
+  setApplicationReady: PropTypes.func.isRequired,
 };
 
-const { initializeWordsManager, initializeVoiceManager, initializeSettings } = operations;
+const { initializeWordsManager, initializeVoiceManager, initializeSettings, setApplicationReady } = operations;
 
 const mapStateToProps = (state) => ({
-  wordsLoaded: state.words.wordsLoaded,
-  settingsLoaded: state.settings.settingsLoaded,
+  applicationReady: state.view.applicationReady,
 });
 
-export default connect(mapStateToProps, { initializeWordsManager, initializeVoiceManager, initializeSettings })(App);
+export default connect(mapStateToProps, { initializeWordsManager, initializeVoiceManager, initializeSettings, setApplicationReady })(App);

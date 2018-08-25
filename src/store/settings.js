@@ -12,7 +12,6 @@ const defaultState = {
     testingWordLimit: 20,
     practiceOrder: ['thai', 'pronunciation', 'term'],
     practiceAllAtOnce: false,
-    settingsLoaded: false,
 };
 
 export const reducer = (state=defaultState, { type, payload }) => {
@@ -45,7 +44,7 @@ const initializeSettings = () => async dispatch => {
         practiceOrder=defaultState.practiceOrder,
         testingWordLimit=defaultState.testingWordLimit,
     } = await loadSettings();
-    dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { practiceWordLimit, practiceAllAtOnce, practiceOrder, pronunciationType, testingWordLimit, settingsLoaded: true } });
+    dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { practiceWordLimit, practiceAllAtOnce, practiceOrder, pronunciationType, testingWordLimit } });
 };
 const changePracticeWordLimit = practiceWordLimit => dispatch => {
     dispatch({ type: SETTINGS_CHANGESETTINGS, payload: { practiceWordLimit }});
