@@ -128,13 +128,29 @@
         bottom: 0;
         height: 1em;
         width: 100%;
-        background-color: $color-faint;
+        background-color: #d7d5f6;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 33.333%;
+            height: 100%;
+        }
+        &::after {
+            left: 33.333%;
+            background-color: #c3c1f9;
+        }
+        &::before {
+            left: 66.666%;
+            background-color: #b0adff;
+        }
 
         .bar {
             position: absolute;
             left: 0;
             height: 100%;
-            background-color: green;
+            background-color: $color-success;
             transition: width 300ms;
         }
     }

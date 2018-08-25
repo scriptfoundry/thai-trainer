@@ -198,10 +198,21 @@ body,
     bottom: 0;
     height: 1em;
     width: 100%;
-    background-color: #e5e9f1; }
+    background-color: #d7d5f6; }
+    .test .progress::before, .test .progress::after {
+      content: '';
+      position: absolute;
+      width: 33.333%;
+      height: 100%; }
+    .test .progress::after {
+      left: 33.333%;
+      background-color: #c3c1f9; }
+    .test .progress::before {
+      left: 66.666%;
+      background-color: #b0adff; }
     .test .progress .bar {
       position: absolute;
       left: 0;
       height: 100%;
-      background-color: green;
+      background-color: #01b601;
       transition: width 300ms; }
