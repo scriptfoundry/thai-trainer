@@ -8,13 +8,12 @@ const getPronunciation = (ipa, paiboon, pronunciationType) => pronunciationType 
 
 const ProgressItem = ({ word, pronunciationType, showProgress }) => {
     const { term, thai, ipa, paiboon, aspectScores=[0, 0, 0] } = word;
-    const progressIcons = aspectScores.map((score, index) => <ProgressIcon key={index} progress={ score / 5 } /> );
 
     return <tr>
         <td>{ term }</td>
         <td>{ thai }</td>
         <td><PlayButton word={word} /> { getPronunciation(ipa, paiboon, pronunciationType) }</td>
-        { showProgress ? <td className="progress-icons">{ progressIcons }</td> : null }
+        { showProgress ? <td className="progress-icons"><ProgressIcon progress={Math.min(...aspectScores) / 5} /></td> : null }
     </tr>;
 };
 

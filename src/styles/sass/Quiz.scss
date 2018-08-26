@@ -134,15 +134,16 @@
         &::after {
             content: '';
             position: absolute;
-            width: 33.333%;
+            width: 33%;
             height: 100%;
         }
         &::after {
-            left: 33.333%;
+            left: 33%;
             background-color: #c3c1f9;
         }
         &::before {
-            left: 66.666%;
+            left: 66%;
+            width: 34%;
             background-color: #b0adff;
         }
 
@@ -152,6 +153,7 @@
             height: 100%;
             background-color: $color-success;
             transition: width 300ms;
+            z-index: 1;
         }
     }
 }
