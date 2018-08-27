@@ -1,7 +1,14 @@
 {
-  "name": "thai",
+  "name": "thai-trainer",
+  "description": "A assistant for learning written Thai",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://thai.fatfx.com/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scriptfoundry/thai-trainer.git"
+  },
   "dependencies": {
     "fast-levenshtein": "^2.0.6",
     "history": "^4.7.2",
