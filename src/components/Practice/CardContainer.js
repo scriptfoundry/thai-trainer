@@ -25,9 +25,9 @@ export default class CardContainer extends Component {
         this.props.nudgePractice(this.props.practiceAllAtOnce);
     }
     onKey({code}) {
-        if ((code === 'Space' || code === 'ArrowDown')) this.nudge();
+        if ((code === 'Space' || code === 'Enter')) this.nudge();
         else if (code === 'ArrowRight') this.advance(1);
-        else if (code === 'ArrowLeft' || code === 'ArrowUp') this.advance(-1);
+        else if (code === 'ArrowLeft') this.advance(-1);
     }
     render() {
         const { pronunciationType, queue, currentIndex, currentStage, practiceAllAtOnce, practiceOrder } = this.props;

@@ -291,4 +291,17 @@ describe('UtilsService', () => {
             { a: 4, b: 55, c: 7 },
         ]);
     });
+    it('returns a randomized list of provided values, ensuring a particular value is present', () => {
+        const randomValues = [ 0.8106155395507812, 0.7146610021591187, 0.06898759305477142, 0.3258082866668701, 0.11168600618839264, 0.05064991116523743, 0.34461453557014465, 0.20475636422634125, 0.5583593249320984, 0.9148363471031189 ];
+        let randomValueIndex = 0;
+        global.Math.random = jest.fn(() => randomValues[randomValueIndex++ % randomValues.length]);
+
+        const { makeUniqueRandomSamplingIncludingValue } = require('../Utils');
+        let makeSample = makeUniqueRandomSamplingIncludingValue(['abc', 'def', 'ghi', 'abc', 'jkl', 'mno', 'mno', 'mno', 'pqr', 'stu'], 4);
+        expect(makeSample('xyz')).toEqual([ 'xyz', 'jkl', 'ghi', 'stu' ]);
+
+        expect(makeSample('def')).toEqual([ 'def', 'ghi', 'abc', 'jkl' ]);
+
+        for (let i = 0; i < 100; i++) expect(makeSample('def').some(v => v === 'def')).toBe(true);
+    });
 });

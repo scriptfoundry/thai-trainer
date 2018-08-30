@@ -181,3 +181,13 @@ export const createMergeObjectArrayByProperty = prop => (a, b) => {
         else return [ ...carry, item ];
     }, []);
 };
+
+export const makeUniqueRandomSamplingIncludingValue = (allValues, length) => {
+    const uniqueValues = allValues.filter((value, index, arr) => arr.indexOf(value) === index);
+
+    return requiredValue => {
+        let availableValues = shuffle(uniqueValues.filter(value =>  value !== requiredValue));
+        availableValues.splice(Math.floor(Math.random() * length), 0, requiredValue);
+        return availableValues.slice(0, length);
+    };
+};

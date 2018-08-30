@@ -42,4 +42,64 @@
             vertical-align: middle;
         }
     }
+    .drill-button {
+        @include medium-button($primary-theme);
+
+        span {
+            margin-right: -.5em;
+            margin-left: .5em;
+        }
+    }
+}
+
+.drill {
+    .container > div {
+        position: absolute;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        top: 20%;
+        opacity: 1;
+        transition: opacity .3s;
+
+        &.card-exit {
+            opacity: 0;
+        }
+    }
+    h1, h3 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1em;
+        height: 1em;
+        margin-left: -.5em;
+        margin-top: -.6em;
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    h3 {
+        transition: all 500ms;
+        font-size: 3rem;
+        background-color: $color-faint;
+        border-radius: 1.5em;
+        border: .2em solid white;
+        padding: .5em;
+        cursor: pointer;
+
+        &.incorrect {
+            color: white;
+            background-color: white;
+            cursor: default;
+        }
+        &.correct {
+            background-color: white;
+            border-color: $color-success;
+            cursor: default;
+        }
+        &.answer-0 { margin-left: -6em; }
+        &.answer-1 { margin-left: 4em; }
+        &.answer-2 { margin-top: -6em; margin-left: -1.25em; }
+        &.answer-3 { margin-top: 3.5em; margin-left: -1.25em; }
+    }
 }

@@ -42,7 +42,8 @@ class App extends Component {
           <Route path="/" exact component={MainNavigation} />
           <Route path="/basics" exact component={NavigationBasics} />
           <Route path='/basics/vowels' component={Vowels} />
-          <Route path='/basics/consonantconfusion' component= {Confusion} />
+          <Route path='/basics/consonantconfusion/drill-:visibleConfusion(\d)' component= {Confusion} />
+          <Route path='/basics/consonantconfusion' exact component= {Confusion} />
           <Route path="/basics/consonants" component={Consonants} />
           <Route path='/progress' component={Progress} />
           <Route path='/practice/:type?' component={Practice} />

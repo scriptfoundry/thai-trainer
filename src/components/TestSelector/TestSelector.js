@@ -44,7 +44,7 @@ const TestSelector = ({ testingWordLimit, words }) => {
         }
 
         <section>
-            <aside>According to your <Link to='/settings'>settings</Link>, tests will cover a maximum of { testingWordLimit } words at a time. It is important to set the right value. Too high and tests will take too long and you&apos;ll not enjoy doing them. Too low, and they won&apos;t be a challenge</aside>
+            <aside>According to your <Link to='/settings'>settings</Link>, tests will cover a maximum of { testingWordLimit } words at a time. It is important to set the right value. Too high and tests will seem tedious and you&apos;ll hate doing them. Too low, and they won&apos;t be a challenge.</aside>
         </section>
     </div>;
 };

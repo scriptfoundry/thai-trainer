@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON } from '../../services/WordManager';
+import { Link } from 'react-router-dom';
 import PlayButton from '../common/PlayButton';
 
 const ConfusionDetail = ({confusions, visibleConfusion, consonants, pronunciationType }) => {
@@ -16,6 +17,7 @@ const ConfusionDetail = ({confusions, visibleConfusion, consonants, pronunciatio
 
     return <div className="detail">
         <div className="characters">{ confusedConsonants }</div>
+        <Link className="drill-button" to={ `/basics/consonantconfusion/drill-${ visibleConfusion }`}>Drill <span className="icon">〉</span></Link>
     </div>;
 };
 

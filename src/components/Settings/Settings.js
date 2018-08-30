@@ -85,6 +85,7 @@ Settings.propTypes = {
     saySample: PropTypes.func.isRequired,
     setRate: PropTypes.func.isRequired,
     setThaiVoice: PropTypes.func.isRequired,
+    setEnglishVoice: PropTypes.func.isRequired,
     changeTestingWordLimit: PropTypes.func.isRequired,
 };
 
