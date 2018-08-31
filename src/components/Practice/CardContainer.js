@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Card from './Card';
-import HelpButton from './HelpButton';
+import Hint from '../common/Hint';
 import { say, LANGUAGE_THAI } from '../../services/Voices';
 
 export default class CardContainer extends Component {
@@ -41,7 +41,13 @@ export default class CardContainer extends Component {
         </CSSTransition>);
 
         return <TransitionGroup className="cards">
-            <HelpButton showHelp={ () => {}} />
+            <Hint { ...this.props } title="Instructions">
+                <p>Press [Space] or [Enter] to advance</p>
+                <p>Press [Right Arrow] to skip to the next word.</p>
+                <p>Press [Left Arrow] to jump back to the last word.</p>
+                <p>Go to settings to change the number of words to practice at once.</p>
+            </Hint>
+
             { card }
         </TransitionGroup>;
     }
@@ -50,6 +56,7 @@ export default class CardContainer extends Component {
 CardContainer.propTypes = {
     currentIndex: PropTypes.number.isRequired,
     currentStage: PropTypes.number.isRequired,
+    hintVisible: PropTypes.bool.isRequired,
     practiceAllAtOnce: PropTypes.bool.isRequired,
     practiceOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
     practiceWordLimit: PropTypes.number.isRequired,
@@ -60,4 +67,5 @@ CardContainer.propTypes = {
     advancePractice: PropTypes.func.isRequired,
     nudgePractice: PropTypes.func.isRequired,
     closePractice: PropTypes.func.isRequired,
+    toggleHint: PropTypes.func.isRequired,
 };

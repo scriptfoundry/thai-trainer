@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { makeUniqueRandomSamplingIncludingValue, buildRandomizedValuesQueue, wait } from '../../services/Utils';
 import { PRONUNCIATIONTYPE_PAIBOON } from '../../services/WordManager';
 import DrillAnswer from './DrillAnswer';
+import Hint from '../common/Hint';
 
 const makeQueue = buildRandomizedValuesQueue(5);
 
@@ -39,10 +40,13 @@ class Drill extends PureComponent {
         const queue = makeQueue(consonantsToDrill);
 
         this.state = {
-            currentIndex: -1,
-            possibleAnswers: [],
+            correctAnswer: null,
             currentConsonant: null,
-            queue
+            currentIndex: -1,
+            mistakes: [],
+            possibleAnswers: [],
+            queue,
+            waiting: false,
         };
 
         this.onKey = this.onKey.bind(this);
@@ -71,9 +75,10 @@ class Drill extends PureComponent {
         });
     }
     async selectAnswer(direction) {
+        let { hintVisible } = this.props;
         let { correctAnswer, possibleAnswers, currentConsonant, mistakes, waiting } = this.state;
 
-        if (waiting) return;
+        if (waiting || hintVisible) return;
 
         let correct = possibleAnswers[direction] === currentConsonant.pronunciation;
 
@@ -107,6 +112,11 @@ class Drill extends PureComponent {
         </CSSTransition>);
 
         return <div className="drill">
+            <Hint { ...this.props } title="Instructions">
+                <p>Use your arrow keys to select the correct pronunciation.</p>
+                <p>You will advance automatically when you make the correct choice.</p>
+            </Hint>
+
             <TransitionGroup className="container">
                 { card }
             </TransitionGroup>
@@ -117,6 +127,7 @@ class Drill extends PureComponent {
 Drill.propTypes = {
     confusions: PropTypes.array.isRequired,
     consonants: PropTypes.object.isRequired,
+    hintVisible: PropTypes.bool.isRequired,
     match: PropTypes.shape({ params: PropTypes.object }).isRequired,
     pronunciationType: PropTypes.string.isRequired,
 

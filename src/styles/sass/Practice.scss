@@ -1,6 +1,5 @@
 @import './constants';
 .practice {
-    @include container();
     @include section();
 
     .test-button {

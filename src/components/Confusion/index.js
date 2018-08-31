@@ -4,10 +4,11 @@ import { operations } from '../../store';
 
 import '../../styles/css/Confusion.css';
 
-const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, confusions, confusionLoaded, visibleConfusion, showConfusionByIndex } }) => ({
+const mapStateToProps = ({ settings: { pronunciationType }, sounds: { consonants, confusions, confusionLoaded, visibleConfusion, showConfusionByIndex }, view: { hintVisible } }) => ({
     consonants,
     confusions,
     confusionLoaded,
+    hintVisible,
     pronunciationType,
     visibleConfusion,
     showConfusionByIndex,

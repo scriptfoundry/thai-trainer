@@ -62,10 +62,8 @@ App.propTypes = {
   setApplicationReady: PropTypes.func.isRequired,
 };
 
-const { initializeWordsManager, initializeVoiceManager, initializeSettings, setApplicationReady } = operations;
-
 const mapStateToProps = (state) => ({
   applicationReady: state.view.applicationReady,
 });
 
-export default connect(mapStateToProps, { initializeWordsManager, initializeVoiceManager, initializeSettings, setApplicationReady })(App);
+export default connect(mapStateToProps, operations)(App);

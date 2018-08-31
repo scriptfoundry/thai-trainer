@@ -7,6 +7,7 @@ import '../../styles/css/Practice.css';
 const mapStateToProps = ({ words, settings, view }) => ({
     currentIndex: words.currentIndex,
     currentStage: words.currentStage,
+    hintVisible: view.hintVisible,
     queue: words.queue,
     words: words.words,
     practiceWordLimit: settings.practiceWordLimit,

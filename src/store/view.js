@@ -3,10 +3,12 @@ import { STATUS_PRACTICE, STATUS_OVERDUE, STATUS_WAITING } from '../services/Lei
 const VIEW_APPLICATIONREADY = 'view_applicationready';
 const VIEW_CHANGESUBVIEW = 'view/changesubview';
 const VIEW_CHANGEPREVIEWFILTER = 'view_changepreviewfilter';
+const VIEW_TOGGLEHINT = 'view/togglehint';
 
 const defaultState = {
     applicationReady: false,
     currentView: null,
+    hintVisible: false,
     subview: null,
     previewFilter: [STATUS_PRACTICE, STATUS_OVERDUE, STATUS_WAITING]
 };
@@ -20,6 +22,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
 
         return { ...state, previewFilter };
     }
+    if (type === VIEW_TOGGLEHINT) return { ...state, hintVisible: !state.hintVisible };
     if (type === VIEW_APPLICATIONREADY) return { ...state, applicationReady: true };
 
     return state;
@@ -28,9 +31,11 @@ export const reducer = (state=defaultState, { type, payload }) => {
 const setApplicationReady = () => dispatch => dispatch({ type: VIEW_APPLICATIONREADY });
 const changeSubview = subview => dispatch => dispatch({ type: VIEW_CHANGESUBVIEW, payload: subview});
 const togglePreviewFilterStatus = status => dispatch => dispatch({ type: VIEW_CHANGEPREVIEWFILTER, payload: status });
+const toggleHint = () => dispatch => dispatch({ type: VIEW_TOGGLEHINT });
 
 export const operations = {
     changeSubview,
     setApplicationReady,
+    toggleHint,
     togglePreviewFilterStatus,
 };
