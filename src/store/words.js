@@ -8,6 +8,7 @@ export const WORDS_CLOSEPRACTICE = 'words/closepractice';
 const WORDS_ADVANCE = 'words/advance';
 const WORDS_NUDGE = 'words/nudge';
 const WORDS_ADVANCESOUND = 'words/advancesound';
+const WORDS_NUDGESOUND = 'words/nudgesound';
 const WORDS_RESEED = 'words/reseed';
 
 const defaultState = {
@@ -30,13 +31,16 @@ export const reducer = (state = defaultState, { type, payload }) => {
         let currentIndex = (state.currentIndex + length + 1) % length;
         return { ...state, currentIndex, currentStage: 0 };
     }
+    if (type === WORDS_NUDGESOUND) {
+        if (state.currentStage === 0) return { ...state, currentStage: 1 };
+
+        const length = state.queue.length;
+        return { ...state, currentIndex: (state.currentIndex + 1 + length) % length, currentStage: 0 };
+    }
     if (type === WORDS_ADVANCESOUND) {
         const length = state.queue.length;
 
         if (payload === -1) return { ...state, currentIndex: (state.currentIndex + length - 1) % length, currentStage: 0 };
-
-        if (state.currentStage < 1) return { ...state, currentStage: state.currentStage + 1 };
-
         return { ...state, currentIndex: (state.currentIndex + length + 1) % length, currentStage: 0 };
     }
     if (type === WORDS_RESEED) {
@@ -63,8 +67,9 @@ const initializeWordsManager = () => async dispatch => {
 
 const seedPractice = (words, limit) => dispatch => dispatch({ type: WORDS_RESEED, payload: {words, limit} });
 const advancePractice = direction => dispatch => dispatch({ type: WORDS_ADVANCE, payload: direction });
-const nudgePractice = (shouldJustAdvance) => dispatch => dispatch({ type: shouldJustAdvance ? WORDS_ADVANCE : WORDS_NUDGE });
+const nudgePractice = () => (dispatch, getState) => dispatch({ type: getState().settings.shouldJustAdvance ? WORDS_ADVANCE : WORDS_NUDGE });
 const closePractice = () => dispatch => dispatch({ type: WORDS_CLOSEPRACTICE });
 const advanceSound = direction => dispatch => dispatch({ type: WORDS_ADVANCESOUND, payload: direction });
+const nudgeSound = () => dispatch => dispatch({ type: WORDS_NUDGESOUND });
 
-export const operations = { initializeWordsManager, seedPractice, advancePractice, advanceSound, nudgePractice, closePractice };
+export const operations = { initializeWordsManager, seedPractice, advancePractice, nudgePractice, advanceSound, nudgeSound, closePractice };

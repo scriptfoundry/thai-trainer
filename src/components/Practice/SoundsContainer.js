@@ -7,8 +7,6 @@ class Sounds extends Component {
     constructor(...args) {
         super(...args);
 
-        this.advance = this.advance.bind(this);
-        this.nudge = this.nudge.bind(this);
         this.onKey = this.onKey.bind(this);
 
         document.addEventListener('keydown', this.onKey);
@@ -16,16 +14,14 @@ class Sounds extends Component {
     componentWillUnmount() {
         document.removeEventListener('keydown', this.onKey);
     }
-    advance(direction) {
-        this.props.advanceSound(direction);
-    }
-    nudge() {
-        this.props.advanceSound();
-    }
-    onKey({code}) {
-        if ((code === 'Space' || code === 'ArrowDown')) this.nudge();
-        else if (code === 'ArrowRight') this.nudge();
-        else if (code === 'ArrowLeft' || code === 'ArrowUp') this.advance(-1);
+    onKey({ code, metaKey, shiftKey }) {
+        if (metaKey || shiftKey) return;
+
+        const { advanceSound, nudgeSound } = this.props;
+
+        if ((code === 'Space' || code === 'ArrowDown' || code === 'Enter')) nudgeSound();
+        else if (code === 'ArrowRight') advanceSound(1);
+        else if (code === 'ArrowLeft') advanceSound(-1);
     }
     render() {
         const { currentIndex, queue, currentStage } = this.props;
@@ -44,6 +40,7 @@ class Sounds extends Component {
 
 Sounds.propTypes = {
     advanceSound: PropTypes.func.isRequired,
+    nudgeSound: PropTypes.func.isRequired,
     currentIndex: PropTypes.number.isRequired,
     queue: PropTypes.array.isRequired,
     currentStage: PropTypes.number.isRequired,

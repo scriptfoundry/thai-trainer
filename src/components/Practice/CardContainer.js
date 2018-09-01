@@ -9,8 +9,6 @@ export default class CardContainer extends Component {
     constructor(...args) {
         super(...args);
 
-        this.advance = this.advance.bind(this);
-        this.nudge = this.nudge.bind(this);
         this.onKey = this.onKey.bind(this);
 
         document.addEventListener('keydown', this.onKey);
@@ -18,26 +16,22 @@ export default class CardContainer extends Component {
     componentWillUnmount() {
         document.removeEventListener('keydown', this.onKey);
     }
-    advance(direction) {
-        this.props.advancePractice(direction);
-    }
-    nudge() {
-        this.props.nudgePractice(this.props.practiceAllAtOnce);
-    }
     onKey({code}) {
-        if ((code === 'Space' || code === 'Enter')) this.nudge();
-        else if (code === 'ArrowRight') this.advance(1);
-        else if (code === 'ArrowLeft') this.advance(-1);
+        const { advancePractice, nudgePractice} = this.props;
+
+        if ((code === 'Space' || code === 'ArrowDown' || code === 'Enter')) nudgePractice();
+        else if (code === 'ArrowRight') advancePractice(1);
+        else if (code === 'ArrowLeft') advancePractice(-1);
     }
     render() {
-        const { pronunciationType, queue, currentIndex, currentStage, practiceAllAtOnce, practiceOrder } = this.props;
+        const { pronunciationType, queue, currentIndex, currentStage, nudgePractice, practiceAllAtOnce, practiceOrder } = this.props;
         const word = queue[currentIndex];
 
         if (!word) return null;
         if (practiceAllAtOnce || practiceOrder[currentStage] === 'pronunciation') setTimeout(() => say(LANGUAGE_THAI, word.thai), 500);
 
         const card = (<CSSTransition key={word.id} timeout={500} classNames="card">
-            <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ this.nudge } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } />
+            <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ () => nudgePractice(practiceAllAtOnce) } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } />
         </CSSTransition>);
 
         return <TransitionGroup className="cards">
