@@ -99,7 +99,8 @@ export const sortBySimilarity = (target, property, words) => {
         .filter(word => word[property] !== target[property])
 		.map(word => ({ word, similarity: Levenshtein.get(needle, getFullWidthCharacters(word[property]) )}))
 		.sort((a, b) => a.similarity > b.similarity ? 1 : -1)
-		.map(({word}) => word);
+		.map(({word}) => word)
+		.filter((word, index, arr) => arr.findIndex(otherWord => word[property] === otherWord[property]) === index);
 };
 
 export const shuffle = (arr) => {

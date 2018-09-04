@@ -302,6 +302,10 @@ describe('UtilsService', () => {
 
         expect(makeSample('def')).toEqual([ 'def', 'ghi', 'abc', 'jkl' ]);
 
-        for (let i = 0; i < 100; i++) expect(makeSample('def').some(v => v === 'def')).toBe(true);
+        for (let i = 0; i < 100; i++) {
+            let samples = makeSample('def');
+            expect(samples.some(v => v === 'def')).toBe(true); // Expected value must always be present
+            expect(samples.every((sample, index, arr) => arr.indexOf(sample) === index)).toBe(true); // No sample value should appear twice
+        }
     });
 });

@@ -23,8 +23,6 @@ const defaultState = {
     isComplete: false,
     isSaved: false,
     index: null,
-    selectedAnswer: null,
-    possibleAnswers: null,
 };
 
 export const reducer = (state = defaultState, { type, payload }) => {
