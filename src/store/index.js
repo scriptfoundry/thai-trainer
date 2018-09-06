@@ -7,6 +7,7 @@ import { reducer as settings, operations as settingsOperations } from './setting
 import { reducer as words, operations as wordOperations } from './words';
 import { reducer as test, operations as testOperations } from './tests';
 import { reducer as sounds, operations as soundsOperations } from './sounds';
+import { middleware as trackingMiddleware, operations as trackingOperations  } from './tracking';
 
 const rootReducer = combineReducers({
     view,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
 
 let enhancers = [];
 const middleware = [
+    trackingMiddleware,
     thunk,
 ];
 if (process.env.NODE_ENV === 'development') {
@@ -37,6 +39,7 @@ export const operations = {
     ...wordOperations,
     ...testOperations,
     ...soundsOperations,
+    ...trackingOperations,
 };
 
 export default store;

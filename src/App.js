@@ -16,6 +16,7 @@ import TestSelector from './components/TestSelector';
 import Vowels from './components/Vowels';
 import Consonants from './components/Consonants';
 import Confusion from './components/Confusion';
+import Tracking from './components/common/Tracking';
 import NotFound from './components/NotFound';
 
 import './styles/css/App.css';
@@ -38,6 +39,7 @@ class App extends Component {
     return <Router>
       <ScrollReset>
         <Breadcrumb />
+        <Route path="*" component={Tracking} />
         <Switch>
           <Route path="/" exact component={MainNavigation} />
           <Route path="/basics" exact component={NavigationBasics} />

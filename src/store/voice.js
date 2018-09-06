@@ -1,8 +1,8 @@
 import { init, getAll, setThaiVoice, setEnglishVoice, setRate, say, LANGUAGE_ENGLISH, LANGUAGE_THAI } from '../services/Voices';
 
-const VOICE_SETVOICES = 'voice/setvoices';
-const VOICE_SETENGLISHVOICE = 'voice/setEnglishVoice';
-const VOICE_SETTHAIVOICE = 'voice/setThaiVoice';
+export const VOICE_SETVOICES = 'voice/setvoices';
+export const VOICE_SETENGLISHVOICE = 'voice/setEnglishVoice';
+export const VOICE_SETTHAIVOICE = 'voice/setThaiVoice';
 const VOICE_SETRATE = 'voice/setRate';
 const VOICE_SAYSAMPLE = 'voice/saySample';
 
