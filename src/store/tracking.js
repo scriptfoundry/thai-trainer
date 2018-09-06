@@ -1,6 +1,6 @@
 import { createMiddleware } from 'redux-beacon';
 import GoogleAnalyticsGtag, { trackEvent, trackPageView } from '@redux-beacon/google-analytics-gtag';
-import logger from '@redux-beacon/logger';
+// import logger from '@redux-beacon/logger';
 import debounceEvent from '@redux-beacon/debounce-event';
 
 import { SETTINGS_INITIALIZE, SETTINGS_SETPRONUNCIATIONTYPE, SETTINGS_SETPRACTICELIMIT, SETTINGS_SETTESTLIMIT, SETTINGS_SETPRACTICEDISPLAYORDER, } from './settings';
@@ -38,7 +38,7 @@ const eventsMap = {
 
 };
 
-export const middleware = createMiddleware(eventsMap, GoogleAnalyticsGtag('UA-124762758-1'), { logger });
+export const middleware = createMiddleware(eventsMap, GoogleAnalyticsGtag('UA-124762758-1'), { /*logger*/ });
 
 export const operations = {
     trackRouteChange: path => dispatch => dispatch({ type: TRACKING_TRACKROUTECHANGE, payload: path })
