@@ -12,10 +12,10 @@ const goodWords = [
     'ร้านอาหาร',
 ];
 const makeClickableHeader = (label, onClick, isDisabled) => isDisabled ? <button className="disabled-button">{label}</button> : <button onClick={ onClick }>{label}</button>;
-const PronunciationSelector = ({ changePronunciationType, pronunciationType, words, saySample }) => {
+const PronunciationSelector = ({ changePronunciationType, pronunciationType, words }) => {
     const sampleWords = words
         .filter(({ thai }) => goodWords.find(goodWord => thai === goodWord))
-        .map(word => <PronunciationSample key={ word.thai } word={ word } saySample={ saySample } />);
+        .map(word => <PronunciationSample key={ word.thai } word={ word } />);
 
     const samplesClassName = pronunciationType === PRONUNCIATIONTYPE_PAIBOON ? 'samples paiboon' : 'samples ipa';
     return (<div className="voice-selector">
@@ -40,7 +40,6 @@ PronunciationSelector.propTypes = {
     pronunciationType: PropTypes.oneOf([ PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON ]).isRequired,
     changePronunciationType: PropTypes.func.isRequired,
     words: PropTypes.array.isRequired,
-    saySample: PropTypes.func.isRequired,
 };
 
 export default PronunciationSelector;

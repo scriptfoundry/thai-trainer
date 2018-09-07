@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PlayButton from '../common/PlayButton';
-import { isPronunciation, say, LANGUAGE_THAI } from '../../services/Voices';
+import { isPronunciation } from '../../services/Voices';
 
 const getClass = (word, selected, correct, isAnswered) => selected === null ? 'answer'
     : isAnswered && word === correct ? 'answer correct'
@@ -12,7 +12,7 @@ const getClass = (word, selected, correct, isAnswered) => selected === null ? 'a
     : 'answer rejected';
 
 const Answer = ({ word, property, onSelect, selected, correct, isAnswered }) => <div className={ getClass(word, selected, correct, isAnswered) } onClick={ onSelect }>
-    { isPronunciation(property) ? <PlayButton word={word} saySample={ () => say(LANGUAGE_THAI, word.thai) } /> : null }
+    { isPronunciation(property) ? <PlayButton word={word} /> : null }
     <span>{ word[property] }</span>
 </div>;
 

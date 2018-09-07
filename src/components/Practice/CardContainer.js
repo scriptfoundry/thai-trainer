@@ -34,7 +34,7 @@ export default class CardContainer extends Component {
         const word = queue[currentIndex];
 
         if (!word) return null;
-        if (practiceAllAtOnce || practiceOrder[currentStage] === 'pronunciation') setTimeout(() => say(LANGUAGE_THAI, word.thai), 500);
+        if (practiceAllAtOnce || practiceOrder[currentStage] === 'pronunciation') setTimeout(() => say(LANGUAGE_THAI, word), 300);
 
         const card = (<CSSTransition key={word.id} timeout={500} classNames="card">
             <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ () => nudgePractice(practiceAllAtOnce) } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } />

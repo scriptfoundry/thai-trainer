@@ -34,8 +34,8 @@ class Sounds extends Component {
 
         const word = queue[currentIndex];
         if (!word) return null;
-        if (currentStage === 0) say(LANGUAGE_THAI, word.thai);
-        else say(LANGUAGE_ENGLISH, word.term);
+        if (currentStage === 0) say(LANGUAGE_THAI, word);
+        else say(LANGUAGE_ENGLISH, word);
 
         return <div>
             <h1>{ word.thai } <PlayButton word={ word } /></h1>

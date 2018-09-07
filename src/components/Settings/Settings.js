@@ -25,7 +25,6 @@ const Settings = (props) => {
         changePronunciationType,
         changePracticeWordLimit,
         changeTestingWordLimit,
-        saySample,
         setRate,
         setThaiVoice,
         setEnglishVoice,
@@ -52,7 +51,7 @@ const Settings = (props) => {
             <RangedNumberSelector heading="Maximum number of words to test at once" min={5} max={30} value={ testingWordLimit } onChange={ changeTestingWordLimit } />
         </section>
         <section>
-            <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } saySample={ saySample } />
+            <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } />
         </section>
         <Link className="button" to="/">Done</Link>
     </div>;
@@ -82,7 +81,6 @@ Settings.propTypes = {
     changePracticeDisplayOrder: PropTypes.func.isRequired,
     changePronunciationType: PropTypes.func.isRequired,
     changePracticeWordLimit: PropTypes.func.isRequired,
-    saySample: PropTypes.func.isRequired,
     setRate: PropTypes.func.isRequired,
     setThaiVoice: PropTypes.func.isRequired,
     setEnglishVoice: PropTypes.func.isRequired,

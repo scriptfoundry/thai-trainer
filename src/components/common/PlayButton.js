@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { operations } from '../../store';
+import { say, LANGUAGE_THAI } from '../../services/Voices';
 
 class PlayButton extends Component {
     constructor(...args) {
@@ -11,8 +10,8 @@ class PlayButton extends Component {
     async play(evt) {
         evt.stopPropagation();
         evt.target.blur();
-        let { word: {altThai, thai}, saySample } = this.props;
-        await  saySample(altThai || thai);
+        let { word } = this.props;
+        await  say(LANGUAGE_THAI, word);
     }
     render() {
         return <button onClick={ this.play }>▷</button>;
@@ -20,13 +19,10 @@ class PlayButton extends Component {
 }
 
 PlayButton.propTypes = {
-    saySample: PropTypes.func.isRequired,
     word: PropTypes.shape({
         altThai: PropTypes.string,
         thai: PropTypes.string.isRequired
     }).isRequired,
 };
 
-const { saySample } = operations;
-
-export default connect(null, { saySample })(PlayButton);
+export default PlayButton;

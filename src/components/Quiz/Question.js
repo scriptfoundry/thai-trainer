@@ -13,8 +13,8 @@ class Question extends Component {
         if (isPronunciation(property)) setTimeout(this.speak, 500);
     }
     speak() {
-        const { word: { thai } } = this.props;
-        say(LANGUAGE_THAI, thai);
+        const { word } = this.props;
+        say(LANGUAGE_THAI, word);
     }
     render() {
         const { word, property } = this.props;
@@ -23,12 +23,7 @@ class Question extends Component {
     }
 }
 Question.propTypes = {
-    word: PropTypes.shape({
-        term: PropTypes.string.isRequired,
-        thai: PropTypes.string.isRequired,
-        ipa: PropTypes.string.isRequired,
-        paiboon: PropTypes.string.isRequired,
-    }).isRequired,
+    word: PropTypes.object.isRequired,
     property: PropTypes.string.isRequired,
 };
 

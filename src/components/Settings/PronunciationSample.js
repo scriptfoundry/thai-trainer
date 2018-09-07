@@ -13,8 +13,7 @@ PronunciationSample.propTypes = {
         thai: PropTypes.string.isRequired,
         ipa: PropTypes.string.isRequired,
         paiboon: PropTypes.string.isRequired
-    }).isRequired,
-    saySample: PropTypes.func.isRequired
+    }).isRequired
 };
 
 export default PronunciationSample;
