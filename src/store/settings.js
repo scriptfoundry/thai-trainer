@@ -27,8 +27,10 @@ export const reducer = (state=defaultState, { type, payload }) => {
 
         case SETTINGS_SETPRONUNCIATIONTYPE:
         return { ...state, pronunciationType: payload === PRONUNCIATIONTYPE_IPA ? PRONUNCIATIONTYPE_IPA : PRONUNCIATIONTYPE_PAIBOON };
+
+        default:
+        return state;
     }
-    return state;
 };
 
 const changePronunciationType = (pronunciationType=null) => dispatch => {
