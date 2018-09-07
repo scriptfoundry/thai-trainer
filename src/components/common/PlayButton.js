@@ -11,8 +11,8 @@ class PlayButton extends Component {
     async play(evt) {
         evt.stopPropagation();
         evt.target.blur();
-        let { word: {thai}, saySample } = this.props;
-        await  saySample(thai);
+        let { word: {altThai, thai}, saySample } = this.props;
+        await  saySample(altThai || thai);
     }
     render() {
         return <button onClick={ this.play }>▷</button>;
@@ -22,6 +22,7 @@ class PlayButton extends Component {
 PlayButton.propTypes = {
     saySample: PropTypes.func.isRequired,
     word: PropTypes.shape({
+        altThai: PropTypes.string,
         thai: PropTypes.string.isRequired
     }).isRequired,
 };
