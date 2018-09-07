@@ -9,17 +9,23 @@ export default class CardContainer extends Component {
     constructor(...args) {
         super(...args);
 
+        this.cardsSeen = 0;
+
         this.onKey = this.onKey.bind(this);
 
         document.addEventListener('keydown', this.onKey);
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.currentIndex !== this.props.currentIndex) this.cardsSeen += 1;
+    }
     componentWillUnmount() {
+        this.props.registerPracticeEnd('full', this.cardsSeen);
         document.removeEventListener('keydown', this.onKey);
     }
     onKey({code}) {
-        const { advancePractice, nudgePractice} = this.props;
+        const { advancePractice, practiceAllAtOnce, nudgePractice} = this.props;
 
-        if ((code === 'Space' || code === 'ArrowDown' || code === 'Enter')) nudgePractice();
+        if (!practiceAllAtOnce && (code === 'Space' || code === 'ArrowDown' || code === 'Enter')) nudgePractice();
         else if (code === 'ArrowRight') advancePractice(1);
         else if (code === 'ArrowLeft') advancePractice(-1);
     }
@@ -62,4 +68,5 @@ CardContainer.propTypes = {
     nudgePractice: PropTypes.func.isRequired,
     closePractice: PropTypes.func.isRequired,
     toggleHint: PropTypes.func.isRequired,
+    registerPracticeEnd: PropTypes.func.isRequired,
 };

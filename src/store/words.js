@@ -5,6 +5,7 @@ const createQueue = buildRandomizedValuesQueue(5);
 
 export const WORDS_SETWORDS = 'words/setwords';
 export const WORDS_CLOSEPRACTICE = 'words/closepractice';
+export const WORDS_REGISTERPRACTICEEND = 'words/registerpracticeend';
 const WORDS_ADVANCE = 'words/advance';
 const WORDS_NUDGE = 'words/nudge';
 const WORDS_ADVANCESOUND = 'words/advancesound';
@@ -71,5 +72,6 @@ const nudgePractice = () => (dispatch, getState) => dispatch({ type: getState().
 const closePractice = () => dispatch => dispatch({ type: WORDS_CLOSEPRACTICE });
 const advanceSound = direction => dispatch => dispatch({ type: WORDS_ADVANCESOUND, payload: direction });
 const nudgeSound = () => dispatch => dispatch({ type: WORDS_NUDGESOUND });
+const registerPracticeEnd = (type, count) => dispatch => dispatch({ type: WORDS_REGISTERPRACTICEEND, payload: { type, count } });
 
-export const operations = { initializeWordsManager, seedPractice, advancePractice, nudgePractice, advanceSound, nudgeSound, closePractice };
+export const operations = { initializeWordsManager, seedPractice, advancePractice, nudgePractice, advanceSound, nudgeSound, closePractice, registerPracticeEnd };

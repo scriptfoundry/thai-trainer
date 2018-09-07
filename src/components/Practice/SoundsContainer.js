@@ -7,11 +7,17 @@ class Sounds extends Component {
     constructor(...args) {
         super(...args);
 
+        this.cardsSeen = 0;
+
         this.onKey = this.onKey.bind(this);
 
         document.addEventListener('keydown', this.onKey);
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.currentIndex !== this.props.currentIndex) this.cardsSeen += 1;
+    }
     componentWillUnmount() {
+        this.props.registerPracticeEnd('sounds', this.cardsSeen);
         document.removeEventListener('keydown', this.onKey);
     }
     onKey({ code, metaKey, shiftKey }) {
@@ -41,6 +47,7 @@ class Sounds extends Component {
 Sounds.propTypes = {
     advanceSound: PropTypes.func.isRequired,
     nudgeSound: PropTypes.func.isRequired,
+    registerPracticeEnd: PropTypes.func.isRequired,
     currentIndex: PropTypes.number.isRequired,
     queue: PropTypes.array.isRequired,
     currentStage: PropTypes.number.isRequired,
