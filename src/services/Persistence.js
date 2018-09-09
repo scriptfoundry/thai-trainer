@@ -45,8 +45,8 @@ export const saveVoices = async (voiceSettings) => {
 
 export const loadSettings = async () => {
     let settings = await localforage.getItem('settings');
-    let { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce } = settings || {};
-    return { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce };
+    let { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce, showCharacterClasses } = settings || {};
+    return { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce, showCharacterClasses };
 };
 
 export const saveSettings = async (settings) => {

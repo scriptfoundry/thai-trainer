@@ -14,6 +14,9 @@
         margin-bottom: 1em;
     }
 
+    h3 {
+        font-size: 2em;
+    }
     .voice-selector {
         margin-bottom: 3em;
         &:last-child { margin-bottom: 0; }
@@ -81,5 +84,14 @@
         @include large-button($primary-theme);
         width: 50%;
         margin-left: 25%;
+    }
+    .button-group {
+        @include button-group();
+        width: 50%;
+        padding-left: 25%;
+
+        .selected {
+            cursor: default;
+        }
     }
 }

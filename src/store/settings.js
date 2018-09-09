@@ -7,6 +7,7 @@ export const SETTINGS_SETPRACTICELIMIT = 'settings/setpracticelimit';
 export const SETTINGS_SETTESTLIMIT = 'settings/settestlimit';
 export const SETTINGS_SETPRACTICEDISPLAYORDER = 'settings/setpracticedisplayorder';
 const SETTINGS_TOGGLEALLATONCE = 'settings/toggleallatonce';
+const SETTINGS_TOGGLECHARACTERCLASSES = 'settings/togglecharacterclasses';
 
 const defaultState = {
     pronunciationType: PRONUNCIATIONTYPE_IPA,
@@ -14,6 +15,7 @@ const defaultState = {
     testingWordLimit: 20,
     practiceOrder: ['thai', 'pronunciation', 'term'],
     practiceAllAtOnce: false,
+    showCharacterClasses: false,
 };
 
 export const reducer = (state=defaultState, { type, payload }) => {
@@ -23,6 +25,7 @@ export const reducer = (state=defaultState, { type, payload }) => {
         case SETTINGS_SETTESTLIMIT:
         case SETTINGS_SETPRACTICEDISPLAYORDER:
         case SETTINGS_TOGGLEALLATONCE:
+        case SETTINGS_TOGGLECHARACTERCLASSES:
         return { ...state, ...payload };
 
         case SETTINGS_SETPRONUNCIATIONTYPE:
@@ -53,9 +56,10 @@ const initializeSettings = () => async dispatch => {
         pronunciationType=defaultState.pronunciationType,
         practiceAllAtOnce=defaultState.practiceAllAtOnce,
         practiceOrder=defaultState.practiceOrder,
+        showCharacterClasses=defaultState.showCharacterClasses,
         testingWordLimit=defaultState.testingWordLimit,
     } = await loadSettings();
-    dispatch({ type: SETTINGS_INITIALIZE, payload: { practiceWordLimit, practiceAllAtOnce, practiceOrder, pronunciationType, testingWordLimit } });
+    dispatch({ type: SETTINGS_INITIALIZE, payload: { practiceWordLimit, practiceAllAtOnce, practiceOrder, pronunciationType, showCharacterClasses, testingWordLimit } });
 };
 const changePracticeWordLimit = practiceWordLimit => dispatch => {
     dispatch({ type: SETTINGS_SETPRACTICELIMIT, payload: { practiceWordLimit }});
@@ -65,6 +69,11 @@ const changeTestingWordLimit = testingWordLimit => dispatch => {
     dispatch({ type: SETTINGS_SETTESTLIMIT, payload: { testingWordLimit }});
     saveSettings({ testingWordLimit });
 };
+const toggleCharacterClasses = () => (dispatch, getState) => {
+    let showCharacterClasses = getState().settings.showCharacterClasses === false;
+    dispatch({ type: SETTINGS_TOGGLECHARACTERCLASSES, payload: { showCharacterClasses }});
+    saveSettings({ showCharacterClasses });
+};
 
 export const operations = {
     changePracticeDisplayOrder,
@@ -72,4 +81,5 @@ export const operations = {
     changePracticeWordLimit,
     changeTestingWordLimit,
     initializeSettings,
+    toggleCharacterClasses,
 };

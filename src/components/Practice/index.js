@@ -14,6 +14,7 @@ const mapStateToProps = ({ words, settings, view }) => ({
     pronunciationType: settings.pronunciationType,
     practiceOrder: settings.practiceOrder,
     practiceAllAtOnce: settings.practiceAllAtOnce,
+    showCharacterClasses: settings.showCharacterClasses,
     subview: view.subview
 });
 

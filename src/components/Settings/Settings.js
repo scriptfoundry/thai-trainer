@@ -6,6 +6,7 @@ import RateSelector from './RateSelector';
 import PronunciationSelector from './PronunciationSelector';
 import PracticeOrderSelector from './PracticeOrderSelector';
 import RangedNumberSelector from './RangedNumberSelector';
+import CharacterClassToggle from './CharacterClassToggle';
 
 const Settings = (props) => {
     const {
@@ -20,6 +21,7 @@ const Settings = (props) => {
         testingWordLimit,
         practiceOrder,
         practiceAllAtOnce,
+        showCharacterClasses,
 
         changePracticeDisplayOrder,
         changePronunciationType,
@@ -28,6 +30,7 @@ const Settings = (props) => {
         setRate,
         setThaiVoice,
         setEnglishVoice,
+        toggleCharacterClasses,
     } = props;
 
     return <div className="settings">
@@ -45,6 +48,9 @@ const Settings = (props) => {
             <PracticeOrderSelector changePracticeDisplayOrder={ changePracticeDisplayOrder } practiceWordLimit={ practiceWordLimit } practiceOrder={ practiceOrder } practiceAllAtOnce={ practiceAllAtOnce } />
         </section>
         <section>
+            <CharacterClassToggle onToggle={ toggleCharacterClasses } showCharacterClasses={ showCharacterClasses } />
+        </section>
+        <section>
             <RangedNumberSelector heading="Ideal number of words to practice at once" min={5} max={30} value={ practiceWordLimit } onChange={ changePracticeWordLimit } />
         </section>
         <section>
@@ -53,7 +59,7 @@ const Settings = (props) => {
         <section>
             <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } />
         </section>
-        <Link className="button" to="/">Done</Link>
+        <Link className="button" to="/">Back</Link>
     </div>;
 };
 
@@ -77,6 +83,7 @@ Settings.propTypes = {
         ipa: PropTypes.string.isRequired,
         paiboon: PropTypes.string.isRequired,
     })).isRequired,
+    showCharacterClasses: PropTypes.bool.isRequired,
 
     changePracticeDisplayOrder: PropTypes.func.isRequired,
     changePronunciationType: PropTypes.func.isRequired,
@@ -85,6 +92,7 @@ Settings.propTypes = {
     setThaiVoice: PropTypes.func.isRequired,
     setEnglishVoice: PropTypes.func.isRequired,
     changeTestingWordLimit: PropTypes.func.isRequired,
+    toggleCharacterClasses: PropTypes.func.isRequired,
 };
 
 export default Settings;

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Line from './Line';
 import { classNames } from '../../services/Utils';
 
-const Card = ({ word, onClick, pronunciationType, stage, practiceOrder, practiceAllAtOnce }) => {
-    const lines = practiceOrder.map((prop, index) => <Line key={prop} index={index} order={practiceOrder} practiceAllAtOnce={practiceAllAtOnce} pronunciationType={pronunciationType} stage={stage} word={word}  />);
+const Card = ({ word, onClick, pronunciationType, stage, practiceOrder, practiceAllAtOnce, showCharacterClasses }) => {
+    const lines = practiceOrder.map((prop, index) => <Line key={prop} index={index} type={practiceOrder[index]} practiceAllAtOnce={practiceAllAtOnce} pronunciationType={pronunciationType} stage={stage} word={word} showCharacterClasses={ showCharacterClasses } />);
     return <div onClick={ onClick } className={ classNames({ card: true, practiceAllAtOnce }) }>{ lines }</div>;
 };
 
@@ -20,6 +20,7 @@ Card.propTypes = {
     onClick: PropTypes.func.isRequired,
     practiceAllAtOnce: PropTypes.bool.isRequired,
     practiceOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
+    showCharacterClasses: PropTypes.bool.isRequired,
 };
 
 export default Card;

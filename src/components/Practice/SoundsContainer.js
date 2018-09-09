@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { say, LANGUAGE_THAI, LANGUAGE_ENGLISH } from '../../services/Voices';
-import PlayButton from '../common/PlayButton';
+import Line from './Line';
 
 class Sounds extends Component {
     constructor(...args) {
@@ -30,17 +31,23 @@ class Sounds extends Component {
         else if (code === 'ArrowLeft') advanceSound(-1);
     }
     render() {
-        const { currentIndex, queue, currentStage } = this.props;
+        const { currentIndex, queue, currentStage, showCharacterClasses } = this.props;
 
         const word = queue[currentIndex];
         if (!word) return null;
         if (currentStage === 0) say(LANGUAGE_THAI, word);
         else say(LANGUAGE_ENGLISH, word);
 
-        return <div>
-            <h1>{ word.thai } <PlayButton word={ word } /></h1>
-            { currentStage > 0 ? <h2>{ word.term }</h2> : null }
-        </div>;
+        const card = <CSSTransition  key={word.id} timeout={500} classNames="card">
+            <div className="card">
+                <Line type="thai" word={ word } showCharacterClasses={ showCharacterClasses } index={0} stage={ currentStage } />
+                <Line type="term" word={ word } index={ 1 } stage={ currentStage } />
+            </div>
+        </CSSTransition>;
+
+        return <TransitionGroup className="cards">
+            {card}
+        </TransitionGroup>;
     }
 }
 
@@ -51,6 +58,7 @@ Sounds.propTypes = {
     currentIndex: PropTypes.number.isRequired,
     queue: PropTypes.array.isRequired,
     currentStage: PropTypes.number.isRequired,
+    showCharacterClasses: PropTypes.bool.isRequired,
 };
 
 export default Sounds;

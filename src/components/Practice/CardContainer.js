@@ -30,15 +30,15 @@ export default class CardContainer extends Component {
         else if (code === 'ArrowLeft') advancePractice(-1);
     }
     render() {
-        const { pronunciationType, queue, currentIndex, currentStage, nudgePractice, practiceAllAtOnce, practiceOrder } = this.props;
+        const { pronunciationType, queue, currentIndex, currentStage, nudgePractice, practiceAllAtOnce, practiceOrder, showCharacterClasses } = this.props;
         const word = queue[currentIndex];
 
         if (!word) return null;
         if (practiceAllAtOnce || practiceOrder[currentStage] === 'pronunciation') setTimeout(() => say(LANGUAGE_THAI, word), 300);
 
-        const card = (<CSSTransition key={word.id} timeout={500} classNames="card">
-            <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ () => nudgePractice(practiceAllAtOnce) } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } />
-        </CSSTransition>);
+        const card = <CSSTransition key={word.id} timeout={500} classNames="card">
+            <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ () => nudgePractice(practiceAllAtOnce) } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } showCharacterClasses={ showCharacterClasses } />
+        </CSSTransition>;
 
         return <TransitionGroup className="cards">
             <Hint { ...this.props } title="Instructions">
@@ -61,6 +61,7 @@ CardContainer.propTypes = {
     practiceOrder: PropTypes.arrayOf(PropTypes.string).isRequired,
     practiceWordLimit: PropTypes.number.isRequired,
     pronunciationType: PropTypes.string.isRequired,
+    showCharacterClasses: PropTypes.bool.isRequired,
     queue: PropTypes.array.isRequired,
     words: PropTypes.array.isRequired,
 
