@@ -53,3 +53,9 @@ export const saveSettings = async (settings) => {
     let existingSettings = await localforage.getItem('settings');
     await localforage.setItem('settings', { ...existingSettings, ...settings });
 };
+
+export const loadTones = async () => {
+    let response = await fetch('/data/tones.json');
+    let words = await response.json();
+    return words;
+};

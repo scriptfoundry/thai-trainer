@@ -1,0 +1,47 @@
+@import './constants';
+
+.consonant-classes {
+    @include container();
+    @include section();
+    
+    .review {
+        section {
+            display: flex;
+            margin: 1em;
+            border: 1px solid $color-faint;
+            border-radius: .4em;
+            background-color: $color-faint;
+
+            h2 {
+                flex: .1;
+                height: 100%;
+                padding: 0 1em;
+                margin: 0;
+                align-self: center;
+            }
+            > div {
+                display: flex;
+                flex: 1;
+                flex-wrap: wrap;
+                padding: 1em;
+                background-color: white;
+
+                div {
+                    transition: color 300ms;
+                    font-size: 2em;
+                    padding: .25em .5em;
+                    color: $color-faint;
+                }
+            }
+        }
+        .highlighted {
+            color: $black;
+        }
+    }
+
+    button {
+        @include large-button($primary-theme);
+        width: 60%;
+        margin-left: 20%;
+    }
+}

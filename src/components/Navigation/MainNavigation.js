@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+const MainNavigation = () => {
         return <div className="navigation">
             <h1>Learn Thai</h1>
             <section>
@@ -22,4 +22,4 @@ const Navigation = () => {
         </div>;
 };
 
-export default Navigation;
+export default MainNavigation;

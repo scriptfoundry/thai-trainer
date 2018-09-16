@@ -1,0 +1,45 @@
+@import './constants';
+
+.tone-rules {
+    @include container();
+    @include section();
+
+    table {
+        $border-radius: .5em;
+        width: 100%;
+        margin-bottom: 2em;
+
+        thead tr:first-child :first-child { border-top-left-radius: $border-radius; }
+        thead tr:first-child :last-child { border-top-right-radius: $border-radius; }
+        tbody tr:last-child :first-child { border-bottom-left-radius: $border-radius; }
+        tbody tr:last-child :last-child { border-bottom-right-radius: $border-radius; }
+
+        &, tbody, tbody tr:last-child { border-bottom-right-radius: $border-radius; }
+
+        thead tr:first-child {
+            font-size: 1.4em;
+            font-weight: ligher;
+        }
+    }
+    th {
+        background-color: $color-faint;
+
+        &.low { background-color: rgb(170, 170, 253); }
+        &.mid { background-color: rgb(240, 224, 151); }
+        &.high { background-color: rgb(240, 145, 145); }
+    }
+    tr :first-child {
+        width: 20%;
+    }
+    tbody td { 
+        border: 1px solid $color-faint;
+    }
+    th, td {
+        text-align: center;
+        padding: .5em 1em;
+    }
+    td {
+        font-size: 1.5em;
+        font-weight: lighter;
+    }   
+}

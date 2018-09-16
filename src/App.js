@@ -8,6 +8,7 @@ import Loading from './components/Loading';
 import Breadcrumb from './components/Navigation/Breadcrumbs';
 import MainNavigation from './components/Navigation/MainNavigation';
 import NavigationBasics from './components/Navigation/BasicsNavigation';
+import TonesNavigation from './components/Navigation/ToneNavigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
 import Practice from './components/Practice';
@@ -16,6 +17,8 @@ import TestSelector from './components/TestSelector';
 import Vowels from './components/Vowels';
 import Consonants from './components/Consonants';
 import Confusion from './components/Confusion';
+import ConsonantClasses from './components/ConsonantClasses';
+import ToneRules from './components/ToneRules';
 import Tracking from './components/common/Tracking';
 import NotFound from './components/NotFound';
 
@@ -47,6 +50,9 @@ class App extends Component {
           <Route path='/basics/consonantconfusion/drill-:visibleConfusion(\d)' component= {Confusion} />
           <Route path='/basics/consonantconfusion' exact component= {Confusion} />
           <Route path="/basics/consonants" component={Consonants} />
+          <Route path="/basics/tones" exact component={TonesNavigation} />
+          <Route path="/basics/tones/classes" component={ConsonantClasses} />
+          <Route path="/basics/tones/rules" component={ToneRules} />
           <Route path='/progress' component={Progress} />
           <Route path='/practice/:type?' component={Practice} />
           <Route path='/test' exact component={TestSelector} />

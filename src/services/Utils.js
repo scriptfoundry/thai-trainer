@@ -183,8 +183,10 @@ export const createMergeObjectArrayByProperty = prop => (a, b) => {
     }, []);
 };
 
+export const getUniqueValues = values => values.filter((value, index, arr) => arr.indexOf(value) === index);
+
 export const makeUniqueRandomSamplingIncludingValue = (allValues, length) => {
-    const uniqueValues = allValues.filter((value, index, arr) => arr.indexOf(value) === index);
+    const uniqueValues = getUniqueValues(allValues);
 
     return requiredValue => {
         let availableValues = shuffle(uniqueValues.filter(value =>  value !== requiredValue));

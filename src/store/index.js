@@ -7,6 +7,7 @@ import { reducer as settings, operations as settingsOperations } from './setting
 import { reducer as words, operations as wordOperations } from './words';
 import { reducer as test, operations as testOperations } from './tests';
 import { reducer as sounds, operations as soundsOperations } from './sounds';
+import { reducer as tones, operations as tonesOperations } from './tones';
 import { middleware as trackingMiddleware, operations as trackingOperations  } from './tracking';
 
 const rootReducer = combineReducers({
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     words,
     test,
     sounds,
+    tones,
 });
 
 let enhancers = [];
@@ -39,6 +41,7 @@ export const operations = {
     ...wordOperations,
     ...testOperations,
     ...soundsOperations,
+    ...tonesOperations,
     ...trackingOperations,
 };
 
