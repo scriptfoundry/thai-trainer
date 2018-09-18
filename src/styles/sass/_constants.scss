@@ -361,3 +361,27 @@ $primary-theme: (
         }
     }
 }
+@mixin progress-bar() {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 1em;
+    width: 100%;
+    background-color: #d7d5f6;
+
+    .bar {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: $color-success;
+        transition: width 300ms;
+        z-index: 1;
+    }
+    .label {
+        position: relative;
+        color: $color-primary-0;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+    }
+}

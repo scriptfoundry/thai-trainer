@@ -123,12 +123,7 @@
         }
     }
     .progress {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: 1em;
-        width: 100%;
-        background-color: #d7d5f6;
+        @include progress-bar;
 
         &::before,
         &::after {
@@ -145,15 +140,6 @@
             left: 66%;
             width: 34%;
             background-color: #b0adff;
-        }
-
-        .bar {
-            position: absolute;
-            left: 0;
-            height: 100%;
-            background-color: $color-success;
-            transition: width 300ms;
-            z-index: 1;
         }
     }
 }

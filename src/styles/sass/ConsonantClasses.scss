@@ -3,7 +3,7 @@
 .consonant-classes {
     @include container();
     @include section();
-    
+
     .review {
         section {
             display: flex;
@@ -39,9 +39,25 @@
         }
     }
 
-    button {
+    .button {
         @include large-button($primary-theme);
         width: 60%;
+        margin-top: 1em;
         margin-left: 20%;
+    }
+
+    .drill {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        h3 {
+            line-height: 1.2em;
+        }
+    }
+    .progress-bar {
+        @include progress-bar;
     }
 }

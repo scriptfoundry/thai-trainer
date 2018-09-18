@@ -51,7 +51,8 @@ class App extends Component {
           <Route path='/basics/consonantconfusion' exact component= {Confusion} />
           <Route path="/basics/consonants" component={Consonants} />
           <Route path="/basics/tones" exact component={TonesNavigation} />
-          <Route path="/basics/tones/classes" component={ConsonantClasses} />
+          <Route path="/basics/tones/classes" exact component={ConsonantClasses} />
+          <Route path="/basics/tones/classes/drill/:type(all|mid-high)" component={ConsonantClasses} />
           <Route path="/basics/tones/rules" component={ToneRules} />
           <Route path='/progress' component={Progress} />
           <Route path='/practice/:type?' component={Practice} />

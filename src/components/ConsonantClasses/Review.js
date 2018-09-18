@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import ReviewCharacter from './ReviewCharacter';
 import OutboundLink from '../common/OutboundLink';
 import { getUniqueValues } from '../../services/Utils';
@@ -25,7 +26,7 @@ class Review extends Component {
         else this.setState({ highlightedCharacters: findAllMatchingConfusions(this.props.confusions, character)});
     }
     render() {
-        const { low, mid, high, start } = this.props;
+        const { low, mid, high } = this.props;
         const { highlightedCharacters } = this.state;
 
         return <div className="review">
@@ -50,7 +51,8 @@ class Review extends Component {
                 <h2>Low</h2>
                 <div className="low">{ buildCharacterList(low, this.highlight, highlightedCharacters) }</div>
             </section>
-            <button onClick={ start }>Drill</button>
+            <Link to="/basics/tones/classes/drill/mid-high" className="button">Practice mid / high</Link>
+            <Link to="/basics/tones/classes/drill/all" className="button">Practice all</Link>
         </div>;
     }
 }
@@ -60,7 +62,6 @@ Review.propTypes = {
     mid: PropTypes.arrayOf(PropTypes.string).isRequired,
     high: PropTypes.arrayOf(PropTypes.string).isRequired,
     confusions: PropTypes.arrayOf(PropTypes.array).isRequired,
-    start: PropTypes.func.isRequired,
 };
 
 export default Review;
