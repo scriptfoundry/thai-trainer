@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const MainNavigation = () => {
         return <div className="navigation">
-            <h1>Learn Thai</h1>
+            <h1>Read Thai</h1>
             <section>
-                <Link className="button" to="/basics">Thai basics</Link>
+                <Link className="button" to="/basics">Learn the basics</Link>
             </section>
             <section>
                 <Link className="button" to="/test">Test</Link>
