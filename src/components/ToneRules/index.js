@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
+import { operations } from '../../store';
 import ToneRules from './ToneRules';
 
 import '../../styles/css/ToneRules.css';
 
-export default connect()(ToneRules);
+const mapStateToProps = ({ view: { hintVisible }}) => ({
+    hintVisible,
+});
+export default connect(mapStateToProps, operations)(ToneRules);

@@ -5,7 +5,7 @@
     @include section();
 
     .review {
-        section {
+        > section {
             display: flex;
             margin: 1em;
             border: 1px solid $color-faint;

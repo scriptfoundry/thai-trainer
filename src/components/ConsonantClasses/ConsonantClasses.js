@@ -20,7 +20,7 @@ class ConsonantClasses extends Component {
 
         return <div className="consonant-classes">
             { type === undefined ?
-                <Review low={lowChars} mid={midChars} high={highChars} confusions={ confusions } /> :
+                <Review {...this.props} low={lowChars} mid={midChars} high={highChars} confusions={ confusions } /> :
                 <Drill type={ type } low={lowChars}  high={highChars}  mid={midChars} />
             }
         </div>;

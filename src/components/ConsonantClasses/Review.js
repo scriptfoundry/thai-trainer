@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ReviewCharacter from './ReviewCharacter';
+import Hint from '../common/Hint';
 import OutboundLink from '../common/OutboundLink';
 import { getUniqueValues } from '../../services/Utils';
 
@@ -32,12 +33,13 @@ class Review extends Component {
         return <div className="review">
             <h1>Consonant classes</h1>
 
-            <ul className="hint">
-                Hints:
-                <li>Focus your energy on memorizing mid and high class characters, since there aren&apos;t very many of them. Any other consonant will be, by definition, low.</li>
-                <li>I have done my best to show these characters in their order of frequency as tone-leading characters. You should try to learn them all, but like so many languages, the Thai alphabet closely follows <OutboundLink url="https://en.wikipedia.org/wiki/Zipf's_law">Zipf&apos;s Law</OutboundLink>, so remembering at least the first few characters will have a disproportionately powerful effect!</li>
-                <li>Mouse over any character to highlight any other characters that you might consider similar-looking.</li>
-            </ul>
+            <Hint {...this.props} title="Notes">
+                <p>Mouse over any character to highlight the other characters you might consider similar-looking.</p>
+                <p>Practice mid- and high-class characters first, since there aren&apos;t many to remember. All other consonant will be, by definition, low.</p>
+                <p>Drilling here is <i>graduated</i> &mdash; that is, you will be tested on the first few of each class. More characters are added only after you have made no mistakes!</p>
+                <p>The consonants are listed and drilled in order of (tone-leading) frequency. The Thai alphabet closely follows <OutboundLink url="https://en.wikipedia.org/wiki/Zipf's_law">Zipf&apos;s Law</OutboundLink>. So memorizing and mastering only the first few characters will be dramatically more helpful than memorizing only the last few!</p>
+                <p>Author&apos;s note: My personal sense is that mnemonics do not help with character classes. Tone rules are hard enough. They should feel as automatic as possible, which is why I have chosen graduated drilling here.</p>
+            </Hint>
 
             <section>
                 <h2>High</h2>
@@ -51,8 +53,8 @@ class Review extends Component {
                 <h2>Low</h2>
                 <div className="low">{ buildCharacterList(low, this.highlight, highlightedCharacters) }</div>
             </section>
-            <Link to="/basics/tones/classes/drill/mid-high" className="button">Practice mid / high</Link>
-            <Link to="/basics/tones/classes/drill/all" className="button">Practice all</Link>
+            <Link to="/basics/tones/classes/drill/mid-high" className="button">Drill (mid / high)</Link>
+            <Link to="/basics/tones/classes/drill/all" className="button">Drill (all)</Link>
         </div>;
     }
 }
@@ -62,6 +64,7 @@ Review.propTypes = {
     mid: PropTypes.arrayOf(PropTypes.string).isRequired,
     high: PropTypes.arrayOf(PropTypes.string).isRequired,
     confusions: PropTypes.arrayOf(PropTypes.array).isRequired,
+    hintVisible: PropTypes.bool.isRequired,
 };
 
 export default Review;

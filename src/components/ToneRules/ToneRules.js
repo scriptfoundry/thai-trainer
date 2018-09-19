@@ -1,12 +1,13 @@
 import React from 'react';
+import Hint from '../common/Hint';
 
-const ToneRules = () => <div className="tone-rules">
+const ToneRules = (props) => <div className="tone-rules">
     <h1>Tones</h1>
 
-    <ul className="hint">
-        Hint:
-        <li>Consider learning mid-class syllables rules first. They aren&apos;t as frequent as low-class syllables, but they share several rules with the other class syllables.</li>
-    </ul>
+    <Hint {...props} title="Hint">
+        <p>Consider learning mid-class rules first. They make a great foundation! The other classes essentially &quot;borrow&quot; something from mid-class rules.</p>
+        <p>On the other hand, tone-leading low-class characters are more frequent than mid- and high-class characters (according to my studies: 42% vs. 35% &amp; 23%.)</p>
+    </Hint>
 
     <h2>Rules for syllables with no tone markers</h2>
     <table>
