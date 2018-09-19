@@ -17,7 +17,7 @@ const ConfusionDetail = ({confusions, visibleConfusion, consonants, pronunciatio
 
     return <div className="detail">
         <div className="characters">{ confusedConsonants }</div>
-        <Link className="drill-button" to={ `/basics/consonantconfusion/drill-${ visibleConfusion }`}>Drill <span className="icon">〉</span></Link>
+        <Link className="drill-button" to={ `/basics/consonants/confusion/drill-${ visibleConfusion }`}>Drill <span className="icon">〉</span></Link>
     </div>;
 };
 

@@ -5,16 +5,13 @@ const BasicNavigation = () => {
         return <div className="navigation">
             <h1>Thai Basics</h1>
             <section>
-                <Link className="button" to="/basics/vowels">Review vowels</Link>
+                <Link className="button" to="/basics/vowels">Thai vowels</Link>
             </section>
             <section>
-                <Link className="button" to="/basics/consonants">Review consonants</Link>
+                <Link className="button" to="/basics/consonants">Thai consonants</Link>
             </section>
             <section>
-                <Link className="button" to="/basics/consonantconfusion">Easily confused consonants</Link>
-            </section>
-            <section>
-                <Link className="button" to="/basics/tones">Tone tools</Link>
+                <Link className="button" to="/basics/tones">Thai tones</Link>
             </section>
         </div>;
 };

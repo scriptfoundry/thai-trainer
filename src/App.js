@@ -8,6 +8,7 @@ import Loading from './components/Loading';
 import Breadcrumb from './components/Navigation/Breadcrumbs';
 import MainNavigation from './components/Navigation/MainNavigation';
 import NavigationBasics from './components/Navigation/BasicsNavigation';
+import ConsonantNavigation from './components/Navigation/ConsonantNavigation';
 import TonesNavigation from './components/Navigation/ToneNavigation';
 import Progress from './components/Progress';
 import Settings from './components/Settings';
@@ -47,9 +48,10 @@ class App extends Component {
           <Route path="/" exact component={MainNavigation} />
           <Route path="/basics" exact component={NavigationBasics} />
           <Route path='/basics/vowels' component={Vowels} />
-          <Route path='/basics/consonantconfusion/drill-:visibleConfusion(\d)' component= {Confusion} />
-          <Route path='/basics/consonantconfusion' exact component= {Confusion} />
-          <Route path="/basics/consonants" component={Consonants} />
+          <Route path='/basics/consonants' exact component={ConsonantNavigation} />
+          <Route path='/basics/consonants/confusion/drill-:visibleConfusion(\d)' component= {Confusion} />
+          <Route path="/basics/consonants/review" component={Consonants} />
+          <Route path='/basics/consonants/confusion' component= {Confusion} />
           <Route path="/basics/tones" exact component={TonesNavigation} />
           <Route path="/basics/tones/classes" exact component={ConsonantClasses} />
           <Route path="/basics/tones/classes/drill/:type(all|mid-high)" component={ConsonantClasses} />

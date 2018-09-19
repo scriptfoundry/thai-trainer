@@ -123,7 +123,7 @@ class Drill extends Component {
 
         const progress = mistakesMade ? 0 : stageComplete ? queue.length : index;
 
-return <div className="drill">
+        return <div className="drill">
             <div className="container">
                 <h1>{character}</h1>
                 { getAnswer(0) }
