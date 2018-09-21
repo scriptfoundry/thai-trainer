@@ -41,5 +41,28 @@
     td {
         font-size: 1.5em;
         font-weight: lighter;
-    }   
+    }
+    .button {
+        @include large-button($primary-theme);
+    }
+    .drill {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .drill-buttons {
+        display: flex;
+        width: 60%;
+        margin-left: 20%;
+        
+        > * {
+            margin: .25em;
+            flex: 1;
+        }
+    }
+    .progress-bar {
+        @include progress-bar;
+    }
 }

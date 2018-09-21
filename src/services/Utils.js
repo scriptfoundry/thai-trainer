@@ -194,3 +194,5 @@ export const makeUniqueRandomSamplingIncludingValue = (allValues, length) => {
         return availableValues.slice(0, length);
     };
 };
+
+export const makeFilterByProps = items => props => items.filter(item => Object.keys(props).every(prop => props[prop].some(propsProp => item[prop] === propsProp || (propsProp === null && item[prop] === undefined))));

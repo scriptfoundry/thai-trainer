@@ -15,24 +15,28 @@
         }
     }
     h1, h3 {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 1em;
         height: 1em;
-        margin-left: -.5em;
         margin-top: -.6em;
+        position: absolute;
+        top: 50%;
     }
     h1 {
         font-size: 8rem;
+        left: 0%;
+        text-align: center;
+        width: 100%;
     }
     h3 {
-        transition: all 500ms;
-        font-size: 3rem;
         background-color: $color-faint;
-        border-radius: 1.5em;
         border: .2em solid white;
+        border-radius: 1.5em;
+        font-size: 3rem;
+        left: 50%;
+        line-height: 1.1em;
+        margin-left: -.5em;
         padding: .5em;
+        transition: all 500ms;
+        width: 1em;
         cursor: pointer;
 
         &.incorrect {
@@ -45,9 +49,15 @@
             border-color: $color-success;
             cursor: default;
         }
-        &.answer-0 { margin-left: -6em; margin-top: -1.25em; }
-        &.answer-1 { margin-left: 4em; margin-top: -1.25em; }
-        &.answer-2 { margin-top: -6em; margin-left: -1.25em; }
-        &.answer-3 { margin-top: 3.5em; margin-left: -1.25em; }
+        &.answer-0 { margin-left: -5em; margin-top: -1.25em; }
+        &.answer-1 { margin-left: 3em; margin-top: -1.25em; }
+        &.answer-2 { margin-top: -5em; margin-left: -1em; }
+        &.answer-3 { margin-top: 2em; margin-left: -1em; }
+        &.answer-4 {
+            margin-top: 6em;
+            margin-left: -2.25em;
+            width: auto;
+            border-radius: .5em;
+        }
     }
 }

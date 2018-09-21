@@ -308,4 +308,42 @@ describe('UtilsService', () => {
             expect(samples.every((sample, index, arr) => arr.indexOf(sample) === index)).toBe(true); // No sample value should appear twice
         }
     });
+    it('filters a list of tones by an object of matching properties', () => {
+        const { makeFilterByProps } = require('../Utils');
+
+        const TONE_CLASS_LOW = 0;
+        const TONE_CLASS_MID = 1;
+        const TONE_CLASS_HIGH = 2;
+        const TONE_VOWEL_SHORT = 3;
+        const TONE_VOWEL_LONG = 4;
+        const TONE_ENDING_STOP = 5;
+        const TONE_ENDING_SONORANT = 6;
+        const TONE_MAI_EK = 7;
+        const TONE_MAI_CHATTAWA = 8;
+
+        let tones = [
+            { cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, id: 1 },
+            { cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, id: 2 },
+            { cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, marker: TONE_MAI_EK, id: 3 },
+            { cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA, id: 4 }
+        ];
+
+        const getIdList = tones => tones.map(({id}) => id);
+
+        let filterByProps = makeFilterByProps(tones);
+
+        expect(getIdList(filterByProps({ cls: [TONE_CLASS_HIGH] }))).toEqual([]);
+        expect(getIdList(filterByProps({ cls: [TONE_CLASS_LOW, TONE_CLASS_MID] }))).toEqual([1, 2, 3, 4]);
+        expect(getIdList(filterByProps({ cls: [TONE_CLASS_LOW] }))).toEqual([4]);
+        expect(getIdList(filterByProps({ cls: [TONE_CLASS_MID] }))).toEqual([1, 2, 3]);
+        expect(getIdList(filterByProps({ marker: [null] }))).toEqual([1, 2]);
+        expect(getIdList(filterByProps({ marker: [null, TONE_MAI_EK] }))).toEqual([1, 2, 3]);
+
+        expect(getIdList(filterByProps({ length: [TONE_VOWEL_LONG] }))).toEqual([2, 3, 4]);
+        expect(getIdList(filterByProps({ length: [TONE_VOWEL_LONG], marker: [TONE_MAI_EK] }))).toEqual([3]);
+        expect(getIdList(filterByProps({ cls: [TONE_CLASS_MID], ending: [TONE_ENDING_STOP] }))).toEqual([1, 2]);
+        expect(getIdList(filterByProps({ length: [TONE_VOWEL_SHORT, TONE_VOWEL_LONG], ending: [TONE_ENDING_STOP] }))).toEqual([1, 2]);
+
+        expect(getIdList(filterByProps({}))).toEqual([1, 2, 3, 4]);
+    });
 });

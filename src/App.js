@@ -55,11 +55,14 @@ class App extends Component {
           <Route path="/basics/tones" exact component={TonesNavigation} />
           <Route path="/basics/tones/classes" exact component={ConsonantClasses} />
           <Route path="/basics/tones/classes/drill/:type(all|mid-high)" component={ConsonantClasses} />
-          <Route path="/basics/tones/rules" component={ToneRules} />
+          <Route path="/basics/tones/rules" exact component={ToneRules} />
+          <Route path="/basics/tones/rules/drill/:type(all|low|mid|high)" component={ToneRules} />
+
           <Route path='/progress' component={Progress} />
           <Route path='/practice/:type?' component={Practice} />
           <Route path='/test' exact component={TestSelector} />
           <Route path='/test/:type(overdue|current)' component={Test} />
+
           <Route path="/settings" component={Settings} />
           <Route component={NotFound} />
         </Switch>

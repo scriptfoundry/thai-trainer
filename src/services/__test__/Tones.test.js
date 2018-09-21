@@ -144,7 +144,7 @@ describe('Tones service', () => {
             ['ะ'],
         ]);
     });
-    it('applies tone rules', () => {
+    it('applies tone rules by characcter', () => {
         // LOW CONSONANTS
         // NO TONE MARKER
         expect(getTone({ character: 'ง', length: TONE_VOWEL_LONG, ending: null, marker: null })).toEqual(TONE_MID);                 // BOX 1 (open + long)
@@ -262,5 +262,124 @@ describe('Tones service', () => {
         expect(getTone({ character: 'ผ', length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW);                // BOX 3 (open + short)
         expect(getTone({ character: 'ส', length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW); // BOX 4 (closed + short)
         expect(getTone({ character: 'ห', length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+    });
+    it('applies tone rules by class', () => {
+        // LOW CONSONANTS
+        // NO TONE MARKER
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: null, marker: null })).toEqual(TONE_MID);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_MID); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_MID);// ibid
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: null, marker: null })).toEqual(TONE_HIGH);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_HIGH); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+
+        // LOW MAI_EK
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_FALLING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_FALLING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_FALLING);// ibid
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_FALLING);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_FALLING); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+        // LOW MAI_THO
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_HIGH);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_HIGH); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_HIGH);// ibid
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_HIGH);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_HIGH); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_HIGH);  // BOX 5 (closed + long)
+        // LOW MAI_TRI (no change)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_MID);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_MID); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_MID);// ibid
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+        // LOW MAI_CHATTAWA (no change)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_MID);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_MID); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_MID);// ibid
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_HIGH);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_HIGH); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_LOW, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+
+
+
+        // MID CONSONANTS
+        // NO TONE MARKER
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: null, marker: null })).toEqual(TONE_MID);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_MID); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_MID);// ibid
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: null, marker: null })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+
+        // LOW MAI_EK
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_LOW);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_LOW); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_LOW);// ibid
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+        // LOW MAI_THO
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_FALLING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);// ibid
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_FALLING); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+        // LOW MAI_TRI (no change)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH);// ibid
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_HIGH);  // BOX 5 (closed + long)
+        // LOW MAI_CHATTAWA
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);// ibid
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_MID, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);  // BOX 5 (closed + long)
+
+
+
+        // HIGH CONSONANTS
+        // NO TONE MARKER
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: null, marker: null })).toEqual(TONE_RISING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_RISING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: null })).toEqual(TONE_RISING);// ibid
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: null, marker: null })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: null })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+
+        // LOW MAI_EK
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_LOW);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_LOW); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_EK })).toEqual(TONE_LOW);// ibid
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_EK })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_EK })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+        // LOW MAI_THO
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_FALLING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);// ibid
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_FALLING); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_THO })).toEqual(TONE_FALLING);  // BOX 5 (closed + long)
+        // LOW MAI_TRI (no change)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_RISING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_RISING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_TRI })).toEqual(TONE_RISING);// ibid
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_TRI })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_TRI })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
+        // LOW MAI_CHATTAWA
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);                 // BOX 1 (open + long)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING); // BOX 2 (sonorant + open)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_SONORANT, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_RISING);// ibid
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: null, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW);                // BOX 3 (open + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_SHORT, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW); // BOX 4 (closed + short)
+        expect(getTone({ cls: TONE_CLASS_HIGH, length: TONE_VOWEL_LONG, ending: TONE_ENDING_STOP, marker: TONE_MAI_CHATTAWA })).toEqual(TONE_LOW);  // BOX 5 (closed + long)
     });
 });

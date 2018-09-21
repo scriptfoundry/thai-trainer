@@ -55,14 +55,14 @@ const reducer = (components, character) => {
 export const getComponents = (input='') => input.split('').reduce(reducer, []);
 export const getCachedCompents = memoize(getComponents, 100);
 
-export const getTone = ({ character, length, ending, marker }) => {
-    if (isHigh(character)) {
+export const getTone = ({ character, cls, length, ending, marker }) => {
+    if (cls === TONE_CLASS_HIGH || isHigh(character)) {
         if (marker === TONE_MAI_EK) return TONE_LOW;
         if (marker === TONE_MAI_THO) return TONE_FALLING;
 
         if (ending === TONE_ENDING_SONORANT || (ending === null && length === TONE_VOWEL_LONG)) return TONE_RISING;
         if (ending === TONE_ENDING_STOP || (ending === null && length === TONE_VOWEL_SHORT)) return TONE_LOW;
-    } else if (isMid(character)) {
+    } else if (cls === TONE_CLASS_MID || isMid(character)) {
         if (marker === TONE_MAI_EK) return TONE_LOW;
         if (marker === TONE_MAI_THO) return TONE_FALLING;
         if (marker === TONE_MAI_TRI) return TONE_HIGH;
@@ -78,4 +78,27 @@ export const getTone = ({ character, length, ending, marker }) => {
     }
 
     return TONE_MID;
+};
+
+
+const stage0 = ({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_LONG && !ending)));
+const stage1 = ({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_SHORT)));
+const stage2 = ({ marker }) => !marker;
+const stage3 = ({ marker }) => marker === TONE_MAI_EK || marker === TONE_MAI_THO;
+const stage4 = ({ marker }) => !!marker;
+const stage5 = ({ cls }) => cls === TONE_CLASS_LOW;
+const stage6 = ({ cls }) => cls === TONE_CLASS_MID;
+const stage7 = ({ cls }) => cls === TONE_CLASS_HIGH;
+
+export const getTonesByStage = tones => stage => {
+    if (stage === 0) return { tones: tones.filter(stage0), label: 'Only live, no markers'};
+    if (stage === 1) return { tones: tones.filter(stage1), label: 'All live & all short, no markers'};
+    if (stage === 2) return { tones: tones.filter(stage2), label: 'All live & dead, no markers'};
+    if (stage === 3) return { tones: tones.filter(stage3), label: 'Only mai ek & mai tho markers'};
+    if (stage === 4) return { tones: tones.filter(stage4), label: 'All markers only'};
+    if (stage === 5) return { tones: tones.filter(stage5), label: 'Only low-class'};
+    if (stage === 6) return { tones: tones.filter(stage6), label: 'Only mid-class'};
+    if (stage === 7) return { tones: tones.filter(stage7), label: 'Only high-class'};
+
+    return { tones: [...tones], label: 'Everything'};
 };

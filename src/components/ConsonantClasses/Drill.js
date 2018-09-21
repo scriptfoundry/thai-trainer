@@ -56,6 +56,8 @@ class Drill extends Component {
     async checkAnswer(toneClass) {
         const { low, mid, high, type } = this.props;
 
+        if (this.state.busy) return;
+
         const correct =
             toneClass === TONE_CLASS_LOW && type === 'all' ? low :
             toneClass === TONE_CLASS_MID ? mid :
@@ -91,6 +93,7 @@ class Drill extends Component {
             });
         } else {
             this.setState({
+                busy: false,
                 correct: false,
                 mistakesMade: true,
                 hiddenItems: [...hiddenItems, toneClass],
