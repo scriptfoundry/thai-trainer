@@ -21,6 +21,7 @@ import {
     organizeByRoughStatus,
     filterByRoughStatus,
     updateProgress,
+    resetWords,
 } from '../Leitner';
 
 describe('Leitner', () => {
@@ -44,16 +45,16 @@ describe('Leitner', () => {
     });
     it('loads words and progress from file and local storage', async () => {
         const wordsToGet = [
-            [1,'Animals','Animal','สัตว์','sàt','sàt'],
-            [2,'Animals','Bear','หมี','mǐː','mǐi'],
-            [3,'Animals','Bird','นก','nók','nók'],
-            [4,'Animals','Cat','แมว','mɛːw','mɛɛo'],
-            [5,'Animals','Cow / Bull','วัว','wuːa','wua'],
-            [6,'Animals','Dog','หมา','mǎː','mǎa'],
-            [7,'Animals','Fish','ปลา','plaː','bplaa'],
-            [8,'Animals','Horse','ม้า','máː','máa'],
-            [9,'Animals','Monkey','ลิง','liŋ','ling'],
-            [10,'Animals','Mouse / Rat','หนู','nǔː','nǔu'],
+            [1,'Animal','สัตว์','sàt','sàt'],
+            [2,'Bear','หมี','mǐː','mǐi'],
+            [3,'Bird','นก','nók','nók'],
+            [4,'Cat','แมว','mɛːw','mɛɛo'],
+            [5,'Cow / Bull','วัว','wuːa','wua'],
+            [6,'Dog','หมา','mǎː','mǎa'],
+            [7,'Fish','ปลา','plaː','bplaa'],
+            [8,'Horse','ม้า','máː','máa'],
+            [9,'Monkey','ลิง','liŋ','ling'],
+            [10,'Mouse / Rat','หนู','nǔː','nǔu'],
         ];
 
         const json = jest.fn(() => wordsToGet);
@@ -68,16 +69,16 @@ describe('Leitner', () => {
         let allWordData = await loadWords();
         expect(getItem).toHaveBeenCalledWith('progress');
         expect(allWordData).toEqual([
-            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
-            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี', 'altThai': null},
-            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก', 'altThai': null},
-            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
-            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว', 'altThai': null},
-            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา', 'altThai': null},
-            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
-            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
-            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
-            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
+            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
+            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', 'altThai': null},
+            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', 'altThai': null},
+            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
+            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', 'altThai': null},
+            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', 'altThai': null},
+            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
+            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
+            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
+            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
         ]);
 
         localForageData = [
@@ -88,32 +89,32 @@ describe('Leitner', () => {
         ];
         allWordData = await loadWords();
         expect(allWordData).toEqual([
-            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
-            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
-            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
-            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
-            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
-            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
-            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
-            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
+            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
+            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
+            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
+            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
+            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
+            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
+            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
+            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
         ]);
     });
     it('saves progress to local storage', async () => {
         const setItem = jest.fn(() => Promise.resolve(null));
         jest.doMock('localforage', () => ({ setItem }));
         let words = [
-            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'section': 'Animals', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
-            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'section': 'Animals', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
-            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'section': 'Animals', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
-            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'section': 'Animals', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
-            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'section': 'Animals', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'section': 'Animals', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'section': 'Animals', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
-            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'section': 'Animals', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
-            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'section': 'Animals', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
-            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'section': 'Animals', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
+            {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
+            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
+            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
+            {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
+            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
+            {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
+            {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
+            {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
         ];
         let expected = [
             [2, 1000, 1001, [1, 2, 3]],
@@ -326,6 +327,18 @@ describe('Leitner', () => {
 
         // Words not already in the practice deck are not removed
         expect(removePracticeWord(words, {id: 999})).toEqual(words);
+    });
+    it('resets all words by removing all practice results', () => {
+        const words = [
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+        ];
+        const expectedResults = words.map(({id}) => ({ id }));
+
+        expect(resetWords(words)).toEqual(expectedResults);
     });
     it('gets unseen/active/mastered status of a word', () => {
         const words = [

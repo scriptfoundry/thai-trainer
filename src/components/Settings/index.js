@@ -7,7 +7,7 @@ import '../../styles/css/Settings.css';
 const mapStateToProps = ({
     voice: {thaiVoice, thaiVoices, englishVoice, englishVoices, rate},
     words: { words },
-    settings: { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce, showCharacterClasses },
+    settings: { pronunciationType, practiceWordLimit, testingWordLimit, practiceOrder, practiceAllAtOnce, showCharacterClasses, resetProgressVisible },
 }) => ({
     words,
     englishVoice,
@@ -21,6 +21,7 @@ const mapStateToProps = ({
     practiceOrder,
     practiceAllAtOnce,
     showCharacterClasses,
+    resetProgressVisible,
 });
 
 export default connect(mapStateToProps, operations)(Settings);

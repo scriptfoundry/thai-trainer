@@ -19,8 +19,6 @@ const ProgressItem = ({ word, pronunciationType, showProgress }) => {
 
 ProgressItem.propTypes = {
     word: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        section: PropTypes.string.isRequired,
         term: PropTypes.string.isRequired,
         thai: PropTypes.string.isRequired,
         ipa: PropTypes.string.isRequired,

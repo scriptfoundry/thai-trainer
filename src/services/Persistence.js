@@ -28,9 +28,11 @@ export const loadProgressData = async () => {
     const progress = await localforage.getItem('progress');
     return progress || [];
 };
-
 export const saveProgressData = async (progress) => {
     await localforage.setItem('progress', progress);
+};
+export const resetProgressData = async () => {
+    await localforage.removeItem('progress');
 };
 
 export const loadVoices = async () => {

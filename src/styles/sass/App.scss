@@ -41,3 +41,44 @@ aside {
 .tc_mid { color: rgb(165, 148, 0); }
 .tc_high { color: rgb(173, 0, 0); }
 .tc_none { color: rgb(37, 37, 37); }
+.modal {
+    background-color: rgba(black, 0.4);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+
+    &.visible { display: block; }
+
+    .fg {
+        background-color: white;
+        border-radius: .4em;
+        border: 1px solid $color-muted;
+        box-shadow: .2em .2em .2em rgba(black, .3);
+        left: 50%;
+        margin-left: -10em;
+        margin-top: -10em;
+        padding: 2em;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 20em;
+    }
+    .bg {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    button {
+        margin: 1em .2em 0;
+    }
+    .danger {
+        background-color: $color-danger;
+        color: white;
+    }
+}

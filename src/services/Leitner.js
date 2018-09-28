@@ -53,6 +53,9 @@ export async function loadWords() {
     });
 }
 
+export function resetWords(words) {
+    return words.map(word => ({ ...word, aspectScores: undefined, date: undefined, dueDate: undefined }));
+}
 
 /**
  * Saves the current progress information for a list of words

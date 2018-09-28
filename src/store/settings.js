@@ -1,4 +1,4 @@
-import { loadSettings, saveSettings } from '../services/Persistence';
+import { loadSettings, saveSettings, resetProgressData, } from '../services/Persistence';
 import { PRONUNCIATIONTYPE_IPA, PRONUNCIATIONTYPE_PAIBOON } from '../services/WordManager';
 
 export const SETTINGS_INITIALIZE = 'settings/initialize';
@@ -6,16 +6,19 @@ export const SETTINGS_SETPRONUNCIATIONTYPE = 'settings/setpronunciationtype';
 export const SETTINGS_SETPRACTICELIMIT = 'settings/setpracticelimit';
 export const SETTINGS_SETTESTLIMIT = 'settings/settestlimit';
 export const SETTINGS_SETPRACTICEDISPLAYORDER = 'settings/setpracticedisplayorder';
+export const SETTINGS_RESETPROGRESS = 'settings/resetprogress';
 const SETTINGS_TOGGLEALLATONCE = 'settings/toggleallatonce';
 const SETTINGS_TOGGLECHARACTERCLASSES = 'settings/togglecharacterclasses';
+const SETTINGS_TOGGLERESETPROGRESS = 'settings/toggleresetprogress';
 
 const defaultState = {
     pronunciationType: PRONUNCIATIONTYPE_IPA,
-    practiceWordLimit: 20,
-    testingWordLimit: 20,
+    practiceWordLimit: 15,
+    testingWordLimit: 15,
     practiceOrder: ['thai', 'pronunciation', 'term'],
     practiceAllAtOnce: false,
     showCharacterClasses: false,
+    resetProgressVisible: false,
 };
 
 export const reducer = (state=defaultState, { type, payload }) => {
@@ -26,6 +29,8 @@ export const reducer = (state=defaultState, { type, payload }) => {
         case SETTINGS_SETPRACTICEDISPLAYORDER:
         case SETTINGS_TOGGLEALLATONCE:
         case SETTINGS_TOGGLECHARACTERCLASSES:
+        case SETTINGS_TOGGLERESETPROGRESS:
+        case SETTINGS_RESETPROGRESS:
         return { ...state, ...payload };
 
         case SETTINGS_SETPRONUNCIATIONTYPE:
@@ -74,6 +79,14 @@ const toggleCharacterClasses = () => (dispatch, getState) => {
     dispatch({ type: SETTINGS_TOGGLECHARACTERCLASSES, payload: { showCharacterClasses }});
     saveSettings({ showCharacterClasses });
 };
+const toggleResetProgress = () => (dispatch, getState) => {
+    let resetProgressVisible = getState().settings.resetProgressVisible === false;
+    dispatch({ type: SETTINGS_TOGGLERESETPROGRESS, payload: { resetProgressVisible } });
+};
+const resetProgress = () => async dispatch => {
+    await resetProgressData();
+    dispatch({ type: SETTINGS_RESETPROGRESS, payload: { resetProgressVisible: false }});
+};
 
 export const operations = {
     changePracticeDisplayOrder,
@@ -82,4 +95,6 @@ export const operations = {
     changeTestingWordLimit,
     initializeSettings,
     toggleCharacterClasses,
+    toggleResetProgress,
+    resetProgress,
 };

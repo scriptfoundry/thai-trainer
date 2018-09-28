@@ -1,5 +1,6 @@
 import { buildRandomizedValuesQueue, getDayOfEpoch } from '../services/Utils';
-import { loadWords, refreshPracticeWords, updateProgress, saveProgress } from '../services/Leitner';
+import { loadWords, refreshPracticeWords, updateProgress, saveProgress, resetWords } from '../services/Leitner';
+import { SETTINGS_RESETPROGRESS } from './settings';
 import { TEST_SAVED } from './tests';
 const createQueue = buildRandomizedValuesQueue(5);
 
@@ -52,6 +53,10 @@ export const reducer = (state = defaultState, { type, payload }) => {
         saveProgress(words);
         let queue = createQueue(practiceWords);
         return { ...state, words, queue, currentIndex: 0 };
+    }
+    if (type === SETTINGS_RESETPROGRESS) {
+        let words = resetWords(state.words);
+        return { ...state, words, queue: [], currentIndex: 0 };
     }
 
     if (type === WORDS_CLOSEPRACTICE) return { ...state, queue: [], currentIndex: 0 };

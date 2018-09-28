@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import VoiceSelector from './VoiceSelector';
 import RateSelector from './RateSelector';
 import PronunciationSelector from './PronunciationSelector';
 import PracticeOrderSelector from './PracticeOrderSelector';
 import RangedNumberSelector from './RangedNumberSelector';
 import CharacterClassToggle from './CharacterClassToggle';
+import ResetProgress from './ResetProgress';
 
 const Settings = (props) => {
     const {
@@ -22,6 +22,7 @@ const Settings = (props) => {
         practiceOrder,
         practiceAllAtOnce,
         showCharacterClasses,
+        resetProgressVisible,
 
         changePracticeDisplayOrder,
         changePronunciationType,
@@ -31,6 +32,8 @@ const Settings = (props) => {
         setThaiVoice,
         setEnglishVoice,
         toggleCharacterClasses,
+        resetProgress,
+        toggleResetProgress,
     } = props;
 
     return <div className="settings">
@@ -39,8 +42,6 @@ const Settings = (props) => {
             <VoiceSelector heading="Thai voices" voices={ thaiVoices } selectedVoice={ thaiVoice } onSelectVoice={ setThaiVoice } />
             <VoiceSelector heading="English voices" voices={ englishVoices } selectedVoice={ englishVoice } onSelectVoice={ setEnglishVoice } />
         </section>
-        <section>
-         </section>
         <section>
             <RateSelector value={ rate } onChange={setRate} />
         </section>
@@ -59,7 +60,9 @@ const Settings = (props) => {
         <section>
             <PronunciationSelector pronunciationType={ pronunciationType } changePronunciationType={ changePronunciationType } words={ words } />
         </section>
-        <Link className="button" to="/">Back</Link>
+        <section>
+            <ResetProgress toggleResetProgress={ toggleResetProgress } resetProgress={ resetProgress } resetProgressVisible={ resetProgressVisible } />
+        </section>
     </div>;
 };
 
@@ -84,6 +87,7 @@ Settings.propTypes = {
         paiboon: PropTypes.string.isRequired,
     })).isRequired,
     showCharacterClasses: PropTypes.bool.isRequired,
+    resetProgressVisible: PropTypes.bool.isRequired,
 
     changePracticeDisplayOrder: PropTypes.func.isRequired,
     changePronunciationType: PropTypes.func.isRequired,
@@ -93,6 +97,8 @@ Settings.propTypes = {
     setEnglishVoice: PropTypes.func.isRequired,
     changeTestingWordLimit: PropTypes.func.isRequired,
     toggleCharacterClasses: PropTypes.func.isRequired,
+    toggleResetProgress: PropTypes.func.isRequired,
+    resetProgress: PropTypes.func.isRequired,
 };
 
 export default Settings;

@@ -50,6 +50,15 @@
             }
         }
     }
+    .reset-progress {
+        p {
+            text-align: center;
+        }
+        .danger {
+            background-color: $color-danger;
+            color: white;
+        }
+    }
 
     .samples {
        @include container();
