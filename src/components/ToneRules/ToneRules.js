@@ -8,11 +8,11 @@ class ToneRules extends Component {
         this.props.initializeTones();
     }
     render() {
-        const { match: { params: { type } }, tonesmap } = this.props;
+        const { match: { params: { stage } }, tonesmap } = this.props;
 
         return <div className="tone-rules">
-            { type === undefined ? <Review {...this.props} /> : null }
-            { type && tonesmap.length ? <Drill {...this.props} type={type} /> : null }
+            { stage === undefined ? <Review {...this.props} /> : null }
+            { stage && tonesmap.length ? <Drill {...this.props} stage={parseInt(stage, 10)} /> : null }
         </div>;
     }
 }

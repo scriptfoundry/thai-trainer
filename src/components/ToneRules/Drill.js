@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TONE_FALLING, TONE_HIGH, TONE_LOW, TONE_MID, TONE_RISING } from '../../services/Tones';
 import { buildRandomizedValuesQueue, classNames, wait } from '../../services/Utils';
@@ -6,17 +6,16 @@ import { getTone, getTonesByStage } from '../../services/Tones';
 import { say, LANGUAGE_THAI } from '../../services/Voices';
 import ProgressBar from '../common/ProgressBar';
 
-const randomize = buildRandomizedValuesQueue(2);
-let getTones;
+const randomize = buildRandomizedValuesQueue(3);
 
-class Drill extends Component {
+class Drill extends PureComponent {
     constructor(...args) {
         super(...args);
 
-        let { tonesmap } = this.props;
-        getTones = getTonesByStage(tonesmap);
+        let { stage } = this.props;
+        stage = Math.max(1, stage);
 
-        const { queue, label } = this.reseed();
+        const { queue, label } = this.reseed(null, stage);
 
         this.state = {
             busy: false,
@@ -26,15 +25,15 @@ class Drill extends Component {
             label,
             mistakeMake: false,
             queue,
-            stage: 0,
+            stage,
         };
 
         this.onKey = this.onKey.bind(this);
     }
-    reseed(currentQueue, stage=0) {
+    reseed(currentQueue, stage) {
         let queue;
 
-        let {tones, label} = getTones(stage);
+        let {tones, label} = getTonesByStage(stage, this.props.tonesmap);
         do {
             queue = randomize(tones).map(item => ({ item, word: item.examples[Math.floor(Math.random() * item.examples.length)] , tone: getTone(item)}));
         } while(currentQueue && queue.tone === currentQueue[currentQueue.length - 1].tone);
@@ -135,7 +134,7 @@ class Drill extends Component {
 
 Drill.propTypes = {
     tonesmap: PropTypes.array.isRequired,
-    type: PropTypes.oneOf([ 'all', 'low', 'mid', 'high' ]),
+    stage: PropTypes.number,
 
     initializeTones: PropTypes.func.isRequired,
 };

@@ -7,7 +7,7 @@ export const STAGES = [
     { sleep: 1 },
     { sleep: 3 },
     { sleep: 7 },
-    { sleep: 17 },
+    { sleep: 13 },
     { sleep: Number.MAX_SAFE_INTEGER }
 ];
 export const ASPECT_READ = 0;

@@ -80,25 +80,31 @@ export const getTone = ({ character, cls, length, ending, marker }) => {
     return TONE_MID;
 };
 
+export const getTonesByStage = (stage, tones = []) => {
+    let target = 0;
+    stage = stage - 1;
+    if (stage <= target++) return { tones: tones.filter(({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_LONG && !ending)))), label: `Stage ${target}: Only live (no markers)`, className: 'c-1'};
+    if (stage === target++) return { tones: tones.filter(({length, ending, marker}) => (!marker && length === TONE_VOWEL_SHORT && ending !== TONE_ENDING_SONORANT)), label: `Stage ${target}: Only dead & short (no markers)`, className: 'c-2'};
+    if (stage === target++) return { tones: tones.filter(({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_SHORT)))), label: `Stage ${target}: All live & all short (no markers)`, className: 'c-3'};
+    if (stage === target++) return { tones: tones.filter(({ marker }) => !marker), label: `Stage ${target}: All live & dead (no markers)`, className: 'c-4'};
+    if (stage === target++) return { tones: tones.filter(({ marker }) => marker === TONE_MAI_EK || marker === TONE_MAI_THO), label: `Stage ${target}: Only mai ek & mai tho markers`, className: 'c-5'};
+    if (stage === target++) return { tones: tones.filter(({ marker }) => !!marker), label: `Stage ${target}: All markers only`, className: 'c-6'};
+    if (stage === target++) return { tones: tones.filter(({ cls }) => cls === TONE_CLASS_LOW), label: `Stage ${target}: Only low-class`, className: 'c-7'};
+    if (stage === target++) return { tones: tones.filter(({ cls }) => cls === TONE_CLASS_MID), label: `Stage ${target}: Only mid-class`, className: 'c-8'};
+    if (stage === target++) return { tones: tones.filter(({ cls }) => cls === TONE_CLASS_HIGH), label: `Stage ${target}: Only high-class`, className: 'c-9'};
 
-const stage0 = ({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_LONG && !ending)));
-const stage1 = ({ length, ending, marker }) => (!marker && (ending === TONE_ENDING_SONORANT || (length === TONE_VOWEL_SHORT)));
-const stage2 = ({ marker }) => !marker;
-const stage3 = ({ marker }) => marker === TONE_MAI_EK || marker === TONE_MAI_THO;
-const stage4 = ({ marker }) => !!marker;
-const stage5 = ({ cls }) => cls === TONE_CLASS_LOW;
-const stage6 = ({ cls }) => cls === TONE_CLASS_MID;
-const stage7 = ({ cls }) => cls === TONE_CLASS_HIGH;
+    return { tones: [...tones], label: 'Everything', last: true};
+};
 
-export const getTonesByStage = tones => stage => {
-    if (stage === 0) return { tones: tones.filter(stage0), label: 'Only live, no markers'};
-    if (stage === 1) return { tones: tones.filter(stage1), label: 'All live & all short, no markers'};
-    if (stage === 2) return { tones: tones.filter(stage2), label: 'All live & dead, no markers'};
-    if (stage === 3) return { tones: tones.filter(stage3), label: 'Only mai ek & mai tho markers'};
-    if (stage === 4) return { tones: tones.filter(stage4), label: 'All markers only'};
-    if (stage === 5) return { tones: tones.filter(stage5), label: 'Only low-class'};
-    if (stage === 6) return { tones: tones.filter(stage6), label: 'Only mid-class'};
-    if (stage === 7) return { tones: tones.filter(stage7), label: 'Only high-class'};
+export const getTonesDescriptors = () => {
+    let descriptorsList = [];
+    let stage = 1;
+    let last, label, className;
+    do {
+        ({last, label, className} = getTonesByStage(stage));
+        descriptorsList.push({ stage, label, className });
+        stage += 1;
+    } while (!last);
 
-    return { tones: [...tones], label: 'Everything'};
+    return descriptorsList;
 };
