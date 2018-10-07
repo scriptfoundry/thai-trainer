@@ -82,19 +82,19 @@ describe('Leitner', () => {
         ]);
 
         localForageData = [
-            [2, 1000, 1001, [1, 2, 3]],
-            [3, 1000, 1002, [1, 1, 1]],
-            [5, 1000, 1000, [0, 0, 0]],
-            [6, 1000, 1000, [0, 0, 0]],
+            [2, 1000, 1001, [1, 2]],
+            [3, 1000, 1002, [1, 1]],
+            [5, 1000, 1000, [0, 0]],
+            [6, 1000, 1000, [0, 0]],
         ];
         allWordData = await loadWords();
         expect(allWordData).toEqual([
             {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
-            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
-            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
+            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2], 'altThai': null},
+            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1], 'altThai': null},
             {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
-            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0], 'altThai': null},
+            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0], 'altThai': null},
             {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
             {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
             {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
@@ -106,21 +106,21 @@ describe('Leitner', () => {
         jest.doMock('localforage', () => ({ setItem }));
         let words = [
             {'id': 1, 'ipa': 'sàt', 'paiboon': 'sàt', 'term': 'Animal', 'thai': 'สัตว์', 'altThai': null},
-            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2, 3], 'altThai': null},
-            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1, 1], 'altThai': null},
+            {'id': 2, 'ipa': 'mǐː', 'paiboon': 'mǐi', 'term': 'Bear', 'thai': 'หมี', date: 1000, dueDate: 1001, aspectScores: [1, 2], 'altThai': null},
+            {'id': 3, 'ipa': 'nók', 'paiboon': 'nók', 'term': 'Bird', 'thai': 'นก', date: 1000, dueDate: 1002, aspectScores: [1, 1], 'altThai': null},
             {'id': 4, 'ipa': 'mɛːw', 'paiboon': 'mɛɛo', 'term': 'Cat', 'thai': 'แมว', 'altThai': null},
-            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
-            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0, 0], 'altThai': null},
+            {'id': 5, 'ipa': 'wuːa', 'paiboon': 'wua', 'term': 'Cow / Bull', 'thai': 'วัว', date: 1000, dueDate: 1000, aspectScores: [0, 0], 'altThai': null},
+            {'id': 6, 'ipa': 'mǎː', 'paiboon': 'mǎa', 'term': 'Dog', 'thai': 'หมา', date: 1000, dueDate: 1000, aspectScores: [0, 0], 'altThai': null},
             {'id': 7, 'ipa': 'plaː', 'paiboon': 'bplaa', 'term': 'Fish', 'thai': 'ปลา', 'altThai': null},
             {'id': 8, 'ipa': 'máː', 'paiboon': 'máa', 'term': 'Horse', 'thai': 'ม้า', 'altThai': null},
             {'id': 9, 'ipa': 'liŋ', 'paiboon': 'ling', 'term': 'Monkey', 'thai': 'ลิง', 'altThai': null},
             {'id': 10, 'ipa': 'nǔː', 'paiboon': 'nǔu', 'term': 'Mouse / Rat', 'thai': 'หนู', 'altThai': null}
         ];
         let expected = [
-            [2, 1000, 1001, [1, 2, 3]],
-            [3, 1000, 1002, [1, 1, 1]],
-            [5, 1000, 1000, [0, 0, 0]],
-            [6, 1000, 1000, [0, 0, 0]],
+            [2, 1000, 1001, [1, 2]],
+            [3, 1000, 1002, [1, 1]],
+            [5, 1000, 1000, [0, 0]],
+            [6, 1000, 1000, [0, 0]],
         ];
         const { saveProgress } = require('../Leitner');
         await saveProgress(words);
@@ -129,20 +129,18 @@ describe('Leitner', () => {
     it('updates a words aspects scores', () => {
         let aspectScores;
 
-        expect(updateWordAspect(aspectScores, 0, true)).toEqual([1, 0, 0]);
+        expect(updateWordAspect(aspectScores, 0, true)).toEqual([1, 0]);
         expect(aspectScores).toEqual();
 
-        expect(updateWordAspect(aspectScores, 0, false)).toEqual([0, 0, 0]);
-        expect(updateWordAspect(aspectScores, 1, false)).toEqual([0, 0, 0]);
-        expect(updateWordAspect(aspectScores, 2, false)).toEqual([0, 0, 0]);
+        expect(updateWordAspect(aspectScores, 0, false)).toEqual([0, 0]);
+        expect(updateWordAspect(aspectScores, 1, false)).toEqual([0, 0]);
+        expect(updateWordAspect(aspectScores, 2, false)).toEqual([0, 0]);
 
-        aspectScores = [3, 4, 5];
-        expect(updateWordAspect(aspectScores, 0, true)).toEqual([4, 4, 5]);
-        expect(updateWordAspect(aspectScores, 1, true)).toEqual([3, 5, 5]);
-        expect(updateWordAspect(aspectScores, 2, true)).toEqual([3, 4, 5]);
-        expect(updateWordAspect(aspectScores, 0, false)).toEqual([2, 4, 5]);
-        expect(updateWordAspect(aspectScores, 1, false)).toEqual([3, 3, 5]);
-        expect(updateWordAspect(aspectScores, 2, false)).toEqual([3, 4, 4]);
+        aspectScores = [3, 4];
+        expect(updateWordAspect(aspectScores, 0, true)).toEqual([4, 4]);
+        expect(updateWordAspect(aspectScores, 1, true)).toEqual([3, 5]);
+        expect(updateWordAspect(aspectScores, 0, false)).toEqual([2, 4]);
+        expect(updateWordAspect(aspectScores, 1, false)).toEqual([3, 3]);
     });
     it('applies item scores to their respective words', () => {
         let words = [
@@ -263,9 +261,9 @@ describe('Leitner', () => {
     });
     it('refreshes a list of practice words', () => {
         let words = [
-            { id: 1, date: 1000, dueDate: 9999, aspectScores: [5, 5, 5]},
-            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2, 3]},
-            { id: 3, date: 1000, dueDate: 1001, aspectScores: [1, 1, 1]},
+            { id: 1, date: 1000, dueDate: 9999, aspectScores: [5, 5]},
+            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2]},
+            { id: 3, date: 1000, dueDate: 1001, aspectScores: [1, 1]},
             { id: 4, },
             { id: 5, },
             { id: 6, },
@@ -276,18 +274,18 @@ describe('Leitner', () => {
         ];
 
         expect(refreshPracticeWords(words, 5, 1000)).toEqual([
-            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2, 3]},
-            { id: 4, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
-            { id: 5, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
-            { id: 6, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
-            { id: 7, date: 1000, dueDate: 1000, aspectScores: [0, 0, 0]},
+            { id: 2, date: 1000, dueDate: 1001, aspectScores: [0, 2]},
+            { id: 4, date: 1000, dueDate: 1000, aspectScores: [0, 0]},
+            { id: 5, date: 1000, dueDate: 1000, aspectScores: [0, 0]},
+            { id: 6, date: 1000, dueDate: 1000, aspectScores: [0, 0]},
+            { id: 7, date: 1000, dueDate: 1000, aspectScores: [0, 0]},
         ]);
     });
     it('adds a word for practice', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
             { id:  4 },
             { id:  5 },
             { id:  6 },
@@ -296,10 +294,10 @@ describe('Leitner', () => {
         let newWord = words.find(({id}) => id === 5);
 
         expect(addPracticeWord(practiceWords, newWord, 1001)).toEqual([
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
         ]);
 
         // Ensure that words and the original words are not modified
@@ -308,21 +306,21 @@ describe('Leitner', () => {
     });
     it('drops a word from practice', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0] },
         ];
 
         let wordToRemove = words.find(({id}) => id === 5);
 
-        expect(wordToRemove).toEqual({ id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] });
+        expect(wordToRemove).toEqual({ id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] });
         expect(removePracticeWord(words, wordToRemove)).toEqual([
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0] },
         ]);
 
         // Words not already in the practice deck are not removed
@@ -330,11 +328,11 @@ describe('Leitner', () => {
     });
     it('resets all words by removing all practice results', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
-            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
+            { id:  6, date: 1001, dueDate: 1001, aspectScores: [1, 0] },
         ];
         const expectedResults = words.map(({id}) => ({ id }));
 
@@ -342,15 +340,15 @@ describe('Leitner', () => {
     });
     it('gets unseen/active/mastered status of a word', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 1] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
             { id:  6 },
-            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
-            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
-            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
-            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5] },
+            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4] },
+            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 1] },
+            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0] },
         ];
 
         // ACTIVE: overdue
@@ -381,15 +379,15 @@ describe('Leitner', () => {
     });
     it('reduces a list of words into groups of like status', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 1] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
             { id:  6 },
-            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
-            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
-            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
-            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5] },
+            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4] },
+            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 1] },
+            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0] },
         ];
 
         let sections = organizeByRoughStatus(words, 1001);
@@ -408,15 +406,15 @@ describe('Leitner', () => {
     });
     it('groups and filters a list of words into groups of like status', () => {
         const words = [
-            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5, 5] },
-            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4, 5] },
-            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 0, 1] },
-            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0, 0] },
+            { id:  1, date: 1000, dueDate: 1001, aspectScores: [5, 5] },
+            { id:  2, date: 1000, dueDate: 1001, aspectScores: [5, 4] },
+            { id:  3, date: 1000, dueDate: 1001, aspectScores: [0, 1] },
+            { id:  5, date: 1001, dueDate: 1001, aspectScores: [0, 0] },
             { id:  6 },
-            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5, 5] },
-            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4, 5] },
-            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 0, 1] },
-            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0, 0] },
+            { id:  7, date: 1000, dueDate: 1002, aspectScores: [5, 5] },
+            { id:  8, date: 1000, dueDate: 1002, aspectScores: [5, 4] },
+            { id:  9, date: 1000, dueDate: 1002, aspectScores: [0, 1] },
+            { id:  10, date: 1001, dueDate: 1002, aspectScores: [0, 0] },
         ];
 
         expect(filterByRoughStatus(words, 1001, []).map(({id}) => id)).toEqual([]);

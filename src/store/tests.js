@@ -12,7 +12,7 @@ const TEST_SETTESTWORDS = 'test/settesetwords';
 const TEST_ACCEPTANSWER = 'test/acceptanswer';
 const TEST_CLEARALL = 'test/clearall';
 
-const getRandomQueue = buildRandomizedValuesQueue(3);
+const getRandomQueue = buildRandomizedValuesQueue(2);
 
 const defaultState = {
     testWords: [],

@@ -11,7 +11,7 @@ const CharacterClassToggle = ({ onToggle, showCharacterClasses }) => <div>
     </div>
     <div>
         <h3>
-            { showCharacterClasses ? <Thai word={{ thai: 'สบาย' }} /> : 'สบาย'}
+            { showCharacterClasses ? <Thai word={{ thai: 'หยำเป' }} /> : 'หยำเป'}
         </h3>
     </div>
 </div>;

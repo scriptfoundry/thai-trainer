@@ -22,7 +22,7 @@ export const midCharacters = 'กตปอจบดฎฏ';
 export const highCharacters = 'สหขผถศฝฉฐษฃ';
 
 const rxThai = /[ก-๛]/;
-const rxZeroWidth = /[๋๊้่๎ํ์็ฺูุืึีิำั]/u;
+const rxZeroWidth = /[๋๊้่๎ํ์็ฺูุืึีิั]/u;
 const rxFindClass = new RegExp(`^([${lowCharacters}]?)([${midCharacters}]?)([${highCharacters}]?)`, 'u');
 
 const rxLow = new RegExp(`[${lowCharacters}]`, 'u');

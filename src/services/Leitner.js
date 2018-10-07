@@ -73,7 +73,7 @@ export async function saveProgress(words) {
  * @param {Boolean} advance If true, the number at aspect index will be advanced. If negative, it will be rewound
  * @returns {Object} Returns a new word having its aspect array replaced
  */
-export function updateWordAspect(aspectScores=[0, 0, 0], aspect, advance) {
+export function updateWordAspect(aspectScores=[0, 0], aspect, advance) {
     return applyDelta(aspectScores, aspect, advance ? 1 : -1);
 }
 
@@ -158,7 +158,7 @@ export function refreshPracticeWords(words, limit, date) {
     const filterPending = ({ aspectScores=null}) => aspectScores === null;
     let pendingWords = words
         .filter(filterPending)
-        .map(w => ({ ...w, date, dueDate: date, aspectScores: [0, 0, 0]}));
+        .map(w => ({ ...w, date, dueDate: date, aspectScores: [0, 0]}));
 
     return [...currentWords, ...pendingWords].slice(0, limit);
 }
@@ -171,7 +171,7 @@ export function refreshPracticeWords(words, limit, date) {
  * @returns {Object[]} New list of words
  */
 export function addPracticeWord(words, word, date) {
-    return [ ...words, { ...word, date, dueDate: date, aspectScores: [0, 0, 0] } ];
+    return [ ...words, { ...word, date, dueDate: date, aspectScores: [0, 0] } ];
 }
 
 /**

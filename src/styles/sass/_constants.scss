@@ -159,15 +159,13 @@ $primary-theme: (
     }
 
 }
-@mixin icon-button($theme:()) {
+@mixin icon-square($theme:()) {
     $theme: map-merge($theme, $default-theme);
-    @include button();
 
     background-color: map-get($theme, backgroundColor);
     border-radius: map-get($theme, borderRadius);
     border: 1px solid map-get($theme, borderColor);
     color: map-get($theme, foregroundColor);
-    cursor: pointer;
     display: inline-block;
     font-size: 1.2rem;
     height: 1.5em;
@@ -176,6 +174,11 @@ $primary-theme: (
     padding: 0;
     text-align: center;
     width: 1.5em;
+}
+@mixin icon-button($theme:()) {
+    @include button();
+    @include icon-square($theme);
+    cursor: pointer;
 }
 @mixin text-button() {
     @include button();

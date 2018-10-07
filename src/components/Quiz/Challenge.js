@@ -7,9 +7,8 @@ import Advancement from './Advancement';
 import { sortBySimilarity, shuffle } from '../../services/Utils';
 
 const stageTestTargets = [
-    { question: 'term', answer: ['thai', 'pronunciation'] },
-    { question: 'pronunciation', answer: ['term', 'thai'] },
-    { question: 'thai', answer: ['term', 'pronunciation'] },
+    { question: 'thai', answer: 'pronunciation' },
+    { question: 'pronunciation', answer: 'thai' },
 ];
 
 const keyToProperty = (key, pronunciationType) => {
@@ -22,47 +21,47 @@ class Challenge extends PureComponent {
         super(...args);
 
         let { queue, index, stage, words, pronunciationType } = this.props;
-        let leftProperty = keyToProperty(stageTestTargets[stage].answer[0], pronunciationType);
-        let rightProperty = keyToProperty(stageTestTargets[stage].answer[1], pronunciationType);
+        let property = keyToProperty(stageTestTargets[stage].answer, pronunciationType);
 
-        const leftAnswers  = shuffle([...sortBySimilarity(queue[index], leftProperty, words).slice(0, 9), queue[index]]);
-        const rightAnswers = shuffle([...sortBySimilarity(queue[index], rightProperty, words).slice(0, 9), queue[index]]);
+        const answers  = shuffle([...sortBySimilarity(queue[index], property, words).slice(0, 8), queue[index]]);
         this.state = {
-            leftProperty,
-            rightProperty,
-            leftAnswers,
-            rightAnswers,
-            selectedLeft: null,
-            selectedRight: null,
+            property,
+            answers,
+            selectedAnswer: null,
         };
         this.answer = this.answer.bind(this);
     }
-    answer(side, answer) {
-        const { selectedLeft, selectedRight } = this.state;
+    answer(answer) {
+        if (this.state.selectedAnswer) return;
 
-        if (selectedLeft && selectedRight) return;
-
-        const prop = side === 'left' ? 'selectedLeft' : 'selectedRight';
-        this.setState({ [prop]: answer });
+        this.setState({ selectedAnswer: answer });
     }
     render() {
         const { queue, index, stage, pronunciationType, submitAnswer } = this.props;
-        const { leftAnswers, leftProperty, rightAnswers, rightProperty, selectedLeft, selectedRight } = this.state;
+        const { answers, property, selectedAnswer } = this.state;
         const correctAnswer = queue[index];
-        const isAnswered = selectedLeft !== null && selectedRight !== null;
+        const isAnswered = selectedAnswer !== null;
 
-        const leftSide = leftAnswers.map(word => <Answer key={ word.id } isAnswered={ isAnswered } correct={ correctAnswer } selected={ selectedLeft } word={ word } property={ leftProperty } pronunciationType={ pronunciationType } onSelect={ () => this.answer('left', word) } /> );
-        const rightSide = rightAnswers.map(word => <Answer key={ word.id } isAnswered={ isAnswered } correct={ correctAnswer } selected={ selectedRight }  word={ word } property={ rightProperty } pronunciationType={ pronunciationType } onSelect={ () => this.answer('right', word) } /> );
+        const visibleAnswers = answers.map(word =>
+            <Answer
+                key={ word.id }
+                isAnswered={ isAnswered }
+                correct={ correctAnswer }
+                selected={ selectedAnswer }
+                word={ word }
+                property={ property }
+                pronunciationType={ pronunciationType }
+                onSelect={ () => this.answer(word) }
+            /> );
+
+        const isCorrect = correctAnswer === selectedAnswer;
 
         return <div className="challenge">
             <Question word={ correctAnswer } property={ keyToProperty(stageTestTargets[stage].question, pronunciationType) } />
-            <div className="answers">
-                <div className="left">{ leftSide }</div>
-                <div className="right">{ rightSide }</div>
-            </div>
 
-            <Advancement isLastQuestion={index === queue.length - 1} isCorrect={ correctAnswer === selectedRight && correctAnswer === selectedLeft} index={ index } isAnswered={ isAnswered } submitAnswer={ submitAnswer } />
+            <div className="answers">{ visibleAnswers }</div>
 
+            <Advancement isLastQuestion={index === queue.length - 1} isCorrect={ isCorrect } index={ index } isAnswered={ isAnswered } submitAnswer={ submitAnswer } />
         </div>;
 
     }

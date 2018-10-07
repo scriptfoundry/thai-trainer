@@ -7,18 +7,24 @@
         display: flex;
         flex-direction: row;
         padding: .5em 0;
-        border-top: 1px solid $color-faint;
+        border-bottom: 1px solid $color-faint;
         line-height: 2em;
         text-align: left;
 
         > * {
             flex: 1;
+            text-align: center;
         }
 
-        &:last-child {
-            border-bottom: 1px solid $color-faint;
+        > :first-child {
+            text-align: left;
+            font-size: 1.4em;
         }
 
+        &.header {
+            font-weight: bold;
+            border-top-width: 0;
+        }
     }
     section {
         @include section();
@@ -37,8 +43,7 @@
         border-color: darken(#12ac12, 10%);
     }
     span {
-        @include icon-button();
-        margin-right: 1em;
+        @include icon-square();
         border-radius: .2em;
         color: $white;
         height: 1.5em;

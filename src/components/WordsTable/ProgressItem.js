@@ -7,7 +7,7 @@ import ProgressIcon from '../common/ProgressIcon';
 const getPronunciation = (ipa, paiboon, pronunciationType) => pronunciationType === PRONUNCIATIONTYPE_IPA ? ipa : paiboon;
 
 const ProgressItem = ({ word, pronunciationType, showProgress }) => {
-    const { term, thai, ipa, paiboon, aspectScores=[0, 0, 0] } = word;
+    const { term, thai, ipa, paiboon, aspectScores=[0, 0] } = word;
 
     return <tr>
         <td>{ term }</td>

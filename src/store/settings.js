@@ -14,10 +14,10 @@ const SETTINGS_TOGGLERESETPROGRESS = 'settings/toggleresetprogress';
 const defaultState = {
     pronunciationType: PRONUNCIATIONTYPE_IPA,
     practiceWordLimit: 15,
-    testingWordLimit: 15,
+    testingWordLimit: 20,
     practiceOrder: ['thai', 'pronunciation', 'term'],
     practiceAllAtOnce: false,
-    showCharacterClasses: false,
+    showCharacterClasses: true,
     resetProgressVisible: false,
 };
 
