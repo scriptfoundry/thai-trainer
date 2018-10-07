@@ -378,7 +378,7 @@ $primary-theme: (
         left: 0;
         height: 100%;
         background-color: $color-success;
-        transition: width 300ms;
+        transition: width 300ms 300ms;
         z-index: 1;
     }
     .label {
