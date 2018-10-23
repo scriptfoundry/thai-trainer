@@ -124,7 +124,10 @@ class Drill extends Component {
 
         const character = queue[index];
 
-        const progress = mistakesMade ? 0 : stageComplete ? queue.length : index;
+        const progress = mistakesMade ? 0
+            : stageComplete ? queue.length
+            : correctItem !== null ? index + 1
+            : index;
 
         return <div className="drill">
             <div className="container">

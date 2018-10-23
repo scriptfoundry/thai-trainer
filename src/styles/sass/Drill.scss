@@ -2,42 +2,37 @@
 
 .drill {
     .container > div {
-        position: absolute;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        top: 20%;
         opacity: 1;
         transition: opacity .3s;
 
-        &.card-exit {
-            opacity: 0;
-        }
+        &.card-exit { opacity: 0; }
     }
+
     h1, h3 {
+        border: .2em solid white;
+        border-radius: 1em;
         height: 1em;
-        margin-top: -.6em;
+        left: 50%;
+        margin-left: -.75em;
+        margin-top: -.75em;
+        padding: .1em;
         position: absolute;
-        top: 50%;
+        text-align: center;
+        top: 40%;
+        width: 1em;
     }
     h1 {
-        font-size: 8rem;
-        left: 0%;
-        text-align: center;
-        width: 100%;
+        font-size: 20vh;
     }
     h3 {
         background-color: $color-faint;
-        border: .2em solid white;
+        border-color: white;
         border-radius: 1.5em;
-        font-size: 3rem;
-        left: 50%;
-        line-height: 1.1em;
-        margin-left: -.5em;
-        padding: .5em;
+        font-size: 12vh;
+        line-height: 1.2em;
+        text-align: center;
         transition: all 500ms;
-        width: 1em;
-        cursor: pointer;
+        vertical-align: bottom;
 
         &.incorrect {
             color: white;
@@ -49,15 +44,21 @@
             border-color: $color-success;
             cursor: default;
         }
-        &.answer-0 { margin-left: -5em; margin-top: -1.25em; }
-        &.answer-1 { margin-left: 3em; margin-top: -1.25em; }
-        &.answer-2 { margin-top: -5em; margin-left: -1em; }
-        &.answer-3 { margin-top: 2em; margin-left: -1em; }
-        &.answer-4 {
-            margin-top: 6em;
-            margin-left: -2.25em;
-            width: auto;
-            border-radius: .5em;
-        }
     }
+    .answer-0 { margin-left:-2.75em; }
+    .answer-1 { margin-left:1.35em; }
+    .answer-2 { margin-top:-2.8em; }
+    .answer-3 { margin-top:1.35em; }
+    .answer-4 {
+        margin-left: -2.75em;
+        margin-top: -1.4em;
+        top: 96%;
+        width: 5em;
+    }
+
+    @media(max-width:768px) {
+        h1 { font-size: 10vh; }
+        h3 { font-size: 6vh; }
+    }
+
 }
