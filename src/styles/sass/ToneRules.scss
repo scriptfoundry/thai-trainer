@@ -92,8 +92,15 @@
             text-transform: uppercase;
         }
         .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             text-align: center;
             margin: .5em 0;
+            a {
+                flex: 0;
+                margin-bottom: .25em;
+            }
         }
         .button {
             @include medium-button($primary-theme);

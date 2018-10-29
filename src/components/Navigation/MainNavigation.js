@@ -5,13 +5,13 @@ const MainNavigation = () => {
         return <div className="navigation">
             <h1>Read Thai</h1>
             <section>
-                <Link className="button" to="/basics">Learn the basics</Link>
+                <Link className="button" to="/basics">The basics</Link>
             </section>
             <section>
-                <Link className="button" to="/test">Test overdue or current words</Link>
+                <Link className="button" to="/test">Test words</Link>
             </section>
             <section>
-                <Link className="button" to="/practice">Practice new words</Link>
+                <Link className="button" to="/practice">Practice words</Link>
             </section>
             <section>
                 <Link className="button" to="/progress">View progress</Link>

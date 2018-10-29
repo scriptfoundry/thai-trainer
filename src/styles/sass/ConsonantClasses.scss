@@ -12,6 +12,10 @@
             border-radius: .4em;
             background-color: $color-faint;
 
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+
             h2 {
                 flex: .1;
                 height: 100%;
@@ -35,7 +39,16 @@
             }
         }
         .highlighted {
-            color: $black;
+            color: inherit;
+        }
+        .high {
+            color: $tc_high;
+        }
+        .mid {
+            color: $tc_mid;
+        }
+        .low {
+            color: $tc_low;
         }
     }
 

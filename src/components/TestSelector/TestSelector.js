@@ -35,12 +35,12 @@ const TestSelector = ({ testingWordLimit, words }) => {
 
         { outstandingWords.length === 0
             ? null
-            : <section><Link className="button" to="/test/overdue">Overdue words ({ outstandingCount || 'none'} available)</Link></section>
+            : <section><Link className="button" to="/test/overdue">Overdue ({ outstandingCount || 'none'})</Link></section>
         }
 
         { currentWords.length === 0
             ? null
-            : <section><Link className="button" to="/test/current">Current practice words ({ currentCount || 'none' } available)</Link></section>
+            : <section><Link className="button" to="/test/current">Current ({ currentCount || 'none' })</Link></section>
         }
 
         <section>

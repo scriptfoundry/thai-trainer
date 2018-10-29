@@ -13,7 +13,7 @@ const getClass = (word, selected, correct, isAnswered) => selected === null ? 'a
 
 const Answer = ({ word, property, onSelect, selected, correct, isAnswered }) => <div className={ getClass(word, selected, correct, isAnswered) } onClick={ onSelect }>
     <span className={ property }>{ word[property] }</span>
-    { isPronunciation(property) ? <span><PlayButton word={word} /></span> : null }
+    { isPronunciation(property) ? <span className="play-button"><PlayButton word={word} /></span> : null }
 </div>;
 
 const wordShape = PropTypes.shape({

@@ -37,10 +37,10 @@ aside {
         &:hover { color: $color-primary-1; }
     }
 }
-.tc_low { color: rgb(3, 13, 153); }
-.tc_mid { color: rgb(165, 148, 0); }
-.tc_high { color: rgb(173, 0, 0); }
-.tc_none { color: rgb(37, 37, 37); }
+.tc_low { color: $tc_low; }
+.tc_mid { color: $tc_mid; }
+.tc_high { color: $tc_high; }
+.tc_none { color: $tc_none; }
 .modal {
     background-color: rgba(black, 0.4);
     bottom: 0;

@@ -11,10 +11,8 @@ const Preview = ({ practiceWordLimit, words}) => {
     const visibleWords = getFilteredWordsList(words, getDayOfEpoch(new Date()), [STATUS_PRACTICE]).slice(0, practiceWordLimit);
 
     return <div className="preview">
-        <section>
-            <Link className="start-button" to="/practice/full">Normal practice</Link>
-            <Link className="start-button" to="/practice/sounds-only">Sounds only</Link>
-        </section>
+        <Link className="start-button" to="/practice/full">Full practice</Link>
+        <Link className="start-button" to="/practice/sounds-only">Sounds only</Link>
         <section>
             <h2>Words for this session</h2>
             <WordsTable visibleWords={ visibleWords } showPreview={false} showProgress={ false } />

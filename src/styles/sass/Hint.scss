@@ -45,9 +45,9 @@
         display: flex;
         overflow: auto;
 	    position: relative;
-        margin: 0 auto;
+        margin: 0 1em;
         max-height: calc(100vh - 40px);
-        width: 640px;
+        max-width: 640px;
         background-color: $white;
         color: $black;
         border-radius: .5em;
@@ -94,11 +94,6 @@
             background-color: white;
             border-width: 5px;
         }
-    }
-    ul {
-        list-style-type: disc;
-        margin-left: 1.5em;
-
     }
     li {
         margin-bottom: .5em;

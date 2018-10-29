@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Card from './Card';
@@ -40,16 +40,17 @@ export default class CardContainer extends Component {
             <Card word={ queue[currentIndex] } stage={ currentStage } onClick={ () => nudgePractice(practiceAllAtOnce) } pronunciationType={pronunciationType} practiceAllAtOnce={ practiceAllAtOnce } practiceOrder={ practiceOrder } showCharacterClasses={ showCharacterClasses } />
         </CSSTransition>;
 
-        return <TransitionGroup className="cards">
+        return <Fragment>
             <Hint { ...this.props } title="Instructions">
                 <p>Press [Space] or [Enter] to advance</p>
                 <p>Press [Right Arrow] to skip to the next word.</p>
                 <p>Press [Left Arrow] to jump back to the last word.</p>
                 <p>Go to settings to change the number of words to practice at once.</p>
             </Hint>
-
-            { card }
-        </TransitionGroup>;
+            <TransitionGroup className="cards">
+                { card }
+            </TransitionGroup>
+        </Fragment>;
     }
 }
 

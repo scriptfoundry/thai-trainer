@@ -67,9 +67,11 @@
             display: flex;
 
             > div {
-                flex: none;
+                flex: 4;
                 text-align: center;
-                width: 25%;
+            }
+            > :nth-child(2) {
+                flex: 1;
             }
             .disabled-button {
                 @include text-button();
@@ -77,14 +79,7 @@
                 cursor: default;
                 font-weight: bold;
             }
-            > :first-child {
-                margin-left: 1.5 * 12.5%
-            }
-            > :nth-child(2) {
-                width: 12.5%;
-            }
         }
-
 
         &.ipa { @include highlight-column(1); }
         &.paiboon { @include highlight-column(3); }
@@ -95,9 +90,11 @@
         margin-left: 25%;
     }
     .button-group {
-        @include button-group();
-        width: 50%;
-        padding-left: 25%;
+        @include button-group(768px);
+
+        @media (max-wdith: 768px) {
+            display: flex;
+        }
 
         .selected {
             cursor: default;
