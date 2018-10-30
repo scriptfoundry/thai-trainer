@@ -45,7 +45,7 @@
         }
     }
     .card {
-        background-color: white;
+        background-color: transparent;
         border-radius: .25em;
         cursor: pointer;
         font-size: 4em;
@@ -79,10 +79,29 @@
     .card-exit {
         opacity: 0;
     }
+    .next-button {
+        border: .1em solid $color-faint;
+        border-radius: 1em;
+        color: $color-muted;
+        display: inline-block;
+        font-size: .75em;
+        height: 1em;
+        width: 1em;
+
+        @include forDesktop {
+            display: none;
+        }
+    }
     .help-button {
         @include icon-button();
         position: absolute;
         z-index: 1;
+        display: none !important;
+    }
+    .hint {
+        @include forHandheld {
+            display: none;
+        }
     }
     table button {
         margin-right: 1em;

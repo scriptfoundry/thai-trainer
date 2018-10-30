@@ -5,7 +5,11 @@ import { classNames } from '../../services/Utils';
 
 const Card = ({ word, onClick, pronunciationType, stage, practiceOrder, practiceAllAtOnce, showCharacterClasses }) => {
     const lines = practiceOrder.map((prop, index) => <Line key={prop} index={index} type={practiceOrder[index]} practiceAllAtOnce={practiceAllAtOnce} pronunciationType={pronunciationType} stage={stage} word={word} showCharacterClasses={ showCharacterClasses } prop={ prop } />);
-    return <div onClick={ onClick } className={ classNames({ card: true, practiceAllAtOnce }) }>{ lines }</div>;
+    const nextButton = stage > 1 ? '»' : '›';
+    return <div onClick={ onClick } className={ classNames({ card: true, practiceAllAtOnce }) }>
+        { lines }
+        <span className="next-button">{ nextButton }</span>
+    </div>;
 };
 
 Card.propTypes = {
