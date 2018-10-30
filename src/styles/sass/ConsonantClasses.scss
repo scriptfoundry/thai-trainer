@@ -12,7 +12,7 @@
             border-radius: .4em;
             background-color: $color-faint;
 
-            @media (max-width: 768px) {
+            @include forHandheld() {
                 flex-direction: column;
             }
 

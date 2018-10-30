@@ -79,6 +79,12 @@ $primary-theme: (
     altForegroundColor: #ffffff,
     altBorderColor: #47b797,
 );
+@mixin forHandheld() {
+    @media (max-width:768px) { @content; }
+}
+@mixin forDesktop() {
+    @media (min-width: 768px) { @content; }
+}
 @mixin button($theme:()) {
     $settings: map-merge($default-theme, $theme);
     background-color: map-get($settings, backgroundColor);
@@ -210,7 +216,6 @@ $primary-theme: (
     }
     margin-bottom: 1rem;
     vertical-align: baseline;
-    font-weight: lighter;
     
     > * {
         @include button();
@@ -242,7 +247,6 @@ $primary-theme: (
     text-align: center;
     font-weight: lighter;
     color: $black;
-	font-weight: lighter;
 	line-height: 1.125;
 
 }

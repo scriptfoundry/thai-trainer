@@ -11,7 +11,7 @@ const ResetProgress = ({ resetProgress, toggleResetProgress, resetProgressVisibl
     return <div className="reset-progress">
         <h2>Speech rate (Thai)</h2>
         <div className="button-group">
-            <button className="danger" onClick={ toggleResetProgress }>Reset progress</button>
+            <div className="danger" onClick={ toggleResetProgress }>Reset progress</div>
         </div>
         <p>Be careful! Resetting your progress will be like starting all tests from scratch.</p>
 

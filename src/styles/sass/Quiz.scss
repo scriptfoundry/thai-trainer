@@ -38,7 +38,7 @@
         display: flex;
         overflow: auto;
 
-        @media (min-width: 768px) {
+        @include forDesktop() {
             flex-wrap: wrap;
             justify-content: space-between;
 
@@ -53,7 +53,7 @@
                 padding: .25em;
             }
         }
-        @media (max-width: 768px) {
+        @include forHandheld() {
             flex-direction: column;
             .answer {
                 display: flex;

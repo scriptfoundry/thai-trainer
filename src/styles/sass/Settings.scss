@@ -92,7 +92,7 @@
     .button-group {
         @include button-group(768px);
 
-        @media (max-wdith: 768px) {
+        @include forHandheld() {
             display: flex;
         }
 

@@ -56,7 +56,7 @@
         width: 5em;
     }
 
-    @media(max-width:768px) {
+    @include forHandheld() {
         h1 { font-size: 14vh; }
         h3 { font-size: 8vh; }
     }

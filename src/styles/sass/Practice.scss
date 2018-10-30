@@ -2,7 +2,7 @@
 .practice {
     @include section();
 
-    @media (max-width: 768px) {
+    @include forHandheld() {
         font-size: .8rem;
     }
     .test-button {

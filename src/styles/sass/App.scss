@@ -50,22 +50,22 @@ aside {
     right: 0;
     top: 0;
     z-index: 3;
+    justify-content: center;
+    align-items: center;
 
-    &.visible { display: block; }
+
+    &.visible { display: flex; }
 
     .fg {
         background-color: white;
         border-radius: .4em;
         border: 1px solid $color-muted;
         box-shadow: .2em .2em .2em rgba(black, .3);
-        left: 50%;
-        margin-left: -10em;
-        margin-top: -10em;
         padding: 2em;
-        position: absolute;
         text-align: center;
-        top: 50%;
+        max-width: 90%;
         width: 20em;
+        margin: 0 1em;
     }
     .bg {
         bottom: 0;
