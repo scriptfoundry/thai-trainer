@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Preview from './Preview';
 import CardContainer from './CardContainer';
-import SoundsContainer from './SoundsContainer';
 
 class Practice extends Component {
     componentWillMount() {
@@ -24,7 +23,6 @@ class Practice extends Component {
         <h1>Practice</h1>
         {
             subview === 'full' ? <CardContainer { ...props } />
-            : subview === 'sounds-only' ? <SoundsContainer { ...props } />
             : <Preview { ...props } />
         }
     </div>);
