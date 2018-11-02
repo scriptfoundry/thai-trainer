@@ -4,33 +4,33 @@
     {"vowel":"รร","examples":["พรรณ","ธรรม","กรรม"],"pronunciation":["a","a"]}, 
     {"vowel":"อา","examples":["ชา","วา","ตา"],"pronunciation":["aː","aa"]},
 
+    {"vowel":"แอ","examples":["แอ","แคน","แตน"],"pronunciation":["ɛː","ɛɛ"]},
     {"vowel":"แอ็","examples":["แข็ง","แข็งแรง","แท็กซี่"],"pronunciation":["ɛ","ɛ"],"playable":false},
     {"vowel":"แอะ","examples":["แกะ","แตะ","แพะ"],"pronunciation":["ɛʔ","ɛ"]},
-    {"vowel":"แอ","examples":["แอ","แคน","แตน"],"pronunciation":["ɛː","ɛɛ"]},
 
+    {"vowel":"ออ","examples":["จอ","คอ","ทอ"],"pronunciation":["ɔː","ɔɔ"]},
     {"vowel":"อ็อ","examples":["ช็อก","ล็อค","ผล็อง"],"pronunciation":["ɔ","ɔ"],"playable":false},
     {"vowel":"เอาะ","examples":["เจาะ","เบาะ","เงาะ"],"pronunciation":["ɔ","ɔ"]},
-    {"vowel":"ออ","examples":["จอ","คอ","ทอ"],"pronunciation":["ɔː","ɔɔ"]},
 
+    {"vowel":"เอ","examples":["เป้","เมฆ","เณร"],"pronunciation":["eː","ee"]},
     {"vowel":"เอ็","examples":["เน็ต","เจ็บ","เด็ด"], "pronunciation":["e","e"]},
     {"vowel":"เอะ","examples":["เอะ","เตะ","นักเตะ"],"pronunciation":["eʔ","e"]},
-    {"vowel":"เอ","examples":["เป้","เมฆ","เณร"],"pronunciation":["eː","ee"]},
     
+    {"vowel":"เออ","examples":["เจอ","เทอม","อำเภอ"],"pronunciation":["ɤː","əə"]},
     {"vowel":"เอิ","examples":["เริง","เกิด","ดำเนิน"],"pronunciation":["ɤː","əə"],"playable":false},
     {"vowel":"เออะ","examples":["เถอะ","เยอะ","เดอะ"],"pronunciation":["ɤʔ","ə"]},
-    {"vowel":"เออ","examples":["เจอ","เทอม","อำเภอ"],"pronunciation":["ɤː","əə"]},
 
     {"vowel":"โอ","examples":["โล","โกน","โดด"],"pronunciation":["oː","oo"]},
     {"vowel":"โอะ","examples":["โกะ","โนะ","โมฆะ"],"pronunciation":["oʔ","o"]},
 
-    {"vowel":"อิ","examples":["ซิป","กิน","หิน"],"pronunciation":["i","i"]},
     {"vowel":"อี","examples":["สี","ตี","สี"],"pronunciation":["iː","ii"]},
+    {"vowel":"อิ","examples":["ซิป","กิน","หิน"],"pronunciation":["i","i"]},
 
-    {"vowel":"อึ","examples":["บึง","ศึก","ขึ้น"],"pronunciation":["ɯ","ʉ"]},
     {"vowel":"อื","examples":["จืด","ถือ","ฟืน"],"pronunciation":["ɯː","ʉʉ"]},
+    {"vowel":"อึ","examples":["บึง","ศึก","ขึ้น"],"pronunciation":["ɯ","ʉ"]},
 
-    {"vowel":"อุ","examples":["ทุบ","ลุง","ยุง"],"pronunciation":["u","u"]},
     {"vowel":"อู","examples":["ชู","ดู","หู"],"pronunciation":["uː","uu"]},
+    {"vowel":"อุ","examples":["ทุบ","ลุง","ยุง"],"pronunciation":["u","u"]},
 
     {"vowel":"เอีย","examples":["เอียง","เรียง","อินเดีย"],"pronunciation":["iːa","ia"]},
     {"vowel":"เอียะ","examples":["เอียะ","เดี๊ยะ","กอเอี๊ยะ"],"pronunciation":["ia?","ia"],"playable":false},
@@ -48,8 +48,8 @@
     {"vowel":"อัย","examples":["สมัย","วิจัย","สงสัย"],"pronunciation":["ai","ai"]},
     {"vowel":"ไอย","examples":["ไทย","ไชย","ไวยากรณ์"],"pronunciation":["ai","ai"]},
     
-    {"vowel":"อ็อย","examples":["ผล็อย","ผ็อย"],"pronunciation":["ɔj","ɔj"]},
     {"vowel":"ออย","examples":["หอย","ลอย","ซอย"],"pronunciation":["ɔːj","ɔɔi"]},
+    {"vowel":"อ็อย","examples":["ผล็อย","ผ็อย"],"pronunciation":["ɔj","ɔj"]},
 
     {"vowel":"เอย","examples":["เลย","เนย","เลย"],"pronunciation":["ɤːj","əəi"]},
     {"vowel":"โอย","examples":["โพย","โรย","ขโมย"],"pronunciation":["oːj","ooi"]},

@@ -8,10 +8,10 @@ const MainNavigation = () => {
                 <Link className="button" to="/basics">The basics</Link>
             </section>
             <section>
-                <Link className="button" to="/test">Test words</Link>
+                <Link className="button" to="/practice">Practice words</Link>
             </section>
             <section>
-                <Link className="button" to="/practice">Practice words</Link>
+                <Link className="button" to="/test">Test words</Link>
             </section>
             <section>
                 <Link className="button" to="/progress">View progress</Link>
