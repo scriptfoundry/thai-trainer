@@ -350,6 +350,28 @@ $primary-theme: (
 }
 
 @mixin tab-header() {
+    width: 100%;
+    overflow-x: auto;
+    box-shadow: rgba(black, .2) 3px 3px 3px;
+    border-color: rgba(black, .1);
+    border-style: solid;
+    background-color: rgba(211, 211, 211, .1);
+    border-width: 1px 0 0 1px;
+
+    ol {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        white-space: nowrap;
+        padding: 1em 0;
+    }
+
+    li {
+        display: inline-block;
+        padding: 0 1em;
+    }
+}
+@mixin tab-headerx() {
     ol {
         display: flex;
         justify-content: center; 

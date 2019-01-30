@@ -16,14 +16,14 @@
             @include columns();
             display: flex;
             width: 100%;
-
+            justify-content: center;
         }
         span {
             font-size: 2em;
             text-align: left;
 
             &:nth-child(1) {
-                @include column(1, 2.5);
+                @include column(1);
             }
             &:nth-child(2) {
                 @include column(2);
@@ -32,14 +32,9 @@
                 @include column(2);
             }
             &:nth-child(4) {
-                @include column(1);
+                @include column(2);
                 text-align: center;
             }
-        }
-        button {
-            position: absolute;
-            margin: 0;
-            vertical-align: middle;
         }
     }
     .drill-button {
