@@ -351,12 +351,16 @@ $primary-theme: (
 
 @mixin tab-header() {
     width: 100%;
-    overflow-x: auto;
-    box-shadow: rgba(black, .2) 3px 3px 3px;
-    border-color: rgba(black, .1);
-    border-style: solid;
-    background-color: rgba(211, 211, 211, .1);
-    border-width: 1px 0 0 1px;
+    text-align: center;
+
+    @include forHandheld() {
+        overflow-x: auto;
+        box-shadow: inset rgba(black, .2) 2px 4px 3px;
+        border-color: rgba($color-muted, .8) rgba($color-muted, .2) rgba($color-muted, .2) rgba($color-muted, .8);
+        border-style: solid;
+        background-color: rgba(211, 211, 211, .1);
+        border-width: 1px;
+    }
 
     ol {
         display: inline-block;
