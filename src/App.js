@@ -73,6 +73,9 @@ class App extends Component {
 
 App.propTypes = {
   applicationReady: PropTypes.bool.isRequired,
+  initializeWordsManager: PropTypes.func.isRequired,
+  initializeSettings: PropTypes.func.isRequired,
+  initializeVoiceManager: PropTypes.func.isRequired,
   setApplicationReady: PropTypes.func.isRequired,
 };
 

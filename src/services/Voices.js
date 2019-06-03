@@ -1,4 +1,4 @@
-/* global window, speechSynthesis */
+/* global speechSynthesis */
 import { loadVoices, saveVoices } from './Persistence';
 import PropTypes from 'prop-types';
 

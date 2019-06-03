@@ -5,7 +5,7 @@ import Preview from './Preview';
 import CardContainer from './CardContainer';
 
 class Practice extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const { practiceWordLimit, seedPractice, words } = this.props;
 
         seedPractice(words, practiceWordLimit);

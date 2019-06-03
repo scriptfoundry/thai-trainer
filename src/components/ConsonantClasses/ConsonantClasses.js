@@ -10,7 +10,7 @@ const midChars = midCharacters.split('');
 const highChars = highCharacters.split('');
 
 class ConsonantClasses extends Component {
-    componentWillMount() {
+    componentDidMount() {
         // this.props.initializeTones();
         this.props.initializeConsonants();
     }
