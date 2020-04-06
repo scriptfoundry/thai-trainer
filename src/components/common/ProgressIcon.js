@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CircularProgressbar from 'react-circular-progressbar';
+// import CircularProgressbar from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 
 
 const ProgressIcon = ({ progress }) => <div className="progress-meter">

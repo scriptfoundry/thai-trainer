@@ -58,13 +58,20 @@ export const setRate = (newRate) => {
 export const say = (language, word, cancelCurrent = true) => new Promise(resolve => {
     if (cancelCurrent) speechSynthesis.cancel();
 
-    const text = language === LANGUAGE_ENGLISH ? word.term : (word.altThai || word.thai);
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = language === LANGUAGE_ENGLISH ? englishVoice : thaiVoice;
-    utterance.rate = language === LANGUAGE_ENGLISH ? 1 : rate;
+    const utterance = new SpeechSynthesisUtterance();
+    if (language === LANGUAGE_ENGLISH) {
+        utterance.lang = englishVoice.lang;
+        utterance.voice = englishVoice;
+        utterance.rate = 1;
+        utterance.text = word.term;
+    } else {
+        utterance.lang = thaiVoice.lang;
+        utterance.voice = thaiVoice;
+        utterance.rate = rate;
+        utterance.text = word.thai || word.altThai;
+    }
 
     utterance.onend = resolve;
-
     speechSynthesis.speak(utterance);
 });
 

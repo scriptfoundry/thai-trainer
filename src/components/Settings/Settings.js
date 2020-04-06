@@ -41,6 +41,9 @@ const Settings = (props) => {
         <section>
             <VoiceSelector heading="Thai voices" voices={ thaiVoices } selectedVoice={ thaiVoice } onSelectVoice={ setThaiVoice } />
             <VoiceSelector heading="English voices" voices={ englishVoices } selectedVoice={ englishVoice } onSelectVoice={ setEnglishVoice } />
+            <aside>If you see no voices above, try reloading the page now. That usually solves the problem.</aside>
+            <aside>Don&apos;t see a Thai voice? Try googling on how to install <strong>Thai voice support</strong> on your specific device.</aside>
+            <aside>Android users may see multiple available voices, when only one is ever used. I don&apos;t know why this happens or how to fix it.</aside>
         </section>
         <section>
             <RateSelector value={ rate } onChange={setRate} />

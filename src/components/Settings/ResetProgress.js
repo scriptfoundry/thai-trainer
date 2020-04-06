@@ -9,7 +9,7 @@ const ResetProgress = ({ resetProgress, toggleResetProgress, resetProgressVisibl
     });
 
     return <div className="reset-progress">
-        <h2>Speech rate (Thai)</h2>
+        <h2>Reset</h2>
         <div className="button-group">
             <div className="danger" onClick={ toggleResetProgress }>Reset progress</div>
         </div>
