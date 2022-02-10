@@ -30,7 +30,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2"
   },
   "scripts": {
